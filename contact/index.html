@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Doo &mdash; Get Things Done</title>
+    <meta name="Description" content="Doo is an iOS app for reminders and todos. It offers a deliberate focus on simplicity to create a smart, simple way to get things done. Doo is available on iPhone and iPad." />
+    <meta name="Keywords" content="doo, reminders, todo, ios, app, reminder, todos, michael, mike, ciarlo, due, iphone, ipad" />
+
+    <meta charset="utf-8" />
+    <meta property="og:url" content="#" />
+    <meta property="og:image" content="#" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Doo - Get things done" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <link href='../css/screen.css' rel='stylesheet' type='text/css' />
+    <link rel="icon" type="image/png" href="../images/favicon.png" />
+  </head>
+  <body class="contact">
+    <nav>
+      <div class="content-wrapper">
+        <h2><a href="/" title="Go to the Doo homepage">Doo</a></h2>
+        <ul id="nav-menu">
+          <li class="first"><a href="/" title="The Doo homepage">What is Doo?</a></li>
+          <li class="third"><a class="active" href="/contact" title="Submit feedback or request support">Get in touch</a></li>
+        </ul>
+
+        <a id="hamburger-icon" href="#">
+          <span class="top"></span>
+          <span class="middle"></span>
+          <span class="bottom"></span>
+        </a>
+      </div>
+    </nav>
+
+    <section id="contact-form">
+      <div class="content-wrapper">
+        <h1 class="has-illustration half-width"><span class="block">Get in touch.</span> We'd love to hear from you.</h1>
+        <p class="half-width margin main-text">If you&rsquo;re new to Doo or are looking for help, you came to the right place. We aim to reply within 1 business day. Have a suggestion? We&rsquo;d love to hear your thoughts.</p>
+      </div>
+
+      <form>
+        <label>Name</label>
+        <input type="text" name="name" placeholder="Your name..." class="half-width" required></input>
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Your email..." class="half-width" required></input>
+        <label>Subject</label>
+
+        <div class="selection half-width">
+          <div class="nubbin"></div>
+          <select required>
+            <option value="bug">Bug Report</option>
+            <option value="feedback">Feedback</option>
+            <option value="feature">Feature Request</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <label>Message</label>
+        <textarea placeholder="Your message..."></textarea>
+        <input class="submit" type="submit" value="Send">
+      </form>
+<!-- 
+      <form class="form please-validate track-contact-form" method="post" action="/contact/" enctype="multipart/form-data" id="contact_form" data-prevent-double-submit="true" novalidate="">
+
+    
+  
+
+  <div class="row center pt3">
+    <div class="col span2of3 large-span3of4 mid-span1of1 align-left normalize">
+      <p>Please select a topic below related to your inquiry. We'll show articles that provide answers to some of our most common questions. If you don't find what you need, click through the prompts to access our contact form.</p>
+
+    </div>
+
+      <div class="col span2of3 large-span3of4 mid-span1of1 align-left">
+        <div id="status_roadblock" class="dismissable-container alert_closed"></div>
+      </div>
+      <div class="col span2of3 large-span3of4 mid-span1of1 align-left">
+        <div id="lurvin_roadblock" class="dismissable-container alert_closed"></div>
+      </div>
+  </div>
+
+  <div class="row center">
+    <div class="col span2of3 large-span3of4 mid-span1of1 align-left">
+          </div>
+  </div>
+
+  <div class="row ptb4 department_pathways">
+    <div class="col span1of4 ptb3 top">
+      <div class="pathway-card">
+        <h2>Technical Support</h2>
+        <a href="/contact/support/" class="primary-action">Select</a>
+      </div>
+    </div><script id="department_template" type="text/template"><div class='col span1of4 ptb3 top'>
+      <div class='pathway-card'>
+        <h2>{{title}}</h2>
+        <a href='javascript:;' class='{{class}} primary-action' data-department='{{department}}'>
+          Select
+        </a>
+      </div>
+    </div></script><div class="col span1of4 ptb3 top">
+      <div class="pathway-card">
+        <h2>Account Access</h2>
+        <a href="javascript:;" class=" primary-action" data-department="account">
+          Select
+        </a>
+      </div>
+    </div><div class="col span1of4 ptb3 top">
+      <div class="pathway-card">
+        <h2>Billing</h2>
+        <a href="javascript:;" class="primary-action is-active" data-department="billing">
+          Select
+        </a>
+      </div>
+    </div><div class="col span1of4 ptb3 top">
+      <div class="pathway-card">
+        <h2>Business Partnerships</h2>
+        <a href="javascript:;" class=" primary-action" data-department="bizdev">
+          Select
+        </a>
+      </div>
+    </div><div class="col span1of4 ptb3 top">
+      <div class="pathway-card">
+        <h2>Legal &amp; Privacy Questions</h2>
+        <a href="javascript:;" class=" primary-action" data-department="legal">
+          Select
+        </a>
+      </div>
+    </div><div class="col span1of4 ptb3 top">
+      <div class="pathway-card">
+        <h2>Considering MailChimp</h2>
+        <a href="javascript:;" class=" primary-action" data-department="prospective">
+          Select
+        </a>
+      </div>
+    </div></div>
+
+  <div class="row ptb4 topic_pathways">
+    <div class="block span1of1 center">
+      <div class="col span2of3 large-span3of4 mid-span1of1 align-left">
+        <h2 class="heading">What kind of billing question do you have?</h2>
+      </div>
+    </div>
+    <div class="topic_pathways-list">
+      <script id="topic_template" type="text/template"><div class='col span1of4 ptb3 top'>
+        <div class='pathway-card'>
+          <h2>{{title}}</h2>
+          <a href='javascript:;' class='{{class}} primary-action' data-topic='{{topic}}'>
+            Select
+          </a>
+        </div>
+      </div></script>
+    <div class="col span1of4 ptb3 top">
+        <div class="pathway-card">
+          <h2>Non-Profit Discount Requests</h2>
+          <a href="javascript:;" class=" primary-action" data-topic="nonprofit">
+            Select
+          </a>
+        </div>
+      </div><div class="col span1of4 ptb3 top">
+        <div class="pathway-card">
+          <h2>Agency Discount Requests</h2>
+          <a href="javascript:;" class="primary-action is-active" data-topic="agency">
+            Select
+          </a>
+        </div>
+      </div><div class="col span1of4 ptb3 top">
+        <div class="pathway-card">
+          <h2>General Pricing</h2>
+          <a href="javascript:;" class=" primary-action" data-topic="pricing">
+            Select
+          </a>
+        </div>
+      </div><div class="col span1of4 ptb3 top">
+        <div class="pathway-card">
+          <h2>High Volume Pricing</h2>
+          <a href="javascript:;" class=" primary-action" data-topic="volume">
+            Select
+          </a>
+        </div>
+      </div></div>
+  </div>
+
+      <div class="row ptb4 suggested_articles center">
+      <div class="col span2of3 large-span3of4 mid-span1of1 align-left">
+        <h2 class="heading pb3">Do any of these articles help resolve your issue?</h2>
+        <div class="pathway-card">
+          <div class="suggested_articles-results pa3">
+              <a class="block span1of1 ptb1" href="http://kb.mailchimp.com/accounts/account-setup/whitelabeling-and-agency-programs#Programs-for-Agencies" target="_blank">Whitelabeling and agency programs</a>
+            
+              <a class="block span1of1 ptb1" href="http://kb.mailchimp.com/accounts/multi-user/manage-multiple-clients-in-one-account?_ga=1.66461805.298061717.1452402845" target="_blank">Manage multiple clients in one account</a>
+            
+              <a class="block span1of1 ptb1" href="http://kb.mailchimp.com/quick-answers/lists-answers/can-i-create-multiple-lists-in-my-mailchimp-account" target="_blank">Can I create multiple lists in my MailChimp account?</a>
+            </div>
+          <a href="javascript:;" class="primary-action no-icon show-the-rest is-active">Didn't find what you need? Access our contact form.</a>
+        </div>
+      </div>
+    </div>
+  
+  <div class="row form_fields center">
+    <div class="col span2of3 large-span3of4 mid-span1of1 align-left">
+      <div class="msg-info mb3 monitored_msg">
+        <p>Please note that submissions to this form are not monitored for technical support inquiries. </p>
+      </div>
+    </div>
+    <div class="col span2of3 large-span3of4 mid-span1of1 align-left">
+        <div class="field_department  form-group">
+          <label class="form-label">Account Access</label>
+          <div class="form-input-group"><input value="account[compliance]" id="department_accountcompliance_0" name="department" type="radio" data-department="account" data-topic="compliance" data-parsley-multiple="department" data-parsley-id="8840"> <label for="department_accountcompliance_0">Compliance &amp; Account Suspensions</label><br><input value="account[login]" id="department_accountlogin_1" name="department" type="radio" data-department="account" data-topic="login" data-parsley-multiple="department" data-parsley-id="8840"> <label for="department_accountlogin_1">Account Login &amp; Recovery</label><br></div><div class="field-message"><ul class="parsley-errors-list" id="parsley-id-multiple-department"></ul></div>
+        </div>
+        <div class="field_department  form-group">
+          <label class="form-label">Billing</label>
+          <div class="form-input-group"><input value="billing[nonprofit]" id="department_billingnonprofit_0" name="department" type="radio" data-department="billing" data-topic="nonprofit" data-parsley-multiple="department" data-parsley-id="8840"> <label for="department_billingnonprofit_0">Non-Profit Discount Requests</label><br><input value="billing[agency]" id="department_billingagency_1" name="department" type="radio" data-department="billing" data-topic="agency" data-parsley-multiple="department" data-parsley-id="8840"> <label for="department_billingagency_1">Agency Discount Requests</label><br><input value="billing[pricing]" id="department_billingpricing_2" name="department" type="radio" data-department="billing" data-topic="pricing" data-parsley-multiple="department" data-parsley-id="8840"> <label for="department_billingpricing_2">General Pricing</label><br><input value="billing[volume]" id="department_billingvolume_3" name="department" type="radio" data-department="billing" data-topic="volume" data-parsley-multiple="department" data-parsley-id="8840"> <label for="department_billingvolume_3">High Volume Pricing</label><br></div>
+        </div>
+        <div class="field_department  form-group">
+          <label class="form-label">Business Partnerships</label>
+          <div class="form-input-group"><input value="bizdev[bizdev]" id="department_bizdevbizdev_0" name="department" type="radio" data-department="bizdev" data-topic="bizdev" data-parsley-multiple="department" data-parsley-id="8840"> <label for="department_bizdevbizdev_0">Business Partnerships</label><br></div>
+        </div>
+        <div class="field_department  form-group">
+          <label class="form-label">Legal &amp; Privacy Questions</label>
+          <div class="form-input-group"><input value="legal[legal]" id="department_legallegal_0" name="department" type="radio" data-department="legal" data-topic="legal" data-parsley-multiple="department" data-parsley-id="8840"> <label for="department_legallegal_0">Legal &amp; Privacy Questions</label><br></div>
+        </div>
+        <div class="field_department  form-group">
+          <label class="form-label">Considering MailChimp</label>
+          <div class="form-input-group"><input value="prospective[prospective]" id="department_prospectiveprospective_0" name="department" type="radio" data-department="prospective" data-topic="prospective" data-parsley-multiple="department" data-parsley-id="8840"> <label for="department_prospectiveprospective_0">Considering MailChimp</label><br></div>
+        </div>
+        <div class="field_has_ticket form-group">
+          <label class="form-label">Do you have a Ticket open?</label>
+          <div class="form-input-group"><input value="no" id="has_ticket_no_0" name="has_ticket" type="radio" wrapper_class="hide" checked="true" data-parsley-multiple="has_ticket" data-parsley-id="1792"> <label for="has_ticket_no_0">No</label><br><input value="yes" id="has_ticket_yes_1" name="has_ticket" type="radio" wrapper_class="hide" data-parsley-multiple="has_ticket" data-parsley-id="1792"> <label for="has_ticket_yes_1">Yes</label><br></div><div class="field-message"><ul class="parsley-errors-list" id="parsley-id-multiple-has_ticket"></ul></div>
+        </div>
+        <div class="field_subject  form-group">
+          <label class="form-label">Subject</label>
+          <input name="subject" class="form-input" type="text" required="true" maxlength="255" data-required="true" placeholder="Subject" value="" data-parsley-id="2352"><div class="field-message"><ul class="parsley-errors-list" id="parsley-id-2352"></ul></div>
+        </div>
+        <div class="field_message  form-group">
+          <label class="form-label">Message</label>
+          <textarea name="message" class="form-area" type="textarea" placeholder="Message" data-parsley-id="8807"></textarea><div class="field-message"><ul class="parsley-errors-list" id="parsley-id-8807"></ul></div>
+        </div>
+        <div class="field_name  form-group">
+          <label class="form-label">Name</label>
+          <input name="name" class="form-input" type="text" maxlength="255" placeholder="Name" value="" data-parsley-id="4512"><div class="field-message"><ul class="parsley-errors-list" id="parsley-id-4512"></ul></div>
+        </div>
+        <div class="field_email  form-group">
+          <label class="form-label">Email</label>
+          <input name="email" class="form-input" type="email" maxlength="255" required="true" data-required="true" placeholder="Email" value="" data-parsley-id="3055"><div class="field-message"><ul class="parsley-errors-list" id="parsley-id-3055"></ul></div>
+        </div>
+        <div class="field_username  form-group">
+          <label class="form-label">MailChimp username</label>
+          <input name="username" class="form-input" type="text" maxlength="255" placeholder="MailChimp username" value="" data-parsley-id="1353"><div class="field-message"><ul class="parsley-errors-list" id="parsley-id-1353"></ul></div>
+        </div>
+        <div class="field_screenshot hide form-group">
+          <label class="form-label">Screenshot (jpg, png or gif). <a href="http://kb.mailchimp.com/campaigns/previews-and-tests/if-you-need-to-send-a-screenshot-to-support" target="_blank">Help on uploading a Screenshot</a></label>
+          <input name="screenshot" class="form-file" type="file" placeholder="" accept="image/*" wrapper_class="hide" value="" data-parsley-id="5400"><div class="field-message"><ul class="parsley-errors-list" id="parsley-id-5400"></ul></div>
+        </div>
+        <div class="field_captcha  form-group">
+          <label class="form-label"></label>
+          <div class="form-captcha"><script src="https://www.google.com/recaptcha/api.js"></script><div class="g-recaptcha" data-sitekey="6Lf6NQATAAAAAEAC88XrdiwpI11xVr8nNMNJ1Oez"><div><div style="width: 304px; height: 78px;"><iframe src="https://www.google.com/recaptcha/api2/anchor?k=6Lf6NQATAAAAAEAC88XrdiwpI11xVr8nNMNJ1Oez&amp;co=aHR0cDovL21haWxjaGltcC5jb206ODA.&amp;hl=en&amp;v=r20160105165243&amp;size=normal&amp;cb=87uc4pi3wjlu" title="recaptcha widget" width="304" height="78" role="presentation" frameborder="0" scrolling="no"></iframe></div><textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid #c1c1c1; margin: 10px 25px; padding: 0px; resize: none;  display: none; "></textarea></div></div></div>
+        </div>
+
+      <div class="field_submit">
+        <input class="form-button" name="submit" type="submit" value="Submit">
+      </div>
+    </div>
+  </div>
+
+
+</form> -->
+    </section>
+
+    <section id="footer">
+      <div class="content-wrapper">
+        <ul>
+          <li><a href="/" title="The Doo homepage">What is Doo?</a></li>
+          <li><a href="/contact" title="Submit feedback or request support">Get in touch</a></li>
+        </ul>
+
+        <p>Copyright &copy; 2015 Michael Ciarlo</p>
+      </div>
+    </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="../js/lib.js"></script>
+  <script src="../js/mciarlo.js"></script>
+  </body>
+</html>
