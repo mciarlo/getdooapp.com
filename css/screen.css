@@ -650,12 +650,13 @@ nav {
   background-image: url(../images/accent_4.jpg); }
 #contact-form .main-text {
   margin-top: 0; }
+#contact-form .half-width.margin {
+  width: 100%; }
 
 form {
   display: block;
   margin: 2em auto 0 auto;
-  width: 86%;
-  max-width: 920px; }
+  width: 100%; }
 
 input, textarea, .selection {
   border: 2px solid #eaeaea;
@@ -664,7 +665,7 @@ input, textarea, .selection {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   -ms-border-radius: 6px;
-  font-size: 1.4em;
+  font-size: 1.2em;
   font-family: "Avenir Next";
   color: #444;
   padding: .5em .8em .6em;
@@ -702,9 +703,7 @@ label, input, textarea, .selection {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box;
-  float: left;
-  clear: left; }
+  -ms-box-sizing: border-box; }
 
 .selection {
   overflow: hidden;
@@ -776,7 +775,7 @@ label, input, textarea, .selection {
   font-size: 1.2em; }
 
 @media screen and (min-width: 375px) {
-  .content-wrapper, form {
+  .content-wrapper {
     width: 82%; }
 
   nav a:link, nav a:visited {
@@ -1069,10 +1068,10 @@ label, input, textarea, .selection {
   #extension-image.invisible,
   #threed-touch-image.invisible,
   #voiceover-image.invisible {
-    transform: translate3d(0px, 200px, 0px);
-    -webkit-transform: translate3d(0px, 200px, 0px);
-    -moz-transform: translate3d(0px, 200px, 0px);
-    -ms-transform: translate3d(0px, 200px, 0px); }
+    transform: translate3d(0px, 100px, 0px);
+    -webkit-transform: translate3d(0px, 100px, 0px);
+    -moz-transform: translate3d(0px, 100px, 0px);
+    -ms-transform: translate3d(0px, 100px, 0px); }
 
   #conclusion {
     padding-top: 5em; }
@@ -1113,9 +1112,12 @@ label, input, textarea, .selection {
   #contact-form .main-text {
     padding-top: 48px; }
   #contact-form input, #contact-form textarea, #contact-form .selection {
-    font-size: 1.5em; }
+    font-size: 1.2em; }
   #contact-form label {
-    font-size: 1.2em; } }
+    font-size: 1em; }
+  #contact-form .half-width.margin {
+    width: 48%;
+    float: left; } }
 @media screen and (min-width: 920px) {
   #illustrations, #icloud-sync, #more-to-doo {
     max-width: none; }
