@@ -24,6 +24,39 @@ $(function () {
 	});
 
 	if ($('body').hasClass('contact')) {
+		$("#subject-select").change(function () {
+			$("#subject-input").attr('value', $("#subject-select option:selected").text());
+		});
+
+		$("#name-input, #email-input, #message-input").change(function () {
+			$(this).removeClass('required');
+		});
+
+		$("#support-submit").click(function (ev) {
+			$("#name-input, #email-input, #message-input").removeClass('required');
+			
+			if ($("#name-input").val().length == 0 ||
+				$("#email-input").val().length == 0 ||
+				$("#message-input").val().length == 0) {
+
+				if ($("#name-input").val().length == 0) {
+					$("#name-input").addClass('required');
+				}
+
+				if ($("#email-input").val().length == 0) {
+					$("#email-input").addClass('required');
+				}
+
+				if ($("#message-input").val().length == 0) {
+					$("#message-input").addClass('required');
+				}
+
+				ev.preventDefault();
+				ev.stopPropagation();
+			}
+
+		});
+
 		return;
 	}
 

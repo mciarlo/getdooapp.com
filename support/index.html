@@ -47,31 +47,33 @@
 
     <section id="contact-form">
       <div class="content-wrapper">
-        <h1 class="has-illustration half-width"><span class="block">Have questions?</span> We&rsquo;ve got answers.</h1>
+        <h1 class="has-illustration half-width"><span class="block">Get in touch.</span> We&rsquo;d love to hear from you.</h1>
 
         <div class="half-width margin">
-          <p class="main-text">If you&rsquo;re new to Doo or are looking for help, you came to the right place. We aim to reply within 1 business day. Have a suggestion? We&rsquo;d love to hear your thoughts.</p>
+          <p class="main-text">Questions, comments, bug reports, and illustration requests are welcome. We aim to reply within 1 business day.</p>
 
-          <form action='contact.php' method="post">
+          <form action="https://docs.google.com/forms/d/1k5z8QcUnhTvTqYz7eYlFlYp6PMQNWru-zkM3xA21qy8/formResponse" target="_self" method="POST" id="mG61Hd">
             <label>Name</label>
-            <input type="text" name="name" placeholder="Your name..." required></input>
+            <input type="text" name="entry.12534165" id="name-input" placeholder="Your name..." required></input>
             <label>Email</label>
-            <input type="email" name="email" placeholder="Your email..." required></input>
+            <input type="email" name="entry.1163129725" id="email-input" placeholder="Your email..." required></input>
             <label>Subject</label>
 
             <div class="selection">
               <div class="nubbin"></div>
-              <select name="subject" required>
+              <select id="subject-select" name="entry.943345034" required>
                 <option value="bug">Bug Report</option>
                 <option value="feedback">Feedback</option>
-                <option value="feature">Feature Request</option>
+                <option value="feature">Illustration Request</option>
                 <option value="other">Other</option>
               </select>
+
+              <input id="subject-input" type="hidden" name="entry.943345034" value="Bug Report" />
             </div>
 
             <label>Message</label>
-            <textarea name="message" placeholder="Your message..."></textarea>
-            <input class="submit" type="submit" name="send" value="Send">
+            <textarea name="entry.1074388366" id="message-input" placeholder="Your message..."></textarea>
+            <input class="submit" id="support-submit" type="submit" name="send" value="Send">
           </form>
         </div>
       </div>

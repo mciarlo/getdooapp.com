@@ -617,25 +617,23 @@ nav {
 */
 #footer {
   font-size: .8em;
-  padding: 0; }
+  background: #f1f1f1; }
   #footer .content-wrapper {
-    border-top: 6px solid #f1f1f1;
-    padding: 0 0 3em; }
+    padding-bottom: 1em; }
   #footer p {
     color: #909090;
-    float: left; }
+    float: left;
+    font-size: .9em; }
   #footer ul {
-    margin-bottom: 4em; }
+    margin-bottom: 2em; }
   #footer li {
     display: block;
-    border-bottom: 1px solid #f1f1f1; }
-    #footer li:last-child {
-      border: none; }
+    border-bottom: 1px solid #eaeaea; }
     #footer li a:link, #footer li a:visited {
       display: block;
       font-weight: 400;
       text-transform: uppercase;
-      color: #a1a1a1;
+      color: #808080;
       padding: 1em 0; }
     #footer li a:hover {
       color: #9265b2; }
@@ -678,12 +676,15 @@ input, textarea, .selection {
   -o-transition: all 0.2s ease-in-out; }
   input:focus, textarea:focus, .selection:focus {
     border-color: #9265b2; }
+  input.required, textarea.required, .selection.required {
+    background: #ffe5e5;
+    border-color: #c74949; }
   input.submit, textarea.submit, .selection.submit {
     width: auto;
     background: #9265b2;
     color: white;
     border: none;
-    padding: .5em 1em .6em 1em;
+    padding: .9em 1.4em .8em 1.4em;
     cursor: pointer; }
     input.submit:hover, textarea.submit:hover, .selection.submit:hover {
       background: #784b98; }
@@ -1088,7 +1089,7 @@ label, input, textarea, .selection {
     margin-top: 0em; }
 
   #footer .content-wrapper {
-    padding: 2em 0 3em; }
+    padding: 0; }
   #footer p {
     float: left;
     margin-top: .85em; }
