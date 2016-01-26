@@ -1023,7 +1023,7 @@ label, input, textarea, .selection {
       margin: 0 0 4em -56%; }
     #icloud-sync .half-width {
       position: absolute;
-      top: 8em;
+      top: 5em;
       left: 52%;
       margin: 0;
       z-index: 2; }
@@ -1189,7 +1189,8 @@ label, input, textarea, .selection {
     margin-left: -45%;
     width: 110%; }
   #icloud-sync .half-width {
-    width: 50%; }
+    width: 50%;
+    top: 4em; }
 
   #icloud-1 {
     left: 65%; }
@@ -1263,7 +1264,7 @@ label, input, textarea, .selection {
       margin: 4em auto;
       max-width: 1080px; }
     #icloud-sync .half-width {
-      top: 12em; }
+      top: 14em; }
 
   #icloud-1 {
     left: 25%;
