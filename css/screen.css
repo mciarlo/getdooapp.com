@@ -1047,7 +1047,7 @@ label, input, textarea, .selection {
       margin: 0 0 4em -56%; }
     #icloud-sync .half-width {
       position: absolute;
-      top: 5em;
+      top: 3em;
       left: 52%;
       margin: 0;
       z-index: 2; }
