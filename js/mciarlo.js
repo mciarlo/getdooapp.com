@@ -60,6 +60,26 @@ $(function () {
 		return;
 	}
 
+	$("#play-btn").click(function (ev) {
+		ev.preventDefault();
+
+		$("#intro-video").toggleClass('active');
+
+	    var activeVideo = document.getElementById("video-element");
+	    activeVideo.currentTime = 0;
+	    activeVideo.play();
+	});
+
+
+	$("#close-video-btn").click(function (ev) {
+		ev.preventDefault();
+		
+		$("#intro-video").removeClass('active');
+
+		var activeVideo = document.getElementById("video-element");
+	    activeVideo.pause();
+	});
+
 	// Lazy load major image assets
   	$("img.lazy-load").removeClass('hidden').addClass('invisible').unveil(imageActivationOffset(), function() {
   		if (this.getAttribute("data-src").indexOf("ipad_icloud_screenshot") > 0) {
