@@ -194,6 +194,95 @@ h3 {
  **** NAV
  *****************************
  */
+nav {
+  background: #9265b2;
+  color: white;
+  position: relative;
+  padding: .8em 0; }
+  nav .content-wrapper {
+    width: 100%; }
+  nav h2 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    float: left;
+    margin-left: 7%; }
+    nav h2 a:link, nav h2 a:visited {
+      color: white; }
+    nav h2 a:hover {
+      color: #ddbdf4; }
+  nav ul {
+    position: absolute;
+    top: 100%;
+    margin-top: .8em;
+    width: 100%;
+    left: 0%;
+    background: #9265b2;
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    z-index: 9998;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+    padding-top: .2em; }
+    nav ul.active {
+      opacity: 1;
+      height: 120px; }
+      nav ul.active li {
+        opacity: 1;
+        transform: translate3d(0px, 0px, 0px);
+        -webkit-transform: translate3d(0px, 0px, 0px);
+        -moz-transform: translate3d(0px, 0px, 0px);
+        -ms-transform: translate3d(0px, 0px, 0px); }
+    nav ul li {
+      display: block;
+      opacity: 0;
+      text-align: center;
+      transition: all 0.25s ease-in-out;
+      -webkit-transition: all 0.25s ease-in-out;
+      -moz-transition: all 0.25s ease-in-out;
+      -ms-transition: all 0.25s ease-in-out;
+      -o-transition: all 0.25s ease-in-out;
+      transform: translate3d(0px, -40px, 0px);
+      -webkit-transform: translate3d(0px, -40px, 0px);
+      -moz-transform: translate3d(0px, -40px, 0px);
+      -ms-transform: translate3d(0px, -40px, 0px); }
+      nav ul li.first {
+        transition-delay: 0ms;
+        -webkit-transition-delay: 0ms;
+        -moz-transition-delay: 0ms;
+        -ms-transition-delay: 0ms;
+        -o-transition-delay: 0ms; }
+      nav ul li.second {
+        transition-delay: 100ms;
+        -webkit-transition-delay: 100ms;
+        -moz-transition-delay: 100ms;
+        -ms-transition-delay: 100ms;
+        -o-transition-delay: 100ms; }
+    nav ul a:link, nav ul a:visited {
+      transition: color 0.2s ease-in-out;
+      -webkit-transition: color 0.2s ease-in-out;
+      -moz-transition: color 0.2s ease-in-out;
+      -ms-transition: color 0.2s ease-in-out;
+      -o-transition: color 0.2s ease-in-out;
+      width: 86%;
+      margin: 0 auto;
+      display: block;
+      text-transform: uppercase;
+      font-weight: 400;
+      border-top: 1px solid #9a6dba;
+      padding: 1em 0;
+      color: white; }
+      nav ul a:link.active, nav ul a:visited.active {
+        color: #cba3e6; }
+        nav ul a:link.active:hover, nav ul a:visited.active:hover {
+          color: #ddbdf4; }
+    nav ul a:hover {
+      color: #ddbdf4; }
+
 #intro-video {
   background: #f1f1f1;
   opacity: 0.0;
@@ -203,11 +292,13 @@ h3 {
   position: fixed;
   top: 0;
   left: 0;
-  transition: all 0.25s ease-in-out;
-  -webkit-transition: all 0.25s ease-in-out;
-  -moz-transition: all 0.25s ease-in-out;
-  -ms-transition: all 0.25s ease-in-out;
-  -o-transition: all 0.25s ease-in-out; }
+  z-index: 9999;
+  display: none;
+  transition: opacity 0.25s ease-in-out;
+  -webkit-transition: opacity 0.25s ease-in-out;
+  -moz-transition: opacity 0.25s ease-in-out;
+  -ms-transition: opacity 0.25s ease-in-out;
+  -o-transition: opacity 0.25s ease-in-out; }
   #intro-video video {
     position: absolute;
     top: 50%;
@@ -217,7 +308,7 @@ h3 {
     margin-top: -84px;
     margin-left: -150px; }
   #intro-video.active {
-    z-index: 9999;
+    display: block;
     opacity: 1; }
 
 #close-video-btn {
@@ -234,90 +325,13 @@ h3 {
   #close-video-btn:hover {
     background-image: url(../images/close_icon_hover.svg); }
 
-#nav-menu {
-  background: #9265b2;
-  opacity: 0.0;
-  z-index: 0;
-  height: 100%;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  transition: all 0.25s ease-in-out;
-  -webkit-transition: all 0.25s ease-in-out;
-  -moz-transition: all 0.25s ease-in-out;
-  -ms-transition: all 0.25s ease-in-out;
-  -o-transition: all 0.25s ease-in-out; }
-  #nav-menu ul {
-    position: absolute;
-    top: 50%;
-    margin-top: -4em;
-    width: 100%;
-    left: 0;
-    font-size: 1.2em; }
-    #nav-menu ul li {
-      display: block;
-      opacity: 0;
-      text-align: center;
-      transition: all 0.25s ease-in-out;
-      -webkit-transition: all 0.25s ease-in-out;
-      -moz-transition: all 0.25s ease-in-out;
-      -ms-transition: all 0.25s ease-in-out;
-      -o-transition: all 0.25s ease-in-out;
-      transform: translate3d(0px, -40px, 0px);
-      -webkit-transform: translate3d(0px, -40px, 0px);
-      -moz-transform: translate3d(0px, -40px, 0px);
-      -ms-transform: translate3d(0px, -40px, 0px); }
-      #nav-menu ul li.first {
-        transition-delay: 0ms;
-        -webkit-transition-delay: 0ms;
-        -moz-transition-delay: 0ms;
-        -ms-transition-delay: 0ms;
-        -o-transition-delay: 0ms; }
-      #nav-menu ul li.second {
-        transition-delay: 100ms;
-        -webkit-transition-delay: 100ms;
-        -moz-transition-delay: 100ms;
-        -ms-transition-delay: 100ms;
-        -o-transition-delay: 100ms; }
-    #nav-menu ul a:link, #nav-menu ul a:visited {
-      transition: color 0.2s ease-in-out;
-      -webkit-transition: color 0.2s ease-in-out;
-      -moz-transition: color 0.2s ease-in-out;
-      -ms-transition: color 0.2s ease-in-out;
-      -o-transition: color 0.2s ease-in-out;
-      width: 86%;
-      margin: 0 auto;
-      display: block;
-      text-transform: uppercase;
-      font-weight: 400;
-      padding: 1em 0;
-      color: white; }
-      #nav-menu ul a:link.active, #nav-menu ul a:visited.active {
-        color: #cba3e6; }
-        #nav-menu ul a:link.active:hover, #nav-menu ul a:visited.active:hover {
-          color: #ddbdf4; }
-    #nav-menu ul a:hover {
-      color: #ddbdf4; }
-  #nav-menu.active {
-    z-index: 9998;
-    opacity: 0.98; }
-    #nav-menu.active li {
-      opacity: 1;
-      transform: translate3d(0px, 0px, 0px);
-      -webkit-transform: translate3d(0px, 0px, 0px);
-      -moz-transform: translate3d(0px, 0px, 0px);
-      -ms-transform: translate3d(0px, 0px, 0px); }
-
 #hamburger-icon {
   position: absolute;
-  display: none;
-  top: 2em;
+  top: 50%;
   right: 7%;
   margin-top: -12px;
   width: 20px;
-  height: 20px;
-  z-index: 9998; }
+  height: 20px; }
   #hamburger-icon span {
     display: block;
     position: absolute;
@@ -856,6 +870,11 @@ label, input, textarea, .selection {
   .content-wrapper {
     width: 82%; }
 
+  nav a:link, nav a:visited {
+    width: 82%; }
+  nav h2 {
+    margin-left: 9%; }
+
   #hamburger-icon {
     right: 9%; }
 
@@ -939,6 +958,44 @@ label, input, textarea, .selection {
   section {
     padding: 2.5em 0; }
 
+  nav {
+    padding: 1em 0; }
+    nav .content-wrapper {
+      width: 82%; }
+    nav h2 {
+      margin-left: 0;
+      font-size: 1.2em; }
+    nav ul {
+      padding-top: 0;
+      height: auto;
+      float: right;
+      position: relative;
+      top: auto;
+      left: auto;
+      right: auto;
+      width: auto;
+      margin-top: 0;
+      opacity: 1; }
+      nav ul.active {
+        height: auto; }
+      nav ul li {
+        opacity: 1;
+        display: inline-block;
+        margin-left: 3em;
+        font-size: .8em;
+        transform: translate3d(0px, 0px, 0px);
+        -webkit-transform: translate3d(0px, 0px, 0px);
+        -moz-transform: translate3d(0px, 0px, 0px);
+        -ms-transform: translate3d(0px, 0px, 0px); }
+      nav ul a:link, nav ul a:visited {
+        width: auto;
+        float: none;
+        border: none;
+        display: inline; }
+      nav ul a:hover {
+        background: transparent;
+        color: #ddbdf4; }
+
   #intro-movie {
     background-size: 110% auto;
     height: 580px; }
@@ -950,14 +1007,14 @@ label, input, textarea, .selection {
     #intro-movie .download-link a:visited {
       margin-top: 0; }
 
+  #hamburger-icon {
+    display: none; }
+
   #intro-video video {
     width: 748px;
     height: auto;
     margin-top: -210px;
     margin-left: -374px; }
-
-  #nav-menu {
-    font-size: 2em; }
 
   #doo-hero {
     width: 110%;
@@ -1229,6 +1286,11 @@ label, input, textarea, .selection {
   #intro-movie {
     background-size: 100% auto;
     height: 580px; }
+
+  nav h2 {
+    font-size: 1.4em; }
+  nav ul {
+    margin-top: .1em; }
 
   #intro-video video {
     width: 1010px;
