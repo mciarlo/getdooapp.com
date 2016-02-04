@@ -899,6 +899,9 @@ label, input, textarea, .selection {
   .feature-set h3, .feature-set p {
     width: 60%; }
 
+  #intro-movie {
+    height: 540px; }
+
   #intro-video video {
     width: 480px;
     height: auto;
@@ -937,11 +940,15 @@ label, input, textarea, .selection {
     padding: 2.5em 0; }
 
   #intro-movie {
-    background-size: auto 100%;
-    height: 560px; }
+    background-size: 110% auto;
+    height: 580px; }
     #intro-movie .block {
       display: inline;
-      margin-right: .5em; }
+      margin-right: .5em;
+      margin-top: .4em; }
+    #intro-movie .download-link a:link,
+    #intro-movie .download-link a:visited {
+      margin-top: 0; }
 
   #intro-video video {
     width: 748px;
@@ -1192,13 +1199,8 @@ label, input, textarea, .selection {
   #icloud-2 {
     margin-left: 40%; }
 
-  #intro-movie {
-    background-size: 110% auto;
-    height: 580px; }
-
   #play-btn {
-    top: 47%;
-    font-size: 1.2em; } }
+    top: 50%; } }
 @media screen and (min-width: 1024px) {
   .detail-header {
     font-size: 1.3em; }
@@ -1227,9 +1229,6 @@ label, input, textarea, .selection {
   #intro-movie {
     background-size: 100% auto;
     height: 580px; }
-
-  #play-btn {
-    top: 48%; }
 
   #intro-video video {
     width: 1010px;
@@ -1294,6 +1293,15 @@ label, input, textarea, .selection {
   section {
     padding: 5em 0; }
 
+  #intro-movie h2 {
+    font-size: 2.8em; }
+  #intro-movie .download-link {
+    font-size: 1.2em; }
+
+  #play-btn {
+    top: 50%;
+    font-size: 1.2em; }
+
   .detail-header {
     font-size: 1.4em; }
 
@@ -1356,3 +1364,5 @@ label, input, textarea, .selection {
     max-width: 1160px;
     margin-left: -136px;
     margin-top: 3em; } }
+@media screen and (min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi) {
+  background-image: url(../images/movie_frame@2x.jpg); }

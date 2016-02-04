@@ -62,7 +62,6 @@ $(function () {
 
 	$("#play-btn").click(function (ev) {
 		ev.preventDefault();
-
 		$("#intro-video").toggleClass('active');
 
 	    var activeVideo = document.getElementById("video-element");
@@ -70,12 +69,10 @@ $(function () {
 	    activeVideo.play();
 	});
 
-
 	$("#close-video-btn").click(function (ev) {
 		ev.preventDefault();
 		
 		$("#intro-video").removeClass('active');
-
 		var activeVideo = document.getElementById("video-element");
 	    activeVideo.pause();
 	});
