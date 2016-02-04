@@ -372,7 +372,7 @@ nav {
  */
 #intro-movie {
   position: relative;
-  background: #9265b2 url(../images/movie_frame.jpg) center center no-repeat;
+  background: #3f155d url(../images/movie_frame.jpg) center center no-repeat;
   background-size: auto 100%;
   padding: 0;
   height: 340px;
@@ -493,7 +493,11 @@ nav {
     background-size: 25% auto;
     position: absolute;
     left: 50%;
-    margin-left: -35px; }
+    margin-left: -35px;
+    -webkit-backface-visibility: hidden;
+    outline: 1px solid transparent;
+    padding: 1px;
+    -webkit-background-clip: content-box; }
     .card-demo .card.down {
       background-image: url(../images/down_arrow.png); }
     .card-demo .card span {
@@ -795,7 +799,8 @@ label, input, textarea, .selection {
   box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  -ms-box-sizing: border-box; }
+  -ms-box-sizing: border-box;
+  -webkit-appearance: none; }
 
 .selection {
   overflow: hidden;

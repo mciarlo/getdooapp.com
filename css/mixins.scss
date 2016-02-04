@@ -17,6 +17,13 @@ $lightPurple: #ddbdf4;
   -ms-border-radius: $radius;
 }
 
+@mixin rotationfix {
+  -webkit-backface-visibility: hidden;
+  outline: 1px solid transparent;
+  padding: 1px;
+  -webkit-background-clip: content-box;
+}
+
 @mixin opacity($float, $percent) {
   opacity: $float;
   filter: alpha(opacity=$percent);
