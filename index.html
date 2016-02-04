@@ -41,12 +41,10 @@
     <div id="intro-video">
       <a href="#" id="close-video-btn">Close</a>
 
-      <video id="video-element" controls>
+      <video id="video-element" controls poster="../images/video_poster.jpg">
         <source src="../video/doo_intro.mp4" type="video/mp4">
         <source src="../video/doo_intro.ogv" type="video/ogv">
         <source src="../video/doo_intro.webm" type="video/webm">
-
-        <img src="../images/movie_frame.jpg"/>
       </div>
 
     </div>
@@ -263,7 +261,8 @@
       </section>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  <script src="../js/doo.js"></script>
+  <script src="../js/lib.js"></script>
+  <script src="../js/mciarlo.js"></script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
