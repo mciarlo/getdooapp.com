@@ -83,10 +83,10 @@ $(function () {
   			$('#icloud-1').trigger("unveil");
   		}
 
-  		if (this.getAttribute("data-src").indexOf("doo_app_extension_screenshot") > 0) {
+  		if (this.getAttribute("data-src").indexOf("doo_complexity_reminder_screenshot") > 0) {
   			$(".details").removeClass('invisible');
   		}
-
+  		
 	  	$(this).load(function() {
 	    	$(this).removeClass('invisible');
 	  	});
