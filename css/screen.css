@@ -318,10 +318,15 @@ nav {
   width: 20px;
   height: 20px;
   z-index: 9998;
-  background: transparent url(../images/close_icon.svg) center center no-repeat;
+  background: #f1f1f1 url(../images/close_icon.svg) center center no-repeat;
   background-size: 20px auto;
   padding: 20px;
-  text-indent: -9999px; }
+  text-indent: -9999px;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -ms-border-radius: 50%;
+  opacity: 0.9; }
   #close-video-btn:hover {
     background-image: url(../images/close_icon_hover.svg); }
 
@@ -702,26 +707,52 @@ nav {
 #footer {
   padding: 2em 0;
   font-size: .8em;
-  background: #f1f1f1; }
+  background: #9265b2;
+  text-align: center; }
   #footer .content-wrapper {
     padding-bottom: 1em; }
   #footer p {
-    color: #909090;
-    float: left;
+    color: #e4caf7;
     font-size: .9em; }
-  #footer ul {
-    margin-bottom: 2em; }
-  #footer li {
+
+#nav-links {
+  margin-bottom: 2em; }
+  #nav-links li {
     display: block;
-    border-bottom: 1px solid #eaeaea; }
-    #footer li a:link, #footer li a:visited {
-      display: block;
-      font-weight: 400;
-      text-transform: uppercase;
-      color: #808080;
-      padding: 1em 0; }
-    #footer li a:hover {
-      color: #9265b2; }
+    border-bottom: 1px solid #9b6dbc; }
+  #nav-links a:link, #nav-links a:visited {
+    display: block;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #e4caf7;
+    padding: 1em 0; }
+  #nav-links a:hover {
+    color: #fff; }
+
+#social li {
+  display: inline-block;
+  margin: 1em; }
+#social a:link, #social a:visited {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  text-indent: -9999px;
+  font-size: 0;
+  background-image: url(../images/social_icons.png);
+  background-repeat: no-repeat;
+  background-size: 72px auto; }
+#social .facebook-link {
+  background-position: -24px -24px; }
+  #social .facebook-link:hover {
+    background-position: -24px 0; }
+#social .twitter-link {
+  background-position: -48px -24px; }
+  #social .twitter-link:hover {
+    background-position: -48px 0; }
+#social .instagram-link {
+  background-position: 0 -24px; }
+  #social .instagram-link:hover {
+    background-position: 0 0; }
 
 /***
 *****************************
@@ -927,10 +958,10 @@ label, input, textarea, .selection {
     height: 540px; }
 
   #intro-video video {
-    width: 480px;
+    width: 380px;
     height: auto;
-    margin-top: -135px;
-    margin-left: -240px; } }
+    margin-top: -107px;
+    margin-left: -190px; } }
 @media screen and (min-width: 768px) {
   .has-illustration {
     padding-top: 48px;
@@ -1016,10 +1047,10 @@ label, input, textarea, .selection {
     display: none; }
 
   #intro-video video {
-    width: 748px;
+    width: 640px;
     height: auto;
-    margin-top: -210px;
-    margin-left: -374px; }
+    margin-top: -180px;
+    margin-left: -320px; }
 
   #doo-hero {
     width: 110%;
@@ -1219,20 +1250,23 @@ label, input, textarea, .selection {
     margin-left: -10%;
     margin-top: 4em; }
 
-  #footer .content-wrapper {
-    padding: 0; }
-  #footer p {
-    float: left;
-    margin-top: .85em; }
-  #footer ul {
-    float: right;
-    margin: 0; }
-    #footer ul li {
+  #footer {
+    padding: 2em 0 3em; }
+    #footer .content-wrapper {
+      padding: 0; }
+    #footer p {
+      margin-top: 1.5em; }
+
+  #nav-links {
+    margin-bottom: 0; }
+    #nav-links li {
       display: inline-block;
       border: none;
-      margin-left: 3em; }
-      #footer ul li:last-child {
-        border: none; }
+      margin: 0 1em; }
+
+  #social li {
+    padding-top: 0;
+    line-height: 0; }
 
   #faq {
     padding: 3em 0; }
@@ -1298,10 +1332,10 @@ label, input, textarea, .selection {
     margin-top: .1em; }
 
   #intro-video video {
-    width: 1010px;
+    width: 768px;
     height: auto;
-    margin-top: -284px;
-    margin-left: -505px; }
+    margin-top: -216px;
+    margin-left: -384px; }
 
   #mini-tour {
     padding-bottom: 4.5em; }
@@ -1430,6 +1464,9 @@ label, input, textarea, .selection {
   #conclusion-hero {
     max-width: 1160px;
     margin-left: -136px;
-    margin-top: 3em; } }
+    margin-top: 3em; }
+
+  #footer {
+    font-size: .9em; } }
 @media screen and (min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi) {
   background-image: url(../images/movie_frame@2x.jpg); }
