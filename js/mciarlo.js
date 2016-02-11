@@ -60,6 +60,9 @@ $(function () {
 		return;
 	}
 
+	// Prepare text blocks for animation
+	$(".details").addClass('invisible');
+
 	$("#play-btn").click(function (ev) {
 		ev.preventDefault();
 		$("#intro-video").toggleClass('active');
@@ -84,16 +87,15 @@ $(function () {
   		}
 
   		if (this.getAttribute("data-src").indexOf("doo_complexity_reminder_screenshot") > 0) {
-  			$(".details").removeClass('invisible');
+  			setTimeout(function () {
+				$(".details").removeClass('invisible');
+  			}, 100 * 3);
   		}
   		
 	  	$(this).load(function() {
 	    	$(this).removeClass('invisible');
 	  	});
 	});
-
-	// Prepare text blocks for animation
-	$(".details").addClass('invisible');
 
 	// Animate out illustration heros during scroll
 	$("#illustration-hero-1").imageDynamics(function() {
