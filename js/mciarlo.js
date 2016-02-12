@@ -97,6 +97,8 @@ $(function () {
 	  	});
 	});
 
+	$("#conclusion-hero").trigger("unveil");
+
 	// Animate out illustration heros during scroll
 	$("#illustration-hero-1").imageDynamics(function() {
 		$("#illustration-hero-2").trigger("unveil");
