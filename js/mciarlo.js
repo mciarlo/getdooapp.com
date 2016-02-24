@@ -64,8 +64,8 @@ $(function () {
 		$(".faq-link").click(function (ev) {
 			ev.preventDefault();
 			
-			var el = $(this).attr('href'), $el = $(el);
-		    $("body, html").animate({'scrollTop' :  $el.offset().top - ($window.outerHeight() * .4)}, 200, function () {
+			var el = $(this).attr('href'), $el = $(el), multiplier = $window.outerWidth() < 600 ? .05 : .4;
+		    $("body, html").animate({'scrollTop' :  $el.offset().top - ($window.outerHeight() * multiplier)}, 200, function () {
 		    	$el.addClass('highlight');
 
 		    	setTimeout(function () {
