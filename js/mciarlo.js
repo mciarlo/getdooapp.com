@@ -60,6 +60,23 @@ $(function () {
 		return;
 	}
 
+	if ($('body').hasClass('faq')) {
+		$(".faq-link").click(function (ev) {
+			ev.preventDefault();
+			
+			var el = $(this).attr('href'), $el = $(el);
+		    $body.animate({'scrollTop' :  $el.offset().top - ($window.outerHeight() * .4)}, 200, function () {
+		    	$el.addClass('highlight');
+
+		    	setTimeout(function () {
+		    		$el.removeClass('highlight');
+		    	}, 1200);
+		    });
+		});
+
+		return;
+	}
+
 	// Prepare text blocks for animation
 	$(".details").addClass('invisible');
 
