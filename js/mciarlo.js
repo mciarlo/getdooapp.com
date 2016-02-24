@@ -65,7 +65,7 @@ $(function () {
 			ev.preventDefault();
 			
 			var el = $(this).attr('href'), $el = $(el);
-		    $body.animate({'scrollTop' :  $el.offset().top - ($window.outerHeight() * .4)}, 200, function () {
+		    $("body, html").animate({'scrollTop' :  $el.offset().top - ($window.outerHeight() * .4)}, 200, function () {
 		    	$el.addClass('highlight');
 
 		    	setTimeout(function () {
