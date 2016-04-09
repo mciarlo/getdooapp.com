@@ -6,7 +6,7 @@
 
     <meta name="Author" content="Michael Ciarlo">
     <meta name="robots" content="noodp">
-    <title itemprop="name">Support : Doo &ndash; Get Things Done</title>
+    <title itemprop="name">Contact : Doo &ndash; Get Things Done</title>
     <meta name="Description" content="A smart, simple iOS app for reminders and to-do lists featuring beautiful illustrations and an intuitive interface." />
     <meta name="Keywords" content="doo, reminders, todo, to-do, task, tasks, ios, app, reminder, todos, to-dos, michael, mike, ciarlo, due, iphone, ipad, productive, time, management" />
 
@@ -31,7 +31,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png">
     <link rel="icon" type="image/x-icon" sizes="32x32" href="/images/icon32.png">
   </head>
-  <body>
+  <body class="contact">
     <nav>
       <div class="content-wrapper">
         <h2><a href="/" title="Go to the Doo homepage">Doo</a></h2>
@@ -39,8 +39,8 @@
           <li class="first"><a href="/" title="Doo for iOS">Doo <em>for</em> iOS</a></li>
           <li class="second"><a href="/doo-for-mac" title="Doo for Mac">Doo <em>for</em> Mac<span id="new-label">New</span></a></li>
           <li class="third"><a href="/faq" title="View frequently asked questions">FAQ</a></li>
-          <li class="fourth"><a class="active" href="/support" title="Get help and view user guides">Support</a></li>
-          <li class="fifth"><a href="/contact" title="Contact the Doo team">Contact</a></li>
+          <li class="fourth"><a href="/support" title="Get help and view user guides">Support</a></li>
+          <li class="fifth"><a class="active" href="/contact" title="Contact the Doo team">Contact</a></li>
         </ul>
 
         <a id="hamburger-icon" href="#">
@@ -51,9 +51,39 @@
       </div>
     </nav>
 
-    <section id="intro-hero">
+    <section id="contact-form">
       <div class="content-wrapper">
-        <h2>Support</h2>
+        <div class="half-width">
+          <h1 class="has-illustration">Doo Support</h1>
+
+          <p class="main-text">Visit the <a href="/faq" title="Visit the FAQ"><span class="bold">FAQ</a></a> to read the answers to our most common questions. We aim to reply within 1-2 business days.</p>
+        </div>
+        
+        <div class="half-width margin">
+          <form action="https://docs.google.com/forms/d/1k5z8QcUnhTvTqYz7eYlFlYp6PMQNWru-zkM3xA21qy8/formResponse" target="_self" method="POST" id="mG61Hd">
+            <label>Name</label>
+            <input type="text" name="entry.12534165" id="name-input" placeholder="Your name..." required></input>
+            <label>Email</label>
+            <input type="email" name="entry.1163129725" id="email-input" placeholder="Your email..." required></input>
+            <label>Subject</label>
+
+            <div class="selection">
+              <div class="nubbin"></div>
+              <select id="subject-select" name="entry.943345034" required>
+                <option value="bug">Bug Report</option>
+                <option value="feedback">Feedback</option>
+                <option value="feature">Illustration Request</option>
+                <option value="other">Other</option>
+              </select>
+
+              <input id="subject-input" type="hidden" name="entry.943345034" value="Bug Report" />
+            </div>
+
+            <label>Message</label>
+            <textarea name="entry.1074388366" id="message-input" placeholder="Your message..."></textarea>
+            <input class="submit" id="support-submit" type="submit" name="send" value="Send">
+          </form>
+        </div>
       </div>
     </section>
 
@@ -78,18 +108,18 @@
       </div>
     </section>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="../js/lib.js"></script>
-    <script src="../js/mciarlo.js"></script>
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="../js/doo.js"></script>
 
-      ga('create', 'UA-72804362-1', 'auto');
-      ga('send', 'pageview');
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    </script>
+    ga('create', 'UA-72804362-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
   </body>
 </html>

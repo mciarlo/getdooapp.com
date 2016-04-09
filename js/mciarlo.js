@@ -114,6 +114,10 @@ $(function () {
 	  	});
 	});
 
+	  			$('img.lazy-load').trigger("unveil");
+
+	  			$('.details').trigger("unveil");
+
 	$("#conclusion-hero").trigger("unveil");
 
 	// Animate out illustration heros during scroll
