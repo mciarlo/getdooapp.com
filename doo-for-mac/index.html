@@ -55,9 +55,13 @@
       <div class="content-wrapper">
         <h2><span class="block">A new kind of</span> reminders app.</h2>
         <p class="main-text">Transform your to-dos into a delightful stack of cards that keeps you on task and in the moment.</p>
-        <div class="download-link"><a href="https://itunes.apple.com/us/app/doo-get-things-done/id1066322956?ls=1&mt=8" title="Download Doo from the App Store">Download</a><span id="mac-app-store-store-desc">On the Mac App Store</span></div>
+        <div class="download-link"><a href="https://itunes.apple.com/us/app/doo-get-things-done/id1066322956?ls=1&mt=8" title="Download Doo from the App Store">Download</a><span class="app-store-store-desc">On the Mac App Store</span></div>
 
-        <img id="main-hero-image-mac" src="../images/mac_hero.png" alt="Doo for Mac"/>
+        <img id="main-hero-image-mac" class="lazy-load hidden" src="../images/placeholder.png" data-src="../images/mac_hero.png" data-src-retina="../images/mac_hero@2x.png" alt="Main Doo interface"/>
+
+        <noscript>
+          <img id="main-hero-image-mac" src="../images/mac_hero.png" alt="Doo for Mac"/>
+        </noscript>
       </div>
     </section>
 
@@ -65,15 +69,14 @@
       <div class="content-wrapper">
         <h1 class="half-width main-heading has-illustration"><span class="block">Smart features</span> <span class="block">in a delightfully</span> simple package.</h1>
 
-        <p class="half-width margin main-text">Doo helps you get things done by encouraging small, achievable reminders. Each reminder you create becomes a card. Doo is simple by design so you stay focused and on task.</p>
+        <p class="half-width margin main-text">Doo helps you get things done by encouraging small, achievable reminders. Each reminder you create becomes a card. This simplicity keeps you focused and on task.</p>
 
         <img id="doo-hero" class="lazy-load hidden" src="../images/placeholder.png" data-src="../images/macbook.jpg" data-src-retina="../images/macbook@2x.jpg" alt="Main Doo interface"/>
-
         <img id="doo-hero-alt" class="lazy-load hidden" src="../images/placeholder.png" data-src="../images/macbook-alt.jpg" data-src-retina="../images/macbook-alt@2x.jpg" alt="Main Doo interface"/>
 
         <noscript>
-          <img id="doo-hero" src="../images/doo_hero.jpg" alt="Main Doo interface"/>
-          <img id="doo-hero-alt" src="../images/doo_hero_alt.jpg" alt="Main Doo interface"/>
+          <img id="doo-hero" src="../images/macbook.jpg" alt="Main Doo interface"/>
+          <img id="doo-hero-alt" src="../images/macbook-alt.jpg" alt="Main Doo interface"/>
         </noscript>
 
         <ul id="mac-mini-tour">
@@ -102,9 +105,15 @@
         <p class="half-width margin main-text">Your reminders display one of eighteen beautiful images, each created for a particular task. This makes using Doo an inviting, more engaging experience. It&rsquo;s a small way to make a big difference.</p>
       
         <div class="image-container">
-          <img id="card-1" class="illustration-card" src="../images/coffee_card.jpg" alt="Coffee reminder"/> 
-          <img id="card-2" class="illustration-card" src="../images/party_card.jpg" alt="Party reminder"/> 
-          <img id="card-3" class="illustration-card" src="../images/meeting_card.jpg" alt="Meeting reminder"/> 
+          <img id="card-1" class="lazy-load hidden illustration-card" src="../images/placeholder.png" data-src="../images/coffee_card.png" data-src-retina="../images/coffee_card@2x.png" alt="Coffee date"/>
+          <img id="card-2" class="lazy-load hidden illustration-card" src="../images/placeholder.png" data-src="../images/party_card.png" data-src-retina="../images/party_card@2x.png" alt="Party"/>
+          <img id="card-3" class="lazy-load hidden illustration-card" src="../images/placeholder.png" data-src="../images/medical_card.png" data-src-retina="../images/medical_card@2x.png" alt="Medication reminder"/>
+
+          <noscript>
+            <img id="card-1" class="illustration-card" src="../images/coffee_card.png" alt="Coffee date"/>
+            <img id="card-2" class="illustration-card" src="../images/party_card.png" alt="Party"/>
+            <img id="card-3" class="illustration-card" src="../images/medical_card.png" alt="Medication reminder"/>
+          </noscript>
         </div>
 
         <div id="more-than-a-list">
@@ -116,12 +125,17 @@
 
     <section id="mac-extension">
       <div class="content-wrapper">
-        <h2 class="half-width has-illustration">Add reminders from anywhere</h1>
+        <h2 class="half-width has-illustration"><span class="block">Add reminders`</span> from anywhere</h1>
         <p class="half-width margin main-text">Read a saved article, cook a delicious recipe, or save an address. Add to-dos from Safari, Notes, and more with the Doo share extension.</p>
         
         <div id="extension-container">
-          <img id="extension-source" src="../images/mac_extension.jpg"> 
-          <img id="extension-window" src="../images/extension_window.png">
+          <img id="extension-source" class="lazy-load hidden" src="../images/placeholder.png" data-src="../images/mac_extension.jpg" data-src-retina="../images/mac_extension@2x.jpg" alt="Safari window"/>
+          <img id="extension-window" class="lazy-load hidden" src="../images/placeholder.png" data-src="../images/extension_window.png" data-src-retina="../images/extension_window@2x.png" alt="Extension dialog"/>
+
+          <noscript>
+            <img id="extension-source" src="../images/mac_extension.jpg" alt="Safari window"/>
+            <img id="extension-window" src="../images/extension_window.png" alt="Extension dialog"/>
+          </noscript>
         </div>
   </div>
     </section>
@@ -131,21 +145,34 @@
         <div class="core-feature" id="mac-feature-helpful-suggestions">
           <h2 class="half-width">Helpful suggestions</h2>
           <p class="half-width main-text">Doo helps set you up for success with a gentle nudge if a task looks too big.  You’re more likely to finish a series of smaller tasks versus one large one.</p>
-          <img src="../images/mac_complexity_notice.jpg"/>
+          
+          <img class="lazy-load hidden" src="../images/placeholder.png" data-src="../images/mac_complexity_notice.jpg" data-src-retina="../images/mac_complexity_notice@2x.jpg" alt="Complexity notice"/>
+
+          <noscript>
+            <img src="../images/mac_complexity_notice.jpg" alt="Complexity notice"/>
+          </noscript>
         </div>
 
         <div class="core-feature" id="mac-feature-custom-repeat">
           <h2 class="half-width"><span class="block">Due dates and </span>early alerts.</h2>
           <p class="half-width main-text">Get alerts on due dates or schedule reminders early. Select from presets or create custom durations.</p>
-          <img src="../images/mac_date_options.jpg"/>
 
+          <img class="lazy-load hidden" src="../images/placeholder.png" data-src="../images/mac_date_options.jpg" data-src-retina="../images/mac_date_options@2x.jpg" alt="Date options"/>
+
+          <noscript>
+            <img src="../images/mac_date_options.jpg" alt="Date options"/>
+          </noscript>
         </div>
 
         <div class="core-feature" id="mac-feature-custom-alerts">
           <h2 class="half-width"><span class="block">Flexible </span>repeat options</h2>
-          <p class="half-width main-text">Work at your own pace with custom snooze durations and alert schedules.to finish a series of smaller tasks.</p>
-           <img src="../images/mac_repeat_options.jpg"/>
+          <p class="half-width main-text">Work at your own pace with custom snooze durations and alert schedules.</p>
 
+          <img class="lazy-load hidden" src="../images/placeholder.png" data-src="../images/mac_repeat_options.jpg" data-src-retina="../images/mac_repeat_options@2x.jpg" alt="Repeat options"/>
+
+          <noscript>
+            <img src="../images/mac_repeat_options.jpg" alt="Repeat options"/>
+          </noscript>
         </div>
       </div>
     </section>
@@ -159,7 +186,7 @@
       <div class="image-container">
         <img id="icloud-0" class="lazy-load hidden" src="../images/placeholder.png" data-src="../images/macbook_icloud.jpg" alt="Mac iCloud syncing">
         <img id="icloud-1" class="lazy-load hidden" src="../images/placeholder.png" data-src="../images/iphone_icloud_screenshot.png" data-src-retina="../images/iphone_icloud_screenshot@2x.png" alt="iPhone iCloud syncing">
-        <img id="icloud-2" class="lazy-load hidden" src="../images/placeholder.png" data-src="../images/ipad_icloud_screenshot.jpg" data-src-retina="../images/ipad_icloud_screenshot@2x.jpg" alt="iPad iCloud syncing">
+        <img id="icloud-2" class="lazy-load hidden" src="../images/placeholder.png" data-src="../images/ipad_icloud_screenshot.png" data-src-retina="../images/ipad_icloud_screenshot@2x.png" alt="iPad iCloud syncing">
 
         <noscript>
             <img id="icloud-0" src="../images/macbook_icloud.jpg" alt="Mac iCloud syncing">
@@ -173,18 +200,11 @@
       <div class="content-wrapper">
 
         <h2 class="half-width has-illustration">An interface that adapts to you.</h1>
-        <p class="half-width margin main-text">Doo adjusts font sizes, images, and even features depending on the size of the application winow. Font sizing ensures you always get the best experience. Images fill more of the screen.</p>
-
-                <div id="resize-video">
-          <video id="video-element" poster="../images/poster.png"> 
-            <source src="../video/size.mp4" type="video/mp4">
-            <source src="../video/doo_intro.ogv" type="video/ogv">
-            <source src="../video/doo_intro.webm" type="video/webm">
-          </video>
-          
-          <a href="#" id="replay-btn">Replay</a>
+        <p class="half-width margin main-text">Doo adjusts font sizes, images, and features to the window size you find most comfortable. You get the best experience at any size.</p>
+  
+        <div id="resize-container">
+          <div id="resize-video" class="frame8"></div>
         </div>
-
       </div>
     </section>
 
@@ -237,13 +257,8 @@
       </div>
     </section>
 
-
-
     <section id="awards-press" class="mac">
       <div class="content-wrapper">
-<!--         <h2><span class="block">Reached <span id="number-1">#1</span></span> in Productivity</h2>
- -->
-
         <h2><span class="block">Praise for</span> Doo on iOS</h2>
         <ul id="app-store">
           <li><img src="../images/best_new_apps.svg"/></li>
@@ -268,16 +283,17 @@
       </div>
     </section>
 
-    <section id="conclusion">
+    <section id="conclusion" class="mac">
       <div class="content-wrapper">
         <h2 class="half-width"><span class="block">Get Doo and</span> get things done.</h2>
         <p class="half-width margin main-text">It turns out the perfect to&ndash;do list isn&rsquo;t a list but something much more. Intelligent features and attention to detail make Doo a smart, fun way to get things done.</p>
-        <a href="https://itunes.apple.com/us/app/doo-get-things-done/id1066322956?ls=1&mt=8" title="Get Doo on the App Store"><img src="../images/Download_on_the_App_Store_Badge_US-UK_135x40.svg" alt="App Store Badge"/></a>
 
-        <img id="conclusion-hero" class="lazy-load hidden" src="../images/placeholder.png" data-src="../images/conclusion_hero.jpg" data-src-retina="../images/conclusion_hero@2x.jpg" alt="Doo for iPad">
+        <a href="https://itunes.apple.com/us/app/doo-get-things-done/id1066322956?ls=1&mt=8" title="Get Doo on the App Store"><img src="../images/mac_app_store_badge.svg" alt="Mac App Store Badge"/></a>
+
+        <img id="conclusion-hero" class="lazy-load hidden" src="../images/placeholder.png" data-src="../images/mac_conclusion_hero.jpg" data-src-retina="../images/mac_conclusion_hero@2x.jpg" alt="Doo for Mac">
 
         <noscript>
-          <img id="conclusion-hero" src="../images/conclusion_hero.jpg" alt="Doo for iPad">
+          <img id="conclusion-hero" src="../images/mac_conclusion_hero.jpg" alt="Doo for Mac">
         </noscript>
       </div>
     </section>

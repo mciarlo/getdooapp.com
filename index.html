@@ -55,7 +55,7 @@
       <div class="content-wrapper">
         <h2><span class="block">A new kind of</span> reminders app.</h2>
         <p class="main-text">Transform your to-dos into a delightful stack of cards that keeps you on task and in the moment.</p>
-        <div class="download-link"><a href="https://itunes.apple.com/us/app/doo-get-things-done/id1066322956?ls=1&mt=8" title="Download Doo from the App Store">Download</a><img src="../images/best_new_apps_purple.svg" alt="Featured on the App Store"/></div>
+        <div class="download-link"><a href="https://itunes.apple.com/us/app/doo-get-things-done/id1066322956?ls=1&mt=8" title="Download Doo from the App Store">Download</a><span class="app-store-store-desc">Featured on the App Store</span></div>
 
         <img id="main-hero-image" class="lazy-load hidden" src="../images/placeholder.png" data-src="../images/doo_main_hero.png" data-src-retina="../images/doo_main_hero@2x.png" alt="Main Doo interface"/>
         
@@ -72,11 +72,11 @@
         <p class="half-width margin main-text">Doo helps you get things done by encouraging small, achievable reminders. Each reminder you create becomes a card. Swipe cards away and power through everything on your to-do list.</p>
 
         <img id="doo-hero" class="lazy-load hidden" src="../images/placeholder.png" data-src="../images/doo_hero.jpg" data-src-retina="../images/doo_hero@2x.jpg" alt="Main Doo interface"/>
-        <img id="doo-hero-alt" class="lazy-load hidden" src="../images/placeholder.png" data-src="../images/doo_hero_alt.jpg" data-src-retina="../images/doo_hero_alt@2x.jpg" alt="Main Doo interface"/>
+        <img class="lazy-load hidden mobile-front-facing" src="../images/placeholder.png" data-src="../images/doo_hero_alt.jpg" data-src-retina="../images/doo_hero_alt@2x.jpg" alt="Main Doo interface"/>
 
         <noscript>
           <img id="doo-hero" src="../images/doo_hero.jpg" alt="Main Doo interface"/>
-          <img id="doo-hero-alt" src="../images/doo_hero_alt.jpg" alt="Main Doo interface"/>
+          <img class="mobile-front-facing" src="../images/doo_hero_alt.jpg" alt="Main Doo interface"/>
         </noscript> 
 
         <div id="simple-by-design" class="half-width">
@@ -107,9 +107,15 @@
         <p class="half-width margin main-text">Your reminders display one of eighteen beautiful images, each created for a particular task. This makes using Doo an inviting, more engaging experience. It&rsquo;s a small way to make a big difference.</p>
       
         <div class="image-container">
-          <img id="card-1" class="illustration-card" src="../images/coffee_card.jpg" alt="Coffee reminder"/> 
-          <img id="card-2" class="illustration-card" src="../images/party_card.jpg" alt="Party reminder"/> 
-          <img id="card-3" class="illustration-card" src="../images/meeting_card.jpg" alt="Meeting reminder"/> 
+          <img id="card-1" class="lazy-load hidden illustration-card" src="../images/placeholder.png" data-src="../images/coffee_card.png" data-src-retina="../images/coffee_card@2x.png" alt="Coffee date"/>
+          <img id="card-2" class="lazy-load hidden illustration-card" src="../images/placeholder.png" data-src="../images/party_card.png" data-src-retina="../images/party_card@2x.png" alt="Party"/>
+          <img id="card-3" class="lazy-load hidden illustration-card" src="../images/placeholder.png" data-src="../images/medical_card.png" data-src-retina="../images/medical_card@2x.png" alt="Medication reminder"/>
+
+          <noscript>
+            <img id="card-1" class="illustration-card" src="../images/coffee_card.png" alt="Coffee date"/>
+            <img id="card-2" class="illustration-card" src="../images/party_card.png" alt="Party"/>
+            <img id="card-3" class="illustration-card" src="../images/medical_card.png" alt="Medication reminder"/>
+          </noscript>
         </div>
 
         <div id="more-than-a-list">
@@ -124,28 +130,49 @@
         <div class="core-feature" id="feature-helpful-suggestions">
           <h2 class="half-width">Helpful suggestions</h2>
           <p class="half-width main-text">Doo helps you succeed with a gentle nudge if a task looks too big.  You’re more likely to finish smaller tasks.</p>
-          <img class="desktop mobile" src="../images/complexity_notice.jpg"/>
+
+          <img class="lazy-load hidden mobile-front-facing" src="../images/placeholder.png" data-src="../images/complexity_notice.jpg" data-src-retina="../images/complexity_notice@2x.jpg" alt="Complexity notice"/>
+
+          <noscript>
+            <img class="mobile-front-facing" src="../images/complexity_notice.jpg" alt="Complexity notice"/>
+          </noscript>
         </div>
 
         <div class="core-feature" id="feature-custom-repeat">
           <h2 class="half-width"><span class="block">Flexible </span>repeat options</h2>
           <p class="half-width main-text">Work at your own pace with custom snooze durations and alert schedules.</p>
-          <img class="desktop" src="../images/custom_repeat.jpg"/>
-          <img class="mobile" src="../images/custom_repeat.jpg"/>
+
+          <img class="lazy-load hidden desktop" src="../images/placeholder.png" data-src="../images/custom_repeat.jpg" data-src-retina="../images/custom_repeat@2x.jpg" alt="Custom repeat"/>
+          <img class="lazy-load hidden mobile-front-facing" src="../images/placeholder.png" data-src="../images/custom_repeat_alt.jpg" data-src-retina="../images/custom_repeat_alt@2x.jpg" alt="Custom repeat"/>
+
+          <noscript>
+            <img class="desktop" src="../images/custom_repeat.jpg" alt="Complexity notice"/>
+            <img class="mobile-front-facing" src="../images/custom_repeat_alt.jpg" alt="Complexity notice"/>
+          </noscript>
         </div>
 
         <div class="core-feature" id="feature-custom-alerts">
           <h2 class="half-width"><span class="block">Due dates and </span>early alerts</h2>
           <p class="half-width main-text">Get alerts on due dates or schedule reminders early. Select from presets or create custom durations.</p>
-          <img class="desktop" src="../images/date_options.jpg"/>
-          <img class="mobile" src="../images/date_options.jpg"/>
+
+          <img class="lazy-load hidden desktop" src="../images/placeholder.png" data-src="../images/date_options.jpg" data-src-retina="../images/date_options@2x.jpg" alt="Date options"/>
+          <img class="lazy-load hidden mobile-front-facing" src="../images/placeholder.png" data-src="../images/date_options_alt.jpg" data-src-retina="../images/date_options_alt@2x.jpg" alt="Date options"/>
+
+          <noscript>
+            <img class="desktop" src="../images/date_options.jpg" alt="Date options" />
+            <img class="mobile-front-facing" src="../images/date_options_alt.jpg" alt="Date options"/>
+          </noscript>
         </div>
 
         <div class="core-feature" id="feature-extension">
           <h2 class="half-width">Add reminders from anywhere</h2>
           <p class="half-width main-text">Read a saved article, cook a delicious recipe, or save an address. Add to-dos from Safari, Notes, and more with the Doo share extension.</p>
-          <img class="desktop" src="../images/extension_ipad.jpg"/>
-          <img class="mobile" src="../images/extension_ipad.jpg"/>
+
+          <img class="lazy-load hidden" src="../images/placeholder.png" data-src="../images/extension_ipad.jpg" data-src-retina="../images/extension_ipad@2x.jpg" alt="iOS Extension"/>
+
+          <noscript>
+            <img src="../images/extension_ipad.jpg" alt="iOS Extension"/>
+          </noscript>
         </div>
       </div>
     </section>
@@ -159,7 +186,7 @@
       <div class="image-container">
         <img id="icloud-0" class="lazy-load hidden" src="../images/placeholder.png" data-src="../images/macbook_icloud.jpg" alt="Mac iCloud syncing">
         <img id="icloud-1" class="lazy-load hidden" src="../images/placeholder.png" data-src="../images/iphone_icloud_screenshot.png" data-src-retina="../images/iphone_icloud_screenshot@2x.png" alt="iPhone iCloud syncing">
-        <img id="icloud-2" class="lazy-load hidden" src="../images/placeholder.png" data-src="../images/ipad_icloud_screenshot.jpg" data-src-retina="../images/ipad_icloud_screenshot@2x.jpg" alt="iPad iCloud syncing">
+        <img id="icloud-2" class="lazy-load hidden" src="../images/placeholder.png" data-src="../images/ipad_icloud_screenshot.png" data-src-retina="../images/ipad_icloud_screenshot@2x.png" alt="iPad iCloud syncing">
 
         <noscript>
             <img id="icloud-0" src="../images/macbook_icloud.jpg" alt="Mac iCloud syncing">
@@ -173,12 +200,12 @@
       <div class="content-wrapper">
         <h2><span class="block">Doo more with</span> powerful extras.</h2>
         <ul>
-          <li class="complexity-bullet">
+          <li>
             <figure>
-              <img class="screenshot lazy-load hidden" src="../images/placeholder.png" data-src="../images/extra_feature1.jpg" data-src-retina="../images/extra_feature1@2x.jpg" alt="Complexity notice">
+              <img class="screenshot lazy-load hidden" src="../images/placeholder.png" data-src="../images/extra_feature1.jpg" data-src-retina="../images/extra_feature1@2x.jpg" alt="Today widget">
 
               <noscript>
-                <img class="screenshot" src="../images/extra_feature1.jpg" alt="Complexity notice">
+                <img class="screenshot" src="../images/extra_feature1.jpg" alt="Today widget">
               </noscript> 
             </figure>
             <div class="details">
@@ -186,12 +213,12 @@
               <p class="detail-description">Add Doo to your Notification Center to see your top three reminders or to add another.</p>
             </div>
           </li>
-          <li class="app-extension-bullet">
+          <li>
             <figure>
-              <img class="screenshot lazy-load hidden" src="../images/placeholder.png" data-src="../images/extra_feature2.jpg" data-src-retina="../images/extra_feature2@2x.jpg" alt="Complexity notice">
+              <img class="screenshot lazy-load hidden" src="../images/placeholder.png" data-src="../images/extra_feature2.jpg" data-src-retina="../images/extra_feature2@2x.jpg" alt="Schedule view">
 
               <noscript>
-                <img class="screenshot" src="../images/extra_feature2.jpg" alt="Share extension">
+                <img class="screenshot" src="../images/extra_feature2.jpg" alt="Schedule view">
               </noscript> 
             </figure>
 
@@ -200,13 +227,13 @@
               <p class="detail-description">See all your reminders organized by date. Peek at what’s upcoming or look back at your history.</p>
             </div>
           </li>
-          <li class="customize-bullet">
+          <li>
             <figure>
-              <img class="screenshot lazy-load hidden" src="../images/placeholder.png" data-src="../images/extra_feature3.jpg" data-src-retina="../images/extra_feature3@2x.jpg" alt="Complexity notice">
+              <img class="screenshot lazy-load hidden" src="../images/placeholder.png" data-src="../images/extra_feature3.jpg" data-src-retina="../images/extra_feature3@2x.jpg" alt="Accessibility">
 
               <noscript>
-                <img class="screenshot" src="../images/extra_feature3.jpg" alt="Repeat options">
-              </noscript> 
+                <img class="screenshot" src="../images/extra_feature3.jpg" alt="Accessibility">
+              </noscript>
             </figure>
             <div class="details">
               <h3 class="detail-header">Accessibility</h3>
@@ -219,7 +246,7 @@
 
     <section id="awards-press">
       <div class="content-wrapper">
-        <h2><span class="block">Reached <span id="number-1">#1</span></span> in Productivity</h2>
+        <h2><span class="block">Reached #1</span> in Productivity</h2>
 
         <ul id="app-store">
           <li><img src="../images/best_new_apps.svg"/></li>
