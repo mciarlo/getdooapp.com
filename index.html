@@ -60,7 +60,7 @@
         <img id="main-hero-image" class="lazy-load hidden" src="../images/placeholder.png" data-src="../images/doo_main_hero.png" data-src-retina="../images/doo_main_hero@2x.png" alt="Main Doo interface"/>
         
         <noscript>
-          <img id="doo-hero" src="../images/doo_main_hero.png" alt="Main Doo interface"/>
+          <img id="main-hero-image" src="../images/doo_main_hero.png" alt="Main Doo interface"/>
         </noscript>
       </div>
     </section>
@@ -89,12 +89,12 @@
     <section id="mini-tour">
       <ul class="content-wrapper">
         <li>
-          <figure class="card-demo"><span class="card up"></span></figure>
+          <figure class="card-demo step6"><span class="card up"></span></figure>
           <strong>Complete</strong>
           <p>Drag cards up to complete tasks.</p>
         </li>
         <li>
-          <figure class="card-demo"><span class="card down"></span></figure>
+          <figure class="card-demo step6"><span class="card down"></span></figure>
           <strong>Snooze</strong>
           <p>Drag cards down to snooze tasks.</p>
         </li>
@@ -107,9 +107,9 @@
         <p class="half-width margin main-text">Your reminders display one of eighteen beautiful images, each created for a particular task. This makes using Doo an inviting, more engaging experience. It&rsquo;s a small way to make a big difference.</p>
       
         <div class="image-container">
-          <img id="card-1" class="lazy-load hidden illustration-card" src="../images/placeholder.png" data-src="../images/coffee_card.png" data-src-retina="../images/coffee_card@2x.png" alt="Coffee date"/>
-          <img id="card-2" class="lazy-load hidden illustration-card" src="../images/placeholder.png" data-src="../images/party_card.png" data-src-retina="../images/party_card@2x.png" alt="Party"/>
-          <img id="card-3" class="lazy-load hidden illustration-card" src="../images/placeholder.png" data-src="../images/medical_card.png" data-src-retina="../images/medical_card@2x.png" alt="Medication reminder"/>
+          <img id="card-1" class="lazy-load-special hidden illustration-card" src="../images/placeholder.png" data-src="../images/coffee_card.png" data-src-retina="../images/coffee_card@2x.png" alt="Coffee date"/>
+          <img id="card-2" class="lazy-load-special hidden illustration-card" src="../images/placeholder.png" data-src="../images/party_card.png" data-src-retina="../images/party_card@2x.png" alt="Party"/>
+          <img id="card-3" class="lazy-load-special hidden illustration-card" src="../images/placeholder.png" data-src="../images/medical_card.png" data-src-retina="../images/medical_card@2x.png" alt="Medication reminder"/>
 
           <noscript>
             <img id="card-1" class="illustration-card" src="../images/coffee_card.png" alt="Coffee date"/>
@@ -142,11 +142,11 @@
           <h2 class="half-width"><span class="block">Flexible </span>repeat options</h2>
           <p class="half-width main-text">Work at your own pace with custom snooze durations and alert schedules.</p>
 
-          <img class="lazy-load hidden desktop" src="../images/placeholder.png" data-src="../images/custom_repeat.jpg" data-src-retina="../images/custom_repeat@2x.jpg" alt="Custom repeat"/>
+          <img id="repeat-options-floating" class="lazy-load hidden desktop" src="../images/placeholder.png" data-src="../images/custom_repeat.jpg" data-src-retina="../images/custom_repeat@2x.jpg" alt="Custom repeat"/>
           <img class="lazy-load hidden mobile-front-facing" src="../images/placeholder.png" data-src="../images/custom_repeat_alt.jpg" data-src-retina="../images/custom_repeat_alt@2x.jpg" alt="Custom repeat"/>
 
           <noscript>
-            <img class="desktop" src="../images/custom_repeat.jpg" alt="Complexity notice"/>
+            <img  class="desktop" src="../images/custom_repeat.jpg" alt="Complexity notice"/>
             <img class="mobile-front-facing" src="../images/custom_repeat_alt.jpg" alt="Complexity notice"/>
           </noscript>
         </div>
@@ -155,7 +155,7 @@
           <h2 class="half-width"><span class="block">Due dates and </span>early alerts</h2>
           <p class="half-width main-text">Get alerts on due dates or schedule reminders early. Select from presets or create custom durations.</p>
 
-          <img class="lazy-load hidden desktop" src="../images/placeholder.png" data-src="../images/date_options.jpg" data-src-retina="../images/date_options@2x.jpg" alt="Date options"/>
+          <img id="date-options-floating" class="lazy-load hidden desktop" src="../images/placeholder.png" data-src="../images/date_options.jpg" data-src-retina="../images/date_options@2x.jpg" alt="Date options"/>
           <img class="lazy-load hidden mobile-front-facing" src="../images/placeholder.png" data-src="../images/date_options_alt.jpg" data-src-retina="../images/date_options_alt@2x.jpg" alt="Date options"/>
 
           <noscript>
@@ -213,6 +213,7 @@
               <p class="detail-description">Add Doo to your Notification Center to see your top three reminders or to add another.</p>
             </div>
           </li>
+
           <li>
             <figure>
               <img class="screenshot lazy-load hidden" src="../images/placeholder.png" data-src="../images/extra_feature2.jpg" data-src-retina="../images/extra_feature2@2x.jpg" alt="Schedule view">
@@ -227,6 +228,7 @@
               <p class="detail-description">See all your reminders organized by date. Peek at what’s upcoming or look back at your history.</p>
             </div>
           </li>
+
           <li>
             <figure>
               <img class="screenshot lazy-load hidden" src="../images/placeholder.png" data-src="../images/extra_feature3.jpg" data-src-retina="../images/extra_feature3@2x.jpg" alt="Accessibility">
@@ -252,17 +254,16 @@
           <li><img src="../images/best_new_apps.svg"/></li>
           <li><img src="../images/best_of_feb.svg"/></li>
         </ul>
-
         <ul id="reviews">
-          <li>
+          <li class="the-next-web">
             <img src="../images/tnw_logo.jpg"/>
             <p>&ldquo;Doo is a beautiful way to get things done without stressing yourself out.&rdquo;</p>
           </li>
-          <li class="middle">
+          <li class="buzzfeed">
             <img src="../images/buzzfeed_logo.jpg"/>
             <p>&ldquo;I absolutely love this app... *incredibly* satisfying...&rdquo;</p>
           </li>
-          <li>
+          <li class="wired">
             <img src="../images/wired_logo.jpg"/>
             <p>&ldquo;There&rsquo;s just enough guilt involved in hitting snooze that I often just complete the task. That&rsquo;s the point.&rdquo;</p>
           </li>
