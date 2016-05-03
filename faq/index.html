@@ -36,9 +36,11 @@
       <div class="content-wrapper">
         <h2><a href="/" title="Go to the Doo homepage">Doo</a></h2>
         <ul id="nav-menu">
-          <li class="first"><a href="/" title="The Doo homepage">Welcome</a></li>
-          <li class="second"><a class="active" href="/faq" title="View frequently asked questions">FAQ</a></li>
-          <li class="third"><a href="/support" title="Submit feedback or request support">Support</a></li>
+          <li class="first"><a href="/" title="Doo for iOS">Doo <em>for</em> iOS</a></li>
+          <li class="second"><a href="/doo-for-mac" title="Doo for Mac">Doo <em>for</em> Mac<span id="new-label">New</span></a></li>
+          <li class="third"><a class="active" href="/faq" title="View frequently asked questions">FAQ</a></li>
+          <li class="fourth"><a href="/support" title="Get help and view user guides">Support</a></li>
+          <li class="fifth"><a href="/contact" title="Contact the Doo team">Contact</a></li>
         </ul>
 
         <a id="hamburger-icon" href="#">
@@ -53,20 +55,18 @@
       <div class="content-wrapper">
         <h1 class="has-illustration half-width">Have questions? We&rsquo;ve got answers.</h1>
 
-        <div id="table-of-contents" class="half-width margin">
+        <div class="table-of-contents half-width margin">
           <ul>
             <li><a href="#how-does-doo-work" class="faq-link" title="How does Doo work?">How does Doo work?</a></li>
             <li><a href="#how-much-does-doo-cost" class="faq-link" title="How much does Doo cost?">How much does Doo cost?</a></li>
             <li><a href="#what-devices-are-supported" class="faq-link" title="What devices are supported?">What devices are supported?</a></li>
-            <li><a href="#how-can-i-see-all-my-reminders" class="faq-link" title="How can I see all my reminders or view reminders that aren't yet due?">How can I see all my reminders or view reminders that aren't yet due?</a></li>
-            <li><a href="#how-can-i-snooze-a-task" class="faq-link" title="How can I snooze a task until a specific day and time?">How can I snooze a task until a specific day and time?</a></li>
             <li><a href="#ios-integrations" class="faq-link" title="Does Doo work with the iOS calendar or reminders app?">Does Doo work with the iOS calendar or reminders app?</a></li>
             <li><a href="#custom-images" class="faq-link" title="Can I use my own images?">Can I use my own images?</a></li>
             <li><a href="#android-osx-app" class="faq-link" title="Are there plans to build Doo for other platforms?">Are there plans to build Doo for other platforms?</a></li>
           </ul>
         </div>
 
-        <ul id="faq-list">
+        <ul class="faq-list">
           <li class="qa-pair" id="how-does-doo-work">
             <p class="question">How does Doo work?</p>
             <p class="answer">Doo is new way to get things done that isn&rsquo;t boring or complicated. Instead Doo is simple by design. Each reminder you create becomes a card. Swipe a card up to mark it complete or down to snooze it for later. That&rsquo;s it!<p>
@@ -76,31 +76,21 @@
 
           <li class="qa-pair" id="how-much-does-doo-cost">
             <p class="question">How much does Doo cost?</p>
-            <p class="answer">Doo is $4.99 on the App Store &mdash; less than the price of a beer.</p>
+            <p class="answer">Doo is $2.99 on the iOS and Mac App Stores &mdash; less than the price of a beer.</p>
 
-            <p>Pricing is often a tricky subject. Eyebrows go up when the cost of an app is higher than a dollar or two. That reaction has been conditioned into us, especially with in-app purchases hiding the true cost of many free apps &mdash; especially games.</p>
+            <p>Pricing is often a tricky subject. In-app purchases hide the true cost of many free apps &mdash; especially games.</p>
 
             <p>We believe the best apps are honest about their cost and put the user first. The best apps don't hide useful features behind paywalls. As a result Doo is a feature-rich tool that you can use for years to come. No user accounts, no sign-up forms, and no &ldquo;pro&rdquo; unlock required. Just a product you can be proud to have on your home screen.</p>
           </li>
 
           <li class="qa-pair" id="what-devices-are-supported">
             <p class="question">What devices are supported?</p>
-            <p class="answer">Doo is a universal app that supports iPhone, iPad, and iPod Touch. Actionable notifications allow you to complete or snooze reminders from your Apple Watch.</p>
-          </li>
-
-          <li class="qa-pair" id="how-can-i-see-all-my-reminders">
-            <p class="question">How can I see all my reminders or view reminders that aren't yet due?</p>
-            <p class="answer">The schedule view shows current, upcoming, and completed reminders. Use this view to see upcoming tasks or manage to-dos. Open the schedule view by tapping the icon at the top right of the card screen.</p>
-          </li>
-
-          <li class="qa-pair" id="how-can-i-snooze-a-task">
-            <p class="question">How can I snooze a task until a specific day and time?</p>
-            <p class="answer">Doo has a special feature you can use to bypass your default snooze duration. On iPhone 6s, force press the snooze button to select a day and time. On iPhone 6 and below, long press the snooze button to select a day and time.</p>
+            <p class="answer">Doo is available on iPhone, iPad, and iPod Touch as a universal app. You can also find Doo in the Mac App Store. Actionable notifications allow you to complete or snooze reminders from your Apple Watch.</p>
           </li>
 
           <li class="qa-pair" id="ios-integrations">
             <p class="question">Does Doo work with the iOS calendar or reminders app?</p>
-            <p class="answer">Doo does not currently integrate with built-in iOS apps. We want Doo to be the best app for reminders and to-dos while preserving the simplicity that makes us special. This type of feature requires us to spend a bit more time to get it right. While there are no guarantees, this feature is under consideration.</p>
+            <p class="answer">Doo is meant to be a replacement for iOS reminders and does not currently integrate with built-in apps. We are actively investigating smart ways to integrate things like calendar events to make Doo even more helpful.</p>
           </li>
 
           <li class="qa-pair" id="custom-images">
@@ -110,20 +100,23 @@
 
           <li class="qa-pair" id="android-osx-app">
             <p class="question">Are there plans to build Doo for other platforms?</p>
-            <p class="answer">We&rsquo;d love to bring Doo to as many platforms as we can. While there are no official timelines, versions for Mac and Android are under consideration.</p>
+            <p class="answer">We&rsquo;d love to bring Doo to as many platforms as we can. While there are no official timelines, versions for Web and Android are under consideration.</p>
           </li>
         </ul>
 
-        <p class="faq-wrap-up"><img src="../images/lift-saver.jpg" alt="Life Raft" /><span class="block">Didn&rsquo;t see your question?</span><a href="/support" title="Contact Doo support">Contact Support</a></p>
+        <p class="faq-wrap-up"><img src="../images/lift-saver.jpg" alt="Life Raft" /><span class="block">Didn&rsquo;t see your question?</span><a href="/contact" title="Contact Doo support">Contact Support</a></p>
       </div>
     </section>
 
     <section id="footer">
       <div class="content-wrapper">
         <ul id="nav-links">
-          <li><a href="/" title="The Doo homepage">Welcome</a></li>
+          <li><a href="/" title="Doo for iOS">Doo <em>for</em> iOS</a></li>
+          <li><a href="/doo-for-mac" title="Doo for Mac">Doo <em>for</em> Mac</a></li>
           <li><a href="/faq" title="View frequently asked questions">FAQ</a></li>
-          <li><a href="/support" title="Submit feedback or request support">Support</a></li>
+          <li><a href="/support" title="Get help and view user guides">Support</a></li>
+          <li><a href="/contact" title="Contact the Doo team">Contact</a></li>
+          <li><a href="/privacy" title="Read the Doo privacy policy">Privacy Policy</a></li>
         </ul>
 
         <ul id="social">
