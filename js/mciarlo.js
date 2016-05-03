@@ -27,110 +27,155 @@ $(function () {
 		$("body, html").animate({'scrollTop' :  0});
 	});
 
-	$("#mac-mini-tour li, #reviews, #app-store").addClass('invisible');
+	$(".core-feature, #mac-mini-tour, #reviews, #app-store").addClass('invisible');
+
+	$("#mac-feature-helpful-suggestions").textDynamics(function () {
+		return $window.outerHeight() * 0.5;
+	}, function () {
+		$("#mac-feature-helpful-suggestions").removeClass('invisible');
+	});
+
+	$("#mac-feature-custom-repeat").textDynamics(function () {
+		return $window.outerHeight() * 0.5;
+	}, function () {
+		$("#mac-feature-custom-repeat").removeClass('invisible');
+	});
+
+	$("#mac-feature-custom-alerts").textDynamics(function () {
+		return $window.outerHeight() * 0.4;
+	}, function () {
+		$("#mac-feature-custom-alerts").removeClass('invisible');
+	});
+
+	$("#feature-helpful-suggestions").textDynamics(function () {
+		return $window.outerHeight() * 0.6;
+	}, function () {
+		$("#feature-helpful-suggestions").removeClass('invisible');
+	});
+
+	$("#feature-custom-repeat").textDynamics(function () {
+		return $window.outerHeight() * 0.7;
+	}, function () {
+		$("#feature-custom-repeat").removeClass('invisible');
+	});
+
+	$("#feature-custom-alerts").textDynamics(function () {
+		return $window.outerHeight() * 0.9;
+	}, function () {
+		$("#feature-custom-alerts").removeClass('invisible');
+	});
+
+	$("#feature-extension").textDynamics(function () {
+		return $window.outerHeight() * 0.3;
+	}, function () {
+		$("#feature-extension").removeClass('invisible');
+	});
+
+	$('#mac-mini-tour').textDynamics(function () {
+		return $window.outerHeight() * 0.4;
+	}, function () {
+		$('#mac-mini-tour').removeClass('invisible');
+	});
+
+	$('#app-store').textDynamics(function () {
+		return $window.outerHeight() * 0.3;
+	}, function () {
+		$('#app-store, #reviews').removeClass('invisible');
+	});
 
 	var numberOfFrames = 8,
 		$video = $('#resize-video'),
-		scrollTimeout,
-		WINDOW_PERCENTAGE_FOR_VIDEO_ANIMATION_START = 0.5,
-		WINDOW_PERCENTAGE_FOR_VIDEO_ANIMATION_DURATION = 0.28,
-		RESIZE_DELAY = 10,
-		animationTimeout,
-		WINDOW_PERCENTAGE_FOR_ANIMATION_START = function () {return $window.outerWidth() < 768 ? 0.2 : 0.9},
-		WINDOW_PERCENTAGE_FOR_ANIMATION_DURATION = 0.2,
-		TIMEOUT_DELAY = 10;
+		WINDOW_PERCENTAGE_FOR_VIDEO_START = function () {return $window.outerWidth() < 768 ? 0.5 : 0.7},
+		WINDOW_PERCENTAGE_FOR_MINI_TOUR_START = function () {return $window.outerWidth() < 768 ? 0.4 : 0.6},
+		distanceForVideoWindow = 200,
+		$miniTour = $('#mini-tour');
 
-	if ($('.mac').length > 0) {
-		function scrollPlay() {
-			if (scrollTimeout) {
-				clearTimeout(scrollTimeout);
-			}
+	$video.removeClass().addClass('frame0');
 
-			var distanceForWindow = $window.outerHeight() * WINDOW_PERCENTAGE_FOR_VIDEO_ANIMATION_DURATION;
+	$video.cssFrameAnimation(function () {
+		return $window.outerHeight() * WINDOW_PERCENTAGE_FOR_VIDEO_START();
+	}, function () {
+		var diff = $video.offset().top + ($window.outerHeight() * WINDOW_PERCENTAGE_FOR_VIDEO_START()) - ($window.scrollTop() + $window.height());
 
-			scrollTimeout = setTimeout(function () {
-				var diff = $video.offset().top - window.pageYOffset - ($window.outerHeight() * WINDOW_PERCENTAGE_FOR_VIDEO_ANIMATION_START);
+	  	var framesPercentage = diff < 0 ? Math.abs(diff) / distanceForVideoWindow : 0,
+	  		sanitizedPercentage = framesPercentage > 1 ? 1 : framesPercentage,
+	  		activeFrame = Math.floor(numberOfFrames * sanitizedPercentage);
+		
+		$video.removeClass().addClass("frame" + activeFrame);
+	}, function () {
+		var diff = $video.offset().top + ($window.outerHeight() * WINDOW_PERCENTAGE_FOR_VIDEO_START()) - ($window.scrollTop() + $window.height());
 
-			  	var framesPercentage = diff < 0 ? Math.abs(diff) / distanceForWindow : 0,
-			  		sanitizedPercentage = framesPercentage > 1 ? 1 : framesPercentage,
-			  		activeFrame = Math.floor(numberOfFrames * sanitizedPercentage);
-				
-				$video.removeClass().addClass("frame" + activeFrame);
-			}, TIMEOUT_DELAY);
+		if (diff > 0) {
+			$video.removeClass().addClass("frame0");
+		} else {
+			$video.removeClass().addClass("frame8");
 		}
+	});
 
-		function textAnimate() {
-			if (animationTimeout) {
-				clearTimeout(animationTimeout);
-			}
-
-			var distanceForWindow = $window.outerHeight() * WINDOW_PERCENTAGE_FOR_ANIMATION_DURATION;
-
-			animationTimeout = setTimeout(function () {
-				var diff = $("#mac-mini-tour").offset().top - window.pageYOffset - ($window.outerHeight() * WINDOW_PERCENTAGE_FOR_ANIMATION_START());
-
-			  	if (diff < 0) {
-					$("#mac-mini-tour li").removeClass('invisible');
-			  	}
-			}, TIMEOUT_DELAY);
-		}
-
+	if ($miniTour.length > 0) {
 		$window.scroll(function () {
-			scrollPlay();
-			textAnimate();
+			var diff = $miniTour.offset().top + ($window.outerHeight() * WINDOW_PERCENTAGE_FOR_MINI_TOUR_START()) - ($window.scrollTop() + $window.height());
+			var classToAdd = diff > 0 ? "starting" : "animated";
+			$miniTour.removeClass().addClass(classToAdd);
 		});
 	}
 
-	var textTimeout,
-		WINDOW_PERCENTAGE_FOR_TEXT_START = function () {return $window.outerWidth() < 768 ? 0.2 : 0.9},
-		WINDOW_PERCENTAGE_FOR_TEXT_DURATION = 0.2,
-		$cardDemo = $('.card-demo'),
-		numberOfAnimationFrames = 6,
-		animationTimeout,
-		WINDOW_PERCENTAGE_FOR_ANIMATION_START = function () {return $window.outerWidth() < 768 ? 0.4 : 0.6},
-		WINDOW_PERCENTAGE_FOR_ANIMATION_DURATION = 0.2,
-		ANIMATION_DELAY = 10;
+	if ($('img.lazy-load').length > 0) {
+		$("#conclusion-hero").trigger("unveil");
 
-	function textAnimate2() {
-		if (textTimeout) {
-			clearTimeout(textTimeout);
-		}
+		// Lazy load major image assets
+	  	$("img.lazy-load").removeClass('hidden').addClass('invisible').unveil(imageActivationOffset(), function() {
+	  		if (this.getAttribute("data-src").indexOf("macbook_icloud") > 0) {
+	  			$('#icloud-1, #icloud-2').trigger("unveil");
+	  		}
+	  		
+		  	$(this).load(function() {
+		    	$(this).removeClass('invisible');
+		  	});
+		});
 
-		var distanceForWindow = $window.outerHeight() * WINDOW_PERCENTAGE_FOR_TEXT_DURATION;
-
-		textTimeout = setTimeout(function () {
-			var diff = $("#reviews").offset().top - window.pageYOffset - ($window.outerHeight() * WINDOW_PERCENTAGE_FOR_TEXT_START());
-
-		  	if (diff < 0) {
-				$("#reviews, #app-store").removeClass('invisible');
-		  	}
-		}, TIMEOUT_DELAY);
+		// Lazy load cards
+	  	$("img.lazy-load-special").removeClass('hidden').addClass('invisible').unveil(100, function() {
+		  	$(this).load(function() {
+		    	$(this).removeClass('invisible');
+		  	});
+		});
 	}
 
-	$window.scroll(textAnimate2);
+	if ($('#feature-custom-alerts').length > 0) {
+		// Animate out illustration heros during scroll
+		$("#repeat-options-floating").imageDynamics(function() {
+		  	var percentageInView = ($window.scrollTop() - $(this).offset().top) / $window.height();
+		  	var angle = START_ILLUSTRATION_HERO_1_ROTATION_ANGLE - (percentageInView * MAX_ILLUSTRATION_HERO_1_ROTATION_ANGLE);
 
-	if ($cardDemo.length > 0) {
-		function scrollAnimate() {
-			if (animationTimeout) {
-				clearTimeout(animationTimeout);
-			}
+		   	$(this).trigger("unveil").css({
+		   		'transform'			: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
+		   		'-moz-transform'	: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
+		   		'-webkit-transform'	: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
+		   		'-o-transform'		: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
+		   		'-ms-transform'		: 'rotate3d(0, 0, 1, ' + angle + 'deg)'
+		   	});
+		});
 
-			var distanceForWindow = $window.outerHeight() * WINDOW_PERCENTAGE_FOR_ANIMATION_DURATION;
+		// Animate out illustration heros during scroll
+		$("#date-options-floating").imageDynamics(function() {
+		  	var percentageInView = ($window.scrollTop() - $(this).offset().top) / $window.height();
+		  	var angle = START_ILLUSTRATION_HERO_2_ROTATION_ANGLE - (percentageInView * MAX_ILLUSTRATION_HERO_2_ROTATION_ANGLE);
 
-			animationTimeout = setTimeout(function () {
-				var diff = $('#mini-tour').offset().top - window.pageYOffset - ($window.outerHeight() * WINDOW_PERCENTAGE_FOR_ANIMATION_START());
-
-			  	var framesPercentage = diff < 0 ? Math.abs(diff) / distanceForWindow : 0,
-			  		sanitizedPercentage = framesPercentage > 1 ? 1 : framesPercentage,
-			  		activeFrame = Math.floor(numberOfAnimationFrames * sanitizedPercentage);
-
-				$cardDemo.removeClass('step1 step2 step3 step4 step5 step6 step7 step8 step9').addClass("step" + activeFrame);
-			}, ANIMATION_DELAY);
-		}
-
-		$window.scroll(scrollAnimate);
+		   	$(this).trigger("unveil").css({
+		   		'transform'			: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
+		   		'-moz-transform'	: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
+		   		'-webkit-transform'	: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
+		   		'-o-transform'		: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
+		   		'-ms-transform'		: 'rotate3d(0, 0, 1, ' + angle + 'deg)'
+		   	});
+		});
 	}
 
+	/******
+	 ****** FAQ, Support, and Contact
+	 ******
+	*/
 	if ($("#subject-select").length > 0) {
 		$("#subject-select").change(function () {
 			$("#subject-input").attr('value', $("#subject-select option:selected").text());
@@ -206,67 +251,6 @@ $(function () {
 			var el = $(this).attr('href'), $el = $(el);
 			$(this).parent().removeClass('active');
 			$(".support-topic-list").show();
-		});
-	}
-
-	if ($('img.lazy-load').length > 0) {
-		// Prepare text blocks for animation
-		$(".details").addClass('invisible');
-		$('.details').trigger("unveil");
-		$("#conclusion-hero").trigger("unveil");
-
-		// Lazy load major image assets
-	  	$("img.lazy-load").removeClass('hidden').addClass('invisible').unveil(imageActivationOffset(), function() {
-	  		if (this.getAttribute("data-src").indexOf("macbook_icloud") > 0) {
-	  			$('#icloud-1, #icloud-2').trigger("unveil");
-	  		}
-
-	  		if (this.getAttribute("data-src").indexOf("doo_complexity_reminder_screenshot") > 0) {
-	  			setTimeout(function () {
-					$(".details").removeClass('invisible');
-	  			}, 100 * 3);
-	  		}
-	  		
-		  	$(this).load(function() {
-		    	$(this).removeClass('invisible');
-		  	});
-		});
-
-		// Lazy load cards
-	  	$("img.lazy-load-special").removeClass('hidden').addClass('invisible').unveil(100, function() {
-		  	$(this).load(function() {
-		    	$(this).removeClass('invisible');
-		  	});
-		});
-	}
-
-	if ($('#feature-custom-alerts').length > 0) {
-		// Animate out illustration heros during scroll
-		$("#repeat-options-floating").imageDynamics(function() {
-		  	var percentageInView = ($window.scrollTop() - $(this).offset().top) / $window.height();
-		  	var angle = START_ILLUSTRATION_HERO_1_ROTATION_ANGLE - (percentageInView * MAX_ILLUSTRATION_HERO_1_ROTATION_ANGLE);
-
-		   	$(this).trigger("unveil").css({
-		   		'transform'			: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
-		   		'-moz-transform'	: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
-		   		'-webkit-transform'	: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
-		   		'-o-transform'		: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
-		   		'-ms-transform'		: 'rotate3d(0, 0, 1, ' + angle + 'deg)'
-		   	});
-		});
-
-		// Animate out illustration heros during scroll
-		$("#date-options-floating").imageDynamics(function() {
-		  	var percentageInView = ($window.scrollTop() - $(this).offset().top) / $window.height();
-		  	var angle = START_ILLUSTRATION_HERO_2_ROTATION_ANGLE - (percentageInView * MAX_ILLUSTRATION_HERO_2_ROTATION_ANGLE);
-
-		   	$(this).trigger("unveil").css({
-		   		'transform'			: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
-		   		'-moz-transform'	: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
-		   		'-webkit-transform'	: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
-		   		'-o-transform'		: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
-		   		'-ms-transform'		: 'rotate3d(0, 0, 1, ' + angle + 'deg)'
-		   	});
 		});
 	}
 });

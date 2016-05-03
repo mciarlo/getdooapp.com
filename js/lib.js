@@ -72,6 +72,7 @@
 
     function imageDynamics() {
       if ($this.is(":hidden")) return;
+      if ($this.length == 0) return;
 
       var windowTop = $w.scrollTop(),
           windowBottom = windowTop + $w.height(),
@@ -86,6 +87,86 @@
     $w.on("scroll.imageDynamics resize.imageDynamics", imageDynamics);
 
     imageDynamics();
+
+    return this;
+
+  };
+
+})(window.jQuery || window.Zepto);
+
+/**
+ * Run the animation block for our image if
+ * it gets scrolled into view or appears on resize
+ * threshold is a function
+ */
+;(function($) {
+  $.fn.textDynamics = function(threshold, callback) {
+    var $w = $(window), $this = this, triggerPoint = threshold || 0;
+
+    this.on("textDynamics", function() {
+      if (typeof callback === "function") callback.call(this);
+    });
+
+    function textDynamics() {
+      if ($this.is(":hidden")) return;
+      if ($this.length == 0) return;
+
+      var windowTop = $w.scrollTop(),
+          windowBottom = windowTop + $w.height(),
+          textTop = $this.offset().top + ((typeof triggerPoint === "function") ? triggerPoint() : triggerPoint),
+          textBottom = textTop + $this.height();
+
+      if (textTop <= windowBottom && textBottom >= windowTop) {
+        $this.trigger("textDynamics")
+      }
+    }
+
+    $w.on("scroll.textDynamics resize.textDynamics", textDynamics);
+
+    textDynamics();
+
+    return this;
+
+  };
+
+})(window.jQuery || window.Zepto);
+
+/**
+ * Run the animation block for our image if
+ * it gets scrolled into view or appears on resize
+ * threshold is a function
+ */
+;(function($) {
+  $.fn.cssFrameAnimation = function(threshold, callback, reset) {
+    var $w = $(window), $this = this, triggerPoint = threshold || 0;
+
+    this.on("cssFrameAnimation", function() {
+      if (typeof callback === "function") callback.call(this);
+    });
+
+    this.on("cssFrameAnimationReset", function() {
+      if (typeof reset === "function") reset.call(this);
+    });
+
+    function cssFrameAnimation() {
+      if ($this.is(":hidden")) return;
+      if ($this.length == 0) return;
+
+      var windowTop = $w.scrollTop(),
+          windowBottom = windowTop + $w.height(),
+          itemTop = $this.offset().top + ((typeof triggerPoint === "function") ? triggerPoint() : triggerPoint),
+          itemBottom = itemTop + $this.height();
+
+      if (itemTop <= windowBottom && itemBottom >= windowTop) {
+        $this.trigger("cssFrameAnimation")
+      } else {
+        $this.trigger("cssFrameAnimationReset")
+      }
+    }
+
+    $w.on("scroll.cssFrameAnimation resize.cssFrameAnimation", cssFrameAnimation);
+
+    cssFrameAnimation();
 
     return this;
 
