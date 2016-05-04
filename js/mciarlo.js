@@ -48,19 +48,19 @@ $(function () {
 	});
 
 	$("#feature-helpful-suggestions").textDynamics(function () {
-		return $window.outerHeight() * 0.6;
+		return $window.outerHeight() * 0.5;
 	}, function () {
 		$("#feature-helpful-suggestions").removeClass('invisible');
 	});
 
 	$("#feature-custom-repeat").textDynamics(function () {
-		return $window.outerHeight() * 0.7;
+		return $window.outerHeight() * 0.6;
 	}, function () {
 		$("#feature-custom-repeat").removeClass('invisible');
 	});
 
 	$("#feature-custom-alerts").textDynamics(function () {
-		return $window.outerHeight() * 0.9;
+		return $window.outerHeight() * 0.8;
 	}, function () {
 		$("#feature-custom-alerts").removeClass('invisible');
 	});
@@ -86,7 +86,7 @@ $(function () {
 	var numberOfFrames = 8,
 		$video = $('#resize-video'),
 		WINDOW_PERCENTAGE_FOR_VIDEO_START = function () {return $window.outerWidth() < 768 ? 0.5 : 0.7},
-		WINDOW_PERCENTAGE_FOR_MINI_TOUR_START = function () {return $window.outerWidth() < 768 ? 0.4 : 0.6},
+		WINDOW_PERCENTAGE_FOR_MINI_TOUR_START = function () {return $window.outerWidth() < 768 ? 0.3 : 0.3},
 		distanceForVideoWindow = 200,
 		$miniTour = $('#mini-tour');
 
