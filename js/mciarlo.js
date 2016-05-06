@@ -7,11 +7,19 @@ $(function () {
 		MAX_ILLUSTRATION_HERO_1_ROTATION_ANGLE = 6,
 		START_ILLUSTRATION_HERO_1_ROTATION_ANGLE = 0,
 		MAX_ILLUSTRATION_HERO_2_ROTATION_ANGLE = -6,
-		START_ILLUSTRATION_HERO_2_ROTATION_ANGLE = 0;
+		START_ILLUSTRATION_HERO_2_ROTATION_ANGLE = 0,
+		HERO_IMAGE_REVEAL_DELAY = 400;
 
 	imageActivationOffset = function () {
 		return $window.height() * IMAGE_ACTIVATION_PERCNTAGE;
 	};
+
+	$('#intro-hero').addClass('invisible');
+
+	setTimeout(function () {
+		$('#intro-hero').removeClass('invisible');
+
+	}, HERO_IMAGE_REVEAL_DELAY);
 
 	// Enable our hamburger menu for mobile
 	$('#hamburger-icon').click(function (ev) {
@@ -87,8 +95,10 @@ $(function () {
 		$video = $('#resize-video'),
 		WINDOW_PERCENTAGE_FOR_VIDEO_START = function () {return $window.outerWidth() < 768 ? 0.5 : 0.7},
 		WINDOW_PERCENTAGE_FOR_MINI_TOUR_START = function () {return $window.outerWidth() < 768 ? 0.3 : 0.3},
+		WINDOW_PERCENTAGE_FOR_APP_SIZE = function () {return $window.outerWidth() < 768 ? 0.3 : 0.5},
 		distanceForVideoWindow = 200,
-		$miniTour = $('#mini-tour');
+		$miniTour = $('#mini-tour'),
+		$appSizeContainer = $('#app-size-container');
 
 	$video.removeClass().addClass('frame0');
 
@@ -112,13 +122,21 @@ $(function () {
 		}
 	});
 
-	if ($miniTour.length > 0) {
-		$window.scroll(function () {
+	$window.scroll(function () {
+		if ($miniTour.length > 0) {
 			var diff = $miniTour.offset().top + ($window.outerHeight() * WINDOW_PERCENTAGE_FOR_MINI_TOUR_START()) - ($window.scrollTop() + $window.height());
 			var classToAdd = diff > 0 ? "starting" : "animated";
 			$miniTour.removeClass().addClass(classToAdd);
-		});
-	}
+		}
+
+		if ($appSizeContainer.length > 0) {
+			var diff = $appSizeContainer.offset().top + ($window.outerHeight() * WINDOW_PERCENTAGE_FOR_APP_SIZE()) - ($window.scrollTop() + $window.height());
+			var classToAdd = diff > 0 ? "starting" : "animated";
+			$appSizeContainer.removeClass().addClass(classToAdd);
+		}
+	});
+
+
 
 	if ($('img.lazy-load').length > 0) {
 		$("#conclusion-hero").trigger("unveil");

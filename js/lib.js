@@ -34,7 +34,7 @@
     function unveil() {
       var inview = images.filter(function() {
         var $e = $(this);
-        if ($e.is(":hidden")) return;
+        //if ($e.is(":hidden")) return;
 
         var windowTop = $w.scrollTop(),
             windowBottom = windowTop + $w.height(),
