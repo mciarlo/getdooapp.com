@@ -34,21 +34,20 @@
     function unveil() {
       var inview = images.filter(function() {
         var $e = $(this);
-        //if ($e.is(":hidden")) return;
 
         var windowTop = $w.scrollTop(),
             windowBottom = windowTop + $w.height(),
             imageTop = $e.offset().top,
             imageBottom = imageTop + $e.height();
 
-        return imageTop <= windowBottom + triggerPoint;
+        return (imageTop <= windowBottom + triggerPoint);
       });
 
       loaded = inview.trigger("unveil");
       images = images.not(loaded);
     }
 
-    $w.on("scroll.unveil resize.unveil lookup.unveil", unveil);
+    $w.on("scroll.unveil resize.unveil lookup.unveil load.unveil", unveil);
 
     unveil();
 
@@ -79,12 +78,12 @@
           imageTop = $this.offset().top,
           imageBottom = imageTop + $this.height();
 
-      if (imageTop <= windowBottom && imageBottom >= windowTop) {
-        $this.trigger("imageDynamics")
+      if (imageTop <= windowBottom) {
+        $this.trigger("imageDynamics");
       }
     }
 
-    $w.on("scroll.imageDynamics resize.imageDynamics", imageDynamics);
+    $w.on("scroll.imageDynamics resize.imageDynamics load.imageDynamics", imageDynamics);
 
     imageDynamics();
 
@@ -116,12 +115,12 @@
           textTop = $this.offset().top + ((typeof triggerPoint === "function") ? triggerPoint() : triggerPoint),
           textBottom = textTop + $this.height();
 
-      if (textTop <= windowBottom && textBottom >= windowTop) {
-        $this.trigger("textDynamics")
+      if (textTop <= windowBottom) {
+        $this.trigger("textDynamics");
       }
     }
 
-    $w.on("scroll.textDynamics resize.textDynamics", textDynamics);
+    $w.on("scroll.textDynamics resize.textDynamics load.imageDynamics", textDynamics);
 
     textDynamics();
 
@@ -137,15 +136,11 @@
  * threshold is a function
  */
 ;(function($) {
-  $.fn.cssFrameAnimation = function(threshold, callback, reset) {
+  $.fn.cssFrameAnimation = function(threshold, callback) {
     var $w = $(window), $this = this, triggerPoint = threshold || 0;
 
     this.on("cssFrameAnimation", function() {
       if (typeof callback === "function") callback.call(this);
-    });
-
-    this.on("cssFrameAnimationReset", function() {
-      if (typeof reset === "function") reset.call(this);
     });
 
     function cssFrameAnimation() {
@@ -157,14 +152,12 @@
           itemTop = $this.offset().top + ((typeof triggerPoint === "function") ? triggerPoint() : triggerPoint),
           itemBottom = itemTop + $this.height();
 
-      if (itemTop <= windowBottom && itemBottom >= windowTop) {
-        $this.trigger("cssFrameAnimation")
-      } else {
-        $this.trigger("cssFrameAnimationReset")
+      if (itemTop <= windowBottom) {
+        $this.trigger("cssFrameAnimation");
       }
     }
 
-    $w.on("scroll.cssFrameAnimation resize.cssFrameAnimation", cssFrameAnimation);
+    $w.on("scroll.cssFrameAnimation resize.cssFrameAnimation load.cssFrameAnimation", cssFrameAnimation);
 
     cssFrameAnimation();
 

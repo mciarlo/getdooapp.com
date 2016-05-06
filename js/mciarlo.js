@@ -1,8 +1,8 @@
 $(function () {
 	var $window = $(window),
 		imageActivationOffset,
+		isElementInViewport,
 		WIDTH_TO_DISABLE_EFFECTS = 768,
-		IMAGE_ACTIVATION_PERCNTAGE = 0.5,
 		SCROLL_ANIMATION_DURATION = 250,
 		MAX_ILLUSTRATION_HERO_1_ROTATION_ANGLE = 6,
 		START_ILLUSTRATION_HERO_1_ROTATION_ANGLE = 0,
@@ -10,16 +10,16 @@ $(function () {
 		START_ILLUSTRATION_HERO_2_ROTATION_ANGLE = 0,
 		HERO_IMAGE_REVEAL_DELAY = 400;
 
-	imageActivationOffset = function () {
-		return $window.height() * IMAGE_ACTIVATION_PERCNTAGE;
+	isElementInViewport = function (el) {
+		var rect = el.getBoundingClientRect();
+
+    	return (rect.bottom > 0 && rect.bottom < window.innerWidth) ||
+        	(rect.top < (window.innerHeight || document.documentElement.clientHeight) && rect.top > 0);
 	};
 
-	$('#intro-hero').addClass('invisible');
-
-	setTimeout(function () {
-		$('#intro-hero').removeClass('invisible');
-
-	}, HERO_IMAGE_REVEAL_DELAY);
+	imageActivationOffset = function () {
+		return $window.height();
+	};
 
 	// Enable our hamburger menu for mobile
 	$('#hamburger-icon').click(function (ev) {
@@ -29,13 +29,18 @@ $(function () {
 		$('#nav-menu').toggleClass('active');
 	});
 
-	// Support Jumper
 	$('.back-to-top').click(function (ev) {
 		ev.preventDefault();
 		$("body, html").animate({'scrollTop' :  0});
 	});
 
-	$(".core-feature, #mac-mini-tour, #reviews, #app-store").addClass('invisible');
+	$(".core-feature, #mac-mini-tour, #reviews, #app-store").each(function () {
+		var isInViewport = isElementInViewport(this);
+
+		if (!isInViewport) {
+			$(this).addClass('invisible');
+		}
+	});
 
 	$("#mac-feature-helpful-suggestions").textDynamics(function () {
 		return $window.outerHeight() * 0.5;
@@ -98,10 +103,9 @@ $(function () {
 		$miniTour = $('#mini-tour'),
 		$appSizeContainer = $('#app-size-container');
 
-	$appSizeContainer.removeClass().addClass('animated0');
-
-	$appSizeContainer.cssFrameAnimation(function () {
+	$appSizeContainer.removeClass().addClass('animated0').cssFrameAnimation(function () {
 		return $window.outerHeight() * WINDOW_PERCENTAGE_FOR_APP_SIZE();
+
 	}, function () {
 		var diff = $appSizeContainer.offset().top + ($window.outerHeight() * WINDOW_PERCENTAGE_FOR_APP_SIZE()) - ($window.scrollTop() + $window.height());
 
@@ -109,15 +113,11 @@ $(function () {
 	  		sanitizedPercentage = framesPercentage > 1 ? 1 : framesPercentage,
 	  		activeFrame = Math.floor(numberOfFrames * sanitizedPercentage);
 		
-		$appSizeContainer.removeClass().addClass("animated" + activeFrame);
-	}, function () {
-		var diff = $appSizeContainer.offset().top + ($window.outerHeight() * WINDOW_PERCENTAGE_FOR_APP_SIZE()) - ($window.scrollTop() + $window.height());
-
-		if (diff > 0) {
-			$appSizeContainer.removeClass().addClass("animated0");
-		} else {
-			$appSizeContainer.removeClass().addClass("animated4");
+		if ($appSizeContainer.hasClass("animated" + activeFrame)) {
+			return;
 		}
+
+		$appSizeContainer.removeClass().addClass("animated" + activeFrame);
 	});
 
 	$window.scroll(function () {
@@ -137,18 +137,27 @@ $(function () {
 		$("#conclusion-hero").trigger("unveil");
 
 		// Lazy load major image assets
-	  	$("img.lazy-load").removeClass('hidden').addClass('invisible').unveil(imageActivationOffset(), function() {
+	  	$("img.lazy-load").unveil(imageActivationOffset(), function() {
 	  		if (this.getAttribute("data-src").indexOf("macbook_icloud") > 0) {
 	  			$('#icloud-1, #icloud-2').trigger("unveil");
 	  		}
 	  		
-		  	$(this).load(function() {
-		    	$(this).removeClass('invisible');
+	  		var $image = $(this);
+
+		  	$image.load(function() {
+		  		if (this.getAttribute("src").indexOf("hero") > 0) {
+		  			setTimeout(function () {
+						$image.removeClass('invisible');
+					}, HERO_IMAGE_REVEAL_DELAY);
+
+		  		} else {
+		    		$image.removeClass('invisible');
+		  		}
 		  	});
 		});
 
 		// Lazy load cards
-	  	$("img.lazy-load-special").removeClass('hidden').addClass('invisible').unveil(100, function() {
+	  	$("img.lazy-load-special").unveil(10, function() {
 		  	$(this).load(function() {
 		    	$(this).removeClass('invisible');
 		  	});
