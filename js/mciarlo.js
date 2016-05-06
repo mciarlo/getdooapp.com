@@ -91,34 +91,32 @@ $(function () {
 		$('#app-store, #reviews').removeClass('invisible');
 	});
 
-	var numberOfFrames = 8,
-		$video = $('#resize-video'),
-		WINDOW_PERCENTAGE_FOR_VIDEO_START = function () {return $window.outerWidth() < 768 ? 0.5 : 0.7},
+	var numberOfFrames = 7,
 		WINDOW_PERCENTAGE_FOR_MINI_TOUR_START = function () {return $window.outerWidth() < 768 ? 0.3 : 0.3},
-		WINDOW_PERCENTAGE_FOR_APP_SIZE = function () {return $window.outerWidth() < 768 ? 0.3 : 0.5},
-		distanceForVideoWindow = 200,
+		WINDOW_PERCENTAGE_FOR_APP_SIZE = function () {return $window.outerWidth() < 768 ? 0.3 : 0.6},
+		distanceForVideoWindow = 240,
 		$miniTour = $('#mini-tour'),
 		$appSizeContainer = $('#app-size-container');
 
-	$video.removeClass().addClass('frame0');
+	$appSizeContainer.removeClass().addClass('animated0');
 
-	$video.cssFrameAnimation(function () {
-		return $window.outerHeight() * WINDOW_PERCENTAGE_FOR_VIDEO_START();
+	$appSizeContainer.cssFrameAnimation(function () {
+		return $window.outerHeight() * WINDOW_PERCENTAGE_FOR_APP_SIZE();
 	}, function () {
-		var diff = $video.offset().top + ($window.outerHeight() * WINDOW_PERCENTAGE_FOR_VIDEO_START()) - ($window.scrollTop() + $window.height());
+		var diff = $appSizeContainer.offset().top + ($window.outerHeight() * WINDOW_PERCENTAGE_FOR_APP_SIZE()) - ($window.scrollTop() + $window.height());
 
 	  	var framesPercentage = diff < 0 ? Math.abs(diff) / distanceForVideoWindow : 0,
 	  		sanitizedPercentage = framesPercentage > 1 ? 1 : framesPercentage,
 	  		activeFrame = Math.floor(numberOfFrames * sanitizedPercentage);
 		
-		$video.removeClass().addClass("frame" + activeFrame);
+		$appSizeContainer.removeClass().addClass("animated" + activeFrame);
 	}, function () {
-		var diff = $video.offset().top + ($window.outerHeight() * WINDOW_PERCENTAGE_FOR_VIDEO_START()) - ($window.scrollTop() + $window.height());
+		var diff = $appSizeContainer.offset().top + ($window.outerHeight() * WINDOW_PERCENTAGE_FOR_APP_SIZE()) - ($window.scrollTop() + $window.height());
 
 		if (diff > 0) {
-			$video.removeClass().addClass("frame0");
+			$appSizeContainer.removeClass().addClass("animated0");
 		} else {
-			$video.removeClass().addClass("frame8");
+			$appSizeContainer.removeClass().addClass("animated4");
 		}
 	});
 
@@ -129,14 +127,12 @@ $(function () {
 			$miniTour.removeClass().addClass(classToAdd);
 		}
 
-		if ($appSizeContainer.length > 0) {
-			var diff = $appSizeContainer.offset().top + ($window.outerHeight() * WINDOW_PERCENTAGE_FOR_APP_SIZE()) - ($window.scrollTop() + $window.height());
-			var classToAdd = diff > 0 ? "starting" : "animated";
-			$appSizeContainer.removeClass().addClass(classToAdd);
-		}
+		// if ($appSizeContainer.length > 0) {
+		// 	var diff = $appSizeContainer.offset().top + ($window.outerHeight() * WINDOW_PERCENTAGE_FOR_APP_SIZE()) - ($window.scrollTop() + $window.height());
+		// 	var classToAdd = diff > 0 ? "starting" : "animated";
+		// 	$appSizeContainer.removeClass().addClass(classToAdd);
+		// }
 	});
-
-
 
 	if ($('img.lazy-load').length > 0) {
 		$("#conclusion-hero").trigger("unveil");
