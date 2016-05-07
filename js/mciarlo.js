@@ -29,7 +29,7 @@ $(function () {
 		ev.stopPropagation();
 
 		$(this).toggleClass('active');
-		$('#nav-menu').toggleClass('active');
+		$('#nav-wrapper').toggleClass('active');
 	});
 
 	$('.back-to-top').click(function (ev) {
@@ -273,7 +273,7 @@ $(function () {
 
 		$(".topic-cancel-filter").click(function (ev) {
 			ev.preventDefault();
-			ev.stopPropagation();\
+			ev.stopPropagation();
 			
 			var el = $(this).attr('href'), $el = $(el);
 			$(this).parent().removeClass('active');
