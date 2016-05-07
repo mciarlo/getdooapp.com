@@ -26,6 +26,7 @@ $(function () {
 	// Enable our hamburger menu for mobile
 	$('#hamburger-icon').click(function (ev) {
 		ev.preventDefault();
+		ev.stopPropagation();
 
 		$(this).toggleClass('active');
 		$('#nav-menu').toggleClass('active');
@@ -33,6 +34,7 @@ $(function () {
 
 	$('.back-to-top').click(function (ev) {
 		ev.preventDefault();
+		ev.stopPropagation();
 		$("body, html").animate({'scrollTop' :  0});
 	});
 
@@ -271,7 +273,8 @@ $(function () {
 
 		$(".topic-cancel-filter").click(function (ev) {
 			ev.preventDefault();
-
+			ev.stopPropagation();\
+			
 			var el = $(this).attr('href'), $el = $(el);
 			$(this).parent().removeClass('active');
 			$(".support-topic-list").show();
