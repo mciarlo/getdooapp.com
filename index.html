@@ -31,7 +31,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png">
     <link rel="icon" type="image/x-icon" sizes="32x32" href="/images/icon32.png">
   </head>
-  <body>
+  <body class="no-js">
     <nav>
       <div class="content-wrapper">
         <h2><a href="/" title="Go to the Doo homepage">Doo</a></h2>
@@ -57,10 +57,10 @@
         <p class="main-text">Transform your to-dos into a delightful stack of cards that keeps you on task and in the moment.</p>
         <div class="download-link"><a href="https://itunes.apple.com/us/app/doo-get-things-done/id1066322956?ls=1&mt=8" title="Download Doo from the App Store">Download</a><span class="app-store-store-desc">Featured on the App Store</span></div>
 
-        <img id="main-hero-image" class="lazy-load invisible" src="../images/placeholder.png" data-src="../images/doo_main_hero.png" data-src-retina="../images/doo_main_hero@2x.png" alt="Main Doo interface"/>
+        <img class="main-hero-image lazy-load invisible" src="../images/placeholder.png" data-src="../images/doo_main_hero.png" data-src-retina="../images/doo_main_hero@2x.png" alt="Main Doo interface"/>
         
         <noscript>
-          <img id="main-hero-image" src="../images/doo_main_hero.png" alt="Main Doo interface"/>
+          <img class="main-hero-image" src="../images/doo_main_hero.png" alt="Main Doo interface"/>
         </noscript>
       </div>
     </section>
@@ -71,11 +71,11 @@
 
         <p class="half-width margin main-text">Doo helps you get things done by encouraging small, achievable reminders. Each reminder you create becomes a card. Swipe cards away and power through everything on your to-do list.</p>
 
-        <img id="doo-hero" class="lazy-load invisible" src="../images/placeholder.png" data-src="../images/doo_hero.jpg" data-src-retina="../images/doo_hero@2x.jpg" alt="Main Doo interface"/>
-        <img class="lazy-load hidden mobile-front-facing" src="../images/placeholder.png" data-src="../images/doo_hero_alt.jpg" data-src-retina="../images/doo_hero_alt@2x.jpg" alt="Main Doo interface"/>
+        <img class="doo-hero lazy-load invisible" src="../images/placeholder.png" data-src="../images/doo_hero.jpg" data-src-retina="../images/doo_hero@2x.jpg" alt="Main Doo interface"/>
+        <img class="lazy-load invisible mobile-front-facing" src="../images/placeholder.png" data-src="../images/doo_hero_alt.jpg" data-src-retina="../images/doo_hero_alt@2x.jpg" alt="Main Doo interface"/>
 
         <noscript>
-          <img id="doo-hero" src="../images/doo_hero.jpg" alt="Main Doo interface"/>
+          <img class="doo-hero" src="../images/doo_hero.jpg" alt="Main Doo interface"/>
           <img class="mobile-front-facing" src="../images/doo_hero_alt.jpg" alt="Main Doo interface"/>
         </noscript> 
 
@@ -106,16 +106,15 @@
         <h2 class="half-width has-illustration"><span class="block">To-dos with</span> warmth and personality.</h2>
         <p class="half-width margin main-text">Your reminders display one of eighteen beautiful images, each created for a particular task. This makes Doo an inviting, more engaging experience. It&rsquo;s a small way to make a big difference.</p>
 
-      
         <div class="image-container">
-          <img id="card-1" class="lazy-load invisible illustration-card" src="../images/placeholder.png" data-src="../images/hiking_card.png" data-src-retina="../images/hiking_card@2x.png" alt="Hiking trip"/>
-          <img id="card-2" class="lazy-load-special invisible illustration-card" src="../images/placeholder.png" data-src="../images/party_card.png" data-src-retina="../images/party_card@2x.png" alt="Party"/>
-          <img id="card-3" class="lazy-load-special invisible illustration-card" src="../images/placeholder.png" data-src="../images/medical_card.png" data-src-retina="../images/medical_card@2x.png" alt="Medication reminder"/>
+          <img class="card-1 lazy-load invisible illustration-card" src="../images/placeholder.png" data-src="../images/hiking_card.png" data-src-retina="../images/hiking_card@2x.png" alt="Hiking trip"/>
+          <img class="card-2 lazy-load-special invisible illustration-card" src="../images/placeholder.png" data-src="../images/party_card.png" data-src-retina="../images/party_card@2x.png" alt="Party"/>
+          <img class="card-3 lazy-load-special invisible illustration-card" src="../images/placeholder.png" data-src="../images/medical_card.png" data-src-retina="../images/medical_card@2x.png" alt="Medication reminder"/>
 
           <noscript>
-            <img id="card-1" class="illustration-card" src="../images/hiking_card.png" alt="Hiking trip"/>
-            <img id="card-2" class="illustration-card" src="../images/party_card.png" alt="Party"/>
-            <img id="card-3" class="illustration-card" src="../images/medical_card.png" alt="Medication reminder"/>
+            <img class="card-1 illustration-card" src="../images/hiking_card.png" alt="Hiking trip"/>
+            <img class="card-2 illustration-card" src="../images/party_card.png" alt="Party"/>
+            <img class="card-3 illustration-card" src="../images/medical_card.png" alt="Medication reminder"/>
           </noscript>
         </div>
 
@@ -132,7 +131,7 @@
           <h2 class="half-width">Helpful suggestions</h2>
           <p class="half-width main-text">Doo helps you succeed with a gentle nudge if a task looks too big.  You’re more likely to finish smaller tasks.</p>
 
-          <img class="lazy-load-special hidden mobile-front-facing" src="../images/placeholder.png" data-src="../images/complexity_notice.jpg" data-src-retina="../images/complexity_notice@2x.jpg" alt="Complexity notice"/>
+          <img class="lazy-load-special invisible mobile-front-facing" src="../images/placeholder.png" data-src="../images/complexity_notice.jpg" data-src-retina="../images/complexity_notice@2x.jpg" alt="Complexity notice"/>
 
           <noscript>
             <img class="mobile-front-facing" src="../images/complexity_notice.jpg" alt="Complexity notice"/>
@@ -147,7 +146,7 @@
           <img class="lazy-load invisible mobile-front-facing" src="../images/placeholder.png" data-src="../images/custom_repeat_alt.jpg" data-src-retina="../images/custom_repeat_alt@2x.jpg" alt="Custom repeat"/>
 
           <noscript>
-            <img  class="desktop" src="../images/custom_repeat.jpg" alt="Complexity notice"/>
+            <img class="desktop" src="../images/custom_repeat.jpg" alt="Complexity notice"/>
             <img class="mobile-front-facing" src="../images/custom_repeat_alt.jpg" alt="Complexity notice"/>
           </noscript>
         </div>
@@ -185,14 +184,14 @@
       </div>
 
       <div class="image-container">
-        <img id="icloud-0" class="lazy-load invisible" src="../images/placeholder.png" data-src="../images/macbook_icloud.jpg" data-src-retina="../images/macbook_icloud@2x.jpg" alt="Mac iCloud syncing">
-        <img id="icloud-1" class="lazy-load invisible" src="../images/placeholder.png" data-src="../images/iphone_icloud_screenshot.png" data-src-retina="../images/iphone_icloud_screenshot@2x.png" alt="iPhone iCloud syncing">
-        <img id="icloud-2" class="lazy-load invisible" src="../images/placeholder.png" data-src="../images/ipad_icloud_screenshot.png" data-src-retina="../images/ipad_icloud_screenshot@2x.png" alt="iPad iCloud syncing">
+        <img class="icloud-0 lazy-load invisible" src="../images/placeholder.png" data-src="../images/macbook_icloud.jpg" data-src-retina="../images/macbook_icloud@2x.jpg" alt="Mac iCloud syncing">
+        <img class="icloud-1 lazy-load invisible" src="../images/placeholder.png" data-src="../images/iphone_icloud_screenshot.png" data-src-retina="../images/iphone_icloud_screenshot@2x.png" alt="iPhone iCloud syncing">
+        <img class="icloud-2 lazy-load invisible" src="../images/placeholder.png" data-src="../images/ipad_icloud_screenshot.png" data-src-retina="../images/ipad_icloud_screenshot@2x.png" alt="iPad iCloud syncing">
 
         <noscript>
-            <img id="icloud-0" src="../images/macbook_icloud.jpg" alt="Mac iCloud syncing">
-            <img id="icloud-1" src="../images/iphone_icloud_screenshot.png" alt="iPhone iCloud syncing">
-            <img id="icloud-2" src="../images/ipad_icloud_screenshot.jpg" alt="iPad iCloud syncing">
+            <img class="icloud-0" src="../images/macbook_icloud.jpg" alt="Mac iCloud syncing">
+            <img class="icloud-1" src="../images/iphone_icloud_screenshot.png" alt="iPhone iCloud syncing">
+            <img class="icloud-2" src="../images/ipad_icloud_screenshot.png" alt="iPad iCloud syncing">
         </noscript>
       </div>
     </section>
@@ -209,6 +208,7 @@
                 <img class="screenshot" src="../images/extra_feature1.jpg" alt="Today widget">
               </noscript> 
             </figure>
+
             <div class="details">
               <h3 class="detail-header">Today Widget</h3>
               <p class="detail-description">Add Doo to your Notification Center to see your top three reminders or to add another.</p>
@@ -251,12 +251,12 @@
       <div class="content-wrapper">
         <h2><span class="block">Reached #1</span> in Productivity</h2>
 
-        <ul id="app-store" class="invisible">
+        <ul class="app-store invisible">
           <li><img src="../images/best_new_apps.svg"/></li>
           <li><img src="../images/best_of_feb.svg"/></li>
         </ul>
 
-        <ul id="reviews" class="invisible">
+        <ul class="reviews invisible">
           <li class="the-next-web">
             <img src="../images/tnw_logo.jpg"/>
             <p>&ldquo;Doo is a beautiful way to get things done without stressing yourself out.&rdquo;</p>
@@ -271,6 +271,27 @@
           </li>
         </ul>
 
+        <noscript>
+          <ul class="app-store">
+            <li><img src="../images/best_new_apps.svg"/></li>
+            <li><img src="../images/best_of_feb.svg"/></li>
+          </ul>
+
+          <ul class="reviews">
+            <li class="the-next-web">
+              <img src="../images/tnw_logo.jpg"/>
+              <p>&ldquo;Doo is a beautiful way to get things done without stressing yourself out.&rdquo;</p>
+            </li>
+            <li class="buzzfeed">
+              <img src="../images/buzzfeed_logo.jpg"/>
+              <p>&ldquo;I absolutely love this app... *incredibly* satisfying...&rdquo;</p>
+            </li>
+            <li class="wired">
+              <img src="../images/wired_logo.jpg"/>
+              <p>&ldquo;There&rsquo;s just enough guilt involved in hitting snooze that I often just complete the task. That&rsquo;s the point.&rdquo;</p>
+            </li>
+          </ul>
+        </noscript>
       </div>
     </section>
 
@@ -280,10 +301,10 @@
         <p class="half-width margin main-text">It turns out the perfect to&ndash;do list isn&rsquo;t a list but something much more. Intelligent features and attention to detail make Doo a fun, satisfying way to get things done.</p>
         <a href="https://itunes.apple.com/us/app/doo-get-things-done/id1066322956?ls=1&mt=8" title="Get Doo on the App Store"><img src="../images/Download_on_the_App_Store_Badge_US-UK_135x40.svg" alt="App Store Badge"/></a>
 
-        <img id="conclusion-hero" class="lazy-load invisible" src="../images/placeholder.png" data-src="../images/conclusion_hero.jpg" data-src-retina="../images/conclusion_hero@2x.jpg" alt="Doo for iPad">
+        <img class="conclusion-hero lazy-load invisible" src="../images/placeholder.png" data-src="../images/conclusion_hero.jpg" data-src-retina="../images/conclusion_hero@2x.jpg" alt="Doo for iPad">
 
         <noscript>
-          <img id="conclusion-hero" src="../images/conclusion_hero.jpg" alt="Doo for iPad">
+          <img class="conclusion-hero" src="../images/conclusion_hero.jpg" alt="Doo for iPad">
         </noscript>
       </div>
     </section>
@@ -324,10 +345,8 @@
       </div>
     </section>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <script src="../js/lib.js"></script>
-    <script src="../js/mciarlo.js"></script>
-    
+    <script src="../js/doo.js"></script>
+
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

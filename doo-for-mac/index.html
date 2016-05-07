@@ -31,7 +31,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png">
     <link rel="icon" type="image/x-icon" sizes="32x32" href="/images/icon32.png">
   </head>
-  <body>
+  <body class="no-js">
     <nav>
       <div class="content-wrapper">
         <h2><a href="/" title="Go to the Doo homepage">Doo</a></h2>
@@ -57,10 +57,10 @@
         <p class="main-text">Transform your to-dos into a delightful stack of cards that keeps you on task and in the moment.</p>
         <div class="download-link"><a href="https://itunes.apple.com/us/app/doo-get-things-done/id1107759193?ls=1&mt=12" title="Download Doo from the App Store">Download</a><span class="app-store-store-desc">On the Mac App Store</span></div>
 
-        <img id="main-hero-image-mac" class="lazy-load invisible" src="../images/placeholder.png" data-src="../images/mac_hero.png" data-src-retina="../images/mac_hero@2x.png" alt="Main Doo interface"/>
+        <img class="main-hero-image-mac lazy-load invisible" src="../images/placeholder.png" data-src="../images/mac_hero.png" data-src-retina="../images/mac_hero@2x.png" alt="Main Doo interface"/>
 
         <noscript>
-          <img id="main-hero-image-mac" src="../images/mac_hero.png" alt="Doo for Mac"/>
+          <img class="main-hero-image-mac" src="../images/mac_hero.png" alt="Doo for Mac"/>
         </noscript>
       </div>
     </section>
@@ -71,15 +71,15 @@
 
         <p class="half-width margin main-text">Doo helps you get things done by encouraging small, achievable reminders. Each reminder you create becomes a card. This simplicity keeps you focused and on task.</p>
 
-        <img id="doo-hero" class="lazy-load invisible" src="../images/placeholder.png" data-src="../images/macbook.jpg" data-src-retina="../images/macbook@2x.jpg" alt="Main Doo interface"/>
-        <img id="doo-hero-alt" class="lazy-load invisible" src="../images/placeholder.png" data-src="../images/macbook-alt.jpg" data-src-retina="../images/macbook-alt@2x.jpg" alt="Main Doo interface"/>
+        <img class="doo-hero lazy-load invisible" src="../images/placeholder.png" data-src="../images/macbook.jpg" data-src-retina="../images/macbook@2x.jpg" alt="Main Doo interface"/>
+        <img class="doo-hero-alt lazy-load invisible" src="../images/placeholder.png" data-src="../images/macbook-alt.jpg" data-src-retina="../images/macbook-alt@2x.jpg" alt="Main Doo interface"/>
 
         <noscript>
-          <img id="doo-hero" src="../images/macbook.jpg" alt="Main Doo interface"/>
-          <img id="doo-hero-alt" src="../images/macbook-alt.jpg" alt="Main Doo interface"/>
+          <img class="doo-hero" src="../images/macbook.jpg" alt="Main Doo interface"/>
+          <img class="doo-hero-alt" src="../images/macbook-alt.jpg" alt="Main Doo interface"/>
         </noscript>
 
-        <ul id="mac-mini-tour" class="invisible">
+        <ul class="mac-mini-tour invisible">
           <li class="first">
             <img src="../images/complete_icon.png"/>
             <strong>Complete</strong>
@@ -98,7 +98,7 @@
         </ul>
 
         <noscript>
-          <ul id="mac-mini-tour">
+          <ul class="mac-mini-tour">
             <li class="first">
               <img src="../images/complete_icon.png"/>
               <strong>Complete</strong>
@@ -123,16 +123,16 @@
       <div class="content-wrapper">
         <h2 class="half-width has-illustration"><span class="block">To-dos with</span> warmth and personality.</h2>
         <p class="half-width margin main-text">Your reminders display one of eighteen beautiful images, each created for a particular task. This makes Doo an inviting, more engaging experience. It&rsquo;s a small way to make a big difference.</p>
-      
+
         <div class="image-container">
-          <img id="card-1" class="lazy-load invisible illustration-card" src="../images/placeholder.png" data-src="../images/hiking_card.png" data-src-retina="../images/hiking_card@2x.png" alt="Hiking trip"/>
-          <img id="card-2" class="lazy-load invisible illustration-card" src="../images/placeholder.png" data-src="../images/party_card.png" data-src-retina="../images/party_card@2x.png" alt="Party"/>
-          <img id="card-3" class="lazy-load invisible illustration-card" src="../images/placeholder.png" data-src="../images/medical_card.png" data-src-retina="../images/medical_card@2x.png" alt="Medication reminder"/>
+          <img class="card-1 lazy-load invisible illustration-card" src="../images/placeholder.png" data-src="../images/hiking_card.png" data-src-retina="../images/hiking_card@2x.png" alt="Hiking trip"/>
+          <img class="card-2 lazy-load-special invisible illustration-card" src="../images/placeholder.png" data-src="../images/party_card.png" data-src-retina="../images/party_card@2x.png" alt="Party"/>
+          <img class="card-3 lazy-load-special invisible illustration-card" src="../images/placeholder.png" data-src="../images/medical_card.png" data-src-retina="../images/medical_card@2x.png" alt="Medication reminder"/>
 
           <noscript>
-            <img id="card-1" class="illustration-card" src="../images/hiking_card.png" alt="Hiking trip"/>
-            <img id="card-2" class="illustration-card" src="../images/party_card.png" alt="Party"/>
-            <img id="card-3" class="illustration-card" src="../images/medical_card.png" alt="Medication reminder"/>
+            <img class="card-1 illustration-card" src="../images/hiking_card.png" alt="Hiking trip"/>
+            <img class="card-2 illustration-card" src="../images/party_card.png" alt="Party"/>
+            <img class="card-3 illustration-card" src="../images/medical_card.png" alt="Medication reminder"/>
           </noscript>
         </div>
 
@@ -149,12 +149,12 @@
         <p class="half-width margin main-text">Read an article, save an address, and everything in between. Use the share icon in almost any app to add a new reminder. How&rsquo;s that for flexibility?</p>
         
         <div id="extension-container">
-          <img id="extension-source" class="lazy-load invisible" src="../images/placeholder.png" data-src="../images/mac_extension.jpg" data-src-retina="../images/mac_extension@2x.jpg" alt="Safari window"/>
-          <img id="extension-window" class="lazy-load invisible" src="../images/placeholder.png" data-src="../images/extension_window.png" data-src-retina="../images/extension_window@2x.png" alt="Extension dialog"/>
+          <img class="extension-source lazy-load invisible" src="../images/placeholder.png" data-src="../images/mac_extension.jpg" data-src-retina="../images/mac_extension@2x.jpg" alt="Safari window"/>
+          <img class="extension-window lazy-load invisible" src="../images/placeholder.png" data-src="../images/extension_window.png" data-src-retina="../images/extension_window@2x.png" alt="Extension dialog"/>
 
           <noscript>
-            <img id="extension-source" src="../images/mac_extension.jpg" alt="Safari window"/>
-            <img id="extension-window" src="../images/extension_window.png" alt="Extension dialog"/>
+            <img class="extension-source" src="../images/mac_extension.jpg" alt="Safari window"/>
+            <img class="extension-window" src="../images/extension_window.png" alt="Extension dialog"/>
           </noscript>
         </div>
       </div>
@@ -204,14 +204,14 @@
       </div>
 
       <div class="image-container">
-        <img id="icloud-0" class="lazy-load invisible" src="../images/placeholder.png" data-src="../images/macbook_icloud.jpg" data-src-retina="../images/macbook_icloud@2x.jpg" alt="Mac iCloud syncing"/>
-        <img id="icloud-1" class="lazy-load invisible" src="../images/placeholder.png" data-src="../images/iphone_icloud_screenshot.png" data-src-retina="../images/iphone_icloud_screenshot@2x.png" alt="iPhone iCloud syncing"/>
-        <img id="icloud-2" class="lazy-load invisible" src="../images/placeholder.png" data-src="../images/ipad_icloud_screenshot.png" data-src-retina="../images/ipad_icloud_screenshot@2x.png" alt="iPad iCloud syncing"/>
+        <img class="icloud-0 lazy-load invisible" src="../images/placeholder.png" data-src="../images/macbook_icloud.jpg" data-src-retina="../images/macbook_icloud@2x.jpg" alt="Mac iCloud syncing">
+        <img class="icloud-1 lazy-load invisible" src="../images/placeholder.png" data-src="../images/iphone_icloud_screenshot.png" data-src-retina="../images/iphone_icloud_screenshot@2x.png" alt="iPhone iCloud syncing">
+        <img class="icloud-2 lazy-load invisible" src="../images/placeholder.png" data-src="../images/ipad_icloud_screenshot.png" data-src-retina="../images/ipad_icloud_screenshot@2x.png" alt="iPad iCloud syncing">
 
         <noscript>
-            <img id="icloud-0" src="../images/macbook_icloud.jpg" alt="Mac iCloud syncing"/>
-            <img id="icloud-1" src="../images/iphone_icloud_screenshot.png" alt="iPhone iCloud syncing"/>
-            <img id="icloud-2" src="../images/ipad_icloud_screenshot.png" alt="iPad iCloud syncing"/>
+            <img class="icloud-0" src="../images/macbook_icloud.jpg" alt="Mac iCloud syncing">
+            <img class="icloud-1" src="../images/iphone_icloud_screenshot.png" alt="iPhone iCloud syncing">
+            <img class="icloud-2" src="../images/ipad_icloud_screenshot.png" alt="iPad iCloud syncing">
         </noscript>
       </div>
     </section>
@@ -223,22 +223,19 @@
         <p class="half-width margin main-text">Doo swaps fonts, images, and even layouts depending on your window size. You get the best experience any way you work.</p>
         
         <div id="app-size-container" class="animated7">
-          <img id="adaptive-ui-small" class="lazy-load invisible" src="../images/placeholder.png" data-src="../images/small_ui.png" data-src-retina="../images/small_ui@2x.png" alt="Small Doo Window"/>
+          <img class="adaptive-ui-small lazy-load invisible" src="../images/placeholder.png" data-src="../images/small_ui.png" data-src-retina="../images/small_ui@2x.png" alt="Small Doo Window"/>
 
-          <img id="adaptive-ui-small-shadow" class="lazy-load invisible" src="../images/placeholder.png" data-src="../images/small_ui_shadow.png" data-src-retina="../images/small_ui_shadow@2x.png"/>
+          <img class="adaptive-ui-small-shadow lazy-load invisible" src="../images/placeholder.png" data-src="../images/small_ui_shadow.png" data-src-retina="../images/small_ui_shadow@2x.png"/>
 
-          <img id="adaptive-ui-large" class="lazy-load invisible" src="../images/placeholder.png" data-src="../images/large_ui.png" data-src-retina="../images/large_ui@2x.png" alt="Large Doo Window"/>
+          <img class="adaptive-ui-large lazy-load invisible" src="../images/placeholder.png" data-src="../images/large_ui.png" data-src-retina="../images/large_ui@2x.png" alt="Large Doo Window"/>
 
-          <img id="adaptive-ui-large-shadow" class="lazy-load invisible" src="../images/placeholder.png" data-src="../images/large_ui_shadow.jpg" data-src-retina="../images/large_ui_shadow@2x.jpg"/>
+          <img class="adaptive-ui-large-shadow lazy-load invisible" src="../images/placeholder.png" data-src="../images/large_ui_shadow.jpg" data-src-retina="../images/large_ui_shadow@2x.jpg"/>
 
           <noscript>
-            <img id="adaptive-ui-small" src="../images/small_ui.png" alt="Small Doo Window"/>
-
-            <img id="adaptive-ui-small-shadow" src="../images/small_ui_shadow.png"/>
-
-            <img id="adaptive-ui-large" src="../images/large_ui.png" alt="Large Doo Window"/>
-
-            <img id="adaptive-ui-large-shadow" src="../images/large_ui_shadow.jpg"/>
+            <img class="adaptive-ui-small" src="../images/small_ui.png" alt="Small Doo Window"/>
+            <img class="adaptive-ui-small-shadow" src="../images/small_ui_shadow.png"/>
+            <img class="adaptive-ui-large" src="../images/large_ui.png" alt="Large Doo Window"/>
+            <img class="adaptive-ui-large-shadow" src="../images/large_ui_shadow.jpg"/>
           </noscript>
         </div>
       </div>
@@ -299,12 +296,12 @@
     <section id="awards-press" class="mac">
       <div class="content-wrapper">
         <h2><span class="block">Praise for</span> Doo on iOS</h2>
-        <ul id="app-store" class="invisible">
+        <ul class="app-store invisible">
           <li><img src="../images/best_new_apps.svg"/></li>
           <li><img src="../images/best_of_feb.svg"/></li>
         </ul>
 
-        <ul id="reviews" class="invisible">
+        <ul class="reviews invisible">
           <li class="the-next-web">
             <img src="../images/tnw_logo.jpg"/>
             <p>&ldquo;Doo is a beautiful way to get things done without stressing yourself out.&rdquo;</p>
@@ -318,6 +315,28 @@
             <p>&ldquo;There&rsquo;s just enough guilt involved in hitting snooze that I often just complete the task. That&rsquo;s the point.&rdquo;</p>
           </li>
         </ul>
+
+        <noscript>
+          <ul class="app-store">
+            <li><img src="../images/best_new_apps.svg"/></li>
+            <li><img src="../images/best_of_feb.svg"/></li>
+          </ul>
+
+          <ul class="reviews">
+            <li class="the-next-web">
+              <img src="../images/tnw_logo.jpg"/>
+              <p>&ldquo;Doo is a beautiful way to get things done without stressing yourself out.&rdquo;</p>
+            </li>
+            <li class="buzzfeed">
+              <img src="../images/buzzfeed_logo.jpg"/>
+              <p>&ldquo;I absolutely love this app... *incredibly* satisfying...&rdquo;</p>
+            </li>
+            <li class="wired">
+              <img src="../images/wired_logo.jpg"/>
+              <p>&ldquo;There&rsquo;s just enough guilt involved in hitting snooze that I often just complete the task. That&rsquo;s the point.&rdquo;</p>
+            </li>
+          </ul>
+        </noscript>
       </div>
     </section>
 
@@ -328,10 +347,10 @@
 
         <a href="https://itunes.apple.com/us/app/doo-get-things-done/id1107759193?ls=1&mt=12" title="Get Doo on the App Store"><img src="../images/mac_app_store_badge.svg" alt="Mac App Store Badge"/></a>
 
-        <img id="conclusion-hero" class="lazy-load invisible" src="../images/placeholder.png" data-src="../images/mac_conclusion_hero.jpg" data-src-retina="../images/mac_conclusion_hero@2x.jpg" alt="Doo for Mac"/>
+        <img class="conclusion-hero lazy-load invisible" src="../images/placeholder.png" data-src="../images/mac_conclusion_hero.jpg" data-src-retina="../images/mac_conclusion_hero@2x.jpg" alt="Doo for Mac"/>
 
         <noscript>
-          <img id="conclusion-hero" src="../images/mac_conclusion_hero.jpg" alt="Doo for Mac"/>
+          <img class="conclusion-hero" src="../images/mac_conclusion_hero.jpg" alt="Doo for Mac"/>
         </noscript>
       </div>
     </section>
@@ -371,9 +390,7 @@
       </div>
     </section>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <script src="../js/lib.js"></script>
-    <script src="../js/mciarlo.js"></script>
+    <script src="../js/doo.js"></script>
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

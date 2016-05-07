@@ -21,6 +21,8 @@ $(function () {
 		return $window.height();
 	};
 
+	$('body').removeClass('no-js');
+
 	// Enable our hamburger menu for mobile
 	$('#hamburger-icon').click(function (ev) {
 		ev.preventDefault();
@@ -34,7 +36,7 @@ $(function () {
 		$("body, html").animate({'scrollTop' :  0});
 	});
 
-	$(".core-feature, #mac-mini-tour, #reviews, #app-store").each(function () {
+	$(".core-feature, .mac-mini-tour, .reviews, .app-store").each(function () {
 		var isInViewport = isElementInViewport(this);
 
 		if (!isInViewport) {
@@ -84,16 +86,16 @@ $(function () {
 		$("#feature-extension").removeClass('invisible');
 	});
 
-	$('#mac-mini-tour').textDynamics(function () {
+	$('.mac-mini-tour').textDynamics(function () {
 		return $window.outerHeight() * 0.4;
 	}, function () {
-		$('#mac-mini-tour').removeClass('invisible');
+		$('.mac-mini-tour').removeClass('invisible');
 	});
 
-	$('#app-store').textDynamics(function () {
+	$('.app-store').textDynamics(function () {
 		return $window.outerHeight() * 0.3;
 	}, function () {
-		$('#app-store, #reviews').removeClass('invisible');
+		$('.app-store, .reviews').removeClass('invisible');
 	});
 
 	var numberOfFrames = 7,
@@ -134,12 +136,12 @@ $(function () {
 	});
 
 	if ($('img.lazy-load').length > 0) {
-		$("#conclusion-hero").trigger("unveil");
+		$(".conclusion-hero").trigger("unveil");
 
 		// Lazy load major image assets
 	  	$("img.lazy-load").unveil(imageActivationOffset(), function() {
 	  		if (this.getAttribute("data-src").indexOf("macbook_icloud") > 0) {
-	  			$('#icloud-1, #icloud-2').trigger("unveil");
+	  			$('.icloud-1, .icloud-2').trigger("unveil");
 	  		}
 	  		
 	  		var $image = $(this);
