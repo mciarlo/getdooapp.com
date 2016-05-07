@@ -8,7 +8,8 @@ $(function () {
 		START_ILLUSTRATION_HERO_1_ROTATION_ANGLE = 0,
 		MAX_ILLUSTRATION_HERO_2_ROTATION_ANGLE = -6,
 		START_ILLUSTRATION_HERO_2_ROTATION_ANGLE = 0,
-		HERO_IMAGE_REVEAL_DELAY = 400;
+		HERO_IMAGE_REVEAL_DELAY = 400,
+		NAV_DELAY = 400;
 
 	isElementInViewport = function (el) {
 		var rect = el.getBoundingClientRect();
@@ -29,7 +30,20 @@ $(function () {
 		ev.stopPropagation();
 
 		$(this).toggleClass('active');
-		$('#nav-wrapper').toggleClass('active');
+
+		if (!$('#nav-wrapper').hasClass('active')) {
+			$('#nav-wrapper').toggleClass('no-click');
+
+		} else {
+			setTimeout(function () {
+				$('#nav-wrapper').toggleClass('no-click');
+			}, NAV_DELAY);
+		}
+
+		// Allow repaint
+		setTimeout(function () {
+			$('#nav-wrapper').toggleClass('active');
+		}, 10);
 	});
 
 	$('.back-to-top').click(function (ev) {
