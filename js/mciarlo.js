@@ -9,7 +9,11 @@ $(function () {
 		MAX_ILLUSTRATION_HERO_2_ROTATION_ANGLE = -6,
 		START_ILLUSTRATION_HERO_2_ROTATION_ANGLE = 0,
 		HERO_IMAGE_REVEAL_DELAY = 400,
-		NAV_DELAY = 400;
+		NAV_DELAY = 400,
+		preventDefaultFormAction = function (ev) {
+			ev.preventDefault();
+			ev.stopPropagation();
+		};
 
 	isElementInViewport = function (el) {
 		var rect = el.getBoundingClientRect();
@@ -226,14 +230,13 @@ $(function () {
 		});
 
 		$("#support-submit").click(function (ev) {
-			ev.preventDefault();
-			ev.stopPropagation();
-
 			$("#name-input, #email-input, #message-input").removeClass('required');
 			
 			if ($("#name-input").val().length == 0 ||
 				$("#email-input").val().length == 0 ||
 				$("#message-input").val().length == 0) {
+
+				preventDefaultFormAction(ev);
 
 				if ($("#name-input").val().length == 0) {
 					$("#name-input").addClass('required');
