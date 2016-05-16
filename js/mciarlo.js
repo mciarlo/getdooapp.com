@@ -28,6 +28,25 @@ $(function () {
 
 	$('body').removeClass('no-js');
 
+	if ($('body').hasClass('change-log-page')) {
+		$('#doo-for-mac-changes').hide();
+
+		var $changeLogTabs = $('.change-log-tab');
+		$changeLogTabs.first().addClass('active');
+
+		$changeLogTabs.click(function (ev) {
+			ev.preventDefault();
+			ev.stopPropagation();
+
+			var el = $(this).attr('href'), $el = $(el);
+
+			$changeLogTabs.removeClass('active');
+			$(this).addClass('active');
+			$('.change-log').hide();
+			$el.show();
+		});
+	}
+
 	// Enable our hamburger menu for mobile
 	$('#hamburger-icon').click(function (ev) {
 		ev.preventDefault();
