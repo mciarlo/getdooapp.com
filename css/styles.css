@@ -769,7 +769,8 @@ nav {
   padding-bottom: 2em; }
   #mac-feature-custom-alerts img {
     width: 110%;
-    margin-left: -7%; }
+    margin-top: 2em;
+    margin-left: -3%; }
 
 /***
  *****************************
@@ -1710,6 +1711,9 @@ a.support-topic-filter:hover {
       width: 420px;
       margin: 1em auto 0; }
 
+  #mac-feature-custom-alerts img {
+    margin-top: 3em; }
+
   #mac-feature-helpful-suggestions img {
     width: 400px; }
 
@@ -2548,7 +2552,7 @@ a.support-topic-filter:hover {
       left: 50%; }
 
   #mac-feature-custom-alerts {
-    padding: 8em 0 15em; }
+    padding: 8em 0 20em; }
     #mac-feature-custom-alerts .half-width, #mac-feature-custom-alerts .main-text {
       float: right;
       margin-right: 5%;
@@ -3169,7 +3173,7 @@ a.support-topic-filter:hover {
       width: 400px; }
 
   #mac-feature-custom-alerts {
-    padding: 8.5em 0 19em; }
+    padding: 8.5em 0 21em; }
     #mac-feature-custom-alerts img {
       width: 420px;
       margin-left: -420px;
@@ -3414,7 +3418,7 @@ a.support-topic-filter:hover {
       width: 420px; }
 
   #mac-feature-custom-alerts {
-    padding: 9em 0 21em; }
+    padding: 9em 0 23em; }
     #mac-feature-custom-alerts img {
       width: 440px;
       margin-left: -440px;
@@ -3721,7 +3725,7 @@ a.support-topic-filter:hover {
       width: 465px; }
 
   #mac-feature-custom-alerts {
-    padding: 10em 0 24em; }
+    padding: 10em 0 27em; }
     #mac-feature-custom-alerts img {
       width: 495px;
       margin-left: -495px; }
