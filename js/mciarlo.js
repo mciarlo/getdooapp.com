@@ -13,6 +13,28 @@ $(function () {
 		preventDefaultFormAction = function (ev) {
 			ev.preventDefault();
 			ev.stopPropagation();
+		},
+		updateFeatures = function () {
+			var $features = $(".feature-compliment:first");
+
+			if ($features.length == 0) {
+				return;
+			}
+
+			var bottom = $(".key-feature:last").offset().top + $(".key-feature:last").outerHeight();
+			var windowBottomForFeatures = $window.scrollTop() + $window.outerHeight();
+			var shouldBeFixed = $window.scrollTop() > $(".key-feature:first").offset().top && windowBottomForFeatures < bottom;
+			var hasClass = $features.hasClass("fixed");
+
+			if (shouldBeFixed && !hasClass) {
+				$features.addClass("fixed");
+				$features.css("top", "0px");
+			} else if (!shouldBeFixed && hasClass) {
+				$features.removeClass("fixed");
+				if (windowBottomForFeatures >= bottom) {
+					$features.css({"top": "auto", "bottom": "0px"});
+				}
+			}
 		};
 
 	isElementInViewport = function (el) {
@@ -47,6 +69,20 @@ $(function () {
 		});
 	}
 
+	var $features = $(".feature-compliment:first");
+
+	$window.scroll(function () {
+		updateFeatures();
+	});
+
+	$window.resize(function () {
+		updateFeatures();
+	});
+
+	updateFeatures();
+
+
+
 	// Enable our hamburger menu for mobile
 	$('#hamburger-icon').click(function (ev) {
 		ev.preventDefault();
@@ -68,110 +104,11 @@ $(function () {
 			$('#nav-wrapper').toggleClass('active');
 		}, 10);
 	});
-
+/*
 	$('.back-to-top').click(function (ev) {
 		ev.preventDefault();
 		ev.stopPropagation();
 		$("body, html").animate({'scrollTop' :  0});
-	});
-
-	$(".core-feature, .mac-mini-tour, .reviews, .app-store").each(function () {
-		var isInViewport = isElementInViewport(this);
-
-		if (!isInViewport) {
-			$(this).addClass('invisible');
-		}
-	});
-
-	$("#mac-feature-helpful-suggestions").textDynamics(function () {
-		return $window.outerHeight() * 0.5;
-	}, function () {
-		$("#mac-feature-helpful-suggestions").removeClass('invisible');
-	});
-
-	$("#mac-feature-custom-repeat").textDynamics(function () {
-		return $window.outerHeight() * 0.5;
-	}, function () {
-		$("#mac-feature-custom-repeat").removeClass('invisible');
-	});
-
-	$("#mac-feature-custom-alerts").textDynamics(function () {
-		return $window.outerHeight() * 0.4;
-	}, function () {
-		$("#mac-feature-custom-alerts").removeClass('invisible');
-	});
-
-	$("#feature-helpful-suggestions").textDynamics(function () {
-		return $window.outerHeight() * 0.5;
-	}, function () {
-		$("#feature-helpful-suggestions").removeClass('invisible');
-	});
-
-	$("#feature-custom-repeat").textDynamics(function () {
-		return $window.outerHeight() * 0.6;
-	}, function () {
-		$("#feature-custom-repeat").removeClass('invisible');
-	});
-
-	$("#feature-custom-alerts").textDynamics(function () {
-		return $window.outerHeight() * 0.8;
-	}, function () {
-		$("#feature-custom-alerts").removeClass('invisible');
-	});
-
-	$("#feature-extension").textDynamics(function () {
-		return $window.outerHeight() * 0.5;
-	}, function () {
-		$("#feature-extension").removeClass('invisible');
-	});
-
-	$('.mac-mini-tour').textDynamics(function () {
-		return $window.outerHeight() * 0.4;
-	}, function () {
-		$('.mac-mini-tour').removeClass('invisible');
-	});
-
-	$('.app-store').textDynamics(function () {
-		return $window.outerHeight() * 0.3;
-	}, function () {
-		$('.app-store, .reviews').removeClass('invisible');
-	});
-
-	var numberOfFrames = 7,
-		WINDOW_PERCENTAGE_FOR_MINI_TOUR_START = function () {return $window.outerWidth() < 768 ? 0.3 : 0.3},
-		WINDOW_PERCENTAGE_FOR_APP_SIZE = function () {return $window.outerWidth() < 768 ? 0.3 : 0.6},
-		distanceForVideoWindow = 240,
-		$miniTour = $('#mini-tour'),
-		$appSizeContainer = $('#app-size-container');
-
-	$appSizeContainer.removeClass().addClass('animated0').cssFrameAnimation(function () {
-		return $window.outerHeight() * WINDOW_PERCENTAGE_FOR_APP_SIZE();
-
-	}, function () {
-		var diff = $appSizeContainer.offset().top + ($window.outerHeight() * WINDOW_PERCENTAGE_FOR_APP_SIZE()) - ($window.scrollTop() + $window.height());
-
-	  	var framesPercentage = diff < 0 ? Math.abs(diff) / distanceForVideoWindow : 0,
-	  		sanitizedPercentage = framesPercentage > 1 ? 1 : framesPercentage,
-	  		activeFrame = Math.floor(numberOfFrames * sanitizedPercentage);
-		
-		if ($appSizeContainer.hasClass("animated" + activeFrame)) {
-			return;
-		}
-
-		$appSizeContainer.removeClass().addClass("animated" + activeFrame);
-	});
-
-	$window.scroll(function () {
-		if ($miniTour.length > 0) {
-			var diff = $miniTour.offset().top + ($window.outerHeight() * WINDOW_PERCENTAGE_FOR_MINI_TOUR_START()) - ($window.scrollTop() + $window.height());
-			var classToAdd = diff > 0 ? "starting" : "animated";
-			
-			if ($miniTour.hasClass(classToAdd)) {
-				return;
-			}
-			
-			$miniTour.removeClass().addClass(classToAdd);
-		}
 	});
 
 	if ($('img.lazy-load').length > 0) {
@@ -203,37 +140,7 @@ $(function () {
 		    	$(this).removeClass('invisible');
 		  	});
 		});
-	}
-
-	if ($('#feature-custom-alerts').length > 0) {
-		// Animate out illustration heros during scroll
-		$("#repeat-options-floating").imageDynamics(function() {
-		  	var percentageInView = ($window.scrollTop() - $(this).offset().top) / $window.height();
-		  	var angle = START_ILLUSTRATION_HERO_1_ROTATION_ANGLE - (percentageInView * MAX_ILLUSTRATION_HERO_1_ROTATION_ANGLE);
-
-		   	$(this).trigger("unveil").css({
-		   		'transform'			: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
-		   		'-moz-transform'	: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
-		   		'-webkit-transform'	: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
-		   		'-o-transform'		: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
-		   		'-ms-transform'		: 'rotate3d(0, 0, 1, ' + angle + 'deg)'
-		   	});
-		});
-
-		// Animate out illustration heros during scroll
-		$("#date-options-floating").imageDynamics(function() {
-		  	var percentageInView = ($window.scrollTop() - $(this).offset().top) / $window.height();
-		  	var angle = START_ILLUSTRATION_HERO_2_ROTATION_ANGLE - (percentageInView * MAX_ILLUSTRATION_HERO_2_ROTATION_ANGLE);
-
-		   	$(this).trigger("unveil").css({
-		   		'transform'			: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
-		   		'-moz-transform'	: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
-		   		'-webkit-transform'	: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
-		   		'-o-transform'		: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
-		   		'-ms-transform'		: 'rotate3d(0, 0, 1, ' + angle + 'deg)'
-		   	});
-		});
-	}
+	}*/
 
 	/******
 	 ****** FAQ, Support, and Contact

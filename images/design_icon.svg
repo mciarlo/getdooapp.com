@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 2</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <ellipse id="path-1" cx="12.7070727" cy="12.0477081" rx="5.77777778" ry="5.80808081"></ellipse>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="11.5555556" height="11.6161616" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-2.000000, -2.000000)" stroke="#FFFFFF">
+            <g id="Group-2" transform="translate(2.000000, 3.000000)">
+                <g id="Tomorrow" transform="translate(12.792927, 12.020474) rotate(-360.000000) translate(-12.792927, -12.020474) translate(0.292927, 0.020474)">
+                    <g id="Group-6" transform="translate(11.241546, 0.000000)" stroke-linecap="round">
+                        <path d="M1.46552685,4.13348618 L1.46552685,0.431546509" id="Line" transform="translate(1.465527, 2.609577) rotate(-360.000000) translate(-1.465527, -2.609577) "></path>
+                        <path d="M1.46552685,23.6638697 L1.46552685,19.9619301" id="Line" transform="translate(1.465527, 21.485839) rotate(-360.000000) translate(-1.465527, -21.485839) "></path>
+                    </g>
+                    <g id="Group-6" transform="translate(12.365273, 11.769841) rotate(-45.000000) translate(-12.365273, -11.769841) translate(10.865273, -0.230159)" stroke-linecap="round">
+                        <path d="M1.46552685,4.13348618 L1.46552685,0.431546509" id="Line" transform="translate(1.465527, 2.609577) rotate(-360.000000) translate(-1.465527, -2.609577) "></path>
+                        <path d="M1.46552685,23.6638697 L1.46552685,19.9619301" id="Line" transform="translate(1.465527, 21.485839) rotate(-360.000000) translate(-1.465527, -21.485839) "></path>
+                    </g>
+                    <g id="Group-4" transform="translate(12.557500, 11.845972) rotate(-315.000000) translate(-12.557500, -11.845972) translate(11.057500, -0.154028)" stroke-linecap="round">
+                        <path d="M1.44444444,3.87562437 L1.44444444,0.172972856" id="Line" transform="translate(1.444444, 2.024299) rotate(-360.000000) translate(-1.444444, -2.024299) "></path>
+                        <path d="M1.44444444,23.5401113 L1.44444444,19.8374598" id="Line" transform="translate(1.444444, 21.688786) rotate(-360.000000) translate(-1.444444, -21.688786) "></path>
+                    </g>
+                    <g id="Group-5" transform="translate(-0.000000, 10.164141)" stroke-linecap="round">
+                        <g id="Group-4" transform="translate(12.617809, 1.940440) rotate(-270.000000) translate(-12.617809, -1.940440) translate(11.117809, -10.059560)">
+                            <path d="M1.44444444,3.87562437 L1.44444444,0.172972856" id="Line" transform="translate(1.444444, 2.024299) rotate(-360.000000) translate(-1.444444, -2.024299) "></path>
+                            <path d="M1.44444444,23.5401113 L1.44444444,19.8374598" id="Line" transform="translate(1.444444, 21.688786) rotate(-360.000000) translate(-1.444444, -21.688786) "></path>
+                        </g>
+                    </g>
+                    <use id="Oval-7" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

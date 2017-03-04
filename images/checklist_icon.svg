@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard">
+            <g id="Group-8" transform="translate(1.000000, 4.000000)">
+                <ellipse id="Oval-3" fill="#FFFFFF" cx="1.90909091" cy="1.85294118" rx="1.90909091" ry="1.85294118"></ellipse>
+                <path d="M7,1.85294118 L27.3636364,1.85294118" id="Line" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <ellipse id="Oval-3" fill="#FFFFFF" cx="1.90909091" cy="10.5" rx="1.90909091" ry="1.85294118"></ellipse>
+                <path d="M7,10.5 L27.3636364,10.5" id="Line" stroke="#FFFFFF" stroke-linecap="square"></path>
+                <ellipse id="Oval-3" fill="#FFFFFF" cx="1.90909091" cy="19.1470588" rx="1.90909091" ry="1.85294118"></ellipse>
+                <path d="M7,19.1470588 L27.3636364,19.1470588" id="Line" stroke="#FFFFFF" stroke-linecap="square"></path>
+            </g>
+        </g>
+    </g>
+</svg>
