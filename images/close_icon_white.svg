@@ -1,12 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="445.109px" height="445.609px" viewBox="0 0 445.109 445.609" enable-background="new 0 0 445.109 445.609"
-	 xml:space="preserve">
-<path fill="#FFFFFF" d="M435.188,385.773l-162.99-162.989L435.145,59.837c13.232-13.232,13.231-34.685,0-47.917l-1.996-1.997
-	c-13.231-13.232-34.686-13.232-47.916,0L222.284,172.871L59.878,10.465c-13.232-13.232-34.686-13.231-47.917,0l-1.997,1.997
-	c-13.231,13.231-13.232,34.685,0,47.917L172.37,222.785L9.923,385.231c-13.231,13.23-13.231,34.685,0,47.915l1.997,1.997
-	c13.232,13.231,34.686,13.231,47.917,0.001l162.448-162.447l162.988,162.988c13.23,13.23,34.685,13.23,47.916-0.001l1.996-1.997
-	C448.417,420.457,448.417,399.004,435.188,385.773z"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="446px" height="446px" viewBox="0 0 446 446" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>close_icon_white</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="close_icon_white" transform="translate(0.000000, -1.000000)" fill-rule="nonzero" fill="#6A3BBF">
+            <path d="M435.188,386.773 L272.198,223.784 L435.145,60.837 C448.377,47.605 448.376,26.152 435.145,12.92 L433.149,10.923 C419.918,-2.309 398.463,-2.309 385.233,10.923 L222.284,173.871 L59.878,11.465 C46.646,-1.767 25.192,-1.766 11.961,11.465 L9.964,13.462 C-3.267,26.693 -3.268,48.147 9.964,61.379 L172.37,223.785 L9.923,386.231 C-3.308,399.461 -3.308,420.916 9.923,434.146 L11.92,436.143 C25.152,449.374 46.606,449.374 59.837,436.144 L222.285,273.697 L385.273,436.685 C398.503,449.915 419.958,449.915 433.189,436.684 L435.185,434.687 C448.417,421.457 448.417,400.004 435.188,386.773 Z" id="Shape"></path>
+        </g>
+    </g>
 </svg>

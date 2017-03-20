@@ -33,231 +33,164 @@
     <link rel="icon" type="image/x-icon" sizes="32x32" href="/images/icon32.png">
   </head>
   <body class="no-js">
-    <section class="introduction">
-      <nav class="dark">
-        <div class="content-wrapper">
-          <a href="/" title="Go to the Doo homepage"><img src="../images/doo_logo_dark.svg"/></a>
-
-          <div id="nav-wrapper" class="no-click">
-            <ul id="nav-menu">
-              <li class="first"><a class="active" href="/" title="Doo for iOS">Doo <em>for</em> iOS</a></li>
-              <li class="second"><a class="new" href="/doo-for-mac" title="Doo for Mac">Doo <em>for</em> Mac</a></li>
-              <li class="third"><a href="/faq" title="View frequently asked questions">FAQ</a></li>
-              <li class="fourth"><a href="/support" title="Get help and view user guides">Support</a></li>
-              <li class="fifth"><a href="/contact" title="Contact the Doo team">Contact</a></li>
-            </ul>
-          </div>
-
-          <a id="hamburger-icon" href="#nav-links">
-            <span class="top"></span>
-            <span class="middle"></span>
-            <span class="bottom"></span>
-          </a>
-        </div>
-      </nav>
-
+    <nav id="sticky-nav">
       <div class="content-wrapper">
-        <div class="absolute-pos">
-          <h1><span class="block">Reminders</span> that <span class="block">work</span></h1>
-          <!-- <p class="main-text">Become a more productive you &mdash; <span class="block">one card at a time.</span></p> -->
-          <ul>
-            <li><a class="btn primary" href="https://itunes.apple.com/us/app/doo-get-things-done/id1066322956?ls=1&mt=8" title="Download Doo from the App Store">Buy on the App Store</a></li><li><a class="btn secondary" id="play-tour" href="#"><img src="../images/play_btn.svg"/>Watch the quick tour</a></li>
+        <a class="logo-link" href="/" title="Go to the Doo homepage"><img src="../images/doo_logo.svg"/></a>
+
+        <div id="nav-wrapper" class="no-click">
+          <ul id="nav-menu">
+            <li class="first"><a class="active" href="/" title="Read an overview of Doo and popular features">Features</a></li>
+            <li class="second"><a href="/faq" title="View frequently asked questions">FAQ</a></li>
+            <li class="third"><a href="/support" title="Get help and view user guides">Support</a></li>
+            <li class="fourth"><a href="/contact" title="Contact the Doo team">Contact</a></li>
           </ul>
         </div>
 
-        <img class="intro-hero-img" src="../images/iphone_hero.png" />
+        <a id="hamburger-icon" href="#nav-links">
+          <span class="top"></span>
+          <span class="middle"></span>
+          <span class="bottom"></span>
+        </a>
       </div>
+    </nav>
+
+    <section class="introduction">
+      <h1><span class="block">Reminders that work</h1>
+
+      <ul class="horizontal-buttons">
+        <li><a class="btn primary with-icon" id="play-tour" href="#"><img src="../images/play_btn.svg"/>Watch the quick tour</a></li><li><a class="btn secondary" href="https://itunes.apple.com/us/app/doo-get-things-done/id1066322956?ls=1&mt=8" title="Download Doo from the App Store">Buy on the App Store</a></li>
+      </ul>
     </section>
 
-    <section class="logos">
-        <ul>
-          <li>As seen in:</li>
-          <li><img src="../images/buzzfeed_logo.svg" alt="Buzzfeed" /></li>
-          <li><img src="../images/tnw_logo.svg" alt="The Next Web" /></li>
-          <li><img src="../images/wired_logo.svg" alt="Wired" /></li>
-          <li><img src="../images/lifehacker_logo.svg" alt="LifeHacker" /></li>
-          <li><img src="../images/netted_logo.svg" alt="Netter by the Webbys" /></li>
-        </ul>
-    </section>
+    <div class="floating-iphone-container">
+      <span class="doo-app-header">
+        <span><img class="doo-app-logo" src="../images/doo_logo.svg"/></span>
+        <span class="count">1</span>
+      </span>
 
-    <section class="how-it-works">
-      <div class="content-wrapper">
-        <h2>Cards help you focus</h2>
+      <div class="card cleaning one">
+        <span class="card-date">Due today at 5:00pm</span>
 
-        <div class="step-by-step">
-          <div class="step step1">
-            <div class="iphone">
-              <img src="../images/creation.png" alt="Apple" />
-            </div>
+        <span class="card-title">Clean the apt</span>
+        <img class="card-image" src="../images/cleaningImage.jpg"/>
+      </div>
 
-            <h3>Break down projects</h3>
-            <p>Create tasks with a single, achievable step. Easy to start easy to finish.</p>
-          </div>
+      <div class="card coffee two">
+        <span class="card-date">Due 2 minutes ago</span>
 
-          <div class="step step2">
-            <div class="iphone">
-              <img src="../images/snooze.png" alt="Apple" />
-            </div>
+        <span class="card-title">Grab coffee with Mel</span>
+        <span class="card-subtitle">Pushcart on 2nd</span>
+        <img class="card-image" src="../images/coffeeImage.jpg"/>
+      </div>
 
-            <h3>Snooze to focus</h3>
-            <p>Create tasks with a single, achievable step. Easy to start easy to finish.</p>
-          </div>
+      <div class="card groceries three">
+        <span class="card-date">Due 5 minutes ago</span>
 
-          <div class="step step3">
-            <div class="iphone">
-              <img src="../images/complete.png" alt="Apple" />
-            </div>
+        <span class="card-title">Groceries</span>
+        <img class="card-image" src="../images/groceryImage.jpg"/>
+      </div>
 
-            <h3>Get things done</h3>
-            <p>Overcome procrastination by completing your stack each day. See your progress add up over time.</p>
-          </div>
-        </div>
+      <div class="card meeting four">
+        <span class="card-date">Due 10 minutes ago</span>
+
+        <span class="card-title">PTO Meeting</span>
+        <span class="card-subtitle">Room 304 with Ms. Silva</span>
+        <img class="card-image" src="../images/meetingImage.jpg"/>
+      </div>
+
+      <img class="floating-iphone-screen" src="../images/doo_app_bg.png" />
+      <img class="floating-iphone" src="../images/iphone_hero.png" />
+    </div>
+
+    <section class="mini-tour">
+      <div class="mini-tour--item transformation">
+        <h2>Doo turns your reminders into swipeable cards.</h2>
+      </div>
+
+      <div class="mini-tour--item completion">
+        <h2>Swipe cards up to mark them complete.</h2>
+      </div>
+
+      <div class="mini-tour--item snooze">
+        <h2>Swipe cards down to snooze them for later.</h2>
+      </div>
+
+      <div class="mini-tour--item focus">
+        <h2>Improve your focus and beat procrastination.</h2>
       </div>
     </section>
 
     <section class="key-features">
-      <div class="content-wrapper">
-        <h2>Key features</h2>
-      </div>
+      <h2>All the features you&rsquo;d expect, <span class="block">plus some great surprises.</span></h2>
 
-      <div class="content-wrapper">
-        <div class="feature-compliment">
-          <img src="../images/sharing.png" alt="Apple" />
-        </div>
-
-        <div class="key-feature">
-          <div class="icon blue"><img src="../images/design_icon.svg" alt="Apple" /></div>
-          <h3>An acclaimed design</h3>
-          <p>Doo helps you make the most of your time with thoughtful details. Every interaction and element is designed for speed, warmth, and reliability.</p>
-        </div>
-
-        <div class="key-feature">
-          <div class="icon orange"><img src="../images/share_icon.svg" alt="Apple" /></div>
-          <h3>Collaborate with others</h3>
-          <p>Share cards with others using iCloud. Invite people using email, text, Airdrop, and more. Revoke access with the tap of a button.</p>
-        </div>
-
-        <div class="key-feature">
-          <div class="icon green"><img src="../images/checklist_icon.svg" alt="Apple" /></div>
-          <h3>Create checklists</h3>
-          <p>Create grocery lists or pack for a trip. Doo makes it easy to create checklists that are out of the way until you need them.</p>
-        </div>
-
-        <div class="key-feature">
-          <div class="icon red"><img src="../images/location_icon.svg" alt="Apple" /></div>
-          <h3>Be reminded at a location</h3>
-          <p>Get reminders when arriving or leaving a location. Customize the activation distance and repeat options.</p>
-        </div>
-
-        <div class="key-feature">
-          <div class="icon orange"><img src="../images/options_icon.svg" alt="Apple" /></div>
-          <h3>Customizable date and repeat options</h3>
-          <p>Doo has powerful functionality built-in. Repeat on specific weekdays and custom intervals. Select end dates. You can even turn off notifications for single reminders. Simplicity meets power.</p>
-        </div>
-
-        <div class="key-feature">
-          <div class="icon blue"><img src="../images/icloud_icon.svg" alt="Apple" /></div>
+      <ul class="draggable">
+        <li>
+          <img src="./images/feature_card_1.png"/>
+          <h3>Location reminders</h3>
+          <p>Get reminders arriving or leaving a location. Customize the activation distance and repeat options.</p>
+        </li><li>
+          <img src="./images/feature_card_2.png"/>
+          <h3>Collaboration</h3>
+          <p>Share reminders with anyone using email, iMessage, and more. Collaborate on grocery lists, trips, and more</p>
+        </li><li>
+          <img src="./images/feature_card_3.png"/>
+          <h3>Checklists</h3>
+          <p>Checklists are great for almost anything. And because they’re out of the way until you need them, you can stay focused.</p>
+        </li><li>
+          <img src="./images/feature_card_4.png"/>
+          <h3>Fully Customizable</h3>
+          <p>Get reminders arriving or leaving a location. Customize the activation distance and repeat options.</p>
+        </li><li>
+          <img src="./images/feature_card_1.png"/>
+          <h3>Schedule View</h3>
+          <p>A place for all upcoming and completed reminders. Complete tasks early, prioritize your day, and more.</p>
+        </li><li>
+          <img src="./images/feature_card_1.png"/>
           <h3>Sync with iCloud</h3>
-          <p>Doo saves your reminders and to–dos to iCloud Drive. Items created on one device are automatically pushed to others. And if you lose your device, your data is restored so you can pick up where you left off.</p>
-          <a href="#" class="btn tertiary">See all 151 features</a>
-        </div>
+          <p>Save your reminders to iCloud Drive to sync between multiple devices. Seamlessly restore your reminder data on any new devices.</p>
+        </li>
+      </ul>
 
-      </div>
+      <a class="btn primary chunky" href="/features">View the full list of features</a>
     </section>
 
     <section class="awards-press">
-      <div class="content-wrapper">
-        <ul class="app-store invisible">
-          <li><img src="../images/app_store_best_new_apps.svg"/></li>
-          <li><img src="../images/app_store_best_of_feb.svg"/></li>
-          <li><img src="../images/app_store_best_of_2016.svg"/></li>
-        </ul>
+      <img class="quote-icon" src="../images/quote_icon.svg"/>
 
-        <h2>People love Doo</h2>
+      <blockquote>
+        I absolutely <span class="block">love this app</span>
+        <cite>&mdash; Nicole Nguyen, <em>Buzzfeed</em></cite>
+      </blockquote>
 
-        <ul class="reviews invisible">
-          <li class="the-next-web">
-            <img src="../images/tnw_logo.svg"/>
-            <p>&ldquo;Doo is a beautiful way to get things done without stressing yourself out.&rdquo;</p>
-          </li>
-          <li class="buzzfeed">
-            <img src="../images/buzzfeed_logo.svg"/>
-            <p>&ldquo;I absolutely love this app... *incredibly* satisfying...&rdquo;</p>
-          </li>
-          <li class="wired">
-            <img src="../images/wired_logo.svg"/>
-            <p>&ldquo;There&rsquo;s just enough guilt involved in hitting snooze that I often just complete the task. That&rsquo;s the point.&rdquo;</p>
-          </li>
-        </ul>
+      <ul class="app-store">
+        <li><img src="../images/app_store_best_new_apps.svg"/></li>
+        <li><img src="../images/app_store_best_of_feb.svg"/></li>
+        <li><img src="../images/app_store_best_of_2016.svg"/></li>
+      </ul>
 
-        <noscript>
-          <ul class="app-store">
-            <li><img src="../images/app_store_best_new_apps.svg"/></li>
-            <li><img src="../images/app_store_best_of_feb.svg"/></li>
-            <li><img src="../images/app_store_best_of_2016.svg"/></li>
-          </ul>
+      <p class="logos-label">With features and reviews by:</p>
 
-          <ul class="reviews">
-            <li class="the-next-web">
-              <img src="../images/tnw_logo.jpg"/>
-              <p>&ldquo;Doo is a beautiful way to get things done without stressing yourself out.&rdquo;</p>
-            </li>
-            <li class="buzzfeed">
-              <img src="../images/buzzfeed_logo.jpg"/>
-              <p>&ldquo;I absolutely love this app... *incredibly* satisfying...&rdquo;</p>
-            </li>
-            <li class="wired">
-              <img src="../images/wired_logo.jpg"/>
-              <p>&ldquo;There&rsquo;s just enough guilt involved in hitting snooze that I often just complete the task. That&rsquo;s the point.&rdquo;</p>
-            </li>
-          </ul>
-        </noscript>
-      </div>
+      <ul class="logos">
+        <li><img src="../images/tnw_logo.svg"/></li>
+        <li><img src="../images/buzzfeed_logo.svg"/></li>
+        <li><img src="../images/wired_logo.svg"/></li>
+        <li><img src="../images/netted_logo.svg"/></li>
+        <li><img src="../images/lifehacker_logo.svg"/></li>
+      </ul>
     </section>
 
-    <section class="conclusion">
-      <img class="app-icon" src="../images/doo_icon_large.png"/>
-      <p>Get the app that&rsquo;s changing productivity.</p>
+    <section class="download-prompt">
+      <h2>Get the app that&rsquo;s changing productivity.</h2>
       <a href="https://itunes.apple.com/us/app/doo-get-things-done/id1066322956?ls=1&mt=8" title="Get Doo on the App Store"><img src="../images/Download_on_the_App_Store_Badge_US-UK_135x40.svg" alt="App Store Badge"/></a>
 
-      <img class="reviews-ipad" src="../images/conclusion_hero@2x.jpg" alt="Doo for iPad">
+      <img class="conclusion-hero" src="../images/conclusion_images@2x.png"/>
 
-    </section>
-
-    <section id="teaser">
       <div class="content-wrapper">
-        <a href="/doo-for-mac" title="Learn more about Doo for Mac">
-          <strong>Introducing Doo for Mac</strong>
-          <span class="subtitle"><span class="block">The newest addition </span>to the Doo family &rsaquo;</span>
+        <h2><span class="block">Also available</span> for macOS</h2>
+        <p class="subtitle"><span class="block">The same great experience.</span>Made for your Mac.</p>
+        <a class="btn secondary" href="/doo-for-mac">Get Doo for Mac</a>
 
-          <img class="lazy-load invisible" src="../images/placeholder.png" data-src="../images/mac_teaser.jpg" data-src-retina="../images/mac_teaser@2x.jpg" alt="Doo for Mac">
-
-          <noscript>
-            <img src="../images/mac_teaser.jpg" alt="Doo for Mac">
-          </noscript>
-        </a>
-      </div>
-    </section>
-
-    <section id="footer">
-      <div class="content-wrapper">
-        <ul id="nav-links">
-          <li><a href="/" title="Doo for iOS">Doo <em>for</em> iOS</a></li>
-          <li><a href="/doo-for-mac" title="Doo for Mac">Doo <em>for</em> Mac</a></li>
-          <li><a href="/faq" title="View frequently asked questions">FAQ</a></li>
-          <li><a href="/support" title="Get help and view user guides">Support</a></li>
-          <li><a href="/contact" title="Contact the Doo team">Contact</a></li>
-          <li><a href="/privacy" title="Read the Doo privacy policy">Privacy Policy</a></li>
-          <li><a href="/change-log" title="Read the change logs">Release Notes</a></li>
-        </ul>
-
-        <ul id="social">
-          <li><a href="https://www.facebook.com/getdooapp/" class="facebook-link" title="Like Doo on Facebook">Facebook</a></li>
-          <li><a href="https://twitter.com/getdooapp" class="twitter-link" title="Follow Doo on Twitter">Twitter</a></li>
-          <li><a href="https://instagram.com/getdooapp" class="instagram-link" title="Follow Doo on Instagram">Instagram</a></li>
-        </ul>
-
-        <p><span class="block">Made with &hearts; in NYC</span> Copyright &copy; 2016 Ciarlo Software, LLC </p>
+        <img class="teaser-ipad" src="../images/footer_peak@2x.png" alt="Doo for Mac">
       </div>
     </section>
 

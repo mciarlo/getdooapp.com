@@ -31,15 +31,15 @@
     <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png">
     <link rel="icon" type="image/x-icon" sizes="32x32" href="/images/icon32.png">
   </head>
-  <body class="support">
-    <nav>
+  <body class="no-js support">
+    <nav id="sticky-nav">
       <div class="content-wrapper">
-        <h2><a href="/" title="Go to the Doo homepage">Doo</a></h2>
+        <a class="logo-link" href="/" title="Go to the Doo homepage"><img src="../images/doo_logo.svg"/></a>
 
         <div id="nav-wrapper" class="no-click">
           <ul id="nav-menu">
-            <li class="first"><a href="/" title="Doo for iOS">Doo <em>for</em> iOS</a></li>
-            <li class="second"><a class="new" href="/doo-for-mac" title="Doo for Mac">Doo <em>for</em> Mac</a></li>
+            <li class="first"><a href="/" title="Doo for iPhone and iPad">iPhone + iPad</a></li>
+            <li class="second"><a href="/doo-for-mac" title="Doo for Mac">Mac</a></li>
             <li class="third"><a href="/faq" title="View frequently asked questions">FAQ</a></li>
             <li class="fourth"><a class="active" href="/support" title="Get help and view user guides">Support</a></li>
             <li class="fifth"><a href="/contact" title="Contact the Doo team">Contact</a></li>
@@ -56,12 +56,12 @@
 
     <section id="support-topics">
       <div class="content-wrapper">
-        <h1><span class="block">Welcome to </span>Doo Support</h1>
-        <p class="main-text">Pick a topic below to see a list of common questions and answers.</p>
+        <span class="welcome-text">Welcome to Doo support</span>
+        <h1>Select a topic to get started</h1>
         <ul>
           <li class="first">
             <a href="#creating-reminders-topic" class="support-topic-filter" title="Filter support topics to reminder creation and editing">
-              <img src="../images/support_icon_1.png"/>
+              <img src="../images/support_icon_creation.svg"/>
               <span>Reminder Creation</span>
             </a>
             <a href="#creating-reminders-topic" class="topic-cancel-filter" title="Remove this filter">+</a>
@@ -69,7 +69,7 @@
 
           <li class="second">
             <a href="#reminder-actions-topic" class="support-topic-filter" title="Filter support topics to reminder completion, snooze, and skip">
-              <img src="../images/support_icon_2.png"/>
+              <img src="../images/support_actions_icon.svg"/>
               <span>Reminder Actions</span>
             </a>
             <a href="#reminder-actions-topic" class="topic-cancel-filter" title="Remove this filter">+</a>
@@ -77,7 +77,7 @@
 
           <li class="third">
             <a href="#icloud-topic" class="support-topic-filter" title="Filter support topics to iCloud syncing">
-              <img src="../images/support_icon_3.png"/>
+              <img src="../images/support_icloud_icon.svg"/>
               <span>iCloud Syncing</span>
             </a>
             <a href="#icloud-topic" class="topic-cancel-filter" title="Remove this filter">+</a>
@@ -85,7 +85,7 @@
 
           <li class="fourth">
             <a href="#extension-topic" class="support-topic-filter" title="Filter support topics to sharing">
-              <img src="../images/support_icon_4.png"/>
+              <img src="../images/support_extension_icon.svg"/>
               <span>Share Extension</span>
             </a>
             <a href="#extension-topic" class="topic-cancel-filter" title="Remove this filter">+</a>
@@ -93,7 +93,7 @@
 
           <li class="fifth">
             <a href="#widget-topic" class="support-topic-filter" title="Filter support topics to the notification enter widget">
-              <img src="../images/support_icon_5.png"/>
+              <img src="../images/support_widget_icon.svg"/>
               <span>iOS Widget</span>
             </a>
             <a href="#widget-topic" class="topic-cancel-filter" title="Remove this filter">+</a>
@@ -101,7 +101,7 @@
 
           <li class="sixth">
             <a href="#general-topic" class="support-topic-filter" title="Filter support topics to Accessibility">
-              <img src="../images/support_icon_6.png"/>
+              <img src="../images/support_accessibility_icon.svg"/>
               <span>General Help</span>
             </a>
             <a href="#general-topic" class="topic-cancel-filter" title="Remove this filter">+</a>
@@ -404,12 +404,8 @@
           </ul>
         </div>
       </div>
-    </section>
 
-    <section id="support-contact-link">
-      <div class="content-wrapper">
-        <p class="faq-wrap-up"><img src="../images/lift-saver.jpg" alt="Life Raft" /><span class="block">Didn&rsquo;t see your topic?</span><a href="/contact" title="Contact Doo support">Contact Support</a></p>
-      </div>
+      <p class="faq-wrap-up">Didn&rsquo;t see your question? <a class="btn secondary" href="/contact" title="Contact Doo support">Contact Us</a></p>
     </section>
 
     <section id="footer">
