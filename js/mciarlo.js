@@ -3,7 +3,7 @@ $(function () {
 		imageActivationOffset,
 		isElementInViewport,
 		NAV_SCROLL_DISTANCE = 40,
-		TOUR_ITEM_TOP_OFFSET = 220,
+		TOUR_ITEM_TOP_OFFSET = 420,
 		TOUR_ITEM_ACTIVATION_DISTANCE = 200,
 		WIDTH_TO_DISABLE_EFFECTS = 768,
 		CARD_ITEM_ACTIVATION_DISTANCE = 500,
@@ -13,19 +13,16 @@ $(function () {
 		MAX_ILLUSTRATION_HERO_2_ROTATION_ANGLE = -6,
 		START_ILLUSTRATION_HERO_2_ROTATION_ANGLE = 0,
 		HERO_IMAGE_REVEAL_DELAY = 400,
+		IPHONE_LEFT_FIXED_OFFSET = .22,
 		NAV_DELAY = 400,
+		NAV_TOP_ACTIVATION = 30,
 		NUMBER_OF_FEATURES = 6,
 		$miniTour = $(".mini-tour:first"),
-		setUpScrollingFeatures = function () {
-			var featuresLeftOffset = Math.round($window.outerWidth() * .1),
-				featuresLeftRightPadding = featuresLeftOffset * 2,
-				featureWidth = Math.round(($window.outerWidth() - featuresLeftRightPadding) / 3);
-			$(".key-features ul").css({
-				"width": (featureWidth * NUMBER_OF_FEATURES) + featuresLeftRightPadding,
-				"left" : featuresLeftOffset
-			}).find("li").css("width", featureWidth);
-
-		},
+		$features = $(".mini-tour--item:first"),
+		$iphone = $(".floating-iphone-container"),
+		$floatingPhone = $iphone.find(".floating-iphone:first"),
+		itemHeight = Math.round($(".mini-tour:first").outerHeight() / 4),
+		iPhoneTop = $iphone.offset().top,
 		preventDefaultFormAction = function (ev) {
 			ev.preventDefault();
 			ev.stopPropagation();
@@ -36,44 +33,28 @@ $(function () {
 					$(".card.coffee").removeClass("one two three four completed").addClass("completed");
 					$(".card.groceries").removeClass("one two three four snoozed").addClass("one");
 					$(".card.meeting").removeClass("one two three four completed").addClass("two");
-					$(".card.cleaning").removeClass("one two three four").addClass("three");
-					$(".doo-app-header .count").text(3);
+					$(".doo-app-header .count").text(2);
 					break;
 				}
 				case 2: {
 					$(".card.coffee").removeClass("one two three four completed").addClass("completed");
 					$(".card.groceries").removeClass("one two three four snoozed").addClass("snoozed");
 					$(".card.meeting").removeClass("one two three four completed").addClass("one");
-					$(".card.cleaning").removeClass("one two three four").addClass("two");
-					$(".doo-app-header .count").text(2);
+					$(".doo-app-header .count").text(1).fadeIn();
 					break;
 				}
 				case 3: {
 					$(".card.coffee").removeClass("one two three four completed").addClass("completed");
 					$(".card.groceries").removeClass("one two three four snoozed").addClass("snoozed");
 					$(".card.meeting").removeClass("one two three four completed").addClass("completed");
-					$(".card.cleaning").removeClass("one two three four").addClass("one");
-					$(".doo-app-header .count").text(1);
-					break;
-				}
-				case 4: {
-					$(".card.cleaning").removeClass("two three four").addClass("skipped");
-					
-					setTimeout(function () {
-						$(".card.cleaning").removeClass("one two three four skipped").addClass("four");
-						$(".card.coffee").removeClass("one two three four completed").addClass("one");
-						$(".card.groceries").removeClass("one two three four snoozed").addClass("two");
-						$(".card.meeting").removeClass("one two three four snoozed").addClass("three");
-					}, 300);
-
+					$(".doo-app-header .count").text(0).fadeOut();
 					break;
 				}
 				default: {
-					$(".card.cleaning").removeClass("one two three four skipped").addClass("one");
-					$(".card.coffee").removeClass("one two three four completed").addClass("two");
-					$(".card.groceries").removeClass("one two three four snoozed").addClass("three");
-					$(".card.meeting").removeClass("one two three four completed").addClass("four");
-					$(".doo-app-header .count").text(4);
+					$(".card.coffee").removeClass("one two three four completed").addClass("one");
+					$(".card.groceries").removeClass("one two three four snoozed").addClass("two");
+					$(".card.meeting").removeClass("one two three four completed").addClass("three");
+					$(".doo-app-header .count").text(3);
 					break;
 				}
 			}
@@ -96,58 +77,93 @@ $(function () {
 			}
 		},
 		updateMiniTour = function () {
-			var $features = $(".mini-tour--item:first");
-
 			if ($features.length == 0) {
 				return;
 			}
 
 			var scrollTop = $window.scrollTop(),
-				itemHeight = Math.round($(".mini-tour--item:first").outerHeight()),
 				transformationTopOffset = $miniTour.offset().top,
-				completionTopOffset = itemHeight,
-				snoozeTopOffset = itemHeight * 2,
-				focusTopOffset = itemHeight * 3,
-				iPhoneTopSnap = itemHeight * 4;
+				itemHeight = $miniTour.outerHeight() / 4,
+				completionTopOffset = itemHeight + (itemHeight * .58),
+				snoozeTopOffset = itemHeight * 2 + (itemHeight * .9),
+				focusTopOffset = itemHeight * 4 + (itemHeight * .2),
+				iPhoneTopSnap = itemHeight * 4 + (itemHeight * .35),
+				iphoneWindowWidthOffset = $window.width() * IPHONE_LEFT_FIXED_OFFSET,
+				iPhonePercent = Math.max(0, (scrollTop / (iPhoneTop + $window.height() / 3)));
 
-			if (scrollTop < transformationTopOffset) {
+			if ($window.width() < 982) {
+				completionTopOffset = itemHeight + (itemHeight * .28);
+				snoozeTopOffset = itemHeight * 2 + (itemHeight * .5);
+				focusTopOffset = itemHeight * 3 + (itemHeight * .95);
+				iPhoneTopSnap = itemHeight * 4 + (itemHeight * .1);
+
+			} else if ($window.width() >= 982 && $window.width() < 1220) {
+				completionTopOffset = itemHeight + (itemHeight * .28);
+				snoozeTopOffset = itemHeight * 2 + (itemHeight * .5);
+				focusTopOffset = itemHeight * 4 + (itemHeight * .1);
+				iPhoneTopSnap = itemHeight * 4 + (itemHeight * .1);
+
+			} else if ($window.width() >= 1220 && $window.width() < 1440) {
+				completionTopOffset = itemHeight + (itemHeight * .5);
+				snoozeTopOffset = itemHeight * 2 + (itemHeight * .7);
+				focusTopOffset = itemHeight * 3 + (itemHeight * 1.2);
+				iPhoneTopSnap = itemHeight * 4 + (itemHeight * .2);
+
+			}
+			
+			iPhonePercent = Math.min(1, iPhonePercent);
+							console.log(iPhonePercent);
+
+			$floatingPhone.css({
+				"-webkit-transform": "translate3d(" + (-iPhonePercent * iphoneWindowWidthOffset) + "px,0,0)",
+				"-moz-transform": "translate3d(" + (-iPhonePercent * iphoneWindowWidthOffset) + "px,0,0)",
+				"-ms-transform": "translate3d(" + (-iPhonePercent * iphoneWindowWidthOffset) + "px,0,0)",
+				"-o-transform": "translate3d(" + (-iPhonePercent * iphoneWindowWidthOffset) + "px,0,0)",
+				"transform": "translate3d(" + (-iPhonePercent * iphoneWindowWidthOffset) + "px,0,0)"
+			});
+
+			if (scrollTop >= iPhoneTop - 140) {
+				if (!$floatingPhone.hasClass("fixed")) {
+					$floatingPhone.addClass("fixed");
+					console.log("added fixed iphone");
+				}
+			} else {
+				$floatingPhone.removeClass("fixed");
+				console.log("removing fixed iphone");
+			}
+
+			if (scrollTop < completionTopOffset) {
 				setActiveCard(0);
 
-			} else if (scrollTop > transformationTopOffset + CARD_ITEM_ACTIVATION_DISTANCE && scrollTop < completionTopOffset) {
-				setActiveCard(4);
-
-			} else if (scrollTop > completionTopOffset + CARD_ITEM_ACTIVATION_DISTANCE && scrollTop < snoozeTopOffset) {
+			} else if (scrollTop > completionTopOffset  && scrollTop < snoozeTopOffset) {
 				setActiveCard(1);
 
-			} else if (scrollTop > snoozeTopOffset + CARD_ITEM_ACTIVATION_DISTANCE && scrollTop < focusTopOffset) {
+			} else if (scrollTop > snoozeTopOffset && scrollTop < focusTopOffset) {
 				setActiveCard(2);
 
-			} else if (scrollTop > focusTopOffset + CARD_ITEM_ACTIVATION_DISTANCE) {
+			} else if (scrollTop > focusTopOffset) {
 				setActiveCard(3);
 			}
 
-			detectScrollBehaviorForItem($(".mini-tour--item.transformation"), transformationTopOffset, transformationTopOffset, completionTopOffset);
-			detectScrollBehaviorForItem($(".mini-tour--item.completion"), completionTopOffset, transformationTopOffset, snoozeTopOffset);
-			detectScrollBehaviorForItem($(".mini-tour--item.snooze"), snoozeTopOffset, transformationTopOffset, focusTopOffset);
-			detectScrollBehaviorForItem($(".mini-tour--item.focus"), focusTopOffset, transformationTopOffset, focusTopOffset + completionTopOffset);
+			$(".phone-zero-state")[scrollTop > focusTopOffset ? "addClass" : "removeClass"]("active");
 
 			if (scrollTop > iPhoneTopSnap) {
-				if ($(".floating-iphone-container").hasClass("scroll")) {
+				if ($floatingPhone.hasClass("scroll")) {
 					return;
 				}
-
-				$(".floating-iphone-container").addClass("scroll").css("top", focusTopOffset + completionTopOffset);
+				$floatingPhone.addClass("scroll").css("top", iPhoneTopSnap - $(".introduction").outerHeight() + 140);
 
 			} else {
-				$(".floating-iphone-container").removeClass("scroll").css("top", "0");
+				$floatingPhone.removeClass("scroll").css("top", "");
 			}
 
 		},
 		updateNav = function () {
-			var percentage = $window.scrollTop() / NAV_SCROLL_DISTANCE;
+			var percentage = Math.max($window.scrollTop() - NAV_TOP_ACTIVATION, 0) / NAV_SCROLL_DISTANCE;
 			percentage = $window.scrollTop() == 0 ? 0 : percentage;
 			percentage = Math.min(percentage, 1);
 			$("#sticky-nav").css("background-color", "rgba(106, 59, 191," + percentage + ")");
+			$("#sticky-nav")[percentage > 0 ? "removeClass" : "addClass"]("bordered");
 		};
 
 	isElementInViewport = function (el) {
@@ -157,72 +173,43 @@ $(function () {
         	(rect.top < (window.innerHeight || document.documentElement.clientHeight) && rect.top > 0);
 	};
 
-	$('body').removeClass('no-js');
 	$(".mini-tour--item.transformation, .mini-tour--item.completion, .mini-tour--item.snooze, .mini-tour--item.focus").addClass("fadedOut");
 
+	var scrollHandling = {
+	    allow: true,
+	    reallow: function() {
+	        scrollHandling.allow = true;
+	    },
+	    delay: 50 //(milliseconds) adjust to the highest acceptable value
+	};
+
 	$window.scroll(function () {
-		updateNav();
-		updateMiniTour();
+		if ($window.width() >= 768) {
+			if (scrollHandling.allow) {
+				updateNav();
+				updateMiniTour();
+		        scrollHandling.allow = false;
+				setTimeout(scrollHandling.reallow, scrollHandling.delay);
+			}
+		}
 	});
 
+	var onResize = function () {
+				itemHeight = Math.round($(".mini-tour:first").outerHeight() / 4);
+		iPhoneTop = $iphone.offset().top;
+
+		$('body')[$window.width() < 768 ? "addClass" : "removeClass"]('no-js');
+		updateMiniTour();
+	};
+
 	$window.resize(function () {
-		//setUpScrollingFeatures();
+		onResize();
 	});
 
 	//setUpScrollingFeatures();
 	updateMiniTour();
+	onResize();
 
-	$(".features-prev").click(function (ev) {
-		preventDefaultFormAction(ev);
-
-	});
-
-	$(".features-next").click(function (ev) {
-		preventDefaultFormAction(ev);
-	});
-
-/*
-	var dragUX = interact('.draggable').draggable({
-		snap: { targets: [
-			{ x: 0, y: 0, range: 50 }
-		]},
-		onmove: dragMoveListener,
-			restrict     : {
-			restriction: 'parent',
-			elementRect: { top: 0, left: .4, bottom: 0, right: .5 }
-		},
-		inertia      : true,
-		axis         : "x"
-	});
-
-	interact.createSnapGrid({
-	  	x: 50, 
-	  	y: 50, 
-	  	range: 10,
-	  	offset: { x: 5, y: 10 }
-	});
-
-	$('.draggable img').on('dragstart', function(event) { event.preventDefault(); });
-
-	  function dragMoveListener (event) {
-	    var target = event.target,
-	        // keep the dragged position in the data-x/data-y attributes
-	        x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx,
-	        y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
-
-	    // translate the element
-	    target.style.webkitTransform =
-	    target.style.transform =
-	      'translate(' + x + 'px, ' + 0 + 'px)';
-
-	    // update the posiion attributes
-	    target.setAttribute('data-x', x);
-	    target.setAttribute('data-y', y);
-	  }
-
-	  // this is used later in the resizing and gesture demos
-	  window.dragMoveListener = dragMoveListener;
-*/
 	// Enable our hamburger menu for mobile
 	$('#hamburger-icon').click(function (ev) {
 		preventDefaultFormAction(ev);
@@ -314,8 +301,9 @@ $(function () {
 		$(".faq-link").click(function (ev) {
 			ev.preventDefault();
 			
-			var el = $(this).attr('href'), $el = $(el), multiplier = $window.outerWidth() < 600 ? .05 : .3;
-		    $("body, html").animate({'scrollTop' :  $el.offset().top - ($window.outerHeight() * multiplier)}, SCROLL_ANIMATION_DURATION, function () {
+			var navHeight = $("nav:first").height(),
+				el = $(this).attr('href'), $el = $(el), multiplier = $window.outerWidth() < 600 ? .05 : .3;
+		    $("body, html").animate({'scrollTop' :  $el.offset().top - ($window.outerHeight() * multiplier) + navHeight}, SCROLL_ANIMATION_DURATION, function () {
 		    	$el.addClass('highlight');
 		    	window.location.hash = el;
 

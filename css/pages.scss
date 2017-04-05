@@ -8,13 +8,21 @@
   display: block
  }
 
+ .button-style {
+  background: $subtlePurple;
+  padding: .15em .5em;
+  margin: 0 .3em;
+  border-radius: 3px;
+ }
+
  .welcome-text {
   text-align: center;
   display: block;
   text-transform: uppercase;
   letter-spacing: .2em;
   color: $lightPurple;
-  margin-bottom: .5em;
+  margin-bottom: 1em;
+  font-size: .7em;
  }
 
 #contact-form {
@@ -79,7 +87,8 @@ input, textarea, .selection {
   }
 
   &:focus {
-    border-color: $lightPurple;
+    border-color: $darkerPurple;
+    background-color: $darkerPurple;
   }
 
   &.required {
@@ -202,7 +211,7 @@ label, input, textarea, .selection {
   }
 
   p {
-    margin-bottom: .7em;
+    margin-bottom: 1em;
   }
 }
 
@@ -270,7 +279,7 @@ label, input, textarea, .selection {
     width: 20px;
     height: 20px;
     display: inline-block;
-    margin: 0 .2em;
+    margin: 0 .5em;
     float: none;
   }
 
@@ -336,14 +345,18 @@ label, input, textarea, .selection {
 
   li {
     padding: 1em;
-    border-top: 1px solid $subtlePurple;
+    border-top: 1px solid $purple;
   }
+}
+
+#footer {
+  background: $darkPurple;
 }
 
 #footer p {
   color: $lightPurple;
-  font-size: .6em;
-  margin-top: 4em;
+  font-size: .7em;
+  margin-top: 2.5em;
 }
 
  /***
@@ -580,6 +593,12 @@ a.support-topic-filter:hover {
   }
 }
 
+.feature-group-icon {
+  display: inline-block;
+  margin-right: 12px;
+  height: 22px;
+}
+
 .feature-group {
   padding-top: 40px;
   
@@ -616,7 +635,7 @@ a.support-topic-filter:hover {
 }
 
 #support-topics,
-.features,
+.features-list,
 #faq,
 #contact-form,
 .paragraphs,
@@ -753,6 +772,10 @@ a.support-topic-filter:hover {
       margin: 0 auto;
     }
   }
+
+   .welcome-text {
+  font-size: 1em;
+ }
 
   .table-of-contents a {
     font-size: 1.2em;
@@ -1033,6 +1056,11 @@ a.support-topic-filter:hover {
     }
   }
 
+  .feature-group-icon {
+    margin-right: 18px;
+    height: 32px;
+  }
+
   .feature-group {
     padding-top: 40px;
 
@@ -1052,11 +1080,12 @@ a.support-topic-filter:hover {
   .device-label {
     text-transform: uppercase;
     letter-spacing: .1em;
-    font-weight: bold;
+    font-weight: normal;
     font-size: .7em;
     color: $lightPurple;
   }
 
+  .introduction h1,
   .features h1,
   #contact-form h1,
   #faq h1,
@@ -1065,7 +1094,7 @@ a.support-topic-filter:hover {
   }
 
   #support-topics,
-  .features,
+  .features-list,
   #faq,
   #contact-form,
   .paragraphs,
@@ -1224,6 +1253,7 @@ a.support-topic-filter:hover {
     }
   }
 
+  .introduction h1,
   .features h1,
   #contact-form h1,
   #faq h1,
@@ -1232,7 +1262,7 @@ a.support-topic-filter:hover {
   }
 
   #support-topics,
-  .features,
+  .features-list,
   #faq,
   #contact-form,
   .paragraphs,
@@ -1321,6 +1351,7 @@ a.support-topic-filter:hover {
     }
   }
 
+  .introduction h1,
   .features h1,
   #contact-form h1,
   #faq h1,
@@ -1329,7 +1360,7 @@ a.support-topic-filter:hover {
   }
 
   #support-topics,
-  .features,
+  .features-list,
   #faq,
   #contact-form,
   .paragraphs,

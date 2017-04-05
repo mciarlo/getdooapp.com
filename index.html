@@ -33,7 +33,7 @@
     <link rel="icon" type="image/x-icon" sizes="32x32" href="/images/icon32.png">
   </head>
   <body class="no-js">
-    <nav id="sticky-nav">
+    <nav id="sticky-nav" class="bordered">
       <div class="content-wrapper">
         <a class="logo-link" href="/" title="Go to the Doo homepage"><img src="../images/doo_logo.svg"/></a>
 
@@ -60,46 +60,46 @@
       <ul class="horizontal-buttons">
         <li><a class="btn primary with-icon" id="play-tour" href="#"><img src="../images/play_btn.svg"/>Watch the quick tour</a></li><li><a class="btn secondary" href="https://itunes.apple.com/us/app/doo-get-things-done/id1066322956?ls=1&mt=8" title="Download Doo from the App Store">Buy on the App Store</a></li>
       </ul>
+
+
+      <img class="mobile" src="../images/iphone_front_mobile@2x.png"/>
     </section>
 
     <div class="floating-iphone-container">
-      <span class="doo-app-header">
-        <span><img class="doo-app-logo" src="../images/doo_logo.svg"/></span>
-        <span class="count">1</span>
-      </span>
+      <div class="floating-iphone">
+        <span class="doo-app-header">
+          <span><img class="doo-app-logo" src="../images/doo_logo.svg"/></span>
+          <span class="count">1</span>
+        </span>
 
-      <div class="card cleaning one">
-        <span class="card-date">Due today at 5:00pm</span>
+        <div class="card coffee one">
+          <span class="card-date">Due 2 minutes ago</span>
 
-        <span class="card-title">Clean the apt</span>
-        <img class="card-image" src="../images/cleaningImage.jpg"/>
+          <span class="card-title">Grab coffee with Mel</span>
+          <span class="card-subtitle">Pushcart on 2nd</span>
+          <img class="card-image" src="../images/coffeeImage.jpg"/>
+        </div>
+
+        <div class="card groceries two">
+          <span class="card-date">Due 5 minutes ago</span>
+
+          <span class="card-title">Groceries</span>
+          <img class="card-image" src="../images/groceryImage.jpg"/>
+        </div>
+
+        <div class="card meeting three">
+          <span class="card-date">Due 10 minutes ago</span>
+
+          <span class="card-title">PTO Meeting</span>
+          <span class="card-subtitle">Room 304 with Ms. Silva</span>
+          <img class="card-image" src="../images/meetingImage.jpg"/>
+        </div>
+
+        <img class="phone-zero-state" src="../images/zeroState.png"/>
+
+        <img class="floating-iphone-screen" src="../images/doo_app_bg.png" />
+        <img class="floating-iphone-body" src="../images/iphone_hero.png" />
       </div>
-
-      <div class="card coffee two">
-        <span class="card-date">Due 2 minutes ago</span>
-
-        <span class="card-title">Grab coffee with Mel</span>
-        <span class="card-subtitle">Pushcart on 2nd</span>
-        <img class="card-image" src="../images/coffeeImage.jpg"/>
-      </div>
-
-      <div class="card groceries three">
-        <span class="card-date">Due 5 minutes ago</span>
-
-        <span class="card-title">Groceries</span>
-        <img class="card-image" src="../images/groceryImage.jpg"/>
-      </div>
-
-      <div class="card meeting four">
-        <span class="card-date">Due 10 minutes ago</span>
-
-        <span class="card-title">PTO Meeting</span>
-        <span class="card-subtitle">Room 304 with Ms. Silva</span>
-        <img class="card-image" src="../images/meetingImage.jpg"/>
-      </div>
-
-      <img class="floating-iphone-screen" src="../images/doo_app_bg.png" />
-      <img class="floating-iphone" src="../images/iphone_hero.png" />
     </div>
 
     <section class="mini-tour">
@@ -151,7 +151,7 @@
         </li>
       </ul>
 
-      <a class="btn primary chunky" href="/features">View the full list of features</a>
+      <a class="btn secondary chunky" href="/features">See all features</a>
     </section>
 
     <section class="awards-press">
@@ -180,17 +180,38 @@
     </section>
 
     <section class="download-prompt">
-      <h2>Get the app that&rsquo;s changing productivity.</h2>
+      <h3>Get the app that&rsquo;s changing productivity.</h3>
       <a href="https://itunes.apple.com/us/app/doo-get-things-done/id1066322956?ls=1&mt=8" title="Get Doo on the App Store"><img src="../images/Download_on_the_App_Store_Badge_US-UK_135x40.svg" alt="App Store Badge"/></a>
-
       <img class="conclusion-hero" src="../images/conclusion_images@2x.png"/>
+    </section>
 
-      <div class="content-wrapper">
-        <h2><span class="block">Also available</span> for macOS</h2>
-        <p class="subtitle"><span class="block">The same great experience.</span>Made for your Mac.</p>
-        <a class="btn secondary" href="/doo-for-mac">Get Doo for Mac</a>
+    <section class="mac-prompt">
+        <h3><span class="block">Also available</span> for macOS</h3>
+        <p class="subtitle"><span class="block">The same great experience from iOS,</span> made right at home on your Mac.</p>
+        <a class="btn secondary" title="Buy Doo for Mac on the App Store" href="https://itunes.apple.com/us/app/doo-get-things-done/id1107759193?ls=1&mt=12">Get Doo for Mac</a>
 
         <img class="teaser-ipad" src="../images/footer_peak@2x.png" alt="Doo for Mac">
+    </section>
+
+
+    <section id="footer">
+      <div class="content-wrapper">
+        <ul id="nav-links">
+          <li><a href="/" title="An overview of Doo's major features">Features</a></li>
+          <li><a href="/faq" title="View frequently asked questions">FAQ</a></li>
+          <li><a href="/support" title="Get help and view user guides">Support</a></li>
+          <li><a href="/contact" title="Contact the Doo team">Contact</a></li>
+          <li><a href="/privacy" title="Read the Doo privacy policy">Privacy Policy</a></li>
+          <li><a href="/change-log" title="Read the change logs">Release Notes</a></li>
+        </ul>
+
+        <ul id="social">
+          <li><a href="https://www.facebook.com/getdooapp/" class="facebook-link" title="Like Doo on Facebook">Facebook</a></li>
+          <li><a href="https://twitter.com/getdooapp" class="twitter-link" title="Follow Doo on Twitter">Twitter</a></li>
+          <li><a href="https://instagram.com/getdooapp" class="instagram-link" title="Follow Doo on Instagram">Instagram</a></li>
+        </ul>
+
+        <p><span class="block">Made with love in NYC</span> Copyright &copy; 2016 Ciarlo Software, LLC </p>
       </div>
     </section>
 
