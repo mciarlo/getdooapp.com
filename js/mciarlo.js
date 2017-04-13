@@ -114,7 +114,7 @@ $(function () {
 			var iPhoneTopSnap = transformationTopOffset + $miniTour.outerHeight() - $(".floating-iphone-body").outerHeight() - IPHONE_FIXED_TOP - parseInt($(".key-features").css("padding-top")),
 				iPhonePercent = Math.min(1, iPhonePercent);
 
-			var shouldBeFixed = scrollTop >= iPhoneTop - IPHONE_FIXED_TOP;
+			var shouldBeFixed = scrollTop - iPhoneScrollTopToCenter >= iPhoneTop - IPHONE_FIXED_TOP;
 			var yOffset = (shouldBeFixed || shouldBeScrolling) ? iPhoneScrollTopToCenter + ($nav.outerHeight() / 2) : 0;
 			iPhoneTopSnap = iPhoneTopSnap - yOffset;
 			var shouldBeScrolling = scrollTop > iPhoneTopSnap;
