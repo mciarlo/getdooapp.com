@@ -15,6 +15,7 @@ $(function () {
 		HERO_IMAGE_REVEAL_DELAY = 400,
 		IPHONE_LEFT_FIXED_OFFSET = .22,
 		NAV_DELAY = 400,
+		IPHONE_FIXED_TOP = 140,
 		NAV_TOP_ACTIVATION = 30,
 		NUMBER_OF_FEATURES = 6,
 		$miniTour = $(".mini-tour:first"),
@@ -84,32 +85,30 @@ $(function () {
 			var scrollTop = $window.scrollTop(),
 				transformationTopOffset = $miniTour.offset().top,
 				itemHeight = $miniTour.outerHeight() / 4,
-				completionTopOffset = itemHeight + (itemHeight * .58),
-				snoozeTopOffset = itemHeight * 2 + (itemHeight * .9),
-				focusTopOffset = itemHeight * 4 + (itemHeight * .2),
-				iPhoneTopSnap = itemHeight * 4 + (itemHeight * .35),
+				completionTopOffset = itemHeight + (itemHeight * .9),
+				snoozeTopOffset = itemHeight * 2 + (itemHeight * 1.1),
+				focusTopOffset = itemHeight * 4 + (itemHeight * .5),
 				iphoneWindowWidthOffset = $window.width() * IPHONE_LEFT_FIXED_OFFSET,
 				iPhonePercent = Math.max(0, (scrollTop / (iPhoneTop + $window.height() / 3)));
 
 			if ($window.width() < 982) {
-				completionTopOffset = itemHeight + (itemHeight * .28);
-				snoozeTopOffset = itemHeight * 2 + (itemHeight * .5);
-				focusTopOffset = itemHeight * 3 + (itemHeight * .95);
-				iPhoneTopSnap = itemHeight * 4 + (itemHeight * .1);
+				completionTopOffset = itemHeight + (itemHeight * 1.05);
+				snoozeTopOffset = itemHeight * 2 + (itemHeight * 1.4);
+				focusTopOffset = itemHeight * 4 + (itemHeight * .85);
 
 			} else if ($window.width() >= 982 && $window.width() < 1220) {
-				completionTopOffset = itemHeight + (itemHeight * .28);
-				snoozeTopOffset = itemHeight * 2 + (itemHeight * .5);
-				focusTopOffset = itemHeight * 4 + (itemHeight * .1);
-				iPhoneTopSnap = itemHeight * 4 + (itemHeight * .1);
+				completionTopOffset = itemHeight + (itemHeight * 1.05);
+				snoozeTopOffset = itemHeight * 3 + (itemHeight * .4);
+				focusTopOffset = itemHeight * 4 + (itemHeight * .85);
 
 			} else if ($window.width() >= 1220 && $window.width() < 1440) {
-				completionTopOffset = itemHeight + (itemHeight * .5);
-				snoozeTopOffset = itemHeight * 2 + (itemHeight * .7);
-				focusTopOffset = itemHeight * 3 + (itemHeight * 1.2);
-				iPhoneTopSnap = itemHeight * 4 + (itemHeight * .2);
-
+				completionTopOffset = itemHeight + (itemHeight * .75);
+				snoozeTopOffset = itemHeight * 2 + (itemHeight * .9);
+				focusTopOffset = itemHeight * 4 + (itemHeight * .6);
 			}
+
+			var iPhoneTopSnap = transformationTopOffset + $miniTour.outerHeight() - $(".floating-iphone-body").outerHeight() - IPHONE_FIXED_TOP - parseInt($(".key-features").css("padding-top")),
+
 			
 			iPhonePercent = Math.min(1, iPhonePercent);
 							console.log(iPhonePercent);
@@ -184,7 +183,9 @@ $(function () {
 	};
 
 	$window.scroll(function () {
-		if ($window.width() >= 768) {
+		var windowWidth = $window.width();
+
+		if (windowWidth >= 768) {
 			if (scrollHandling.allow) {
 				updateNav();
 				updateMiniTour();
@@ -200,6 +201,41 @@ $(function () {
 
 		$('body')[$window.width() < 768 ? "addClass" : "removeClass"]('no-js');
 		updateMiniTour();
+
+		var windowWidth = $window.width(),
+			windowHeight = $window.height();
+
+		if (windowWidth >= 768) {
+			if (scrollHandling.allow) {
+				updateNav();
+				updateMiniTour();
+		        scrollHandling.allow = false;
+				setTimeout(scrollHandling.reallow, scrollHandling.delay);
+			}
+		}
+
+		$iphone.removeClass("xsmall small medium large xlarge");
+		
+		if (windowHeight < 800) {
+			$iphone.addClass("xsmall");
+
+		} else if (windowHeight >= 800 && windowHeight < 940) {
+			$iphone.addClass("small");
+
+		} else if (windowHeight >= 940 && windowHeight < 1200) {
+			if (windowWidth > 1000) {
+				$iphone.addClass("medium");
+			} else {
+				$iphone.addClass("small");
+			}
+
+		} else if (windowHeight >= 1200 && windowWidth > 1000) {
+			if (windowWidth > 1000) {
+				$iphone.addClass("large");
+			} else {
+				$iphone.addClass("small");
+			}
+		}
 	};
 
 	$window.resize(function () {
@@ -209,6 +245,23 @@ $(function () {
 	//setUpScrollingFeatures();
 	updateMiniTour();
 	onResize();
+
+	$("#play-btn").click(function (ev) {
+		ev.preventDefault();
+		$("#intro-video").toggleClass('active');
+
+	    var activeVideo = document.getElementById("video-element");
+	    activeVideo.currentTime = 0;
+	    activeVideo.play();
+	});
+
+	$("#close-video-btn").click(function (ev) {
+		ev.preventDefault();
+		
+		$("#intro-video").removeClass('active');
+		var activeVideo = document.getElementById("video-element");
+	    activeVideo.pause();
+	});
 
 	// Enable our hamburger menu for mobile
 	$('#hamburger-icon').click(function (ev) {

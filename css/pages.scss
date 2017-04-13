@@ -1258,7 +1258,15 @@ a.support-topic-filter:hover {
   #contact-form h1,
   #faq h1,
   .paragraphs h1 {
-    font-size: 4.5em;
+    font-size: 5em;
+  }
+
+    .introduction h2,
+  .features h2,
+  #contact-form h2,
+  #faq h2,
+  .paragraphs h2 {
+    font-size: 3em;
   }
 
   #support-topics,

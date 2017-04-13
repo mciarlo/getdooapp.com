@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="446px" height="446px" viewBox="0 0 446 446" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
-    <title>close_icon_white</title>
+<svg width="410px" height="410px" viewBox="0 0 410 410" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="close_icon_white" transform="translate(0.000000, -1.000000)" fill-rule="nonzero" fill="#6A3BBF">
-            <path d="M435.188,386.773 L272.198,223.784 L435.145,60.837 C448.377,47.605 448.376,26.152 435.145,12.92 L433.149,10.923 C419.918,-2.309 398.463,-2.309 385.233,10.923 L222.284,173.871 L59.878,11.465 C46.646,-1.767 25.192,-1.766 11.961,11.465 L9.964,13.462 C-3.267,26.693 -3.268,48.147 9.964,61.379 L172.37,223.785 L9.923,386.231 C-3.308,399.461 -3.308,420.916 9.923,434.146 L11.92,436.143 C25.152,449.374 46.606,449.374 59.837,436.144 L222.285,273.697 L385.273,436.685 C398.503,449.915 419.958,449.915 433.189,436.684 L435.185,434.687 C448.417,421.457 448.417,400.004 435.188,386.773 Z" id="Shape"></path>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="Group" transform="translate(11.000000, 11.000000)" stroke="#895BDC" stroke-width="23">
+            <path d="M0.5,0.5 L387.5,387.5" id="Line"></path>
+            <path d="M387.5,0.5 L0.5,387.5" id="Line"></path>
         </g>
     </g>
 </svg>

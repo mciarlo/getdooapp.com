@@ -58,14 +58,14 @@
       <h1><span class="block">Reminders that work</h1>
 
       <ul class="horizontal-buttons">
-        <li><a class="btn primary with-icon" id="play-tour" href="#"><img src="../images/play_btn.svg"/>Watch the quick tour</a></li><li><a class="btn secondary" href="https://itunes.apple.com/us/app/doo-get-things-done/id1066322956?ls=1&mt=8" title="Download Doo from the App Store">Buy on the App Store</a></li>
+        <li><a class="btn primary with-icon" id="play-btn" href="../video/Doo_Preview.mp4"><img src="../images/play_btn.svg"/>Watch the quick tour</a></li><li><a class="btn secondary" href="https://itunes.apple.com/us/app/doo-get-things-done/id1066322956?ls=1&mt=8" title="Download Doo from the App Store">Buy on the App Store</a></li>
       </ul>
 
 
       <img class="mobile" src="../images/iphone_front_mobile@2x.png"/>
     </section>
 
-    <div class="floating-iphone-container">
+    <div class="floating-iphone-container large">
       <div class="floating-iphone">
         <span class="doo-app-header">
           <span><img class="doo-app-logo" src="../images/doo_logo.svg"/></span>
@@ -125,27 +125,27 @@
 
       <ul class="draggable">
         <li>
-          <img src="./images/feature_card_1.png"/>
+          <img src="./images/feature_card_1@2x.png"/>
           <h3>Location reminders</h3>
           <p>Get reminders arriving or leaving a location. Customize the activation distance and repeat options.</p>
         </li><li>
-          <img src="./images/feature_card_2.png"/>
+          <img src="./images/feature_card_2@2x.png"/>
           <h3>Collaboration</h3>
           <p>Share reminders with anyone using email, iMessage, and more. Collaborate on grocery lists, trips, and more</p>
         </li><li>
-          <img src="./images/feature_card_3.png"/>
+          <img src="./images/feature_card_3@2x.png"/>
           <h3>Checklists</h3>
           <p>Checklists are great for almost anything. And because they’re out of the way until you need them, you can stay focused.</p>
         </li><li>
-          <img src="./images/feature_card_4.png"/>
-          <h3>Fully Customizable</h3>
-          <p>Get reminders arriving or leaving a location. Customize the activation distance and repeat options.</p>
+          <img src="./images/feature_card_4@2x.png"/>
+          <h3>Flexible repeats</h3>
+          <p>Repeat daily, weekly, monthly or yearly. Select days of the week or set custom intervals.</p>
         </li><li>
-          <img src="./images/feature_card_1.png"/>
-          <h3>Schedule View</h3>
-          <p>A place for all upcoming and completed reminders. Complete tasks early, prioritize your day, and more.</p>
+          <img src="./images/feature_card_5@2x.png"/>
+          <h3>Fast task creation</h3>
+          <p>Quickly enter tasks without fumbling through menus. The edit interface is streamlined to save you time.</p>
         </li><li>
-          <img src="./images/feature_card_1.png"/>
+          <img src="./images/feature_card_6@2x.png"/>
           <h3>Sync with iCloud</h3>
           <p>Save your reminders to iCloud Drive to sync between multiple devices. Seamlessly restore your reminder data on any new devices.</p>
         </li>
@@ -182,15 +182,17 @@
     <section class="download-prompt">
       <h3>Get the app that&rsquo;s changing productivity.</h3>
       <a href="https://itunes.apple.com/us/app/doo-get-things-done/id1066322956?ls=1&mt=8" title="Get Doo on the App Store"><img src="../images/Download_on_the_App_Store_Badge_US-UK_135x40.svg" alt="App Store Badge"/></a>
-      <img class="conclusion-hero" src="../images/conclusion_images@2x.png"/>
+      <img class="conclusion-hero laz" src="../images/conclusion_images@2x.png"/>
     </section>
 
     <section class="mac-prompt">
+      <div class="wrapper">
         <h3><span class="block">Also available</span> for macOS</h3>
         <p class="subtitle"><span class="block">The same great experience from iOS,</span> made right at home on your Mac.</p>
         <a class="btn secondary" title="Buy Doo for Mac on the App Store" href="https://itunes.apple.com/us/app/doo-get-things-done/id1107759193?ls=1&mt=12">Get Doo for Mac</a>
 
         <img class="teaser-ipad" src="../images/footer_peak@2x.png" alt="Doo for Mac">
+      </div>
     </section>
 
 
@@ -214,6 +216,18 @@
         <p><span class="block">Made with love in NYC</span> Copyright &copy; 2016 Ciarlo Software, LLC </p>
       </div>
     </section>
+
+    <div id="intro-video">
+      <a href="#" id="close-video-btn">Close</a>
+
+      <video id="video-element" controls poster="../images/video_poster.jpg"> 
+        <source src="../video/Doo_Preview.mp4" type="video/mp4">
+        <source src="../video/Doo_Preview.ogv" type="video/ogv">
+        <source src="../video/Doo_Preview.webm" type="video/webm">
+      </video>
+
+      <div class="video-bg"></div>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="../js/lib.js"></script>
