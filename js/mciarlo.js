@@ -23,7 +23,8 @@ $(function () {
 		$iphone = $(".floating-iphone-container"),
 		$floatingPhone = $iphone.find(".floating-iphone:first"),
 		itemHeight = Math.round($(".mini-tour:first").outerHeight() / 4),
-		iPhoneTop = $iphone.offset().top,
+		iPhoneScrollTopToCenter = 140,
+		iPhoneTop = 0,
 		preventDefaultFormAction = function (ev) {
 			ev.preventDefault();
 			ev.stopPropagation();
@@ -82,6 +83,8 @@ $(function () {
 				return;
 			}
 
+			iPhoneTop = $iphone.offset().top;
+
 			var scrollTop = $window.scrollTop(),
 				transformationTopOffset = $miniTour.offset().top,
 				itemHeight = $miniTour.outerHeight() / 4,
@@ -94,7 +97,7 @@ $(function () {
 			if ($window.width() < 982) {
 				completionTopOffset = itemHeight + (itemHeight * 1.05);
 				snoozeTopOffset = itemHeight * 2 + (itemHeight * 1.4);
-				focusTopOffset = itemHeight * 4 + (itemHeight * .85);
+				focusTopOffset = itemHeight * 4 + (itemHeight * .8);
 
 			} else if ($window.width() >= 982 && $window.width() < 1220) {
 				completionTopOffset = itemHeight + (itemHeight * 1.05);
@@ -108,10 +111,7 @@ $(function () {
 			}
 
 			var iPhoneTopSnap = transformationTopOffset + $miniTour.outerHeight() - $(".floating-iphone-body").outerHeight() - IPHONE_FIXED_TOP - parseInt($(".key-features").css("padding-top")),
-
-			
 			iPhonePercent = Math.min(1, iPhonePercent);
-							console.log(iPhonePercent);
 
 			$floatingPhone.css({
 				"-webkit-transform": "translate3d(" + (-iPhonePercent * iphoneWindowWidthOffset) + "px,0,0)",
@@ -124,11 +124,10 @@ $(function () {
 			if (scrollTop >= iPhoneTop - 140) {
 				if (!$floatingPhone.hasClass("fixed")) {
 					$floatingPhone.addClass("fixed");
-					console.log("added fixed iphone");
+					$floatingPhone.css("top", iPhoneScrollTopToCenter + "px");
 				}
 			} else {
 				$floatingPhone.removeClass("fixed");
-				console.log("removing fixed iphone");
 			}
 
 			if (scrollTop < completionTopOffset) {
@@ -150,7 +149,7 @@ $(function () {
 				if ($floatingPhone.hasClass("scroll")) {
 					return;
 				}
-				$floatingPhone.addClass("scroll").css("top", iPhoneTopSnap - $(".introduction").outerHeight() + 140);
+				$floatingPhone.addClass("scroll").css("top", iPhoneTopSnap - $(".introduction").outerHeight() + iPhoneScrollTopToCenter);
 
 			} else {
 				$floatingPhone.removeClass("scroll").css("top", "");
@@ -196,14 +195,19 @@ $(function () {
 	});
 
 	var onResize = function () {
-				itemHeight = Math.round($(".mini-tour:first").outerHeight() / 4);
-		iPhoneTop = $iphone.offset().top;
+		itemHeight = Math.round($(".mini-tour:first").outerHeight() / 4);
+
+		if ($iphone.length) {
+			iPhoneTop = $iphone.offset().top;
+			iPhoneScrollTopToCenter = Math.round((windowHeight - $floatingPhone.outerHeight()) / 2);
+		}
 
 		$('body')[$window.width() < 768 ? "addClass" : "removeClass"]('no-js');
 		updateMiniTour();
 
 		var windowWidth = $window.width(),
 			windowHeight = $window.height();
+
 
 		if (windowWidth >= 768) {
 			if (scrollHandling.allow) {
@@ -371,12 +375,12 @@ $(function () {
 			$(".support-topic-filter").parent().removeClass('active');
 			$(this).parent().addClass('active');
 
-			var el = $(this).attr('href'), $el = $(el), multiplier = 0.03;
+			var el = $(this).attr('href'), $el = $(el), multiplier = 0.2;
 
 			$(".support-topic-list").hide();
 			$el.show();
 
-		    $("body, html").animate({'scrollTop' :  $el.offset().top - ($window.outerHeight() * multiplier)}, SCROLL_ANIMATION_DURATION, function () {
+		    $("body, html").animate({'scrollTop' :  $el.offset().top - $("nav:first").outerHeight()}, SCROLL_ANIMATION_DURATION, function () {
 		    	$el.addClass('highlight');
 		    	window.location.hash = el;
 
