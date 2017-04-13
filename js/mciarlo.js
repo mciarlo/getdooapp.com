@@ -20,6 +20,7 @@ $(function () {
 		NUMBER_OF_FEATURES = 6,
 		$miniTour = $(".mini-tour:first"),
 		$features = $(".mini-tour--item:first"),
+		$nav = $("nav:first"),
 		$iphone = $(".floating-iphone-container"),
 		$floatingPhone = $iphone.find(".floating-iphone:first"),
 		itemHeight = Math.round($(".mini-tour:first").outerHeight() / 4),
@@ -109,22 +110,26 @@ $(function () {
 				snoozeTopOffset = itemHeight * 2 + (itemHeight * .9);
 				focusTopOffset = itemHeight * 4 + (itemHeight * .6);
 			}
-
+			
 			var iPhoneTopSnap = transformationTopOffset + $miniTour.outerHeight() - $(".floating-iphone-body").outerHeight() - IPHONE_FIXED_TOP - parseInt($(".key-features").css("padding-top")),
-			iPhonePercent = Math.min(1, iPhonePercent);
+				iPhonePercent = Math.min(1, iPhonePercent);
+
+			var shouldBeFixed = scrollTop >= iPhoneTop - IPHONE_FIXED_TOP;
+			var yOffset = (shouldBeFixed || shouldBeScrolling) ? iPhoneScrollTopToCenter + ($nav.outerHeight() / 2) : 0;
+			iPhoneTopSnap = iPhoneTopSnap - yOffset;
+			var shouldBeScrolling = scrollTop > iPhoneTopSnap;
 
 			$floatingPhone.css({
-				"-webkit-transform": "translate3d(" + (-iPhonePercent * iphoneWindowWidthOffset) + "px,0,0)",
-				"-moz-transform": "translate3d(" + (-iPhonePercent * iphoneWindowWidthOffset) + "px,0,0)",
-				"-ms-transform": "translate3d(" + (-iPhonePercent * iphoneWindowWidthOffset) + "px,0,0)",
-				"-o-transform": "translate3d(" + (-iPhonePercent * iphoneWindowWidthOffset) + "px,0,0)",
-				"transform": "translate3d(" + (-iPhonePercent * iphoneWindowWidthOffset) + "px,0,0)"
+				"-webkit-transform": "translate3d(" + (-iPhonePercent * iphoneWindowWidthOffset) + "px," + yOffset + "px,0)",
+				"-moz-transform": "translate3d(" + (-iPhonePercent * iphoneWindowWidthOffset) + "px," + yOffset + "px,0)",
+				"-ms-transform": "translate3d(" + (-iPhonePercent * iphoneWindowWidthOffset) + "px," + yOffset + "px,0)",
+				"-o-transform": "translate3d(" + (-iPhonePercent * iphoneWindowWidthOffset) + "px," + yOffset + "px,0)",
+				"transform": "translate3d(" + (-iPhonePercent * iphoneWindowWidthOffset) + "px," + yOffset + "px,0)"
 			});
 
-			if (scrollTop >= iPhoneTop - 140) {
+			if (shouldBeFixed) {
 				if (!$floatingPhone.hasClass("fixed")) {
 					$floatingPhone.addClass("fixed");
-					$floatingPhone.css("top", iPhoneScrollTopToCenter + "px");
 				}
 			} else {
 				$floatingPhone.removeClass("fixed");
@@ -145,11 +150,11 @@ $(function () {
 
 			$(".phone-zero-state")[scrollTop > focusTopOffset ? "addClass" : "removeClass"]("active");
 
-			if (scrollTop > iPhoneTopSnap) {
+			if (shouldBeScrolling) {
 				if ($floatingPhone.hasClass("scroll")) {
-					return;
+					//return;
 				}
-				$floatingPhone.addClass("scroll").css("top", iPhoneTopSnap - $(".introduction").outerHeight() + iPhoneScrollTopToCenter);
+				$floatingPhone.addClass("scroll").css("top", iPhoneTopSnap - $(".introduction").outerHeight() + IPHONE_FIXED_TOP);
 
 			} else {
 				$floatingPhone.removeClass("scroll").css("top", "");
@@ -181,7 +186,7 @@ $(function () {
 	    delay: 50 //(milliseconds) adjust to the highest acceptable value
 	};
 
-	$window.scroll(function () {
+	var onScroll = function () {
 		var windowWidth = $window.width();
 
 		if (windowWidth >= 768) {
@@ -192,31 +197,24 @@ $(function () {
 				setTimeout(scrollHandling.reallow, scrollHandling.delay);
 			}
 		}
+	};
+
+	$window.scroll(function () {
+		onScroll();
 	});
 
 	var onResize = function () {
 		itemHeight = Math.round($(".mini-tour:first").outerHeight() / 4);
 
-		if ($iphone.length) {
-			iPhoneTop = $iphone.offset().top;
-			iPhoneScrollTopToCenter = Math.round((windowHeight - $floatingPhone.outerHeight()) / 2);
-		}
-
-		$('body')[$window.width() < 768 ? "addClass" : "removeClass"]('no-js');
-		updateMiniTour();
-
 		var windowWidth = $window.width(),
 			windowHeight = $window.height();
 
-
-		if (windowWidth >= 768) {
-			if (scrollHandling.allow) {
-				updateNav();
-				updateMiniTour();
-		        scrollHandling.allow = false;
-				setTimeout(scrollHandling.reallow, scrollHandling.delay);
-			}
+		if ($iphone.length) {
+			iPhoneTop = $iphone.offset().top;
+			iPhoneScrollTopToCenter = Math.round((windowHeight - $(".floating-iphone-body:first").outerHeight()) / 2) - IPHONE_FIXED_TOP;
 		}
+
+		$('body')[$window.width() < 768 ? "addClass" : "removeClass"]('no-js');
 
 		$iphone.removeClass("xsmall small medium large xlarge");
 		
@@ -240,6 +238,15 @@ $(function () {
 				$iphone.addClass("small");
 			}
 		}
+
+		if (windowWidth >= 768) {
+			if (scrollHandling.allow) {
+				updateNav();
+				updateMiniTour();
+		        scrollHandling.allow = false;
+				setTimeout(scrollHandling.reallow, scrollHandling.delay);
+			}
+		}
 	};
 
 	$window.resize(function () {
@@ -247,8 +254,8 @@ $(function () {
 	});
 
 	//setUpScrollingFeatures();
-	updateMiniTour();
 	onResize();
+	updateMiniTour();
 
 	$("#play-btn").click(function (ev) {
 		ev.preventDefault();
@@ -358,7 +365,7 @@ $(function () {
 		$(".faq-link").click(function (ev) {
 			ev.preventDefault();
 			
-			var navHeight = $("nav:first").height(),
+			var navHeight = $nav.height(),
 				el = $(this).attr('href'), $el = $(el), multiplier = $window.outerWidth() < 600 ? .05 : .3;
 		    $("body, html").animate({'scrollTop' :  $el.offset().top - ($window.outerHeight() * multiplier) + navHeight}, SCROLL_ANIMATION_DURATION, function () {
 		    	$el.addClass('highlight');
