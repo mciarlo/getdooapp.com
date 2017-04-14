@@ -2,17 +2,184 @@ $(function () {
 	var $window = $(window),
 		imageActivationOffset,
 		isElementInViewport,
+		NAV_SCROLL_DISTANCE = 40,
+		TOUR_ITEM_TOP_OFFSET = 420,
+		TOUR_ITEM_ACTIVATION_DISTANCE = 200,
 		WIDTH_TO_DISABLE_EFFECTS = 768,
+		CARD_ITEM_ACTIVATION_DISTANCE = 500,
 		SCROLL_ANIMATION_DURATION = 250,
 		MAX_ILLUSTRATION_HERO_1_ROTATION_ANGLE = 6,
 		START_ILLUSTRATION_HERO_1_ROTATION_ANGLE = 0,
 		MAX_ILLUSTRATION_HERO_2_ROTATION_ANGLE = -6,
 		START_ILLUSTRATION_HERO_2_ROTATION_ANGLE = 0,
 		HERO_IMAGE_REVEAL_DELAY = 400,
+		IPHONE_LEFT_FIXED_OFFSET = .22,
 		NAV_DELAY = 400,
+		IPHONE_FIXED_TOP = 140,
+		NAV_TOP_ACTIVATION = 30,
+		NUMBER_OF_FEATURES = 6,
+		$miniTour = $(".mini-tour:first"),
+		$features = $(".mini-tour--item:first"),
+		$nav = $("nav:first"),
+		$iphone = $(".floating-iphone-container"),
+		$floatingPhone = $iphone.find(".floating-iphone:first"),
+		itemHeight = Math.round($(".mini-tour:first").outerHeight() / 4),
+		iPhoneFixedCenteringOffset = 140,
+		iPhoneTop = 0,
+		calculateiPhoneOffsets = function () {
+			if ($iphone.length) {
+				var windowHeight = $window.height();
+				iPhoneTop = $iphone.offset().top;
+				iPhoneFixedCenteringOffset = Math.round((windowHeight - $(".floating-iphone-body:first").outerHeight()) / 2) - IPHONE_FIXED_TOP;
+			}
+		},
 		preventDefaultFormAction = function (ev) {
 			ev.preventDefault();
 			ev.stopPropagation();
+		},
+		setActiveCard = function (index) {
+			switch(index){
+				case 1: {
+					$(".card.coffee").removeClass("one two three four completed").addClass("completed");
+					$(".card.groceries").removeClass("one two three four snoozed").addClass("one");
+					$(".card.meeting").removeClass("one two three four completed").addClass("two");
+					$(".doo-app-header .count").text(2);
+					break;
+				}
+				case 2: {
+					$(".card.coffee").removeClass("one two three four completed").addClass("completed");
+					$(".card.groceries").removeClass("one two three four snoozed").addClass("snoozed");
+					$(".card.meeting").removeClass("one two three four completed").addClass("one");
+					$(".doo-app-header .count").text(1).fadeIn();
+					break;
+				}
+				case 3: {
+					$(".card.coffee").removeClass("one two three four completed").addClass("completed");
+					$(".card.groceries").removeClass("one two three four snoozed").addClass("snoozed");
+					$(".card.meeting").removeClass("one two three four completed").addClass("completed");
+					$(".doo-app-header .count").text(0).fadeOut();
+					break;
+				}
+				default: {
+					$(".card.coffee").removeClass("one two three four completed").addClass("one");
+					$(".card.groceries").removeClass("one two three four snoozed").addClass("two");
+					$(".card.meeting").removeClass("one two three four completed").addClass("three");
+					$(".doo-app-header .count").text(3);
+					break;
+				}
+			}
+		},
+		detectScrollBehaviorForItem = function ($item, topOffset, minY, nextItemY) {
+			var scrollTop = $window.scrollTop();
+
+			if (scrollTop > topOffset && scrollTop < nextItemY) {
+				$item.removeClass("fadedOut scrolling").addClass("fixed").find("h2").css("top", TOUR_ITEM_TOP_OFFSET);
+
+			} else if (scrollTop < topOffset) {				
+				$item.removeClass("fixed scrolling").addClass("fadedOut").find("h2").css("top", "auto");
+
+			} else {
+				if ($item.hasClass("scrolling")) {
+					return;
+				}
+
+				$item.removeClass("fixed fadedOut").addClass("scrolling").find("h2").css("top", scrollTop - TOUR_ITEM_TOP_OFFSET);
+			}
+		},
+		updateMiniTour = function () {
+			if ($features.length == 0) {
+				return;
+			}
+
+			calculateiPhoneOffsets();
+
+			iPhoneTop = $iphone.offset().top;
+
+			var scrollTop = $window.scrollTop(),
+				transformationTopOffset = $miniTour.offset().top,
+				itemHeight = $miniTour.outerHeight() / 4,
+				completionTopOffset = itemHeight + (itemHeight * .9),
+				snoozeTopOffset = itemHeight * 2 + (itemHeight * 1.1),
+				focusTopOffset = itemHeight * 4 + (itemHeight * .5),
+				iphoneWindowWidthOffset = $window.width() * IPHONE_LEFT_FIXED_OFFSET,
+				iPhonePercent = Math.max(0, (scrollTop / (iPhoneTop + $window.height() / 3)));
+
+			if ($window.width() < 982) {
+				completionTopOffset = itemHeight + (itemHeight * 1.05);
+				snoozeTopOffset = itemHeight * 2 + (itemHeight * 1.4);
+				focusTopOffset = itemHeight * 4 + (itemHeight * .8);
+
+			} else if ($window.width() >= 982 && $window.width() < 1220) {
+				completionTopOffset = itemHeight + (itemHeight * 1.05);
+				snoozeTopOffset = itemHeight * 3 + (itemHeight * .4);
+				focusTopOffset = itemHeight * 4 + (itemHeight * .85);
+
+			} else if ($window.width() >= 1220 && $window.width() < 1440) {
+				completionTopOffset = itemHeight + (itemHeight * .75);
+				snoozeTopOffset = itemHeight * 2 + (itemHeight * .9);
+				focusTopOffset = itemHeight * 4 + (itemHeight * .6);
+			}
+			
+			var iPhoneTopSnap = transformationTopOffset + $miniTour.outerHeight() - $(".floating-iphone-body").outerHeight() - IPHONE_FIXED_TOP - parseInt($(".key-features").css("padding-top")),
+				iPhonePercent = Math.min(1, iPhonePercent);
+
+			var scrollingOffset = iPhoneFixedCenteringOffset + ($nav.outerHeight() / 2);
+			var iPhoneBecomesFixedOffset = $(".floating-iphone-container").offset().top - IPHONE_FIXED_TOP - scrollingOffset;
+			
+			var shouldBeFixed = scrollTop >= iPhoneBecomesFixedOffset,
+				yOffset = (shouldBeFixed || shouldBeScrolling) ? scrollingOffset : 0;
+			
+			iPhoneTopSnap = iPhoneTopSnap - scrollingOffset;
+			var shouldBeScrolling = scrollTop > iPhoneTopSnap;
+
+			$floatingPhone.css({
+				"-webkit-transform": "translate3d(" + (-iPhonePercent * iphoneWindowWidthOffset) + "px," + yOffset + "px,0)",
+				"-moz-transform": "translate3d(" + (-iPhonePercent * iphoneWindowWidthOffset) + "px," + yOffset + "px,0)",
+				"-ms-transform": "translate3d(" + (-iPhonePercent * iphoneWindowWidthOffset) + "px," + yOffset + "px,0)",
+				"-o-transform": "translate3d(" + (-iPhonePercent * iphoneWindowWidthOffset) + "px," + yOffset + "px,0)",
+				"transform": "translate3d(" + (-iPhonePercent * iphoneWindowWidthOffset) + "px," + yOffset + "px,0)"
+			});
+
+			if (shouldBeFixed) {
+				if (!$floatingPhone.hasClass("fixed")) {
+					$floatingPhone.addClass("fixed");
+				}
+			} else {
+				$floatingPhone.removeClass("fixed");
+			}
+
+			if (scrollTop < completionTopOffset) {
+				setActiveCard(0);
+
+			} else if (scrollTop > completionTopOffset  && scrollTop < snoozeTopOffset) {
+				setActiveCard(1);
+
+			} else if (scrollTop > snoozeTopOffset && scrollTop < focusTopOffset) {
+				setActiveCard(2);
+
+			} else if (scrollTop > focusTopOffset) {
+				setActiveCard(3);
+			}
+
+			$(".phone-zero-state")[scrollTop > focusTopOffset ? "addClass" : "removeClass"]("active");
+
+			if (shouldBeScrolling) {
+				if ($floatingPhone.hasClass("scroll")) {
+					//return;
+				}
+				$floatingPhone.addClass("scroll").css("top", iPhoneTopSnap - $(".introduction").outerHeight() + IPHONE_FIXED_TOP);
+
+			} else {
+				$floatingPhone.removeClass("scroll").css("top", "");
+			}
+
+		},
+		updateNav = function () {
+			var percentage = Math.max($window.scrollTop() - NAV_TOP_ACTIVATION, 0) / NAV_SCROLL_DISTANCE;
+			percentage = $window.scrollTop() == 0 ? 0 : percentage;
+			percentage = Math.min(percentage, 1);
+			$("#sticky-nav").css("background-color", "rgba(106, 59, 191," + percentage + ")");
+			$("#sticky-nav")[percentage > 0 ? "removeClass" : "addClass"]("bordered");
 		};
 
 	isElementInViewport = function (el) {
@@ -22,12 +189,134 @@ $(function () {
         	(rect.top < (window.innerHeight || document.documentElement.clientHeight) && rect.top > 0);
 	};
 
-	imageActivationOffset = function () {
-		return $window.height();
+	$(".mini-tour--item.transformation, .mini-tour--item.completion, .mini-tour--item.snooze, .mini-tour--item.focus").addClass("fadedOut");
+
+	var scrollHandling = {
+	    allow: true,
+	    reallow: function() {
+	        scrollHandling.allow = true;
+	    },
+	    delay: 50 //(milliseconds) adjust to the highest acceptable value
 	};
 
-	$('body').removeClass('no-js');
+	var onScroll = function () {
+		var windowWidth = $window.width();
 
+		if (windowWidth >= 768) {
+			if (scrollHandling.allow) {
+				updateMiniTour();
+		        scrollHandling.allow = false;
+				setTimeout(scrollHandling.reallow, scrollHandling.delay);
+			}
+		}
+	};
+
+	$window.scroll(function () {
+		onScroll();
+	});
+
+	var onResize = function () {
+		itemHeight = Math.round($(".mini-tour:first").outerHeight() / 4);
+
+		var windowWidth = $window.width(),
+			windowHeight = $window.height();
+
+		calculateiPhoneOffsets();
+
+		$('body')[windowWidth < 768 ? "addClass" : "removeClass"]('no-js');
+
+		$iphone.removeClass("xsmall small medium large xlarge");
+		
+		if (windowHeight < 800) {
+			$iphone.addClass("xsmall");
+
+		} else if (windowHeight >= 800 && windowHeight < 940) {
+			$iphone.addClass("small");
+
+		} else if (windowHeight >= 940 && windowHeight < 1200) {
+			if (windowWidth > 1000) {
+				$iphone.addClass("medium");
+			} else {
+				$iphone.addClass("small");
+			}
+
+		} else if (windowHeight >= 1200 && windowWidth > 1000) {
+			if (windowWidth > 1000) {
+				$iphone.addClass("large");
+			} else {
+				$iphone.addClass("small");
+			}
+		}
+
+		if (windowWidth >= 768) {
+			if (scrollHandling.allow) {
+				updateMiniTour();
+		        scrollHandling.allow = false;
+				setTimeout(scrollHandling.reallow, scrollHandling.delay);
+			}
+		}
+	};
+
+	$window.resize(function () {
+		onResize();
+	});
+
+	onResize();
+	updateMiniTour();
+
+	$("#play-btn").click(function (ev) {
+		ev.preventDefault();
+		$("#intro-video").toggleClass('active');
+
+	    var activeVideo = document.getElementById("video-element");
+	    activeVideo.currentTime = 0;
+	    activeVideo.play();
+	});
+
+	$("#close-video-btn").click(function (ev) {
+		ev.preventDefault();
+		
+		$("#intro-video").removeClass('active');
+		var activeVideo = document.getElementById("video-element");
+	    activeVideo.pause();
+	});
+
+	// Enable our hamburger menu for mobile
+	$('#hamburger-icon').click(function (ev) {
+		preventDefaultFormAction(ev);
+
+		$(this).toggleClass('active');
+
+		if (!$('#nav-wrapper').hasClass('active')) {
+			$('#nav-wrapper').toggleClass('no-click');
+
+		} else {
+			setTimeout(function () {
+				$('#nav-wrapper').toggleClass('no-click');
+			}, NAV_DELAY);
+		}
+
+		// Allow repaint
+		setTimeout(function () {
+			$('#nav-wrapper').toggleClass('active');
+		}, 10);
+	});
+
+	if ($('img.lazy-load').length > 0) {
+		$(".conclusion-hero").trigger("unveil");
+		// Lazy load major image assets
+	  	$("img.lazy-load").unveil(200, function() {
+			var $image = $(this);
+		  	$image.on("load", function() {
+		    	$image.removeClass('invisible');
+		  	});
+		});
+	}
+
+	/******
+	 ****** Changelog
+	 ******
+	*/
 	if ($('body').hasClass('change-log-page')) {
 		$('#doo-for-mac-changes').hide();
 
@@ -47,198 +336,16 @@ $(function () {
 		});
 	}
 
-	// Enable our hamburger menu for mobile
-	$('#hamburger-icon').click(function (ev) {
-		ev.preventDefault();
-		ev.stopPropagation();
-
-		$(this).toggleClass('active');
-
-		if (!$('#nav-wrapper').hasClass('active')) {
-			$('#nav-wrapper').toggleClass('no-click');
-
-		} else {
-			setTimeout(function () {
-				$('#nav-wrapper').toggleClass('no-click');
-			}, NAV_DELAY);
-		}
-
-		// Allow repaint
-		setTimeout(function () {
-			$('#nav-wrapper').toggleClass('active');
-		}, 10);
-	});
-
+	/******
+	 ****** FAQ, Support, and Contact
+	 ******
+	*/
 	$('.back-to-top').click(function (ev) {
 		ev.preventDefault();
 		ev.stopPropagation();
 		$("body, html").animate({'scrollTop' :  0});
 	});
 
-	$(".core-feature, .mac-mini-tour, .reviews, .app-store").each(function () {
-		var isInViewport = isElementInViewport(this);
-
-		if (!isInViewport) {
-			$(this).addClass('invisible');
-		}
-	});
-
-	$("#mac-feature-helpful-suggestions").textDynamics(function () {
-		return $window.outerHeight() * 0.5;
-	}, function () {
-		$("#mac-feature-helpful-suggestions").removeClass('invisible');
-	});
-
-	$("#mac-feature-custom-repeat").textDynamics(function () {
-		return $window.outerHeight() * 0.5;
-	}, function () {
-		$("#mac-feature-custom-repeat").removeClass('invisible');
-	});
-
-	$("#mac-feature-custom-alerts").textDynamics(function () {
-		return $window.outerHeight() * 0.4;
-	}, function () {
-		$("#mac-feature-custom-alerts").removeClass('invisible');
-	});
-
-	$("#feature-helpful-suggestions").textDynamics(function () {
-		return $window.outerHeight() * 0.5;
-	}, function () {
-		$("#feature-helpful-suggestions").removeClass('invisible');
-	});
-
-	$("#feature-custom-repeat").textDynamics(function () {
-		return $window.outerHeight() * 0.6;
-	}, function () {
-		$("#feature-custom-repeat").removeClass('invisible');
-	});
-
-	$("#feature-custom-alerts").textDynamics(function () {
-		return $window.outerHeight() * 0.8;
-	}, function () {
-		$("#feature-custom-alerts").removeClass('invisible');
-	});
-
-	$("#feature-extension").textDynamics(function () {
-		return $window.outerHeight() * 0.5;
-	}, function () {
-		$("#feature-extension").removeClass('invisible');
-	});
-
-	$('.mac-mini-tour').textDynamics(function () {
-		return $window.outerHeight() * 0.4;
-	}, function () {
-		$('.mac-mini-tour').removeClass('invisible');
-	});
-
-	$('.app-store').textDynamics(function () {
-		return $window.outerHeight() * 0.3;
-	}, function () {
-		$('.app-store, .reviews').removeClass('invisible');
-	});
-
-	var numberOfFrames = 7,
-		WINDOW_PERCENTAGE_FOR_MINI_TOUR_START = function () {return $window.outerWidth() < 768 ? 0.3 : 0.3},
-		WINDOW_PERCENTAGE_FOR_APP_SIZE = function () {return $window.outerWidth() < 768 ? 0.3 : 0.6},
-		distanceForVideoWindow = 240,
-		$miniTour = $('#mini-tour'),
-		$appSizeContainer = $('#app-size-container');
-
-	$appSizeContainer.removeClass().addClass('animated0').cssFrameAnimation(function () {
-		return $window.outerHeight() * WINDOW_PERCENTAGE_FOR_APP_SIZE();
-
-	}, function () {
-		var diff = $appSizeContainer.offset().top + ($window.outerHeight() * WINDOW_PERCENTAGE_FOR_APP_SIZE()) - ($window.scrollTop() + $window.height());
-
-	  	var framesPercentage = diff < 0 ? Math.abs(diff) / distanceForVideoWindow : 0,
-	  		sanitizedPercentage = framesPercentage > 1 ? 1 : framesPercentage,
-	  		activeFrame = Math.floor(numberOfFrames * sanitizedPercentage);
-		
-		if ($appSizeContainer.hasClass("animated" + activeFrame)) {
-			return;
-		}
-
-		$appSizeContainer.removeClass().addClass("animated" + activeFrame);
-	});
-
-	$window.scroll(function () {
-		if ($miniTour.length > 0) {
-			var diff = $miniTour.offset().top + ($window.outerHeight() * WINDOW_PERCENTAGE_FOR_MINI_TOUR_START()) - ($window.scrollTop() + $window.height());
-			var classToAdd = diff > 0 ? "starting" : "animated";
-			
-			if ($miniTour.hasClass(classToAdd)) {
-				return;
-			}
-			
-			$miniTour.removeClass().addClass(classToAdd);
-		}
-	});
-
-	if ($('img.lazy-load').length > 0) {
-		$(".conclusion-hero").trigger("unveil");
-
-		// Lazy load major image assets
-	  	$("img.lazy-load").unveil(imageActivationOffset(), function() {
-	  		if (this.getAttribute("data-src").indexOf("macbook_icloud") > 0) {
-	  			$('.icloud-1, .icloud-2').trigger("unveil");
-	  		}
-	  		
-	  		var $image = $(this);
-
-		  	$image.load(function() {
-		  		if (this.getAttribute("src").indexOf("hero") > 0) {
-		  			setTimeout(function () {
-						$image.removeClass('invisible');
-					}, HERO_IMAGE_REVEAL_DELAY);
-
-		  		} else {
-		    		$image.removeClass('invisible');
-		  		}
-		  	});
-		});
-
-		// Lazy load cards
-	  	$("img.lazy-load-special").unveil(10, function() {
-		  	$(this).load(function() {
-		    	$(this).removeClass('invisible');
-		  	});
-		});
-	}
-
-	if ($('#feature-custom-alerts').length > 0) {
-		// Animate out illustration heros during scroll
-		$("#repeat-options-floating").imageDynamics(function() {
-		  	var percentageInView = ($window.scrollTop() - $(this).offset().top) / $window.height();
-		  	var angle = START_ILLUSTRATION_HERO_1_ROTATION_ANGLE - (percentageInView * MAX_ILLUSTRATION_HERO_1_ROTATION_ANGLE);
-
-		   	$(this).trigger("unveil").css({
-		   		'transform'			: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
-		   		'-moz-transform'	: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
-		   		'-webkit-transform'	: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
-		   		'-o-transform'		: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
-		   		'-ms-transform'		: 'rotate3d(0, 0, 1, ' + angle + 'deg)'
-		   	});
-		});
-
-		// Animate out illustration heros during scroll
-		$("#date-options-floating").imageDynamics(function() {
-		  	var percentageInView = ($window.scrollTop() - $(this).offset().top) / $window.height();
-		  	var angle = START_ILLUSTRATION_HERO_2_ROTATION_ANGLE - (percentageInView * MAX_ILLUSTRATION_HERO_2_ROTATION_ANGLE);
-
-		   	$(this).trigger("unveil").css({
-		   		'transform'			: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
-		   		'-moz-transform'	: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
-		   		'-webkit-transform'	: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
-		   		'-o-transform'		: 'rotate3d(0, 0, 1, ' + angle + 'deg)',
-		   		'-ms-transform'		: 'rotate3d(0, 0, 1, ' + angle + 'deg)'
-		   	});
-		});
-	}
-
-	/******
-	 ****** FAQ, Support, and Contact
-	 ******
-	*/
 	if ($("#subject-select").length > 0) {
 		$("#subject-select").change(function () {
 			$("#subject-input").attr('value', $("#subject-select option:selected").text());
@@ -276,8 +383,9 @@ $(function () {
 		$(".faq-link").click(function (ev) {
 			ev.preventDefault();
 			
-			var el = $(this).attr('href'), $el = $(el), multiplier = $window.outerWidth() < 600 ? .05 : .3;
-		    $("body, html").animate({'scrollTop' :  $el.offset().top - ($window.outerHeight() * multiplier)}, SCROLL_ANIMATION_DURATION, function () {
+			var navHeight = $nav.height(),
+				el = $(this).attr('href'), $el = $(el), multiplier = $window.outerWidth() < 600 ? .05 : .3;
+		    $("body, html").animate({'scrollTop' :  $el.offset().top - ($window.outerHeight() * multiplier) + navHeight}, SCROLL_ANIMATION_DURATION, function () {
 		    	$el.addClass('highlight');
 		    	window.location.hash = el;
 
@@ -292,12 +400,12 @@ $(function () {
 			$(".support-topic-filter").parent().removeClass('active');
 			$(this).parent().addClass('active');
 
-			var el = $(this).attr('href'), $el = $(el), multiplier = 0.03;
+			var el = $(this).attr('href'), $el = $(el), multiplier = 0.2;
 
 			$(".support-topic-list").hide();
 			$el.show();
 
-		    $("body, html").animate({'scrollTop' :  $el.offset().top - ($window.outerHeight() * multiplier)}, SCROLL_ANIMATION_DURATION, function () {
+		    $("body, html").animate({'scrollTop' :  $el.offset().top - $("nav:first").outerHeight()}, SCROLL_ANIMATION_DURATION, function () {
 		    	$el.addClass('highlight');
 		    	window.location.hash = el;
 

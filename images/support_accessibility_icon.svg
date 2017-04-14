@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>support_accessibility_icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="60" height="60" rx="7"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="60" height="60" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD-Copy-8" transform="translate(-385.000000, -1689.000000)" stroke="#FFFFFF">
+            <g id="support_accessibility_icon" transform="translate(385.000000, 1689.000000)">
+                <g id="support_actions_icon" stroke-width="2">
+                    <g id="support_icon_creation">
+                        <g id="support_icloud_icon">
+                            <use id="Rectangle-10" mask="url(#mask-2)" transform="translate(30.000000, 30.000000) scale(-1, 1) rotate(-180.000000) translate(-30.000000, -30.000000) " xlink:href="#path-1"></use>
+                        </g>
+                    </g>
+                </g>
+                <path d="M29.8751244,9 C31.7849923,9 33.3312794,10.5457525 33.3312794,12.4433228 C33.3312794,14.3531906 31.7849923,15.8989431 29.8751244,15.8989431 C27.9786235,15.8989431 26.432871,14.352656 26.4318016,12.4433228 C26.4318016,10.5457525 27.9775541,9 29.8751244,9 Z M44.8156164,20.1346579 L34.5583642,21.430716 L34.5626416,31.6986618 L39.5319338,48.2870297 C39.7944605,49.3344628 39.1646104,50.3824306 38.1284055,50.6412145 C37.0927353,50.8999984 36.0335393,50.3294975 35.7726167,49.2820644 L30.6819527,34.1817039 L29.1142784,34.1817039 L24.4310386,49.5953854 C24.03912,50.6011137 22.9189708,51.0636097 21.9143118,50.6716911 C20.9192771,50.2835153 20.3118835,49.1510684 20.7043368,48.1453402 L25.0058169,31.8665505 L25.0058169,21.430716 L15.5559276,20.1448168 C14.5860227,20.0667539 13.9273001,19.212874 14.0064324,18.2429691 C14.0775445,17.2655787 14.9597622,16.5400214 15.9291325,16.6180843 L27.4102614,17.6067029 L32.4453189,17.6067029 L44.6712535,16.5988359 C45.6427624,16.5598045 46.4661657,17.3153037 46.498781,18.2942981 C46.5378125,19.2663417 45.78766,20.0945571 44.8156164,20.1346579 Z" id="Combined-Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>
