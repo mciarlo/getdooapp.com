@@ -27,10 +27,6 @@
   }
 }
 
-.large-p {
-  text-align: left;
-}
-
 .button-style {
   background: $subtlePurple;
   padding: .15em .5em;
@@ -38,13 +34,13 @@
   border-radius: 3px;
 }
 
-.welcome-text {
+.small-uppercase {
   text-align: center;
   display: block;
   text-transform: uppercase;
   letter-spacing: .2em;
   color: $lightPurple;
-  margin-bottom: 1em;
+  margin-bottom: .2em;
   font-size: .7em;
 }
 
@@ -316,6 +312,7 @@ label, input, textarea, .selection {
     li {
       position: relative;
       padding: 1.6em 0 1.6em 80px;
+      vertical-align: top;
     }
   }
 
@@ -488,9 +485,9 @@ a.support-topic-filter:hover {
     font-size: 3em;
 
     a:link {
-      margin-top: .6em;
+      margin-top: 1.5em;
       float: right;
-      font-size: .5em;
+      font-size: .3em;
       font-weight: normal;
     }
   }
@@ -660,6 +657,22 @@ a.support-topic-filter:hover {
   padding-top: 5em;
 }
 
+.features-intro {
+  h1, p {
+    text-align: center;
+  }
+
+  h1 {
+    margin-bottom: 1em;
+  }
+}
+
+.features-hero {
+  width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
 /**
  333333333333333   77777777777777777777555555555555555555 
 3:::::::::::::::33 7::::::::::::::::::75::::::::::::::::5 
@@ -787,11 +800,6 @@ a.support-topic-filter:hover {
     }
   }
 
-  .large-p {
-    font-size: 130%;
-    text-align: left;
-  }
-
   #contact-form {
     p {
       width: 60%;
@@ -803,7 +811,7 @@ a.support-topic-filter:hover {
     }
   }
 
-  .welcome-text {
+  .small-uppercase {
     font-size: 1em;
   }
 
@@ -973,6 +981,8 @@ a.support-topic-filter:hover {
     }
 
     ul {
+      margin-top: 5em;
+
       li {
         float: left;
         margin: 0 0 1em;
@@ -1131,6 +1141,11 @@ a.support-topic-filter:hover {
       font-size: 2em;
       margin-top: 1em;
     }
+  }
+
+  .features-hero {
+    width: 90%;
+    margin-bottom: 2em;
   }
 }
 

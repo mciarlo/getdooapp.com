@@ -60,22 +60,19 @@ table {
 .paragraphs p {
   margin-bottom: 1em; }
 
-.large-p {
-  text-align: left; }
-
 .button-style {
   background: #9666EB;
   padding: .15em .5em;
   margin: 0 .3em;
   border-radius: 3px; }
 
-.welcome-text {
+.small-uppercase {
   text-align: center;
   display: block;
   text-transform: uppercase;
   letter-spacing: .2em;
   color: #C4AAF2;
-  margin-bottom: 1em;
+  margin-bottom: .2em;
   font-size: .7em; }
 
 #contact-form {
@@ -292,7 +289,8 @@ label, input, textarea, .selection {
     margin-top: 1em; }
     .qa-pair .keyboard-shortcuts li {
       position: relative;
-      padding: 1.6em 0 1.6em 80px; }
+      padding: 1.6em 0 1.6em 80px;
+      vertical-align: top; }
   .qa-pair .keyboard-shortcut {
     position: absolute;
     top: .4em;
@@ -447,9 +445,9 @@ a.support-topic-filter:hover {
     border-bottom: 1px solid #9666EB;
     font-size: 3em; }
     .support-topic-list h3 a:link {
-      margin-top: .6em;
+      margin-top: 1.5em;
       float: right;
-      font-size: .5em;
+      font-size: .3em;
       font-weight: normal; }
   .support-topic-list .faq-list {
     padding-top: 0;
@@ -568,6 +566,16 @@ a.support-topic-filter:hover {
 .revision-history {
   padding-top: 5em; }
 
+.features-intro h1, .features-intro p {
+  text-align: center; }
+.features-intro h1 {
+  margin-bottom: 1em; }
+
+.features-hero {
+  width: 100%;
+  margin: 0 auto;
+  display: block; }
+
 /**
  333333333333333   77777777777777777777555555555555555555 
 3:::::::::::::::33 7::::::::::::::::::75::::::::::::::::5 
@@ -668,17 +676,13 @@ a.support-topic-filter:hover {
       width: 43%;
       margin-left: 6%; }
 
-  .large-p {
-    font-size: 130%;
-    text-align: left; }
-
   #contact-form p {
     width: 60%; }
   #contact-form h1, #contact-form p {
     text-align: center;
     margin: 0 auto; }
 
-  .welcome-text {
+  .small-uppercase {
     font-size: 1em; }
 
   .table-of-contents a {
@@ -790,17 +794,19 @@ a.support-topic-filter:hover {
   #support-topics .main-text {
     text-align: center;
     margin: .5em 0 1em; }
-  #support-topics ul li {
-    float: left;
-    margin: 0 0 1em;
-    text-align: center;
-    width: 49%;
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box; }
-    #support-topics ul li.first, #support-topics ul li.third, #support-topics ul li.fifth {
-      margin-right: 2%; }
+  #support-topics ul {
+    margin-top: 5em; }
+    #support-topics ul li {
+      float: left;
+      margin: 0 0 1em;
+      text-align: center;
+      width: 49%;
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box; }
+      #support-topics ul li.first, #support-topics ul li.third, #support-topics ul li.fifth {
+        margin-right: 2%; }
 
   a.support-topic-filter:link,
   a.support-topic-filter:visited {
@@ -913,7 +919,11 @@ a.support-topic-filter:hover {
     font-size: 5em; }
   .paragraphs h2 {
     font-size: 2em;
-    margin-top: 1em; } }
+    margin-top: 1em; }
+
+  .features-hero {
+    width: 90%;
+    margin-bottom: 2em; } }
 /*
      888888888             66666666        000000000     
    88:::::::::88          6::::::6       00:::::::::00   
@@ -1291,7 +1301,7 @@ nav {
   padding: .8em 0;
   width: 100%;
   z-index: 9999;
-  background: #895BDC; }
+  background: #7A4BCF; }
   nav h2 {
     font-size: 1.25em;
     font-weight: bold;
@@ -1659,7 +1669,7 @@ nav {
   text-align: center; }
   .mac-prompt p {
     margin: 2em 0; }
-  .mac-prompt img {
+  .mac-prompt .teaser-mac {
     width: 90%;
     max-width: 400px;
     margin: 2em auto 0;
@@ -1786,7 +1796,7 @@ nav {
     background-image: url(../images/close_icon_hover.svg); }
 
 .no-js nav {
-  background: #7A4BCF;
+  background: #895BDC;
   border: 0; }
 
 /**
@@ -1904,6 +1914,9 @@ nav {
 @media screen and (min-width: 768px) {
   .btn {
     font-size: .8em; }
+    .btn.chunky {
+      padding: 1.5em 5em;
+      font-size: 1.1em; }
 
   .mobile {
     display: none; }
@@ -1939,7 +1952,7 @@ nav {
     padding: 1.4em 0;
     text-align: center;
     z-index: 9999;
-    background: transparent;
+    background: #895BDC;
     transition: background 200ms ease-in-out; }
     nav li {
       display: inline-block;
@@ -2498,8 +2511,8 @@ nav {
       line-height: 1;
       padding: .5em 0 1em; }
     .awards-press cite {
-      margin-top: 3.5em;
-      font-size: .15em;
+      margin-top: 2em;
+      font-size: .25em;
       color: #C4AAF2;
       display: block;
       font-weight: normal; }
@@ -2551,20 +2564,20 @@ nav {
     max-width: 1020px;
     margin: 0 auto;
     overflow: visible; }
-    .mac-prompt h2, .mac-prompt p, .mac-prompt .btn {
+    .mac-prompt h2, .mac-prompt p, .mac-prompt .mac-download-link {
       margin-left: 0%; }
     .mac-prompt h2 {
       margin-bottom: .4em; }
-    .mac-prompt .btn {
+    .mac-prompt .mac-download-link {
       margin-top: 3em; }
-    .mac-prompt img {
+    .mac-prompt .teaser-mac {
       width: auto; }
 
   .mac-prompt h2,
   .download-prompt h2 {
     width: 100%; }
 
-  .teaser-ipad {
+  .teaser-mac {
     height: 400px;
     position: absolute;
     right: -2%;
@@ -2682,7 +2695,7 @@ nav {
 
   .mac-prompt {
     position: relative; }
-    .mac-prompt img {
+    .mac-prompt .teaser-mac {
       position: absolute;
       right: 0%;
       top: 40%;
@@ -2706,7 +2719,7 @@ nav {
    99999999        111111111111     000000000   
    */
 @media screen and (min-width: 910px) {
-  .mac-prompt img {
+  .mac-prompt .teaser-mac {
     right: 0; } }
 /*
      999999999            66666666        000000000     
@@ -2738,9 +2751,9 @@ nav {
   .mac-prompt {
     position: relative;
     max-width: 1020px; }
-    .mac-prompt h2, .mac-prompt p, .mac-prompt .btn {
+    .mac-prompt h2, .mac-prompt p, .mac-prompt .mac-download-link {
       margin-left: 5%; }
-    .mac-prompt img {
+    .mac-prompt .teaser-mac {
       height: 460px;
       position: absolute;
       right: 5%;
@@ -2808,9 +2821,9 @@ nav {
   .mac-prompt {
     position: relative;
     max-width: 1020px; }
-    .mac-prompt h2, .mac-prompt p, .mac-prompt .btn {
+    .mac-prompt h2, .mac-prompt p, .mac-prompt .mac-download-link {
       margin-left: 2%; }
-    .mac-prompt img {
+    .mac-prompt .teaser-mac {
       height: 500px;
       position: absolute;
       right: 0%;
@@ -2830,7 +2843,11 @@ nav {
     height: 600px;
     margin-top: -300px;
     margin-left: -147px;
-    width: 294px; } }
+    width: 294px; }
+
+  #close-video-btn {
+    top: 20px;
+    left: 20px; } }
 /*
   1111111        000000000             66666666    222222222222222    
  1::::::1      00:::::::::00          6::::::6    2:::::::::::::::22  
@@ -2874,9 +2891,9 @@ nav {
   .mac-prompt {
     position: relative;
     max-width: 1020px; }
-    .mac-prompt h2, .mac-prompt p, .mac-prompt .btn {
+    .mac-prompt h2, .mac-prompt p, .mac-prompt .mac-download-link {
       margin-left: 5%; }
-    .mac-prompt img {
+    .mac-prompt .teaser-mac {
       height: 500px;
       position: absolute;
       right: 2%;

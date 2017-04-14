@@ -126,12 +126,11 @@ $(function () {
 			var scrollingOffset = iPhoneFixedCenteringOffset + ($nav.outerHeight() / 2);
 			var iPhoneBecomesFixedOffset = $(".floating-iphone-container").offset().top - IPHONE_FIXED_TOP - scrollingOffset;
 			
-			var shouldBeFixed = scrollTop >= iPhoneBecomesFixedOffset;
-			var yOffset = (shouldBeFixed || shouldBeScrolling) ? scrollingOffset : 0;
+			var shouldBeFixed = scrollTop >= iPhoneBecomesFixedOffset,
+				yOffset = (shouldBeFixed || shouldBeScrolling) ? scrollingOffset : 0;
+			
 			iPhoneTopSnap = iPhoneTopSnap - scrollingOffset;
 			var shouldBeScrolling = scrollTop > iPhoneTopSnap;
-
-			console.log("Offset for centering is" + iPhoneFixedCenteringOffset);
 
 			$floatingPhone.css({
 				"-webkit-transform": "translate3d(" + (-iPhonePercent * iphoneWindowWidthOffset) + "px," + yOffset + "px,0)",
@@ -205,7 +204,6 @@ $(function () {
 
 		if (windowWidth >= 768) {
 			if (scrollHandling.allow) {
-				updateNav();
 				updateMiniTour();
 		        scrollHandling.allow = false;
 				setTimeout(scrollHandling.reallow, scrollHandling.delay);
@@ -252,7 +250,6 @@ $(function () {
 
 		if (windowWidth >= 768) {
 			if (scrollHandling.allow) {
-				updateNav();
 				updateMiniTour();
 		        scrollHandling.allow = false;
 				setTimeout(scrollHandling.reallow, scrollHandling.delay);
@@ -304,6 +301,17 @@ $(function () {
 			$('#nav-wrapper').toggleClass('active');
 		}, 10);
 	});
+
+	if ($('img.lazy-load').length > 0) {
+		$(".conclusion-hero").trigger("unveil");
+		// Lazy load major image assets
+	  	$("img.lazy-load").unveil(200, function() {
+			var $image = $(this);
+		  	$image.on("load", function() {
+		    	$image.removeClass('invisible');
+		  	});
+		});
+	}
 
 	/******
 	 ****** Changelog
