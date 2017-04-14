@@ -2,6 +2,7 @@ $(function () {
 	var $window = $(window),
 		imageActivationOffset,
 		isElementInViewport,
+		VIDEO_HASH_ID = "app-preview",
 		NAV_SCROLL_DISTANCE = 40,
 		TOUR_ITEM_TOP_OFFSET = 420,
 		TOUR_ITEM_ACTIVATION_DISTANCE = 200,
@@ -264,18 +265,34 @@ $(function () {
 	onResize();
 	updateMiniTour();
 
-	$("#play-btn").click(function (ev) {
-		ev.preventDefault();
+	var showVideo = function () {
+		var $video = $("#intro-video");
+
+		if ($video.length == 0) {
+			return;
+		}
+
 		$("#intro-video").toggleClass('active');
 
 	    var activeVideo = document.getElementById("video-element");
 	    activeVideo.currentTime = 0;
 	    activeVideo.play();
+	};
+
+	if (window.location.hash == ("#" + VIDEO_HASH_ID)) {
+		showVideo();
+	}
+
+	$("#app-preview").click(function (ev) {
+		ev.preventDefault();
+		window.location.hash = VIDEO_HASH_ID;
+		showVideo();
 	});
 
 	$("#close-video-btn").click(function (ev) {
 		ev.preventDefault();
 		
+		window.location.hash = "";
 		$("#intro-video").removeClass('active');
 		var activeVideo = document.getElementById("video-element");
 	    activeVideo.pause();
