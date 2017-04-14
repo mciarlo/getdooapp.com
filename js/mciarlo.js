@@ -24,8 +24,15 @@ $(function () {
 		$iphone = $(".floating-iphone-container"),
 		$floatingPhone = $iphone.find(".floating-iphone:first"),
 		itemHeight = Math.round($(".mini-tour:first").outerHeight() / 4),
-		iPhoneScrollTopToCenter = 140,
+		iPhoneFixedCenteringOffset = 140,
 		iPhoneTop = 0,
+		calculateiPhoneOffsets = function () {
+			if ($iphone.length) {
+				var windowHeight = $window.height();
+				iPhoneTop = $iphone.offset().top;
+				iPhoneFixedCenteringOffset = Math.round((windowHeight - $(".floating-iphone-body:first").outerHeight()) / 2) - IPHONE_FIXED_TOP;
+			}
+		},
 		preventDefaultFormAction = function (ev) {
 			ev.preventDefault();
 			ev.stopPropagation();
@@ -84,6 +91,8 @@ $(function () {
 				return;
 			}
 
+			calculateiPhoneOffsets();
+
 			iPhoneTop = $iphone.offset().top;
 
 			var scrollTop = $window.scrollTop(),
@@ -114,10 +123,15 @@ $(function () {
 			var iPhoneTopSnap = transformationTopOffset + $miniTour.outerHeight() - $(".floating-iphone-body").outerHeight() - IPHONE_FIXED_TOP - parseInt($(".key-features").css("padding-top")),
 				iPhonePercent = Math.min(1, iPhonePercent);
 
-			var shouldBeFixed = scrollTop - iPhoneScrollTopToCenter >= iPhoneTop - IPHONE_FIXED_TOP;
-			var yOffset = (shouldBeFixed || shouldBeScrolling) ? iPhoneScrollTopToCenter + ($nav.outerHeight() / 2) : 0;
-			iPhoneTopSnap = iPhoneTopSnap - yOffset;
+			var scrollingOffset = iPhoneFixedCenteringOffset + ($nav.outerHeight() / 2);
+			var iPhoneBecomesFixedOffset = $(".floating-iphone-container").offset().top - IPHONE_FIXED_TOP - scrollingOffset;
+			
+			var shouldBeFixed = scrollTop >= iPhoneBecomesFixedOffset;
+			var yOffset = (shouldBeFixed || shouldBeScrolling) ? scrollingOffset : 0;
+			iPhoneTopSnap = iPhoneTopSnap - scrollingOffset;
 			var shouldBeScrolling = scrollTop > iPhoneTopSnap;
+
+			console.log("Offset for centering is" + iPhoneFixedCenteringOffset);
 
 			$floatingPhone.css({
 				"-webkit-transform": "translate3d(" + (-iPhonePercent * iphoneWindowWidthOffset) + "px," + yOffset + "px,0)",
@@ -209,12 +223,9 @@ $(function () {
 		var windowWidth = $window.width(),
 			windowHeight = $window.height();
 
-		if ($iphone.length) {
-			iPhoneTop = $iphone.offset().top;
-			iPhoneScrollTopToCenter = Math.round((windowHeight - $(".floating-iphone-body:first").outerHeight()) / 2) - IPHONE_FIXED_TOP;
-		}
+		calculateiPhoneOffsets();
 
-		$('body')[$window.width() < 768 ? "addClass" : "removeClass"]('no-js');
+		$('body')[windowWidth < 768 ? "addClass" : "removeClass"]('no-js');
 
 		$iphone.removeClass("xsmall small medium large xlarge");
 		
@@ -253,7 +264,6 @@ $(function () {
 		onResize();
 	});
 
-	//setUpScrollingFeatures();
 	onResize();
 	updateMiniTour();
 
