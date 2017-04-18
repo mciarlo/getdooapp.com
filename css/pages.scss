@@ -240,7 +240,6 @@ label, input, textarea, .selection {
 .topic-list {
   padding-top: 0;
   margin-bottom: 0;
-  padding-bottom: 0;
 }
 
 .qa-pair {
@@ -910,8 +909,8 @@ a.support-topic-filter:hover {
   }
 
   .faq-wrap-up {
-    background: $darkPurple;
-    padding: 4em 0;
+    padding: 0 0 3em;
+    text-align: left;
     font-size: 1.3em;
     position: relative;
 
@@ -1319,6 +1318,10 @@ a.support-topic-filter:hover {
     }
   }
 
+  .faq-wrap-up {
+    padding: 2em 0 2em;
+  }
+
   .revision-history {
     .change-log-tabs {
       margin-top: 5em;
@@ -1379,6 +1382,10 @@ a.support-topic-filter:hover {
     li {
       width: 25%;
     }
+  }
+
+  .faq-wrap-up {
+    padding: 2em 0 0;
   }
 
   #support-topics,
