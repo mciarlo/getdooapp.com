@@ -196,10 +196,6 @@ label, input, textarea, .selection {
     text-align: left;
   }
 
-  .faq-list {
-    padding-bottom: 2.5em;
-  }
-
   .table-of-contents {
     padding-top: 2em;
   }
@@ -224,7 +220,7 @@ label, input, textarea, .selection {
 
 .faq-list {
   clear: both;
-    border-top: 1px solid $subtlePurple;
+  border-top: 1px solid $subtlePurple;
 
   h2 {
     margin-bottom: 1em;
@@ -350,14 +346,13 @@ label, input, textarea, .selection {
 }
 
 .faq-wrap-up {
-  padding-top: 3em;
   font-size: 1.2em;
   clear: both;
   text-align: center;
 
   a {
     margin-top: 2em;
-    margin-left: 20px;
+    margin-left: 0;
   }
 }
 
@@ -758,6 +753,10 @@ a.support-topic-filter:hover {
   .faq-wrap-up {
     width: 100%;
     margin: 0;
+
+    a {
+      margin-left: 20px;
+    }
   }
 
 }
@@ -819,8 +818,6 @@ a.support-topic-filter:hover {
   }
 
   #faq {
-    padding-bottom: 0;
-
     .half-width {
       width: 50%;
 
