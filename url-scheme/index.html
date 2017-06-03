@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+  <html>
+  <head itemscope itemtype="http://schema.org/WebSite">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="utf-8" />
+
+    <meta name="Author" content="Michael Ciarlo">
+    <meta name="robots" content="noodp">
+    <title itemprop="name">URL Scheme | Doo &ndash; Get Things Done</title>
+    <meta name="Description" content="Get things done by turning your to-do list into a stack of cards you swipe to complete. Cards helps you focus more and procrastinate less. Download for iPhone, iPad, and Mac." />
+    <meta name="Keywords" content="reminders app, reminders ios, reminders mac, todo list, to-do list, task manager, productivity app, get things done, time management, doo, task, tasks" />
+
+    <meta property="og:title" content="Doo &ndash; Get Things Done" />
+    <meta property="og:description" content="Get things done by turning your to-do list into a stack of cards you swipe to complete. Cards helps you focus more and procrastinate less. Download for iPhone, iPad, and Mac." />
+    <link rel="canonical" href="https://www.getdooapp.com">
+    <meta property="og:url" content="https://www.getdooapp.com" />
+    <meta property="og:image" content="https://www.getdooapp.com/images/DooImage.jpg" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Doo - Get Things Done" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <link href='../css/styles.css' rel='stylesheet' type='text/css' />
+    <link type="text/css" rel="stylesheet" href="https://fast.fonts.net/cssapi/437b0e6e-e5ab-42e7-aa2e-6b2f0158ec72.css"/>
+
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/images/icon152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/images/icon120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/icon72.png">
+    <link rel="apple-touch-icon-precomposed" href="/images/icon57.png">
+
+    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png">
+    <link rel="icon" type="image/x-icon" sizes="32x32" href="/images/icon32.png">
+  </head>
+  <body class="no-js url-scheme-page" id="url-scheme-params">
+    <nav id="sticky-nav" class="bordered">
+      <div class="content-wrapper">
+        <a class="logo-link" href="/" title="Go to the Doo homepage"><img src="../images/doo_logo.svg"/></a>
+
+        <div id="nav-wrapper" class="no-click">
+          <ul id="nav-menu">
+            <li class="first"><a href="/" title="Read an overview of Doo and popular features">Overview</a></li>
+            <li class="second"><a href="/faq" title="View frequently asked questions">FAQ</a></li>
+            <li class="third"><a href="/support" title="Get help and view user guides">Support</a></li>
+            <li class="fourth"><a href="/contact" title="Contact the Doo team">Contact</a></li>
+          </ul>
+        </div>
+
+        <a id="hamburger-icon" href="#nav-links">
+          <span class="top"></span>
+          <span class="middle"></span>
+          <span class="bottom"></span>
+        </a>
+      </div>
+    </nav>
+
+    <section class="url-scheme">
+      <div class="content-wrapper">
+        <h1>URL Scheme</h1>
+        <p>Programmatically add tasks to Doo using <code>doo.create</code>. Use the URL host to set the task title. For example, <code>doo.create://New%20reminder</code> will create a new task with the title "New reminder". The title field is the only required attribute of your URL. You can create tasks silently or with a confirmation. URLs are percent decoded before parsing, but encoding is not required.</p>
+
+        <h2>Parameters</h2>
+        <p>All parameters are optional. Certain conditions, like location-based tasks, require specific sets of parameters.</p>
+        <ul class="url-params">
+          <li>
+            <span class="param-label"><code>a</code></span>
+            <span class="param-description">Alerts</span>
+            <span class="param-notes">Use 0 for disabled or 1 for enabled. Defaults to enabled.</span>
+          </li><li>
+            <span class="param-label"><code>nag</code></span>
+            <span class="param-description">Nag Alerts</span>
+            <span class="param-notes">Use 0 for disabled or 1 for enabled. Defaults to disabled.</span>
+          </li><li>
+            <span class="param-label"><code>c</code></span>
+            <span class="param-description">Checklist</span>
+            <span class="param-notes">Strings separated by line breaks, represented by "\n". Begin incomplete items with "[ ]" and completed items with "[x]".</span>
+          </li><li>
+            <span class="param-label"><code>n</code></span>
+            <span class="param-description">Notes</span>
+            <span class="param-notes">Recommended length is 300 characters or less</span>
+          </li><li>
+            <span class="param-label"><code>d</code></span>
+            <span class="param-description">Date</span>
+            <span class="param-notes">A date string in ISO 8601 format</span>
+          </li><li>
+            <span class="param-label"><code>ed</code></span>
+            <span class="param-description">End Date</span>
+            <span class="param-notes">A date string in ISO 8601 format</span>
+          </li><li>
+            <span class="param-label"><code>r</code></span>
+            <span class="param-description">Repeat Type</span>
+            <span class="param-notes">0 = None. 1 = Daily. 2 = Weekly. 3 = Monthly. 4 = Yearly.</span>
+          </li><li>
+            <span class="param-label"><code>rint</code></span>
+            <span class="param-description">Repeat Interval</span>
+            <span class="param-notes">Integer</span>
+          </li><li>
+            <span class="param-label"><code>ord</code></span>
+            <span class="param-description">Repeat Day Ordinals</span>
+            <span class="param-notes">A comma separated list of day ordinals from 1 to N. In the Gregorian calendar, N is equal to 7 and Sunday has an ordinal of 1. Day ordinals are only valid for the weekly repeat type. Visit the Apple documentation on <a href="https://developer.apple.com/reference/foundation/nsdatecomponents/1410442-weekday" title="NSDateFormatter Weekday documentation on Apple.com">weekday ordinals</a> for more information.</span>
+          </li><li>
+            <span class="param-label"><code>eat</code></span>
+            <span class="param-description">Early Reminder Type</span>
+            <span class="param-notes">0 = None. 1 = Day. 2 = Week. 3 = Month. 4 = Year.</span>
+          </li><li>
+            <span class="param-label"><code>eaint</code></span>
+            <span class="param-description">Early Reminder Interval</span>
+            <span class="param-notes">Integer</span>
+          </li><li>
+            <span class="param-label"><code>lat</code></span>
+            <span class="param-description">Latitude</span>
+            <span class="param-notes">Float. A location-based task requires latitude, longitude, and location name. The presence of both latitude and longitude will cause the scheme to ignore any dates or custom repeat information. A location-based task requires latitude, longitude, and location name.</span>
+          </li><li>
+            <span class="param-label"><code>long</code></span>
+            <span class="param-description">Longitude</span>
+            <span class="param-notes">Float. A location-based task requires latitude, longitude, and location name. The presence of both latitude and longitude will cause the scheme to ignore any dates or custom repeat information. A location-based task requires latitude, longitude, and location name.</span>
+          </li><li>
+            <span class="param-label"><code>lact</code></span>
+            <span class="param-description">Location Activation</span>
+            <span class="param-notes">Integer. 0 = Arriving. 1 = Leaving. Defaults to Arriving.</span>
+          </li><li>
+            <span class="param-label"><code>lrad</code></span>
+            <span class="param-description">Location Activation Radius</span>
+            <span class="param-notes">Integer. Defaults to 300 meters.</span>
+          </li><li>
+            <span class="param-label"><code>silent</code></span>
+            <span class="param-description">Confirmation Prompt</span>
+            <span class="param-notes">Require a confirmation before saving the reminder. Use 0 for disabled or 1 for enabled. Defaults to enabled.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="url-scheme-examples">
+      <div class="content-wrapper">
+        <h2>Examples</h2>
+
+        <h3>Create a reminder with no due date, with confirmation</h3>
+        <script src="https://gist.github.com/mciarlo/d61f7489a21ad272a21174382772b9ee.js"></script>
+
+        <h3>Create a reminder with a checklist, no confirmation</h3>
+        <script src="https://gist.github.com/mciarlo/7e45cdeab109104a3b7d8c4e37ed7667.js"></script>
+
+        <h3>Create a reminder with a due date, no confirmation</h3>
+        <script src="https://gist.github.com/mciarlo/f25d6de0540df9fc6691d506ab9508e2.js"></script>
+
+        <h3>Create a reminder with a monthly due date, with confirmation</h3>
+        <script src="https://gist.github.com/mciarlo/1f979a069b7588ae8ca71a09d1915523.js"></script>
+
+        <h3>Create a reminder with a bi-weekly due date on Monday, Wednesday, and Friday, with confirmation</h3>
+        <script src="https://gist.github.com/mciarlo/f7314d369c15757e8d0645e7e6350b1f.js"></script>
+        
+        <h3>Create a reminder due at a location, with no confirmation</h3>
+        <script src="https://gist.github.com/mciarlo/e70bf27d8562a20da9802e1a6e886788.js"></script>
+      </div>
+    </section>
+
+    <section id="footer">
+      <div class="content-wrapper">
+        <ul id="nav-links">
+          <li><a href="/" title="An overview of Doo's major features">Overview</a></li>
+          <li><a href="/faq" title="View frequently asked questions">FAQ</a></li>
+          <li><a href="/support" title="Get help and view user guides">Support</a></li>
+          <li><a href="/contact" title="Contact the Doo team">Contact</a></li>
+          <li><a href="/features" title="Full feature list">Features</a></li>
+          <li><a href="/privacy" title="Read the Doo privacy policy">Privacy Policy</a></li>
+          <li><a href="/change-log" title="Read the change logs">Release Notes</a></li>
+        </ul>
+
+        <ul id="social">
+          <li><a href="https://www.facebook.com/getdooapp/" class="facebook-link" title="Like Doo on Facebook">Facebook</a></li><li><a href="https://twitter.com/getdooapp" class="twitter-link" title="Follow Doo on Twitter">Twitter</a></li><li><a href="https://instagram.com/getdooapp" class="instagram-link" title="Follow Doo on Instagram">Instagram</a></li>
+        </ul>
+
+        <p><span class="block">Made with love in NYC</span> Copyright &copy; 2016 Ciarlo Software, LLC </p>
+      </div>
+    </section>
+
+  <script src="../js/doo.js"></script>
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-72804362-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  </body>
+</html>
