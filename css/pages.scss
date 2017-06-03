@@ -321,6 +321,20 @@ label, input, textarea, .selection {
       padding-top: 0em;
       padding-left: 0;
     }
+
+    &.emoji {
+      border-top: 1px solid rgba(255,255,255,.1);
+
+      span {
+        font-size: 1.2em;
+        padding-bottom: .8em;
+      }
+
+      li {
+        border-bottom: 1px solid rgba(255,255,255,.1);
+        padding: 1.5em 0;
+      }
+    }
   }
 
   .keyboard-shortcut,
@@ -984,14 +998,22 @@ a.support-topic-filter:hover {
     .support-table {
       margin-top: 2em;
 
-      &.emoji li {
-        padding-top: .5em;
-        padding-left: 30%;
+      &.emoji {
+
+        span {
+          font-size: 1em;
+          padding-bottom: 0;
+        }
+
+        li {
+          padding-left: 30%;
+        }
       }
     }
 
     .illustration-description {
       position: absolute;
+      top: 1.5em;
     }
   }
 
