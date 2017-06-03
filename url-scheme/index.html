@@ -56,10 +56,10 @@
     <section class="url-scheme">
       <div class="content-wrapper">
         <h1>URL Scheme</h1>
-        <p>Programmatically add tasks to Doo using <code>doo.create</code>. Use the URL host to set the task title. For example, <code>doo.create://New%20reminder</code> will create a new task with the title "New reminder". The title field is the only required attribute of your URL. You can create tasks silently or with a confirmation. URLs are percent decoded before parsing, but encoding is not required.</p>
+        <p>Programmatically add tasks to Doo using <code>doo.create</code>. Use the URL host to set the task title. The title field is the only required attribute of your URL. You can create tasks silently or with a confirmation. URLs are percent decoded before parsing, but encoding is not required.</p>
 
         <h2>Parameters</h2>
-        <p>All parameters are optional. Certain conditions, like location-based tasks, require specific sets of parameters.</p>
+        <p>All parameters are optional. Certain conditions like location-based tasks require specific sets of parameters.</p>
         <ul class="url-params">
           <li>
             <span class="param-label"><code>a</code></span>
@@ -108,11 +108,11 @@
           </li><li>
             <span class="param-label"><code>lat</code></span>
             <span class="param-description">Latitude</span>
-            <span class="param-notes">Float. A location-based task requires latitude, longitude, and location name. The presence of both latitude and longitude will cause the scheme to ignore any dates or custom repeat information. A location-based task requires latitude, longitude, and location name.</span>
+            <span class="param-notes">Float. A location-based task requires latitude, longitude, and location name. The presence of both latitude and longitude will cause the scheme to ignore any dates or custom repeat information. Latitude values are not validated.</span>
           </li><li>
             <span class="param-label"><code>long</code></span>
             <span class="param-description">Longitude</span>
-            <span class="param-notes">Float. A location-based task requires latitude, longitude, and location name. The presence of both latitude and longitude will cause the scheme to ignore any dates or custom repeat information. A location-based task requires latitude, longitude, and location name.</span>
+            <span class="param-notes">Float. A location-based task requires latitude, longitude, and location name. The presence of both latitude and longitude will cause the scheme to ignore any dates or custom repeat information. Longitude values are not validated.</span>
           </li><li>
             <span class="param-label"><code>lact</code></span>
             <span class="param-description">Location Activation</span>
