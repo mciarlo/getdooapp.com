@@ -76,7 +76,7 @@ $(function () {
 			if (scrollTop > topOffset && scrollTop < nextItemY) {
 				$item.removeClass("fadedOut scrolling").addClass("fixed").find("h2").css("top", TOUR_ITEM_TOP_OFFSET);
 
-			} else if (scrollTop < topOffset) {				
+			} else if (scrollTop < topOffset) {
 				$item.removeClass("fixed scrolling").addClass("fadedOut").find("h2").css("top", "auto");
 
 			} else {
@@ -120,16 +120,16 @@ $(function () {
 				snoozeTopOffset = itemHeight * 2 + (itemHeight * .9);
 				focusTopOffset = itemHeight * 4 + (itemHeight * .6);
 			}
-			
+
 			var iPhoneTopSnap = transformationTopOffset + $miniTour.outerHeight() - $(".floating-iphone-body").outerHeight() - IPHONE_FIXED_TOP - parseInt($(".key-features").css("padding-top")),
 				iPhonePercent = Math.min(1, iPhonePercent);
 
 			var scrollingOffset = iPhoneFixedCenteringOffset + ($nav.outerHeight() / 2);
 			var iPhoneBecomesFixedOffset = $(".floating-iphone-container").offset().top - IPHONE_FIXED_TOP - scrollingOffset;
-			
+
 			var shouldBeFixed = scrollTop >= iPhoneBecomesFixedOffset,
 				yOffset = (shouldBeFixed || shouldBeScrolling) ? scrollingOffset : 0;
-			
+
 			iPhoneTopSnap = iPhoneTopSnap - scrollingOffset;
 			var shouldBeScrolling = scrollTop > iPhoneTopSnap;
 
@@ -227,7 +227,7 @@ $(function () {
 		$('body')[windowWidth < 768 ? "addClass" : "removeClass"]('no-js');
 
 		$iphone.removeClass("xsmall small medium large xlarge");
-		
+
 		if (windowHeight < 800) {
 			$iphone.addClass("xsmall");
 
@@ -291,7 +291,7 @@ $(function () {
 
 	$("#close-video-btn").click(function (ev) {
 		ev.preventDefault();
-		
+
 		window.location.hash = "";
 		$("#intro-video").removeClass('active');
 		var activeVideo = document.getElementById("video-element");
@@ -374,10 +374,12 @@ $(function () {
 
 		$("#support-submit").click(function (ev) {
 			$("#name-input, #email-input, #message-input").removeClass('required');
-			
+			var finalVal = $("#final-field").val();
+
 			if ($("#name-input").val().length == 0 ||
 				$("#email-input").val().length == 0 ||
-				$("#message-input").val().length == 0) {
+				$("#message-input").val().length == 0 ||
+				finalVal.length == 0 || parseInt(finalVal) != 2) {
 
 				preventDefaultFormAction(ev);
 
@@ -399,7 +401,7 @@ $(function () {
 	if ($(".faq-link").length > 0 || $(".support-topic-filter").length > 0) {
 		$(".faq-link").click(function (ev) {
 			ev.preventDefault();
-			
+
 			var navHeight = $nav.height(),
 				el = $(this).attr('href'), $el = $(el), multiplier = $window.outerWidth() < 600 ? .05 : .3;
 		    $("body, html").animate({'scrollTop' :  $el.offset().top - ($window.outerHeight() * multiplier) + navHeight}, SCROLL_ANIMATION_DURATION, function () {
@@ -435,7 +437,7 @@ $(function () {
 		$(".topic-cancel-filter").click(function (ev) {
 			ev.preventDefault();
 			ev.stopPropagation();
-			
+
 			var el = $(this).attr('href'), $el = $(el);
 			$(this).parent().removeClass('active');
 			$(".support-topic-list").show();
