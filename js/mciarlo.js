@@ -1,4 +1,13 @@
 $(function () {
+	$(".faq li").removeClass("active");
+
+	$(".question").click(function (ev) {
+		ev.preventDefault();
+
+		$(this).parent().toggleClass("active");
+	});
+
+
 	var $window = $(window),
 		imageActivationOffset,
 		isElementInViewport,
