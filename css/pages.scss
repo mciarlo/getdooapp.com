@@ -35,31 +35,15 @@
    }
 
    &:focus {
-     border-color: #E2BBA6;
-   }
+     border-color: #C8CAD0;
 
-   &.required {
-     background: #4a2184;
-     border-color: #da3b7e;
+     &:hover {
+       border-color: #C8CAD0;
+     }
    }
 
    &:hover {
-     border-color: #E2BBA6;
-   }
-
-   &.submit {
-     border: 2px solid #59d5d3;
-     border-bottom: 2px solid #43bbb9;
-     padding: .7em 2.2em;
-     color: white;
-     display: inline-block;
-     font-weight: 500;
-     width: auto;
-     margin-top: 1em;
-     text-transform: uppercase;
-     letter-spacing: .05em;
-     cursor: pointer;
-     @include transition(all, 100ms, ease-in-out);
+     border-color: #E7E9EE;
    }
  }
 
@@ -76,7 +60,7 @@ label, input, textarea, .selection {
  #support-topics {
    padding: 12em 0;
    text-align: center;
-   background: $peach;
+   background: $lightGrayBackground;
    border-radius: 4px;
 
    h1 {

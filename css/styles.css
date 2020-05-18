@@ -64,15 +64,13 @@ nav {
   text-align: left;
   z-index: 9999;
   border-bottom: 1px solid #EDEEF3; }
-  nav a {
-    margin-left: 5%; }
   nav ul {
     position: absolute;
     top: 5em; }
     nav ul.left-align {
-      left: 5%; }
+      left: 7%; }
     nav ul.right-align {
-      right: 5%; }
+      right: 7%; }
     nav ul li {
       display: inline-block; }
   nav a:link, nav a:visited {
@@ -100,6 +98,16 @@ nav {
 
   .nav-links li {
     margin-right: 1.5em; } }
+@media screen and (min-width: 768px) {
+  nav ul.left-align {
+    left: 3%; }
+  nav ul.right-align {
+    right: 3%; } }
+@media screen and (min-width: 1024px) {
+  nav ul.left-align {
+    left: 5%; }
+  nav ul.right-align {
+    right: 5%; } }
 /***
 *****************************
 **** Contact
@@ -133,29 +141,11 @@ input, textarea, .selection {
   input:placeholder-shown, textarea:placeholder-shown, .selection:placeholder-shown {
     color: #646370; }
   input:focus, textarea:focus, .selection:focus {
-    border-color: #E2BBA6; }
-  input.required, textarea.required, .selection.required {
-    background: #4a2184;
-    border-color: #da3b7e; }
+    border-color: #C8CAD0; }
+    input:focus:hover, textarea:focus:hover, .selection:focus:hover {
+      border-color: #C8CAD0; }
   input:hover, textarea:hover, .selection:hover {
-    border-color: #E2BBA6; }
-  input.submit, textarea.submit, .selection.submit {
-    border: 2px solid #59d5d3;
-    border-bottom: 2px solid #43bbb9;
-    padding: .7em 2.2em;
-    color: white;
-    display: inline-block;
-    font-weight: 500;
-    width: auto;
-    margin-top: 1em;
-    text-transform: uppercase;
-    letter-spacing: .05em;
-    cursor: pointer;
-    transition: all 100ms ease-in-out;
-    -webkit-transition: all 100ms ease-in-out;
-    -moz-transition: all 100ms ease-in-out;
-    -ms-transition: all 100ms ease-in-out;
-    -o-transition: all 100ms ease-in-out; }
+    border-color: #E7E9EE; }
 
 label, input, textarea, .selection {
   box-sizing: border-box;
@@ -171,7 +161,7 @@ label, input, textarea, .selection {
 #support-topics {
   padding: 12em 0;
   text-align: center;
-  background: #F3E2D9;
+  background: #F5F6F9;
   border-radius: 4px; }
   #support-topics h1 {
     font-size: 3em;
@@ -1099,7 +1089,7 @@ li.active .question .arrow {
   .purpose-built-ui img {
     top: 8%;
     width: 270%;
-    margin-left: -80%; }
+    margin-left: -85%; }
     .purpose-built-ui img.mac-content {
       width: 250%;
       max-width: 1280px;
@@ -1120,13 +1110,16 @@ li.active .question .arrow {
   .purpose-built-ui img {
     top: 5%;
     width: 320%;
-    margin-left: -110%; }
+    margin-left: -115%; }
     .purpose-built-ui img.mac-content {
       margin-left: -95%;
       padding-bottom: 6em;
       margin-top: 20%; } }
 @media screen and (min-width: 1400px) {
-  .purpose-built-ui img.mac-content {
-    margin-top: 0%; } }
+  .purpose-built-ui img {
+    top: 0;
+    margin-left: -125%; }
+    .purpose-built-ui img.mac-content {
+      margin-top: 0%; } }
 
 /*# sourceMappingURL=styles.css.map */
