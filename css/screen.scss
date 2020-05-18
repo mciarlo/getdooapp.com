@@ -536,7 +536,7 @@ li.active .question .arrow {
 
     .left-content {
       width: 15%;
-      margin: 0 0 0 10%;
+      margin: 0 0 0 5%;
     }
 
     .right-content {
@@ -716,6 +716,12 @@ li.active .question .arrow {
 @media screen and (min-width: 1024px) {
   .content-wrapper {
     width: 90%;
+  }
+
+  .features-intro {
+    .left-content {
+      margin-left: 10%;
+    }
   }
 
   .left-content {

@@ -39,7 +39,7 @@ $(function () {
 			return;
 		}
 
-		var windowCenter = $window.scrollTop() + ($window.outerHeight() * .7);
+		var windowCenter = $window.scrollTop() + ($window.outerHeight() * .8);
 
 		if ($taskCreation.offset().top < windowCenter) {
 			$taskCreation.removeClass(ANIMATION_CLASS);
