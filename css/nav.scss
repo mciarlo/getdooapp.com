@@ -1,0 +1,88 @@
+@import "reset";
+@import "mixins";
+@import "colors";
+
+$navDuration: .3s;
+$menuDuration: 1200ms;
+
+/**
+ * Navigation
+ */
+
+#platform-switch li:first-child a::after {
+  content: "/";
+  margin: 0 .5em;
+  color: #B7B7BC;
+}
+
+.nav-links li {
+  margin-right: 1em;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+nav {
+  padding: 1.5em 0 5em;
+  position: relative;
+  text-align: left;
+  z-index: 9999;
+  border-bottom: 1px solid $borderColor;
+
+  a {
+    margin-left: 5%;
+  }
+
+  ul {
+    position: absolute;
+    top: 5em;
+
+    &.left-align {
+      left: 5%;
+    }
+
+    &.right-align {
+      right: 5%;
+    }
+
+    li {
+      display: inline-block;
+    }
+  }
+
+  a:link, a:visited {
+    font-size: 0.8em;
+    color: $textColorSecondary;
+    display: inline-block;
+    @include transition(all, .25s, ease-in-out);
+
+    &:hover,
+    &.active {
+      color: $textColorPrimary;
+    }
+
+    &.active {
+      font-weight: 600;
+    }
+  }
+}
+
+@media screen and (min-width: 675px) {
+  nav {
+    padding: 1.5em 0;
+    text-align: center;
+
+    a {
+      margin-left: 0;
+    }
+
+    ul {
+      top: 1.2em;
+    }
+  }
+
+  .nav-links li {
+    margin-right: 1.5em;
+  }
+}

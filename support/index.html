@@ -11,7 +11,7 @@
     <meta name="Keywords" content="reminders app, reminders ios, reminders mac, todo list, to-do list, task manager, productivity app, get things done, time management, doo, task, tasks" />
 
     <meta property="og:title" content="Doo &ndash; Get Things Done" />
-    <meta property="og:description" content="Get things done by turning your to-do list into a stack of cards you swipe to complete. Cards helps you focus more and procrastinate less. Download for iPhone, iPad, and Mac." />
+    <meta property="og:description" content="Get things done by turning your to-do list into a stack of cards you swipe to complete. Cards helps you focus more and procrastinate less. Available for iPhone, iPad, Apple Watch, and Mac." />
     <link rel="canonical" href="https://www.getdooapp.com">
     <meta property="og:url" content="https://www.getdooapp.com" />
     <meta property="og:image" content="https://www.getdooapp.com/images/DooImage.jpg" />
@@ -22,376 +22,241 @@
     <link href='../css/styles.css' rel='stylesheet' type='text/css' />
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
 
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/images/icon152.png">
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/images/icon120.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/icon72.png">
-    <link rel="apple-touch-icon-precomposed" href="/images/icon57.png">
-
-    <link rel="icon" type="image/x-icon" href="/images/favicon.png">
-    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png">
-    <link rel="icon" type="image/x-icon" sizes="32x32" href="/images/icon32.png">
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="favicon64.png">
+    <link rel="icon" type="image/png" sizes="144x144" href="favicon144.png">
+    <link rel="icon" type="image/png" sizes="128x128" href="favicon128.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon192.png">
   </head>
   <body class="no-js support">
-    <nav id="sticky-nav" class="bordered">
-      <div class="content-wrapper">
-        <a class="logo-link" href="/" title="Go to the Doo homepage"><img src="../images/doo_logo.svg"/></a>
-
-        <div id="nav-wrapper" class="no-click">
-          <ul id="nav-menu">
-            <li class="first"><a href="/" title="Read an overview of Doo and popular features">Overview</a></li>
-            <li class="second"><a href="/faq" title="View frequently asked questions">FAQ</a></li>
-            <li class="third"><a class="active" href="/support" title="Get help and view user guides">Support</a></li>
-            <li class="fourth"><a href="/contact" title="Contact the Doo team">Contact</a></li>
-          </ul>
-        </div>
-
-        <a id="hamburger-icon" href="#nav-links">
-          <span class="top"></span>
-          <span class="middle"></span>
-          <span class="bottom"></span>
-        </a>
-      </div>
+    <nav>
+      <ul class="left-align nav-links">
+        <li><a href="/" title="Get help and view user guides">Overview</a></li>
+        <li><a class="active" href="/support" title="Get help and view user guides">Support</a></li>
+        <li><a href="https://itunes.apple.com/us/app/doo-get-things-done/id1066322956?ls=1&mt=8" title="Get Doo on the App Store">Download</a></li>
+      </ul>
+      <a href="/" title="Go back to the Doo homepage"><img src="../images/doo_logo.svg"></a>
     </nav>
 
-    <section id="support-topics">
-      <div class="content-wrapper">
-        <span class="small-uppercase">Welcome to Doo support</span>
-        <h1>How can we help?</h1>
-        <ul>
-          <li class="first">
-            <a href="#creating-reminders-topic" class="support-topic-filter" title="Filter support topics to reminder creation and editing">
-              <img src="../images/support_icon_creation.svg"/>
-              <span>Reminder Creation</span>
-            </a>
-            <a href="#creating-reminders-topic" class="topic-cancel-filter" title="Remove this filter">+</a>
-          </li>
-
-          <li class="second">
-            <a href="#reminder-actions-topic" class="support-topic-filter" title="Filter support topics to reminder completion, snooze, and skip">
-              <img src="../images/support_actions_icon.svg"/>
-              <span>Reminder Actions</span>
-            </a>
-            <a href="#reminder-actions-topic" class="topic-cancel-filter" title="Remove this filter">+</a>
-          </li>
-
-          <li class="third">
-            <a href="#icloud-topic" class="support-topic-filter" title="Filter support topics to iCloud syncing">
-              <img src="../images/support_icloud_icon.svg"/>
-              <span>iCloud Syncing</span>
-            </a>
-            <a href="#icloud-topic" class="topic-cancel-filter" title="Remove this filter">+</a>
-          </li>
-
-          <li class="fourth">
-            <a href="#extension-topic" class="support-topic-filter" title="Filter support topics to sharing">
-              <img src="../images/support_extension_icon.svg"/>
-              <span>Share Extension</span>
-            </a>
-            <a href="#extension-topic" class="topic-cancel-filter" title="Remove this filter">+</a>
-          </li>
-
-          <li class="fifth">
-            <a href="#widget-topic" class="support-topic-filter" title="Filter support topics to the notification enter widget">
-              <img src="../images/support_widget_icon.svg"/>
-              <span>iOS Widget</span>
-            </a>
-            <a href="#widget-topic" class="topic-cancel-filter" title="Remove this filter">+</a>
-          </li>
-
-          <li class="sixth">
-            <a href="#general-topic" class="support-topic-filter" title="Filter support topics to Accessibility">
-              <img src="../images/support_accessibility_icon.svg"/>
-              <span>General Help</span>
-            </a>
-            <a href="#general-topic" class="topic-cancel-filter" title="Remove this filter">+</a>
-          </li>
-        </ul>
+    <section>
+      <div class="content-wrapper" id="support-topics">
+          <h1>How can we help?</h1>
+          <input type="search" id="support-input" placeholder="Find a topic" />
+          <span class="results-label">No results</span>
+        </div>
       </div>
     </section>
 
-    <section class="topic-list">
-      <div class="content-wrapper">
-        <div class="support-topic-list" id="creating-reminders-topic">
-          <h3>Reminder Creation <a href="#" class="back-to-top" title="Scroll to the top of the page">&uarr; Back to top</a></h3>
+    <section>
+      <div class="content-wrapper display-flex">
+        <div class="left-content">
+          <h2>Reminder Creation</h2>
+        </div>
 
-          <div class="table-of-contents half-width">
-            <ul>
-              <li>
-                <a href="#reminder-creation" class="faq-link" title="How do I create a new reminder?">How do I create a new reminder?</a>
-              </li>
-              <li>
-                <a href="#reminder-editing" class="faq-link" title="How do I edit a reminder?">How do I edit a reminder?</a>
-              </li>
-              <li>
-                <a href="#reminder-delete" class="faq-link" title="How do I delete a reminder?">How do I delete a reminder?</a>
-              </li>
-              <li>
-                <a href="#reminder-due-date" class="faq-link" title="How do I create a reminder with an alert before the due date?">How do I create a reminder with an alert before the due date?</a>
-              </li>
-              <li>
-                <a href="#reminder-notification" class="faq-link" title="How do I create a reminder without a notification?">How do I create a reminder without a notification?</a>
-              </li>
-              <li>
-                <a href="#reminder-repeat" class="faq-link" title="How do I create custom repeat schedules?">How do I create custom repeat schedules?</a>
-              </li>
-            </ul>
-          </div>
-
-          <ul class="faq-list">
+        <div class="right-content" id="creating-reminders-topic">
+          <ul class="faq">
             <li class="qa-pair" id="reminder-creation">
-              <p class="question">How do I create a new reminder?</p>
-              <p class="answer">On iOS, tap the <span class="button-style">+</span> button at the bottom of the main card screen. On Mac, click the <span class="button-style">+</span> button at the top left of the window within the sidebar. You can also create reminders on iOS using the 3D touch shortcut or the share extension.<p>
+              <p class="question">How do I create a new reminder?<img src="../images/arrow.svg" class="arrow"/></p>
+              <p class="answer">On iOS, tap the <img class="icon" src="../images/plusIcon.png"/> button at the bottom of the main card screen. On Mac, click the <img class="icon" src="../images/plusIcon.png"/> button at the top left of the window within the sidebar. You can also create reminders on iOS using the 3D touch shortcut or the share extension.<p>
             </li>
             <li class="qa-pair" id="reminder-editing">
-              <p class="question">How do I edit a reminder?</p>
-              <p class="answer">You can  edit reminders from the schedule view. Tap or click the <img class="icon" src="../images/listIcon.png"/> icon on the main card screen. On Mac, double click the desired reminder to edit. On iOS, tap the desired reminder for options. Tap the <img class="icon" src="../images/editIcon.png"> icon to edit. On iOS, you can also tap the reminder title on the main card screen to begin editing.<p>
+              <p class="question">How do I edit a reminder?<img src="../images/arrow.svg" class="arrow"/></p>
+              <p class="answer">You can  edit reminders from the schedule view. Tap or click the <img class="icon" src="../images/listIcon.png"/> icon on the main card screen. On Mac, double click the desired reminder to edit. On iOS, tap the desired reminder to edit. You can also tap the reminder title on the main card screen to begin editing.<p>
             </li>
             <li class="qa-pair" id="reminder-delete">
-              <p class="question">How do I delete a reminder?</p>
-              <p class="answer">Open the schedule view from the <img class="icon" src="../images/listIcon.png"/> icon on the main card screen. Locate the reminder to delete and tap or click the <img class="icon" src="../images/optionsIcon.png"/> icon. Tap or click the <span class="button-style small">Delete</span> button.<p>
+              <p class="question">How do I delete a reminder?<img src="../images/arrow.svg" class="arrow"/></p>
+              <p class="answer">Open the schedule view from the <img class="icon" src="../images/listIcon.png"/> icon on the main card screen. Locate the reminder to delete and tap or click the <img class="icon" src="../images/optionsIcon.png"/> icon. Select the delete option.<p>
             </li>
             <li class="qa-pair" id="reminder-due-date">
-              <p class="question">How do I create a reminder with an alert before the due date?</p>
+              <p class="question">How do I create a reminder with an alert before the due date?<img src="../images/arrow.svg" class="arrow"/></p>
               <p class="answer">On the add screen, make sure you have the <span class="button-style small">On a date</span> option enabled.</p>
 
-              <p>On iOS tap the date. On the date screen tap the <span class="button-style small">Remind me</span> button beneath the date picker. Select the amount of time you&rsquo;d like to be reminded beforehand.</p>
+              <p class="answer">On iOS tap the date. On the date screen tap the <span class="button-style small">Remind me</span> button beneath the date picker. Select the amount of time you&rsquo;d like to be reminded beforehand.</p>
 
-              <p>On Mac click the <span class="button-style small">&#9662;</span> button to the right of the date. Select the amount of time you&rsquo;d like to be reminded beforehand.</p>
+              <p class="answer">On Mac click the <img class="icon" src="../images/gearIcon.png"/>  button to the right of the date. Select the amount of time you&rsquo;d like to be reminded beforehand.</p>
 
-              <p>Reminders with early alerts show up in your stack before the due date.</p>
+              <p class="answer">Reminders with early alerts show up in your stack before the due date.</p>
             </li>
             <li class="qa-pair" id="reminder-notification">
-              <p class="question">How do I create a reminder without a notification?</p>
+              <p class="question">How do I create a reminder without a notification?<img src="../images/arrow.svg" class="arrow"/></p>
               <p class="answer">On the add screen, make sure you have the <span class="button-style small">On a date</span> option enabled.</p>
 
-              <p>On iOS tap the date. Tap the <span class="button-style small">Show notifications</span> toggle to the off position.</p>
+              <p class="answer">On iOS tap the date. Tap the <span class="button-style small">Show notifications</span> toggle to the off position.</p>
 
-              <p>On Mac click the <span class="button-style small">&#9662;</span> button to the right of the date. Click the <span class="button-style small">Show notifications</span> checkbox to the off position.</p>
+              <p class="answer">On Mac click the <img class="icon" src="../images/gearIcon.png"/> button to the right of the date. Click the <span class="button-style small">Show notifications</span> checkbox to the off position.</p>
             </li>
             <li class="qa-pair" id="reminder-repeat">
-              <p class="question">How do I create custom repeat schedules?</p>
+              <p class="question">How do I create custom repeat schedules?<img src="../images/arrow.svg" class="arrow"/></p>
               <p class="answer">On the add screen, make sure you have the <span class="button-style small">On a date</span> option enabled.</p>
 
-              <p>On iOS tap the active repeat duration. Select the <span class="button-style small">Custom</span> option. To repeat on days of the week, make sure to use the <span class="button-style small">week</span> option.</p>
+              <p class="answer">On iOS tap the active repeat duration. Select the <span class="button-style small">Custom</span> option. To repeat on days of the week, make sure to use the <span class="button-style small">week</span> option.</p>
 
-              <p>On Mac click the <span class="button-style small">&#9662;</span> button to the right of the active repeat duration.</p>
+              <p class="answer">On Mac click the <img class="icon" src="../images/gearIcon.png"/> button to the right of the active repeat duration.</p>
             </li>
           </ul>
         </div>
+      </div>
+    </section>
 
-        <div class="support-topic-list" id="reminder-actions-topic">
-          <h3>Reminder Actions <a href="#" class="back-to-top" title="Scroll to the top of the page">&uarr; Back to top</a></h3>
+    <section>
+      <div class="content-wrapper display-flex">
+        <div class="left-content">
+            <h2>Reminder Actions</h2>
+        </div>
 
-          <div class="table-of-contents half-width">
-            <ul>
-              <li>
-                <a href="#reminder-complete" class="faq-link" title="How do I complete a reminder?">How do I complete a reminder?</a>
-              </li>
-              <li>
-                <a href="#reminder-snooze" class="faq-link" title="How do I snooze a reminder?">How do I snooze a reminder?</a>
-              </li>
-              <li>
-                <a href="#reminder-skip" class="faq-link" title="How do I skip a reminder in my stack?">How do I skip a reminder in my stack?</a>
-              </li>
-              <li>
-                <a href="#reminder-sort" class="faq-link" title="How do I sort or prioritize the reminders in my stack?">How do I sort or prioritize the reminders in my stack?</a>
-              </li>
-            </ul>
-          </div>
-
-          <ul class="faq-list">
+        <div class="right-content" id="reminder-actions-topic">
+          <ul class="faq">
               <li class="qa-pair" id="reminder-complete">
-              <p class="question">How do I complete a reminder?</p>
+              <p class="question">How do I complete a reminder?<img src="../images/arrow.svg" class="arrow"/></p>
               <p class="answer">To complete the top card on iOS, swipe it up. You can also tap the <img class="icon" src="../images/completeIcon.png"/> button or use the schedule view. Tap the <img class="icon" src="../images/listIcon.png"/> icon on the main card screen. Locate the reminder to complete and tap the <img class="icon" src="../images/optionsIcon.png"/> icon. Tap the <span class="button-style small">Complete</span> button.<p>
-              <p>To complete the top card on Mac, click the <img class="icon" src="../images/completeIcon.png"/> button. You can also complete reminders from the schedule view. Click the <img class="icon" src="../images/listIcon.png"/> icon on the main card screen. Locate the reminder to complete and click the <img class="icon" src="../images/moreIcon.png"/> icon. Click the <span class="button-style small">Complete</span> button.</p>
+              <p class="answer">To complete the top card on Mac, click the <img class="icon" src="../images/completeIcon.png"/> button. You can also complete reminders from the schedule view. Click the <img class="icon" src="../images/listIcon.png"/> icon on the main card screen. Locate the reminder to complete and click the <img class="icon" src="../images/optionsIcon.png"/> icon. Click the <span class="button-style small">Complete</span> button.</p>
             </li>
             <li class="qa-pair" id="reminder-snooze">
-              <p class="question">How do I snooze a reminder?</p>
+              <p class="question">How do I snooze a reminder?<img src="../images/arrow.svg" class="arrow"/></p>
               <p class="answer">To snooze the top card on iOS, swipe the card down. You can also tap the <img class="icon" src="../images/snoozeIcon.png"/> button. To bypass your default snooze setting, force press or long press the snooze button. Select between preset options or choose a specific date.<p>
-              <p>To snooze the top card on Mac, click the <img class="icon" src="../images/snoozeIcon.png"/> button. To bypass your default snooze setting, right click the snooze button. Select between preset options or choose a specific date.</p>
+              <p class="answer">To snooze the top card on Mac, click the <img class="icon" src="../images/snoozeIcon.png"/> button. To bypass your default snooze setting, right click the snooze button. Select between preset options or choose a specific date.</p>
             </li>
             <li class="qa-pair" id="reminder-skip">
-              <p class="question">How do I skip a reminder in my stack?</p>
+              <p class="question">How do I skip a reminder in my stack?<img src="../images/arrow.svg" class="arrow"/></p>
               <p class="answer">To skip the top card on iOS, swipe the card left or right. If VoiceOver is enabled, tap the <img class="icon" src="../images/skipIcon.png"/> button.<p>
-              <p>To skip the top card on Mac, click the <img class="icon" src="../images/skipIcon.png"/> button. You can also two-finger swipe left or right using your trackpad, or scroll left or right using your mouse.<p>
+              <p class="answer">To skip the top card on Mac, click the <img class="icon" src="../images/skipIcon.png"/> button. You can also two-finger swipe left or right using your trackpad, or scroll left or right using your mouse.<p>
             </li>
             <li class="qa-pair" id="reminder-sort">
-              <p class="question">How do I sort or prioritize the reminders in my stack?</p>
-              <img src="../images/sort_screenshot.jpg" alt="Sort UI" />
-              <p class="answer">Open the schedule view from the <img class="icon" src="../images/listIcon.png"/> icon on the main card screen. On iOS, tap the <span class="button-style small">Edit</span> button at the top right. Sort reminders in the &ldquo;In Your Stack&rdquo; section using the drag handles. You can also begin bulk editing by long-pressing on a reminder.</p>
+              <p class="question">How do I sort or prioritize the reminders in my stack?<img src="../images/arrow.svg" class="arrow"/></p>
+              <p class="answer">Open the schedule view from the <img class="icon" src="../images/listIcon.png"/> icon on the main card screen. On iOS, tap the <img class="icon" src="../images/sortIcon.png"/> button at the top right. Sort reminders in the &ldquo;In Your Stack&rdquo; section using the drag handles. You can also begin bulk editing by long-pressing on a reminder.</p>
 
-              <p>On Mac, the drag handles appear when you hover over the reminder. Items appear in your stack from top to bottom.<p>
+              <p class="answer">On Mac, the drag handles appear when you hover over the reminder. Items appear in your stack from top to bottom.<p>
             </li>
           </ul>
         </div>
+      </div>
+    </section>
 
-        <div class="support-topic-list" id="icloud-topic">
-          <h3>iCloud Syncing <a href="#" class="back-to-top" title="Scroll to the top of the page">&uarr; Back to top</a></h3>
+    <section>
+      <div class="content-wrapper display-flex">
+        <div class="left-content">
+          <h2>iCloud Syncing</h2>
+        </div>
 
-          <div class="table-of-contents half-width">
-            <ul>
-              <li>
-                <a href="#icloud-sync-toggle" class="faq-link" title="How do I enable or disable iCloud syncing?">How do I enable or disable iCloud syncing?</a>
-              </li>
-              <li>
-                <a href="#icloud-sync-force" class="faq-link" title="How can I force iCloud to sync?">How can I force iCloud to sync?</a>
-              </li>
-              <li>
-                <a href="#icloud-sync-unavailable" class="faq-link" title="Why do I see the &lsquo;iCloud Unavailable&rsquo; message?">Why do I see the &lsquo;iCloud Unavailable&rsquo; message?</a>
-              </li>
-              <li>
-                <a href="#icloud-cache" class="faq-link" title="What happens if I clear the iCloud cache?">What happens if I clear the iCloud cache?</a>
-              </li>
-            </ul>
-          </div>
-
-          <ul class="faq-list">
+        <div class="right-content" id="icloud-topic">
+          <ul class="faq">
             <li class="qa-pair" id="icloud-sync-toggle">
-              <p class="question">How do I enable or disable iCloud syncing?</p>
-              <img src="../images/icloud_prefs_window.png" alt="Doo Preferences window"/>
-              <p class="answer">Tap or click the <img class="icon" src="../images/settingsIcon.png"/> icon on the main card screen. On iOS, tap the iCloud toggle to enable or disable iCloud. On Mac, click the <span class="button-style small">iCloud</span> tab in the Doo Preferences window. Click the iCloud toggle to enable or disable iCloud.<p>
+              <p class="question">How do I enable or disable iCloud syncing?<img src="../images/arrow.svg" class="arrow"/></p>
+              <p class="answer">Tap or click the <img class="icon" src="../images/gearIcon.png"/> icon on the main card screen. On iOS, tap the iCloud toggle to enable or disable iCloud. On Mac, click the <span class="button-style small">iCloud</span> tab in the Doo Preferences window. Click the iCloud toggle to enable or disable iCloud.<p>
 
-              <p>Doo requires an active iCloud account with iCloud Drive enabled. Read the <a href="http://www.apple.com/icloud/setup/ios.html" title="Visit Apple.com to read the official iCloud tutorial">official Apple instructions</a> for step-by-step help enabling iCloud on your iOS device or Mac.</p>
+              <p class="answer">Doo requires an active iCloud account with iCloud Drive enabled. Read the <a href="http://www.apple.com/icloud/setup/ios.html" title="Visit Apple.com to read the official iCloud tutorial">official Apple instructions</a> for step-by-step help enabling iCloud on your iOS device or Mac.</p>
             </li>
             <li class="qa-pair" id="icloud-sync-force">
-              <p class="question">How can I force iCloud to sync?</p>
+              <p class="question">How can I force iCloud to sync?<img src="../images/arrow.svg" class="arrow"/></p>
               <p class="answer">You can force syncing with iCloud by showing and hiding the Control Center on iOS. You can also force a sync by re-opening the application from the home screen.</p>
-              <p>You can force an iCloud sync on Mac by clicking your desktop and then clicking inside the application window.</p>
+              <p class="answer">You can force an iCloud sync on Mac by clicking your desktop and then clicking inside the application window.</p>
             </li>
             <li class="qa-pair" id="icloud-sync-unavailable">
-              <p class="question">Why do I see the &lsquo;iCloud Unavailable&rsquo; message?</p>
+              <p class="question">Why do I see the &lsquo;iCloud Unavailable&rsquo; message?<img src="../images/arrow.svg" class="arrow"/></p>
               <p class="answer">Doo is transparent about reporting errors, even ones that don&rsquo;t affect syncing. Most issues are harmless and resolve themselves automatically.</p>
 
-              <p>We take syncing issues seriously. If iCloud appears broken or inconsistent, please <a href="/contact" title="Contact Doo Support">contact us</a> for troubleshooting help. Be sure to include any error messages and possible ways to reproduce the issue.</p>
+              <p class="answer">We take syncing issues seriously. If iCloud appears broken or inconsistent, please <a href="/contact" title="Contact Doo Support">contact us</a> for troubleshooting help. Be sure to include any error messages and possible ways to reproduce the issue.</p>
             </li>
             <li class="qa-pair" id="icloud-cache">
-              <p class="question">What happens if I clear the iCloud cache?</p>
+              <p class="question">What happens if I clear the iCloud cache?<img src="../images/arrow.svg" class="arrow"/></p>
               <p class="answer">Doo uses a special iCloud feature to sync only the changes that have occurred since the last sync. The syncing mechanism stores a handful of references to remember when the last changes occurred. Resetting the iCloud cache deletes these references and will tell iCloud to sync all data during the next request. Use this feature to troubleshoot syncing issues.</p>
             </li>
           </ul>
         </div>
+      </div>
+    </section>
 
-        <div class="support-topic-list" id="extension-topic">
-          <h3>Share Extension <a href="#" class="back-to-top" title="Scroll to the top of the page">&uarr; Back to top</a></h3>
+    <section>
+      <div class="content-wrapper display-flex">
+        <div class="left-content">
+          <h2>Share Extension</h2>
+        </div>
 
-          <div class="table-of-contents half-width">
-            <ul>
-              <li>
-                <a href="#extension-enable" class="faq-link" title="How do I enable the Doo extension?">How do I enable the Doo extension?</a>
-              </li>
-              <li>
-                <a href="#extension-error" class="faq-link" title="Why did the extension tell me no text or URL could be found?">Why did the extension tell me no text or URL could be found?</a>
-              </li>
-            </ul>
-          </div>
-
-          <ul class="faq-list">
+        <div class="right-content" id="extension-topic">
+          <ul class="faq">
             <li class="qa-pair" id="extension-enable">
-              <p class="question">How do I enable the Doo extension?</p>
+              <p class="question">How do I enable the Doo extension?<img src="../images/arrow.svg" class="arrow"/></p>
 
-              <img src="../images/ext_add.jpg" alt="Widget window" />
+              <p class="answer">On iOS:</p>
+              <ul class="numbered answer">
+                <li>Open Safari and make sure you&rsquo;re on a webpage.</li>
+                <li>Tap the <img class="icon" src="../images/shareIcon.png"/> icon.</li>
+                <li>Beneath Airdrop in the first row of icons, swipe to the end of the list and tap the <img class="icon" src="../images/optionsIcon.png"/> icon.</li>
+                <li>Scroll through the list of Activities until you find &ldquo;Add to Doo&rdquo;. Make sure the toggle is enabled. You can drag the Doo extension up in the list for easier access.</li>
+                <li>Tap the <span class="button-style small">Done</span> button.</li>
+              </ul>
 
-              <p class="answer">On iOS:
-                <ul class="numbered">
-                  <li>Open Safari and make sure you&rsquo;re on a webpage.</li>
-                  <li>Tap the <img class="icon" src="../images/shareIcon.png"/> icon.</li>
-                  <li>Beneath Airdrop in the first row of icons, swipe to the end of the list and tap the <img class="icon" src="../images/moreIcon.png"/> icon.</li>
-                  <li>Scroll through the list of Activities until you find &ldquo;Add to Doo&rdquo;. Make sure the toggle is enabled. You can drag the Doo extension up in the list for easier access.</li>
-                  <li>Tap the <span class="button-style small">Done</span> button.</li>
-                </ul>
-              </p>
+              <p class="answer">On Mac:</p>
+              <ul class="mac numbered answer">
+                <li>Open &ldquo;System Preferences&rdquo; from the Apple Menu.</li>
+                <li>Open the &ldquo;Extensions&rdquo; preference item in the third row of icons.</li>
+                <li>Make sure the &ldquo;All&rdquo; item on the left column is selected.</li>
+                <li>Find Doo in the list on the right.</li>
+                <li>Make sure <span class="button-style small">Share Menu</span> is checked.</li>
+              </ul>
 
-              <img src="../images/extension_prefs_window.png" alt="Extension window" />
-              <p>On Mac:
-                <ul class="mac numbered">
-                  <li>Open &ldquo;System Preferences&rdquo; from the Apple Menu.</li>
-                  <li>Open the &ldquo;Extensions&rdquo; preference item in the third row of icons.</li>
-                  <li>Make sure the &ldquo;All&rdquo; item on the left column is selected.</li>
-                  <li>Find Doo in the list on the right.</li>
-                  <li>Make sure <span class="button-style small">Share Menu</span> is checked.</li>
-                </ul>
-              </p>
-
-              <p>You can now add reminders using webpages, web URLs, selected text, and more wherever you see the <img class="icon" src="../images/shareIcon.png"/> icon.</p>
+              <p class="answer">You can now add reminders using webpages, web URLs, selected text, and more wherever you see the <img class="icon" src="../images/shareIcon.png"/> icon.</p>
             </li>
             <li class="qa-pair" id="extension-error">
-              <p class="question">Why did the extension tell me no text or URL could be found?</p>
+              <p class="question">Why did the extension tell me no text or URL could be found?<img src="../images/arrow.svg" class="arrow"/></p>
               <p class="answer">The Doo extension can use text and web URLs. Some apps convert things like addresses into text that Doo can read. If an app attempts to send an object to Doo that it can&rsquo;t read, you&rsquo;ll see this message.</p>
 
-              <p><a href="/contact" title="Contact the Doo team">Let us know</a> if there&rsquo;s a share menu that you think should work with Doo.</p>
+              <p class="answer"><a href="/contact" title="Contact the Doo team">Let us know</a> if there&rsquo;s a share menu that you think should work with Doo.</p>
             </li>
           </ul>
         </div>
+      </div>
+    </section>
 
-        <div class="support-topic-list" id="widget-topic">
-          <h3>iOS Widget <a href="#" class="back-to-top" title="Scroll to the top of the page">&uarr; Back to top</a></h3>
+    <section>
+      <div class="content-wrapper display-flex">
+        <div class="left-content">
+          <h2>iOS Widget</h2>
+        </div>
 
-          <div class="table-of-contents half-width">
-            <ul>
-              <li>
-                <a href="#widget-enable" class="faq-link" title="How do I enable the Doo iOS widget?">How do I enable the Doo iOS widget?</a>
-              </li>
-              <li>
-                <a href="#widget-slow" class="faq-link" title="The iOS widget doesn&rsquo;t seem to load or takes a long time to appear.">The iOS widget doesn&rsquo;t seem to load or takes a long time to appear.</a>
-              </li>
-            </ul>
-          </div>
-
-          <ul class="faq-list">
+        <div class="right-content" id="widget-topic">
+          <ul class="faq">
             <li class="qa-pair" id="widget-enable">
-              <p class="question">How do I enable the Doo iOS widget?</p>
+              <p class="question">How do I enable the Doo iOS widget?<img src="../images/arrow.svg" class="arrow"/></p>
 
-              <img src="../images/widget_add.jpg" alt="Widget window" />
-              <p class="answer">
-                <ul class="mac numbered">
-                  <li>Open the Search screen by swiping right on the home screen.</li>
-                  <li>Scroll to the bottom of the Search screen.</li>
-                  <li>Tap the <span class="button-style small">Edit</span> button.</li>
-                  <li>Find Doo in the list of items and tap the <span class="button-style">+</span> icon.</li>
-                  <li>Tap the <span class="button-style small">Done</span> button.</li>
-                </ul>
-              </p>
+              <ul class="mac numbered answer">
+                <li>Open the Search screen by swiping right on the home screen.</li>
+                <li>Scroll to the bottom of the Search screen.</li>
+                <li>Tap the <span class="button-style small">Edit</span> button.</li>
+                <li>Find Doo in the list of items and tap the <img class="icon" src="../images/plusIcon.png"/> icon.</li>
+                <li>Tap the <span class="button-style small">Done</span> button.</li>
+              </ul>
 
-              <p>The iOS widget displays up to five reminders. Tap an item to open Doo with that reminder&rsquo;s card on top of your stack. Tap the app icon to open Doo.</p>
+              <p class="answer">The iOS widget displays up to five reminders. Tap an item to open Doo with that reminder&rsquo;s card on top of your stack. Tap the app icon to open Doo.</p>
             </li>
             <li class="qa-pair" id="widget-slow">
-              <p class="question">The iOS widget doesn&rsquo;t seem to load or takes a long time to appear.</p>
+              <p class="question">The iOS widget doesn&rsquo;t seem to load or takes a long time to appear.<img src="../images/arrow.svg" class="arrow"/></p>
               <p class="answer">The Doo widget responds to loading notifications from iOS. On slower devices it&rsquo;s not unusual for this process to take up to a minute.</p>
             </li>
           </ul>
         </div>
+      </div>
+    </section>
 
-        <div class="support-topic-list" id="general-topic">
-          <h3>General Help<a href="#" class="back-to-top" title="Scroll to the top of the page">&uarr; Back to top</a></h3>
+    <section>
+      <div class="content-wrapper display-flex">
+        <div class="left-content">
+          <h2>General Help</h2>
+        </div>
 
-          <div class="table-of-contents half-width">
-            <ul>
-              <li>
-                <a href="#support-accessibility-features" class="faq-link" title="What accessibility features does Doo support?">What accessibility features does Doo support?</a>
-              </li>
-              <li>
-                <a href="#support-accessibility-keyboard" class="faq-link" title="What are the Doo for Mac keyboard shortcuts?">What are the Doo for Mac keyboard shortcuts?</a>
-              </li>
-              <li>
-                <a href="#support-accessibility-menubar" class="faq-link" title="How can I run Doo from the menu bar?">How can I run Doo from the menu bar?</a>
-              </li>
-              <li>
-                <a href="#support-illustration-override" class="faq-link" title="How can I select my own image on cards?">How can I select my own image on cards?</a>
-              </li>
-            </ul>
-          </div>
-
-          <ul class="faq-list">
+        <div class="right-content" id="general-topic">
+          <ul class="faq">
             <li class="qa-pair" id="support-accessibility-features">
-              <p class="question">What accessibility features does Doo support?</p>
+              <p class="question">What accessibility features does Doo support?<img src="../images/arrow.svg" class="arrow"/></p>
               <p class="answer">Doo supports VoiceOver on all available platforms. All actionable items have readable labels. Additional features appear to provide functionality where gestures are inappropriate or cumbersome.</p>
             </li>
 
             <li class="qa-pair" id="support-accessibility-keyboard">
-              <p class="question">What are the Doo for Mac keyboard shortcuts?</p>
+              <p class="question">What are the Doo for Mac keyboard shortcuts?<img src="../images/arrow.svg" class="arrow"/></p>
               <p class="answer">Doo supports keyboard navigation as part of our commitment to accessibility. The following is a list of all Doo specific keyboard shortcuts.</p>
 
-              <ul class="support-table double-column">
+              <ul class="support-table answer">
                 <li><span class="keyboard-shortcut">⌘N</span>New reminder</li>
                 <li><span class="keyboard-shortcut">⌘S</span>Save reminder</li>
                 <li><span class="keyboard-shortcut">⌘`</span>Edit the top card</li>
@@ -408,15 +273,15 @@
             </li>
 
             <li class="qa-pair" id="support-accessibility-menubar">
-              <p class="question">How can I run Doo from the menu bar?</p>
-              <p class="answer">To run Doo from the menu bar, open up Doo Preferences from the <img class="icon" src="../images/settingsIcon.png"/> icon on the main card screen. Check <span class="button-style small">Show in the menu bar</span>. The active window will close and the Doo icon will appear in the menu bar. Click the menu bar icon to show or hide Doo.</p>
+              <p class="question">How can I run Doo from the menu bar?<img src="../images/arrow.svg" class="arrow"/></p>
+              <p class="answer">To run Doo from the menu bar, open up Doo Preferences from the <img class="icon" src="../images/gearIcon.png"/> icon on the main card screen. Check <span class="button-style small">Show in the menu bar</span>. The active window will close and the Doo icon will appear in the menu bar. Click the menu bar icon to show or hide Doo.</p>
             </li>
 
             <li class="qa-pair" id="support-illustration-override">
-              <p class="question">How can I select my own image on cards?</p>
+              <p class="question">How can I select my own image on cards?<img src="../images/arrow.svg" class="arrow"/></p>
               <p class="answer">Doo allows you to override the automatically chosen illustration. Add an emoji to the title of your reminder to ask Doo to find a matching illustration. The full list of illustrations and their emoji equivalents are listed below. Skin tone alternates are always included.</p>
 
-              <ul class="support-table emoji">
+              <ul class="support-table emoji answer">
                 <li><span class="illustration-description">Celebration</span>🎂 🎁 🎈 🎉 🎊 💒 💍</li>
                 <li><span class="illustration-description">Cleaning</span>✨</li>
                 <li><span class="illustration-description">Coffee &amp; Tea</span>☕️ 🍵</li>
@@ -445,33 +310,37 @@
           </ul>
         </div>
       </div>
-
-      <div class="content-wrapper">
-        <p class="faq-wrap-up">Didn&rsquo;t see your question? <a class="btn secondary" href="/contact" title="Contact Doo support">Contact Us</a></p>
-      </div>
-  </section>
-
-    <section id="footer">
-      <div class="content-wrapper">
-        <ul id="nav-links">
-          <li><a href="/" title="An overview of Doo's major features">Overview</a></li>
-          <li><a href="/faq" title="View frequently asked questions">FAQ</a></li>
-          <li><a href="/support" title="Get help and view user guides">Support</a></li>
-          <li><a href="/contact" title="Contact the Doo team">Contact</a></li>
-          <li><a href="/features" title="Full feature list">Features</a></li>
-          <li><a href="/privacy" title="Read the Doo privacy policy">Privacy Policy</a></li>
-          <li><a href="/change-log" title="Read the change logs">Release Notes</a></li>
-        </ul>
-
-        <ul id="social">
-          <li><a href="https://twitter.com/getdooapp" class="twitter-link" title="Follow Doo on Twitter">Twitter</a></li><li><a href="https://instagram.com/getdooapp" class="instagram-link" title="Follow Doo on Instagram">Instagram</a></li>
-        </ul>
-
-        <p><span class="block">Made with love in NYC</span> Copyright &copy; 2019 Ciarlo Software, LLC </p>
-      </div>
     </section>
 
-    <script src="../js/doo.js"></script>
+    <footer>
+      <div class="content-wrapper display-flex">
+        <div class="copyright">
+          <img src="../images/doo_logo.svg">
+          <p><span class="block">Made with love in NYC</span> Copyright &copy; 2016 &ndash; 2020 Ciarlo Software, LLC </p>
+        </div>
+
+        <ul class="nav-links">
+          <li>Products</li><li><a href="/" title="An overview of Doo's major features for iOS">Doo for iOS</a></li>
+          <li><a href="/mac" title="An overview of Doo's major features">Doo for Mac</a></li>
+          <li><a href="/features" title="View all Doo features">Features</a></li>
+          <li><a href="/support" title="Get help and view user guides">Support</a></li>
+          <li><a href="/privacy" title="Read the Doo privacy policy">Privacy Policy</a></li>
+        </ul>
+
+        <ul class="nav-links">
+          <li>Social</li><li><a href="https://twitter.com/getdooapp" class="twitter-link" title="Follow Doo on Twitter">Twitter</a></li><li><a href="https://instagram.com/getdooapp" class="instagram-link" title="Follow Doo on Instagram">Instagram</a></li>
+        </ul>
+
+        <ul class="nav-links">
+          <li>Contact</li><li><a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#103;&#101;&#116;&#100;&#111;&#111;&#097;&#112;&#112;&#046;&#099;&#111;&#109;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#103;&#101;&#116;&#100;&#111;&#111;&#097;&#112;&#112;&#046;&#099;&#111;&#109;</a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <div id="overlay"></div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../js/lib.js"></script>
+    <script src="../js/mciarlo.js"></script>
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
