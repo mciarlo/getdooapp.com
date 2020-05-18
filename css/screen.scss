@@ -198,17 +198,20 @@ $mobileH3TopMargin: 1.5em;
 }
 
 .privacy {
+  background: $black;
+  padding: 4em 0;
+
   h3 {
+    color: white;
     margin-top: $mobileH3TopMargin;
+  }
+
+  p {
+    color: #999;
   }
 }
 
 .highlighted-features {
-  .content-wrapper {
-    padding: $defaultTopPadding / 2 0 0;
-    border-top: 1px solid $borderColor;
-  }
-
   .button {
     margin-top: 2em;
   }
@@ -356,10 +359,11 @@ footer {
 
   .arrow {
     position: absolute;
-    top: .5em;
+    top: .6em;
     right: 0;
     transform: rotate(0deg);
     transition: transform 00ms ease-in-out;
+    width: 14px;
   }
 }
 
@@ -437,7 +441,7 @@ li.active .question .arrow {
   .task-creation,
   .purpose-built-ui,
   .illustrations,
-  .privacy {
+  .privacy .content-wrapper {
     transition: opacity $animationDuration ease-in-out, transform $animationDuration ease-in-out;
     opacity: 1;
     transform: translate3d(0, 0, 0);
@@ -598,9 +602,7 @@ li.active .question .arrow {
   }
 
   .highlighted-features {
-    .content-wrapper {
-      padding-top: $defaultTopPadding;
-    }
+    padding: $defaultTopPadding 0;
 
     .left-content {
       margin: 0;
@@ -637,18 +639,27 @@ li.active .question .arrow {
   }
 
   .privacy {
+    padding: $defaultTopPadding 0;
+
+    h3 {
+      margin-top: 0;
+    }
+
+    .left-content,
+    .right-content {
+      display: inline-block;
+    }
+
     .left-content {
-      width: 55%;
+      width: 50%;
+      margin: 0 0 0 5%;
+      vertical-align: middle;
     }
 
     .right-content  {
       width: 25%;
-      margin: 0 10%;
-
-      img {
-        width: 32px;
-        height: 36px;
-      }
+      margin: 0 0 0 10%;
+      vertical-align: middle;
     }
   }
 
@@ -765,6 +776,11 @@ li.active .question .arrow {
     }
   }
 
+  .press blockquote {
+    font-size: 4em;
+    letter-spacing: -.04em;
+  }
+
   .press-logos {
     li {
       img {
@@ -811,5 +827,10 @@ li.active .question .arrow {
         margin-top: 0%;
       }
     }
+  }
+
+  .press blockquote {
+    font-size: 5em;
+    letter-spacing: -.04em;
   }
 }

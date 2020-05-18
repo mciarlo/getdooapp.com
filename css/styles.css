@@ -64,6 +64,8 @@ nav {
   text-align: left;
   z-index: 9999;
   border-bottom: 1px solid #EDEEF3; }
+  nav > a {
+    margin-left: 7%; }
   nav ul {
     position: absolute;
     top: 5em; }
@@ -91,7 +93,7 @@ nav {
   nav {
     padding: 1.5em 0;
     text-align: center; }
-    nav a {
+    nav > a {
       margin-left: 0; }
     nav ul {
       top: 1.2em; }
@@ -125,11 +127,11 @@ input, textarea, .selection {
   padding: 1em .8em 1em;
   outline: none;
   font-family: "Avenir Next", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Helvetica", "Gill Sans", sans-serif;
-  transition: all 0.2s ease-in-out;
-  -webkit-transition: all 0.2s ease-in-out;
-  -moz-transition: all 0.2s ease-in-out;
-  -ms-transition: all 0.2s ease-in-out;
-  -o-transition: all 0.2s ease-in-out; }
+  transition: border-color 0.2s ease-in-out;
+  -webkit-transition: border-color 0.2s ease-in-out;
+  -moz-transition: border-color 0.2s ease-in-out;
+  -ms-transition: border-color 0.2s ease-in-out;
+  -o-transition: border-color 0.2s ease-in-out; }
   input::-webkit-input-placeholder, textarea::-webkit-input-placeholder, .selection::-webkit-input-placeholder {
     color: #646370; }
   input:-moz-placeholder, textarea:-moz-placeholder, .selection:-moz-placeholder {
@@ -159,7 +161,7 @@ label, input, textarea, .selection {
 **** Support
 ******************************/
 #support-topics {
-  padding: 12em 0;
+  padding: 12em 3em;
   text-align: center;
   background: #F5F6F9;
   border-radius: 4px; }
@@ -167,6 +169,14 @@ label, input, textarea, .selection {
     font-size: 3em;
     padding-bottom: 1em;
     margin-bottom: 0; }
+  #support-topics input {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 400px; }
+
+.support .left-content h2,
+.features .left-content h2 {
+  padding-bottom: 2em; }
 
 #support-input {
   display: inline-block;
@@ -308,9 +318,15 @@ label, input, textarea, .selection {
   padding-top: 0; }
 
 @media screen and (min-width: 768px) {
+  .support .left-content h2,
+  .features .left-content h2 {
+    padding-bottom: 0; }
+
   .feature-group li {
     margin: 0 10% 5em 0;
     width: 40%; }
+  .feature-group p {
+    font-size: 1em; }
 
   .features-list h1 {
     padding: 0; }
@@ -443,7 +459,7 @@ em {
 /** Global Elements **/
 section {
   overflow: hidden;
-  padding: 3em 0; }
+  padding: 4em 0; }
   section:after {
     content: "";
     clear: both;
@@ -749,12 +765,15 @@ Y8b d88P
 .illustrations img {
   margin: 2em 0 0; }
 
-.privacy h3 {
-  margin-top: 1.5em; }
+.privacy {
+  background: #111111;
+  padding: 4em 0; }
+  .privacy h3 {
+    color: white;
+    margin-top: 1.5em; }
+  .privacy p {
+    color: #999; }
 
-.highlighted-features .content-wrapper {
-  padding: 6em 0 0;
-  border-top: 1px solid #EDEEF3; }
 .highlighted-features .button {
   margin-top: 2em; }
 .highlighted-features .left-content {
@@ -848,10 +867,11 @@ footer ul {
   padding-right: 2em; }
   .question .arrow {
     position: absolute;
-    top: .5em;
+    top: .6em;
     right: 0;
     transform: rotate(0deg);
-    transition: transform 00ms ease-in-out; }
+    transition: transform 00ms ease-in-out;
+    width: 14px; }
 
 .answer {
   display: none;
@@ -899,14 +919,14 @@ li.active .question .arrow {
   .task-creation,
   .purpose-built-ui,
   .illustrations,
-  .privacy {
+  .privacy .content-wrapper {
     transition: opacity 800ms ease-in-out, transform 800ms ease-in-out;
     opacity: 1;
     transform: translate3d(0, 0, 0); }
     .task-creation.will-reveal,
     .purpose-built-ui.will-reveal,
     .illustrations.will-reveal,
-    .privacy.will-reveal {
+    .privacy .content-wrapper.will-reveal {
       opacity: 0;
       transform: translate3d(0, 4em, 0); }
 
@@ -1005,35 +1025,42 @@ li.active .question .arrow {
       width: 90%;
       margin-top: 8em; }
 
-  .highlighted-features .content-wrapper {
-    padding-top: 12em; }
-  .highlighted-features .left-content {
-    margin: 0;
-    position: relative; }
-    .highlighted-features .left-content .button {
-      margin-top: 4em; }
-  .highlighted-features .right-content {
-    margin: 0 0 0 12%;
-    width: 65%; }
-    .highlighted-features .right-content li {
-      width: 47.5%;
-      display: inline-block;
-      padding-bottom: 8em; }
-      .highlighted-features .right-content li:nth-child(3), .highlighted-features .right-content li:nth-child(4) {
-        padding-bottom: 0; }
-      .highlighted-features .right-content li:nth-child(odd) {
-        margin-right: 2.5%; }
-      .highlighted-features .right-content li:nth-child(even) {
-        margin-left: 2.5%; }
+  .highlighted-features {
+    padding: 12em 0; }
+    .highlighted-features .left-content {
+      margin: 0;
+      position: relative; }
+      .highlighted-features .left-content .button {
+        margin-top: 4em; }
+    .highlighted-features .right-content {
+      margin: 0 0 0 12%;
+      width: 65%; }
+      .highlighted-features .right-content li {
+        width: 47.5%;
+        display: inline-block;
+        padding-bottom: 8em; }
+        .highlighted-features .right-content li:nth-child(3), .highlighted-features .right-content li:nth-child(4) {
+          padding-bottom: 0; }
+        .highlighted-features .right-content li:nth-child(odd) {
+          margin-right: 2.5%; }
+        .highlighted-features .right-content li:nth-child(even) {
+          margin-left: 2.5%; }
 
-  .privacy .left-content {
-    width: 55%; }
-  .privacy .right-content {
-    width: 25%;
-    margin: 0 10%; }
-    .privacy .right-content img {
-      width: 32px;
-      height: 36px; }
+  .privacy {
+    padding: 12em 0; }
+    .privacy h3 {
+      margin-top: 0; }
+    .privacy .left-content,
+    .privacy .right-content {
+      display: inline-block; }
+    .privacy .left-content {
+      width: 50%;
+      margin: 0 0 0 5%;
+      vertical-align: middle; }
+    .privacy .right-content {
+      width: 25%;
+      margin: 0 0 0 10%;
+      vertical-align: middle; }
 
   .press .content-wrapper {
     padding: 24em 0; }
@@ -1097,6 +1124,10 @@ li.active .question .arrow {
       padding-bottom: 6em;
       margin-top: 5%; }
 
+  .press blockquote {
+    font-size: 4em;
+    letter-spacing: -.04em; }
+
   .press-logos li img {
     height: 24px; }
 
@@ -1120,6 +1151,10 @@ li.active .question .arrow {
     top: 0;
     margin-left: -125%; }
     .purpose-built-ui img.mac-content {
-      margin-top: 0%; } }
+      margin-top: 0%; }
+
+  .press blockquote {
+    font-size: 5em;
+    letter-spacing: -.04em; } }
 
 /*# sourceMappingURL=styles.css.map */

@@ -12,7 +12,7 @@
    padding: 1em .8em 1em;
    outline: none;
    @include fontFamily;
-   @include transition(all, .2s, ease-in-out);
+   @include transition(border-color, .2s, ease-in-out);
 
    &::-webkit-input-placeholder {
      color: $textColorSecondary;
@@ -58,7 +58,7 @@ label, input, textarea, .selection {
  ******************************/
 
  #support-topics {
-   padding: 12em 0;
+   padding: 12em 3em;
    text-align: center;
    background: $lightGrayBackground;
    border-radius: 4px;
@@ -68,7 +68,18 @@ label, input, textarea, .selection {
      padding-bottom: 1em;
      margin-bottom: 0;
    }
+
+   input {
+     width: 90%;
+     margin: 0 auto;
+     max-width: 400px;
+   }
  }
+
+.support .left-content h2,
+.features .left-content h2 {
+   padding-bottom: 2em;
+}
 
  #support-input {
    display: inline-block;
@@ -270,10 +281,19 @@ label, input, textarea, .selection {
 }
 
 @media screen and (min-width: 768px) {
+  .support .left-content h2,
+  .features .left-content h2 {
+    padding-bottom: 0;
+  }
+
   .feature-group {
     li {
       margin: 0 10% 5em 0;
       width: 40%;
+    }
+
+    p {
+      font-size: 1em;
     }
   }
 

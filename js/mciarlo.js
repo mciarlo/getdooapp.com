@@ -9,7 +9,7 @@ $(function () {
 		$taskCreation = $(".task-creation"),
 		$purposefulUI = $(".purpose-built-ui"),
 		$illustrations = $(".illustrations"),
-		$privacy = $(".privacy"),
+		$privacy = $(".privacy .content-wrapper"),
 		$highlightedFeatures = $(".highlighted-features"),
 		ANIMATION_CLASS = "will-reveal",
 		preventDefaultFormAction = function (ev) {
@@ -85,8 +85,8 @@ $(function () {
 	onResize();
 	handleJSAbilities();
 
-	if ($platformLinks.length > 0) {
-		$(".task-creation, .purpose-built-ui, .illustrations, .privacy, .highlighted-features").addClass(ANIMATION_CLASS);
+	if ($platformLinks.length > 0 && $window.outerWidth() >= 768) {
+		$(".task-creation, .purpose-built-ui, .illustrations, .privacy .content-wrapper, .highlighted-features").addClass(ANIMATION_CLASS);
 	}
 
 	$platformLinks.click(function (ev) {
