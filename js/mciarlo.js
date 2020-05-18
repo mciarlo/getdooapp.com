@@ -39,29 +39,30 @@ $(function () {
 			return;
 		}
 
-		var windowCenter = $window.scrollTop() + ($window.outerHeight() * .8);
+		var windowCenterDefault = $window.scrollTop() + ($window.outerHeight() * .65),
+		windowCenterDelayed = $window.scrollTop() + ($window.outerHeight() * .45);
 
-		if ($taskCreation.offset().top < windowCenter) {
+		if ($taskCreation.offset().top < windowCenterDefault) {
 			$taskCreation.removeClass(ANIMATION_CLASS);
 		}
 
-		if ($purposefulUI.offset().top < windowCenter) {
+		if ($purposefulUI.offset().top < windowCenterDefault) {
 			$purposefulUI.removeClass(ANIMATION_CLASS);
 		}
 
-		if ($illustrations.offset().top < windowCenter) {
+		if ($illustrations.offset().top < windowCenterDefault) {
 			$illustrations.removeClass(ANIMATION_CLASS);
 		}
 
-		if ($privacy.offset().top < windowCenter) {
+		if ($privacy.offset().top < windowCenterDefault) {
 			$privacy.removeClass(ANIMATION_CLASS);
 		}
 
-		if ($privacy.offset().top < windowCenter) {
+		if ($privacy.offset().top < windowCenterDefault) {
 			$privacy.removeClass(ANIMATION_CLASS);
 		}
 
-		if ($highlightedFeatures.offset().top < windowCenter) {
+		if ($highlightedFeatures.offset().top < windowCenterDelayed) {
 			$highlightedFeatures.removeClass(ANIMATION_CLASS);
 		}
 	},
