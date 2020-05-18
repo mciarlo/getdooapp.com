@@ -35,6 +35,10 @@ $(function () {
 	    delay: 100 //(milliseconds) adjust to the highest acceptable value
 	},
   onScroll = function () {
+		if ($platformLinks.length == 0) {
+			return;
+		}
+
 		var windowCenter = $window.scrollTop() + ($window.outerHeight() * .7);
 
 		if ($taskCreation.offset().top < windowCenter) {
@@ -80,7 +84,9 @@ $(function () {
 	onResize();
 	handleJSAbilities();
 
-	$(".task-creation, .purpose-built-ui, .illustrations, .privacy, .highlighted-features").addClass(ANIMATION_CLASS);
+	if ($platformLinks.length > 0) {
+		$(".task-creation, .purpose-built-ui, .illustrations, .privacy, .highlighted-features").addClass(ANIMATION_CLASS);
+	}
 
 	$platformLinks.click(function (ev) {
 		ev.preventDefault();
@@ -124,24 +130,35 @@ $(function () {
 
 	var $questions = $(".question");
 	$("#support-input").on("input search", function () {
-		var val = $(this).val();
+		var val = $(this).val().toLowerCase();
 
 		$.each($questions, function (idx, el) {
 			var $item = $(el);
 
 			if (val.length > 0) {
-				var containsInput = $item.text().indexOf(val) > 0;
+				var containsInput = $item.text().toLowerCase().indexOf(val) > 0;
 				$item.parent()[containsInput ? "show" : "hide"]();
 
-				var $container = $item.parents(".content-wrapper"),
-						visibleQuestions = $container.find(".question:visible");
-				$container[visibleQuestions.length > 0 ? "show" : "hide"]();
+				var $container = $item.parents("section"),
+						visibleQuestions = $container.find(".qa-pair"),
+						hasVisibleItems = false;
 
-				$(".results-label").addClass("active").text(visibleQuestions.length + " results below");
+				$.each(visibleQuestions, function (idx, li) {
+					if (!($(li).css("display") == "none")) {
+						hasVisibleItems = true;
+					}
+				});
+
+				$container[hasVisibleItems ? "show" : "hide"]();
+
+				if (idx == $questions.length - 1) {
+					var visibleItems = $(".question:visible").length;
+					$(".results-label").addClass("active").text(visibleItems + " results");
+				}
 
 			} else {
 				$item.parent().show();
-				$(".content-wrapper").show();
+				$("section").show();
 				$(".results-label").removeClass("active");
 			}
 		});

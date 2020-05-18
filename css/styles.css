@@ -55,6 +55,9 @@ table {
   .nav-links li:last-child {
     margin-right: 0; }
 
+.support nav {
+  border: 0; }
+
 nav {
   padding: 1.5em 0 5em;
   position: relative;
