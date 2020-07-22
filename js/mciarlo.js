@@ -5,12 +5,12 @@ $(function () {
 		MAX_DEVICE_PARALLAX_LEFT = 150,
 		MAX_DEVICE_PARALLAX_RIGHT = 250,
 		$body = $("body"),
-		$platformLinks = $("#platform-switch a"),
-		$taskCreation = $(".task-creation"),
-		$purposefulUI = $(".purpose-built-ui"),
-		$illustrations = $(".illustrations"),
-		$privacy = $(".privacy .content-wrapper"),
-		$highlightedFeatures = $(".highlighted-features"),
+		$sectionA = $(".task-creation"),
+		$sectionB = $(".today-mode"),
+		$sectionC = $(".doo-design"),
+		$sectionD = $(".privacy"),
+		$sectionE = $(".highlighted-features"),
+		$burgerIcon = $("#hamburger-icon"),
 		ANIMATION_CLASS = "will-reveal",
 		preventDefaultFormAction = function (ev) {
 			ev.preventDefault();
@@ -27,6 +27,14 @@ $(function () {
 		$body.removeClass("no-js");
 	};
 
+	$burgerIcon.click(function (ev) {
+		ev.preventDefault();
+		ev.stopPropagation();
+
+		$burgerIcon.toggleClass("active");
+		$("nav").toggleClass("active");
+	});
+
 	var scrollHandling = {
 	    allow: true,
 	    reallow: function() {
@@ -35,35 +43,31 @@ $(function () {
 	    delay: 100 //(milliseconds) adjust to the highest acceptable value
 	},
   onScroll = function () {
-		if ($platformLinks.length == 0) {
+		if ($sectionA.length == 0) {
 			return;
 		}
 
 		var windowCenterDefault = $window.scrollTop() + ($window.outerHeight() * .65),
 		windowCenterDelayed = $window.scrollTop() + ($window.outerHeight() * .45);
 
-		if ($taskCreation.offset().top < windowCenterDefault) {
-			$taskCreation.removeClass(ANIMATION_CLASS);
+		if ($sectionA.offset().top < windowCenterDefault) {
+			$sectionA.removeClass(ANIMATION_CLASS);
 		}
 
-		if ($purposefulUI.offset().top < windowCenterDefault) {
-			$purposefulUI.removeClass(ANIMATION_CLASS);
+		if ($sectionB.offset().top < windowCenterDefault) {
+			$sectionB.removeClass(ANIMATION_CLASS);
 		}
 
-		if ($illustrations.offset().top < windowCenterDefault) {
-			$illustrations.removeClass(ANIMATION_CLASS);
+		if ($sectionC.offset().top < windowCenterDefault) {
+			$sectionC.removeClass(ANIMATION_CLASS);
 		}
 
-		if ($privacy.offset().top < windowCenterDefault) {
-			$privacy.removeClass(ANIMATION_CLASS);
+		if ($sectionD.offset().top < windowCenterDefault) {
+			$sectionD.removeClass(ANIMATION_CLASS);
 		}
 
-		if ($privacy.offset().top < windowCenterDefault) {
-			$privacy.removeClass(ANIMATION_CLASS);
-		}
-
-		if ($highlightedFeatures.offset().top < windowCenterDelayed) {
-			$highlightedFeatures.removeClass(ANIMATION_CLASS);
+		if ($sectionE.offset().top < windowCenterDefault) {
+			$sectionE.removeClass(ANIMATION_CLASS);
 		}
 	},
 	onResize = function () {
@@ -85,49 +89,13 @@ $(function () {
 	onResize();
 	handleJSAbilities();
 
-	if ($platformLinks.length > 0 && $window.outerWidth() >= 768) {
-		$(".task-creation, .purpose-built-ui, .illustrations, .privacy .content-wrapper, .highlighted-features").addClass(ANIMATION_CLASS);
+	if ($sectionA.length > 0 && $window.outerWidth() >= 768) {
+		$sectionA.addClass(ANIMATION_CLASS);
+		$sectionB.addClass(ANIMATION_CLASS);
+		$sectionC.addClass(ANIMATION_CLASS);
+		$sectionD.addClass(ANIMATION_CLASS);
+		$sectionE.addClass(ANIMATION_CLASS);
 	}
-
-	$platformLinks.click(function (ev) {
-		ev.preventDefault();
-		ev.stopPropagation();
-
-		var $this = $(this),
-				index = $platformLinks.index($this),
-				urlRoute = $this.attr("data-resource"),
-				pageTitle = $this.attr("title");
-
-		$body.removeClass("mac-platform-transition-in ios-platform-transition-in");
-
-		if (index == 1) {
-			$body.addClass("ios-platform-transition-out");
-
-			setTimeout(function () {
-				$body.removeClass("ios-platform-transition-out ios-platform").addClass("mac-platform-transition-in mac-platform");
-			}, 500);
-
-			setTimeout(function () {
-				$body.removeClass("mac-platform-transition-in");
-			}, 500);
-
-		} else {
-			$body.addClass("mac-platform-transition-out");
-
-			setTimeout(function () {
-				$body.removeClass("mac-platform-transition-out mac-platform").addClass("ios-platform-transition-in ios-platform");
-			}, 500);
-
-			setTimeout(function () {
-				$body.removeClass("ios-platform-transition-in");
-			}, 500);
-		}
-
-		$platformLinks.removeClass("active");
-		$this.addClass("active");
-		window.history.pushState('', pageTitle, urlRoute);
-		document.title = pageTitle;
-	});
 
 	var $questions = $(".question");
 	$("#support-input").on("input search", function () {

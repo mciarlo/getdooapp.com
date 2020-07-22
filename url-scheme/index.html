@@ -31,12 +31,20 @@
   </head>
   <body class="no-js">
     <nav>
-      <ul class="left-align nav-links">
-        <li><a href="/" title="Get an overview of Doo's features">Overview</a></li>
-        <li><a href="/support" title="Get help and view user guides">Support</a></li>
-        <li><a href="https://itunes.apple.com/us/app/doo-get-things-done/id1066322956?ls=1&mt=8" title="Get Doo on the App Store">Download</a></li>
-      </ul>
-      <a href="/" title="Go back to the Doo homepage"><img src="../images/doo_logo.svg"></a>
+      <div class="content-wrapper">
+        <a class="logo-link" href="/" title="Go back to the Doo homepage"><img src="../images/doo_logo.svg"></a>
+        <ul id="nav-links">
+          <li><a class="active" href="/" data-resource="/" title="iOS | Doo &ndash; Get Things Done">Doo for iOS</a></li>
+          <li><a href="/mac" data-resource="mac" title="Mac | Doo &ndash; Get Things Done">Doo for Mac</a></li>
+          <li><a href="/support" data-resource="mac" title="Mac | Doo &ndash; Get Things Done">Support</a></li>
+        </ul>
+
+        <a id="hamburger-icon" href="#nav-links">
+          <span class="top"></span>
+          <span class="middle"></span>
+          <span class="bottom"></span>
+        </a>
+      </div>
     </nav>
 
     <section class="url-scheme">
@@ -141,12 +149,7 @@
     </section>
 
     <footer>
-      <div class="content-wrapper display-flex">
-        <div class="copyright">
-          <img src="../images/doo_logo.svg">
-          <p><span class="block">Made with love in NYC</span> Copyright &copy; 2016 &ndash; 2020 Ciarlo Software, LLC </p>
-        </div>
-
+      <div class="content-wrapper">
         <ul class="nav-links">
           <li>Products</li><li><a href="/" title="An overview of Doo's major features for iOS">Doo for iOS</a></li>
           <li><a href="/mac" title="An overview of Doo's major features">Doo for Mac</a></li>
@@ -162,6 +165,11 @@
         <ul class="nav-links">
           <li>Contact</li><li><a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#103;&#101;&#116;&#100;&#111;&#111;&#097;&#112;&#112;&#046;&#099;&#111;&#109;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#103;&#101;&#116;&#100;&#111;&#111;&#097;&#112;&#112;&#046;&#099;&#111;&#109;</a></li>
         </ul>
+
+        <div class="copyright">
+          <img src="../images/doo_logo_light.svg">
+          <p><span class="block">Made with love in NYC</span> Copyright &copy; 2016 &ndash; 2020 Ciarlo Software, LLC </p>
+        </div>
       </div>
     </footer>
 

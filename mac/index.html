@@ -29,271 +29,125 @@
     <link rel="icon" type="image/png" sizes="128x128" href="../images/favicon128.png">
     <link rel="icon" type="image/png" sizes="192x192" href="../images/favicon192.png">
   </head>
-  <body class="no-js mac-platform">
+  <body class="no-js">
     <nav>
-      <ul class="left-align nav-links">
-        <li><a class="active" href="/" title="Get an overview of Doo's features">Overview</a></li>
-        <li><a href="/support" title="Get help and view user guides">Support</a></li>
-        <li><a href="https://itunes.apple.com/us/app/doo-get-things-done/id1066322956?ls=1&mt=8" title="Get Doo on the App Store">Download</a></li>
-      </ul>
-      <a href="/" title="Go back to the Doo homepage"><img src="../images/doo_logo.svg"></a>
-      <ul id="platform-switch" class="right-align">
-        <li><a href="/" data-resource="/" title="Home | Doo for iOS">iOS</a></li><li><a class="active" href="/mac" data-resource="mac" title="Home | Doo for Mac">Mac</a></li>
-      </ul>
+      <div class="content-wrapper">
+        <a class="logo-link" href="/" title="Go back to the Doo homepage"><img src="../images/doo_logo.svg"></a>
+        <ul id="nav-links">
+          <li><a href="/" data-resource="/" title="iOS | Doo &ndash; Get Things Done">Doo for iOS</a></li>
+          <li><a class="active" href="/mac" data-resource="mac" title="Mac | Doo &ndash; Get Things Done">Doo for Mac</a></li>
+          <li><a href="/support" data-resource="mac" title="Mac | Doo &ndash; Get Things Done">Support</a></li>
+        </ul>
+
+        <a id="hamburger-icon" href="#nav-links">
+          <span class="top"></span>
+          <span class="middle"></span>
+          <span class="bottom"></span>
+        </a>
+      </div>
     </nav>
 
     <section class="introduction">
       <div class="content-wrapper">
         <div class="intro-text">
-          <h1>Todos with invisible superpowers</h1>
-          <div class="download-buttons">
-            <a class="app-store-badge ios-content" href="https://itunes.apple.com/us/app/doo-get-things-done/id1066322956?ls=1&mt=8" title="Get Doo on the App Store"><img src="../images/Download_on_the_App_Store_Badge_US-UK_135x40.svg" alt="App Store Badge"/></a>
-            <a class="app-store-badge mac-content" href="https://itunes.apple.com/us/app/doo-get-things-done/id1107759193?ls=1&mt=12" title="Get Doo on the App Store"><img src="../images/Download_on_the_Mac_App_Store_Badge_US-UK_165x40.svg" alt="App Store Badge"/></a>
-          </div>
+          <h1>Todos with </br>invisible </br>superpowers</h1>
+          <p>Build better habits and make progress each day with a todo app designed to help you focus.</p>
+          <a class="app-store-badge ios-content" href="https://itunes.apple.com/us/app/doo-get-things-done/id1066322956?ls=1&mt=8" title="Get Doo on the App Store"><img src="../images/Download_on_the_App_Store_Badge_US-UK_135x40.svg" alt="App Store Badge"/></a>
         </div>
 
-        <div class="hero-container">
-          <div class="mobile">
-            <img class="full-width" src="../images/hero_placeholder_mobile.jpg"/>
-            <img class="ios-content full-width lazy-load invisible" src="../images/placeholder.png" data-src="../images/ios_hero_mobile.jpg" data-src-retina="../images/ios_hero_mobile@2x.jpg" alt="Syncing feature"/>
-            <img class="mac-content full-width lazy-load invisible" src="../images/placeholder.png" data-src="../images/mac_hero_mobile.jpg" data-src-retina="../images/mac_hero_mobile@2x.jpg" alt="Syncing feature"/>
-          </div>
-          <div class="desktop">
-            <img class="full-width" src="../images/hero_placeholder.jpg"/>
-            <img class="ios-content full-width lazy-load invisible" src="../images/placeholder.png" data-src="../images/ios_hero.jpg" data-src-retina="../images/ios_hero@2x.jpg" alt="Syncing feature"/>
-            <img class="mac-content full-width lazy-load invisible" src="../images/placeholder.png" data-src="../images/mac_hero.jpg" data-src-retina="../images/mac_hero@2x.jpg" alt="Syncing feature"/>
-          </div>
+        <img class="lazy-load invisible mac-screenshot" src="../images/placeholder.png" data-src="../images/mac_hero.png" data-src-retina="../images/mac_hero@2x.png"/>
 
-          <noscript>
-            <div class="mobile">
-              <img class="ios-content full-width" src="../images/ios_hero_mobile@2x.jpg"/>
-              <img class="mac-content full-width" src="../images/mac_hero_mobile@2x.jpg"/>
-            </div>
-            <div class="desktop">
-              <img class="ios-content full-width" src="../images/ios_hero@2x.jpg"/>
-              <img class="mac-content full-width" src="../images/mac_hero@2x.jpg"/>
-          </div>
-          </noscript>
-        </div>
+        <noscript>
+          <img clas="mac-screenshot" src="../images/mac_hero@2x.jpg"/>
+        </noscript>
       </div>
     </section>
 
     <section class="features-intro">
-      <div class="content-wrapper display-flex">
-        <div class="left-content">
-          <p>How it works</p>
-        </div>
-
-        <div class="right-content">
-          <h3>Focus on a few cards each day. <span class="optional-new-line">Build consistent progress over time.<span></h3>
-        </div>
-      </div>
-    </section>
-
-    <section class="task-creation">
-      <div class="content-wrapper display-flex">
-        <div class="left-content">
-          <div class="mobile">
-            <img class="lazy-load invisible full-width" src="../images/placeholder.png" data-src="../images/editing.png" data-src-retina="../images/editing@2x.png" alt="Syncing feature"/>
-
-            <noscript>
-              <img class="full-width" src="../images/placeholder.png" data-src="../images/editing.png" data-src-retina="../images/editing@2x.png" alt="Syncing feature"/>
-            </noscript>
-          </div>
-
-          <h3>Effortless task creation</h3>
-          <p class="ios-content">Creating a task by typing in the title. Tap one of the icons above the keyboard to add dates, times, repeats, and more with a beautiful custom keyboard. Your reminder is written out like a sentence. Tap a word you’d like to change and the custom keyboard will re-appear. Simple.</p>
-
-          <p class="mac-content">Creating a task by typing in the title. Click one of the shortcuts to add dates, times, repeats, and more with beautiful, inline controls. Your reminder is written out like a sentence. Click an item you’d like to change and the control will re-appear. Simple.</p>
-
-          <img class="lazy-load invisible full-width" src="../images/placeholder.png" data-src="../images/keyboard.png" data-src-retina="../images/keyboard@2x.png" alt="Syncing feature"/>
-
-          <noscript>
-            <img class="full-width" src="../images/keyboard@2x.png" alt="Syncing feature"/>
-          </noscript>
-
-          <p class="caption">Custom keyboards make dates, times, and repeats faster than ever.</p>
-        </div>
-
-        <div class="right-content desktop">
-          <img class="lazy-load invisible full-width" src="../images/placeholder.png" data-src="../images/editing.png" data-src-retina="../images/editing@2x.png" alt="Syncing feature"/>
-
-          <noscript>
-            <img class="full-width" src="../images/placeholder.png" data-src="../images/editing.png" data-src-retina="../images/editing@2x.png" alt="Syncing feature"/>
-          </noscript>
-        </div>
-      </div>
-    </section>
-
-    <section class="purpose-built-ui">
-      <div class="content-wrapper display-flex">
-        <div class="left-content">
-
-          <div class="mobile">
-            <img class="ios-content lazy-load invisible" src="../images/placeholder.png" data-src="../images/purposeful_ui.png" data-src-retina="../images/purposeful_ui@2x.png" alt="Syncing feature"/>
-
-            <img class="mac-content lazy-load invisible" src="../images/placeholder.png" data-src="../images/purposeful_ui_mac.png" data-src-retina="../images/purposeful_ui_mac@2x.png" alt="Syncing feature"/>
-
-            <noscript>
-              <img class="ios-content" src="../images/purposeful_ui@2x.png" alt="Syncing feature"/>
-              <img class="mac-content" src="../images/purposeful_ui_mac@@x.jpg" />
-            </noscript>
-          </div>
-
-          <h3>Purpose-built Interface</h3>
-          <p>Popular producitvity apps have tagging, color coding, folders, and subfolders. They call it organization. We call it bloat.</p>
-
-          <p>An uncompromising focus transforms your workflow into a powerful habit builder. Turn your reminders into cards. Pick a few tasks per day and make steady progress over time without even trying.</p>
-        </div>
-
-        <div class="right-content desktop">
-          <img class="ios-content lazy-load invisible" src="../images/placeholder.png" data-src="../images/purposeful_ui.png" data-src-retina="../images/purposeful_ui@2x.png" alt="Syncing feature"/>
-
-          <img class="mac-content lazy-load invisible" src="../images/placeholder.png" data-src="../images/purposeful_ui_mac.png" data-src-retina="../images/purposeful_ui_mac@2x.png" alt="Syncing feature"/>
-
-          <noscript>
-            <img class="ios-content" src="../images/purposeful_ui@2x.png" alt="Syncing feature"/>
-            <img class="mac-content" src="../images/purposeful_ui_mac@@x.jpg" />
-          </noscript>
-        </div>
-      </div>
-    </section>
-
-    <section class="illustrations">
-      <div class="content-wrapper display-flex">
-        <div class="left-content desktop">
-          <img class="lazy-load invisible full-width" src="../images/placeholder.png" data-src="../images/illustration_01.png" data-src-retina="../images/illustration_01@2x.png" alt="Syncing feature"/>
-
-          <img class="lazy-load invisible full-width" src="../images/placeholder.png" data-src="../images/illustration_02.png" data-src-retina="../images/illustration_02@2x.png" alt="Syncing feature"/>
-
-          <noscript>
-            <img class="full-width" src="../images/illustration_01@2x.png" alt="Syncing feature"/>
-            <img class="full-width" src="../images/illustration_02@2x.png" alt="Syncing feature"/>
-          </noscript>
-        </div>
-
-        <div class="right-content">
-          <h3>Beautiful illustrations</h3>
-          <p>Your todo list can represent your goals, long-term aspirations, and your biggest celebrations. Warm, comforting illustrations help reduce your anxiety and inspire you push forward. No more boring task managers. Hello Doo.</p>
-
-          <div class="mobile">
-            <img class="lazy-load invisible full-width" src="../images/placeholder.png" data-src="../images/illustration_01.png" data-src-retina="../images/illustration_01@2x.png" alt="Syncing feature"/>
-
-            <img class="lazy-load invisible full-width" src="../images/placeholder.png" data-src="../images/illustration_02.png" data-src-retina="../images/illustration_02@2x.png" alt="Syncing feature"/>
-
-            <noscript>
-              <img class="full-width" src="../images/illustration_01@2x.png" alt="Syncing feature"/>
-              <img class="full-width" src="../images/illustration_02@2x.png" alt="Syncing feature"/>
-            </noscript>
-          </div>
-
-          <img class="lazy-load invisible full-width" src="../images/placeholder.png" data-src="../images/illustration_03.png" data-src-retina="../images/illustration_03@2x.png" alt="Syncing feature"/>
-
-          <noscript>
-            <img class="full-width" src="../images/illustration_03@2x.png" alt="Syncing feature"/>
-          </noscript>
-        </div>
-      </div>
-    </section>
-
-    <section class="privacy">
       <div class="content-wrapper">
-        <div class="left-content">
-          <img class="lazy-load invisible full-width" src="../images/placeholder.png" data-src="../images/privacy_desk.png" data-src-retina="../images/privacy_desk@2x.png" alt="Syncing feature"/>
+          <p class="heading-label">How it works</p>
+          <h2>Create a card for each task.<span class="optional-new-line">Pick a few tasks each day and snooze the rest.<span> <span class="optional-new-line">Build consistent, sustainable habits that feel invisible.</span></h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="task-creation major-feature">
+      <div class="content-wrapper">
+        <p class="heading-label">Major Features</p>
+        <h3>Effortless task entry</h3>
+        <p>Creating a task by typing in the title. Tap an icon above the keyboard to set dates, locations, notes, and more.  Tap a word to edit. Simple.</p>
+
+        <div class="media-well">
+          <img class="lazy-load invisible mac-screenshot" src="../images/placeholder.png" data-src="../images/mac_editing.png" data-src-retina="../images/mac_editing@2x.png"/>
 
           <noscript>
-            <img class="full-width" src="../images/privacy_desk@2x.png" alt="Syncing feature"/>
+            <img class="mac-screenshot" src="../images/mac_editing@2x.jpg"/>
           </noscript>
-        </div><div class="right-content">
-          <h3>Private by design</h3>
-          <p>Privacy is a fundamental right. That’s why we don’t collect any of your data. What does that mean? No trackers, cookies, or analytics. Your data is yours and yours only.</p>
         </div>
+      </div>
+    </section>
+
+    <section class="today-mode major-feature">
+      <div class="content-wrapper">
+        <h3>Today Mode</h3>
+        <p>Tap the Today button to select your tasks for the day. Doo will snooze the rest so you can improve your focus and avoid productivity guilt.</p>
+
+        <div class="media-well">
+          <img class="lazy-load invisible mac-screenshot" src="../images/placeholder.png" data-src="../images/mac_list.png" data-src-retina="../images/mac_list@2x.png"/>
+
+          <noscript>
+            <img class="mac-screenshot" src="../images/mac_list@2x.jpg"/>
+          </noscript>
+        </div>
+      </div>
+    </section>
+
+    <section class="doo-design major-feature">
+      <div class="content-wrapper">
+        <h3>Designed with purpose</h3>
+        <p>Popular producitvity apps have tagging, color coding, folders, and subfolders. They call it organization. We call it bloat. Doo is everything you need and nothing you don’t.</p>
+
+        <img class="lazy-load invisible full-width desktop" src="../images/placeholder.png" data-src="../images/doo_design_mac.jpg" data-src-retina="../images/doo_design_mac@2x.jpg"/><img class="lazy-load invisible full-width mobile" src="../images/placeholder.png" data-src="../images/doo_design_mobile_mac.jpg" data-src-retina="../images/doo_design_mobile_mac@2x.jpg"/>
+
+        <noscript>
+          <img class="full-width desktop" src="../images/doo_design_mac@2x.jpg"/><img class="full-width mobile" src="../images/doo_design_mobile_mac@2x.jpg"/>
+        </noscript>
+      </div>
+    </section>
+
+    <section class="privacy major-feature">
+      <div class="content-wrapper">
+        <h3>Keeps your data private</h3>
+        <p>Privacy is a fundamental right. That&rsquo;s why Doo includes screen locking. No "Pro" upgrade required. We also don’t collect your data. What does this mean? No trackers, no cookies, and no analytics. Simple &mdash; the way it should be.</p>
+
+        <img class="lazy-load invisible global-lock" src="../images/placeholder.png" data-src="../images/privacy_01.jpg" data-src-retina="../images/privacy_01@2x.jpg"/>
+        <img class="lazy-load invisible" src="../images/placeholder.png" data-src="../images/privacy_02_mac.jpg" data-src-retina="../images/privacy_02_mac@2x.jpg"/>
+
+        <noscript>
+          <img src="../images/privacy_01@2x.jpg"/>
+          <img src="../images/privacy_02_mac@2x.jpg"/>
+        </noscript>
       </div>
     </section>
 
     <section class="highlighted-features">
-      <div class="content-wrapper display-flex">
-        <div class="left-content">
-          <sidebar id="feature-sidebar">
-            <h2 class="large">Even more good stuff</h2>
-            <p>Doo is feature rich and includes everything you need to build better habits and nothing more. Our uncompromising focus is your gain.</p>
-            <a class="button primary" href="/features">All features</a>
-          </sidebar>
-        </div>
+      <div class="content-wrapper">
+          <h2>Even more good stuff</h2>
+          <ul>
+            <li><img src="../images/feature_icon_menubar@2x.png"><strong>Menu bar mode</strong>Use as a windowed application or as a utility from your menu bar.</li><li><img src="../images/feature_icon_widget@2x.png"><strong>Widget</strong>View due tasks at a glance and open the app to a specific task.</li><li><img src="../images/feature_icon_collaboration@2x.png"><strong>Task Collaboration</strong>Share reminders using iMessage, email, or any other text-based service. Changes sync to all devices.</li><li><img src="../images/feature_icon_accessibility@2x.png"><strong>Accessibility</strong>Dynamic Text and VoiceOver support for a more universal experience for all.</li><li><img src="../images/feature_icon_locking@2x.png"><strong>Screen Lock</strong>Protect sensitive information by requiring authentication when the app opens.</li><li><img src="../images/feature_icon_icloud@2x.png"><strong>iCloud Sync</strong>Sync on all of your iOS and Mac devices using your Apple ID.</li>
+          </ul>
 
-        <ul class="ios-content right-content">
-          <li>
-            <img class="lazy-load invisible full-width" src="../images/placeholder.png" data-src="../images/feature_01.jpg" data-src-retina="../images/feature_01@2x.jpg" alt="Syncing feature"/>
-
-            <noscript>
-              <img class="full-width" src="../images/feature_01@2x.jpg" alt="Syncing feature"/>
-            </noscript>
-            <h4>Ask Siri</h4>
-          </li><li>
-            <img class="lazy-load invisible full-width" src="../images/placeholder.png" data-src="../images/feature_02.jpg" data-src-retina="../images/feature_02@2x.jpg" alt="Syncing feature"/>
-
-            <noscript>
-              <img class="full-width" src="../images/feature_02@2x.jpg" alt="Syncing feature"/>
-            </noscript>
-            <h4>Screen lock</h4>
-          </li><li>
-            <img class="lazy-load invisible full-width" src="../images/placeholder.png" data-src="../images/feature_04.jpg" data-src-retina="../images/feature_04@2x.jpg" alt="Syncing feature"/>
-
-            <noscript>
-              <img class="full-width" src="../images/feature_04@2x.jpg" alt="Syncing feature"/>
-            </noscript>
-            <h4>iPad Multitasking</h4>
-          </li><li>
-            <img class="lazy-load invisible full-width" src="../images/placeholder.png" data-src="../images/feature_03.jpg" data-src-retina="../images/feature_03@2x.jpg" alt="Syncing feature"/>
-
-            <noscript>
-              <img class="full-width" src="../images/feature_03@2x.jpg" alt="Syncing feature"/>
-            </noscript>
-            <h4>iCloud Sync</h4>
-          </li>
-        </ul>
-
-        <ul class="mac-content right-content">
-          <li>
-            <img class="lazy-load invisible full-width" src="../images/placeholder.png" data-src="../images/feature_01.jpg" data-src-retina="../images/feature_01@2x.jpg" alt="Syncing feature"/>
-
-            <noscript>
-              <img class="full-width" src="../images/feature_01@2x.jpg" alt="Syncing feature"/>
-            </noscript>
-            <h4>Menu bar mode</h4>
-          </li><li>
-            <img class="lazy-load invisible full-width" src="../images/placeholder.png" data-src="../images/feature_02.jpg" data-src-retina="../images/feature_02@2x.jpg" alt="Syncing feature"/>
-
-            <noscript>
-              <img class="full-width" src="../images/feature_02@2x.jpg" alt="Syncing feature"/>
-            </noscript>
-            <h4>Today Widget</h4>
-          </li><li>
-            <img class="lazy-load invisible full-width" src="../images/placeholder.png" data-src="../images/feature_04.jpg" data-src-retina="../images/feature_04@2x.jpg" alt="Syncing feature"/>
-
-            <noscript>
-              <img class="full-width" src="../images/feature_04@2x.jpg" alt="Syncing feature"/>
-            </noscript>
-            <h4>Actionable notifications</h4>
-          </li><li>
-            <img class="lazy-load invisible full-width" src="../images/placeholder.png" data-src="../images/feature_03.jpg" data-src-retina="../images/feature_03@2x.jpg" alt="Syncing feature"/>
-
-            <noscript>
-              <img class="full-width" src="../images/feature_03@2x.jpg" alt="Syncing feature"/>
-            </noscript>
-            <h4>iCloud Sync</h4>
-          </li>
-        </ul>
+          <a href="/features" class="button bordered">View all features</a>
       </div>
     </section>
 
     <section class="press">
       <div class="content-wrapper">
-        <blockquote>&ldquo;I absolutely love this app!&rdquo;</blockquote>
-        <cite>Nicole Nguyen, Buzzfeed</cite>
+        <blockquote>&ldquo;Incredibly satisfying</blockquote>
+        <cite>&mdash; Nicole Nguyen, Buzzfeed</cite>
 
         <ul class="press-logos">
-          <li>With appearances in</li><li><img src="../images/wired_logo.svg" alt="Wired Magazine Logo"/></li><li><img src="../images/buzzfeed_logo.svg" alt="Buzzfeed Logo"/></li><li><img src="../images/tnw_logo.svg" alt="The Next Web Logo"/></li><li><img src="../images/netted_logo.svg" alt="Netted by The Webbys Logo"/></li><li><img src="../images/lifehacker_logo.svg" alt="Lifehacker Logo"/></li>
+          <li><img src="../images/wired_logo.svg" alt="Wired Magazine Logo"/></li><li><img src="../images/buzzfeed_logo.svg" alt="Buzzfeed Logo"/></li><li><img src="../images/tnw_logo.svg" alt="The Next Web Logo"/></li><li><img src="../images/lifehacker_logo.svg" alt="Lifehacker Logo"/></li><li><img src="../images/macworld_logo.png" alt="Macworld Logo"/></li><li><img src="../images/webby_logo.png" alt="The Webby Awards logo"/></li>
         </ul>
       </div>
     </section>
@@ -301,42 +155,25 @@
     <section class="conclusion">
       <div class="content-wrapper">
         <div class="intro-text">
-          <h2>Get the app with <span class="optional-new-line">invisible superpowers</span></h2>
-          <div class="download-buttons">
-            <a class="app-store-badge ios-content" href="https://itunes.apple.com/us/app/doo-get-things-done/id1066322956?ls=1&mt=8" title="Get Doo on the App Store"><img src="../images/Download_on_the_App_Store_Badge_US-UK_135x40.svg" alt="App Store Badge"/></a>
-            <a class="app-store-badge mac-content" href="https://itunes.apple.com/us/app/doo-get-things-done/id1107759193?ls=1&mt=12" title="Get Doo on the App Store"><img src="../images/Download_on_the_Mac_App_Store_Badge_US-UK_165x40.svg" alt="App Store Badge"/></a>
-          </div>
+          <h2>Build better habits.</br>Get the app with invisible superpowers.</h2>
+          <a class="app-store-badge ios-content" href="https://itunes.apple.com/us/app/doo-get-things-done/id1066322956?ls=1&mt=8" title="Get Doo on the App Store"><img src="../images/Download_on_the_App_Store_Badge_US-UK_135x40.svg" alt="App Store Badge"/></a>
         </div>
 
-        <div class="hero-container">
-          <div class="mobile">
-            <img class="full-width" src="../images/hero_placeholder_mobile.jpg"/>
-            <img class="final-hero lazy-load invisible" src="../images/placeholder.png" data-src="../images/final_hero_mobile.jpg" data-src-retina="../images/final_hero_mobile@2x.jpg" alt="Syncing feature"/>
+        <img class="lazy-load invisible full-width" src="../images/placeholder.png" data-src="../images/conclusion_hero_mac.jpg" data-src-retina="../images/conclusion_hero_mac@2x.jpg"/>
 
-            <noscript>
-              <img class="final-hero" src="../images/final_hero_mobile@2x.jpg" alt="Syncing feature"/>
-            </noscript>
-          </div>
+        <noscript>
+          <img class="full-width" src="../images/conclusion_hero_mac@2x.jpg"/>
+        </noscript>
 
-          <div class="desktop">
-            <img class="full-width" src="../images/hero_placeholder.jpg"/>
-            <img class="final-hero lazy-load invisible" src="../images/placeholder.png" data-src="../images/final_hero.jpg" data-src-retina="../images/final_hero@2x.jpg" alt="Syncing feature"/>
-
-            <noscript>
-              <img class="final-hero" src="../images/final_hero@2x.jpg" alt="Syncing feature"/>
-            </noscript>
-          </div>
-        </div>
       </div>
     </section>
 
-    <footer>
-      <div class="content-wrapper display-flex">
-        <div class="copyright">
-          <img src="../images/doo_logo.svg">
-          <p><span class="block">Made with love in NYC</span> Copyright &copy; 2016 &ndash; 2020 Ciarlo Software, LLC </p>
-        </div>
+    <section class="platform-recirculation-mac">
+      <p>Looking for productivity on other devices? <a href="/" title="Check out Doo for Mac">Check out Doo for iOS ›</a></p>
+    </section>
 
+    <footer>
+      <div class="content-wrapper">
         <ul class="nav-links">
           <li>Products</li><li><a href="/" title="An overview of Doo's major features for iOS">Doo for iOS</a></li>
           <li><a href="/mac" title="An overview of Doo's major features">Doo for Mac</a></li>
@@ -352,6 +189,11 @@
         <ul class="nav-links">
           <li>Contact</li><li><a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#103;&#101;&#116;&#100;&#111;&#111;&#097;&#112;&#112;&#046;&#099;&#111;&#109;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#064;&#103;&#101;&#116;&#100;&#111;&#111;&#097;&#112;&#112;&#046;&#099;&#111;&#109;</a></li>
         </ul>
+
+        <div class="copyright">
+          <img src="../images/doo_logo_light.svg">
+          <p><span class="block">Made with love in NYC</span> Copyright &copy; 2016 &ndash; 2020 Ciarlo Software, LLC </p>
+        </div>
       </div>
     </footer>
 
