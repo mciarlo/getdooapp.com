@@ -10,12 +10,56 @@ $(function () {
 		$sectionC = $(".doo-design"),
 		$sectionD = $(".privacy"),
 		$sectionE = $(".highlighted-features"),
+		videoA = document.getElementById("video_01"),
+		$videoA = $("#video_01"),
+		videoB = document.getElementById("video_02"),
+		$videoB = $("#video_02"),
+		videoC = document.getElementById("video_03"),
+		$videoC = $("#video_03"),
+		videoD = document.getElementById("video_04"),
+		$videoD = $("#video_04"),
 		$burgerIcon = $("#hamburger-icon"),
 		ANIMATION_CLASS = "will-reveal",
 		preventDefaultFormAction = function (ev) {
 			ev.preventDefault();
 			ev.stopPropagation();
 		};
+
+	if ($videoA.length > 0) {
+		videoA.onended = function () {
+			$("#replay-btn-01").addClass("active");
+		};
+
+		videoA.onplay = function () {
+			$("#replay-btn-01").removeClass("active");
+		};
+
+		videoB.onended = function () {
+			$("#replay-btn-02").addClass("active");
+		};
+
+		videoB.onplay = function () {
+			$("#replay-btn-02").removeClass("active");
+		};
+	}
+
+	if ($videoC.length > 0) {
+		videoC.onended = function () {
+			$("#replay-btn-03").addClass("active");
+		};
+
+		videoC.onplay = function () {
+			$("#replay-btn-03").removeClass("active");
+		};
+
+		videoD.onended = function () {
+			$("#replay-btn-04").addClass("active");
+		};
+
+		videoD.onplay = function () {
+			$("#replay-btn-04").removeClass("active");
+		};
+	}
 
 	var isElementInViewport = function (el) {
 		var rect = el.getBoundingClientRect();
@@ -69,6 +113,26 @@ $(function () {
 		if ($sectionE.offset().top < windowCenterDefault) {
 			$sectionE.removeClass(ANIMATION_CLASS);
 		}
+
+		if ($videoA.length > 0) {
+			if ($videoA.offset().top < windowCenterDefault) {
+				videoA.play();
+			}
+
+			if ($videoB.offset().top < windowCenterDefault) {
+				videoB.play();
+			}
+		}
+
+		if ($videoC.length > 0) {
+			if ($videoC.offset().top < windowCenterDefault) {
+				videoC.play();
+			}
+
+			if ($videoD.offset().top < windowCenterDefault) {
+				videoD.play();
+			}
+		}
 	},
 	onResize = function () {
 
@@ -76,6 +140,15 @@ $(function () {
 
 	$window.resize(function () {
 		onResize();
+	});
+
+	$(".replay-btn").click(function (ev) {
+		ev.preventDefault();
+		ev.stopPropagation();
+		$this = $(this);
+		video = document.getElementById($this.attr("data-attr-id"));
+		video.play();
+		$this.removeClass("active");
 	});
 
 	$window.scroll(function () {
