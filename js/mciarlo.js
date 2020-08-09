@@ -10,31 +10,22 @@ $(function () {
 		$sectionC = $(".doo-design"),
 		$sectionD = $(".privacy"),
 		$sectionE = $(".highlighted-features"),
-		videoA = document.getElementById("video_01"),
-		$videoA = $("#video_01"),
 		videoB = document.getElementById("video_02"),
 		$videoB = $("#video_02"),
-		videoC = document.getElementById("video_03"),
-		$videoC = $("#video_03"),
 		videoD = document.getElementById("video_04"),
 		$videoD = $("#video_04"),
 		$burgerIcon = $("#hamburger-icon"),
 		ANIMATION_CLASS = "will-reveal",
+		DID_PLAY_02 = false,
+		DID_PLAY_04 = false,
 		preventDefaultFormAction = function (ev) {
 			ev.preventDefault();
 			ev.stopPropagation();
 		};
 
-	if ($videoA.length > 0) {
-		videoA.onended = function () {
-			$("#replay-btn-01").addClass("active");
-		};
-
-		videoA.onplay = function () {
-			$("#replay-btn-01").removeClass("active");
-		};
-
+	if ($videoB.length > 0) {
 		videoB.onended = function () {
+			DID_PLAY_02 = true;
 			$("#replay-btn-02").addClass("active");
 		};
 
@@ -43,16 +34,9 @@ $(function () {
 		};
 	}
 
-	if ($videoC.length > 0) {
-		videoC.onended = function () {
-			$("#replay-btn-03").addClass("active");
-		};
-
-		videoC.onplay = function () {
-			$("#replay-btn-03").removeClass("active");
-		};
-
+	if ($videoD.length > 0) {
 		videoD.onended = function () {
+			DID_PLAY_04 = true;
 			$("#replay-btn-04").addClass("active");
 		};
 
@@ -114,23 +98,37 @@ $(function () {
 			$sectionE.removeClass(ANIMATION_CLASS);
 		}
 
-		if ($videoA.length > 0) {
-			if ($videoA.offset().top < windowCenterDefault) {
-				videoA.play();
-			}
+		var catchAutoPlayForVideoWithCatchBlock = function (video, catchBlock) {
+			var promise = video.play();
 
+			if (promise !== undefined) {
+				promise.then(_ => {
+					// Autoplay successful
+				}).catch(error => {
+					catchBlock();
+				});
+			}
+		};
+
+		if ($videoB.length > 0) {
 			if ($videoB.offset().top < windowCenterDefault) {
-				videoB.play();
+				if (DID_PLAY_02) {
+					return;
+				}
+				catchAutoPlayForVideoWithCatchBlock(videoB, function () {
+					$("#replay-btn-02").addClass("active");
+				});
 			}
 		}
 
-		if ($videoC.length > 0) {
-			if ($videoC.offset().top < windowCenterDefault) {
-				videoC.play();
-			}
-
+		if ($videoD.length > 0) {
 			if ($videoD.offset().top < windowCenterDefault) {
-				videoD.play();
+				if (DID_PLAY_04) {
+					return;
+				}
+				catchAutoPlayForVideoWithCatchBlock(videoD, function () {
+					$("#replay-btn-04").addClass("active");
+				});
 			}
 		}
 	},

@@ -56,6 +56,10 @@ section {
   display: none;
 }
 
+.lazy-load {
+  transition: opacity .25s ease-in-out;
+}
+
 ::selection {
   background: $lightPurple;
 }
@@ -171,7 +175,7 @@ p {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #3D806E;
+  color: $greenText;
   font-size: .85em;
   margin-bottom: 1em;
 }
@@ -222,7 +226,7 @@ img.icon {
 }
 
 .button {
-  padding: 1.5em 2.5em;
+  padding: 1.5em 3em;
   border-radius: 8px;
   display: inline-block;
   font-size: .9em;
@@ -232,7 +236,7 @@ img.icon {
   color: $textColorPrimary;
   box-shadow: 0 3px 3px rgba(0, 0, 0, .0);
   transform: translateY(0px);
-  transition: transform 100ms ease-in-out, box-shadow 100ms ease-in-out;
+  transition: transform 100ms ease-in-out, box-shadow 100ms ease-in-out, border-color 100ms ease-in-out;
 
   &.primary {
     background-color: $black;
@@ -241,12 +245,11 @@ img.icon {
   }
 
   &.bordered {
-    border: 2px solid $borderColor;
-  }
+    border: 1px solid $borderColor;
 
-  &:hover {
-    box-shadow: 0 14px 20px rgba(0, 0, 0, .05);
-    transform: translateY(-2px);
+    &:hover {
+      border-color: $textColorPrimary;
+    }
   }
 }
 
@@ -295,6 +298,23 @@ img.icon {
   display: block;
 }
 
+.mac-screenshot {
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.application-frame {
+  margin: 0 auto;
+  line-height: 0;
+
+  video, img {
+    width: 100%;
+    margin: 0;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .display-flex {
     flex-direction: row;
@@ -311,7 +331,7 @@ img.icon {
   }
 
   .button {
-    padding: 2em 3em;
+    padding: 2em 6em;
   }
 
   section {
@@ -330,6 +350,10 @@ img.icon {
 
   p {
     font-size: 1.1em;
+  }
+
+  .mac-screenshot {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -352,6 +376,14 @@ img.icon {
 
   .caption {
     font-size: 0.75em;
+  }
+
+  .mac-screenshot {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  .media-well {
+    padding: 8em 0;
   }
 }
 

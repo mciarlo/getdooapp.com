@@ -84,19 +84,25 @@ Y8b d88P
  *********************************************
  */
  .introduction {
-   background-color: #C0F3CE;
+   background-color: $lightGreenBackground;
    padding: 4em 0 6.4em;
    overflow: visible;
+   z-index: 2;
+   position: relative;
 
    .iphone {
      width: 80%;
      margin: 4em auto -15.1em;
    }
 
-   .mac-screenshot {
-     width: 120%;
-     margin: 2em auto -15.1em;
-     margin-left: -10%;
+   .application-frame {
+     width: 90%;
+     margin: 4em auto -15.1em;
+     margin-left: 5%;
+
+     .mac-screenshot {
+       border-color: rgba(177, 201, 183, 1);
+     }
    }
  }
 
@@ -108,7 +114,7 @@ Y8b d88P
  }
 
  .features-intro {
-   padding: 20em 0 10em;
+   padding: 22em 0 10em;
    border-bottom: 1px solid $borderColor;
  }
 
@@ -126,7 +132,7 @@ Y8b d88P
        width: 80%;
      }
 
-     .mac-screenshot {
+     .application-frame {
        width: 80%;
      }
    }
@@ -147,11 +153,19 @@ Y8b d88P
    .media-well {
      background-color: #E8EDF6;
    }
+
+   .application-frame {
+     width: 25%;
+   }
  }
 
  .today-mode {
    .media-well {
      background-color: #E8E8FF;
+   }
+
+   .application-frame {
+     width: 30%;
    }
  }
 
@@ -207,18 +221,28 @@ Y8b d88P
 .replay-btn {
   position: absolute;
   bottom: 2em;
-  left: 2em;
+  left: 50%;
+  margin-left: -33px;
   background: transparent url("../images/repeat_icon.png") 0px .7em no-repeat;
   background-size: 20px auto;
   padding: 1em 0 1em 25px;
   opacity: 0;
   transition: opacity .5s ease-in-out;
   pointer-events: none;
+  line-height: 1;
 
   &.active {
     opacity: 1;
     pointer-events: all;
   }
+}
+
+.iphone .replay-btn {
+  bottom: -4em;
+}
+
+.application-frame .replay-btn {
+  bottom: 2em;
 }
 
 .press {
@@ -253,6 +277,7 @@ Y8b d88P
     display: inline-block;
     width: 50%;
     padding: 2em 0;
+    opacity: 0.3;
 
     &:first-child {
       margin-left: 0;
@@ -291,7 +316,7 @@ Y8b d88P
 
 .platform-recirculation-mac {
   text-align: center;
-  background-color: #FFF9EE;
+  background-color: #E8F1FF;
   font-size: 1.3em;
   padding: 3em 0;
 
@@ -455,6 +480,10 @@ li.active .question .arrow {
     padding-top: 6em;
     padding-bottom: 9em;
 
+    &.mac {
+      padding-bottom: 6em;
+    }
+
     .iphone {
       margin: 0 -240px 0 0;
       width: 240px;
@@ -463,12 +492,12 @@ li.active .question .arrow {
       right: 50%;
     }
 
-    .mac-screenshot {
-      margin: 0 -340px 0 0;
-      width: 340px;
+    .application-frame {
+      margin: 0 -200px 0 0;
+      width: 260px;
       position: absolute;
-      bottom: -15em;
-      right: 50%;
+      bottom: -1.5em;
+      right: 40%;
     }
   }
 
@@ -491,7 +520,7 @@ li.active .question .arrow {
         width: 45%;
       }
 
-      .mac-screenshot {
+      .application-frame {
         width: 50%;
       }
     }
@@ -511,6 +540,10 @@ li.active .question .arrow {
   .introduction {
     padding: 8em 0 12em;
 
+    &.mac {
+      padding-bottom: 8em;
+    }
+
     .iphone {
       margin: 0 -300px 0 0;
       width: 300px;
@@ -519,12 +552,16 @@ li.active .question .arrow {
       right: 50%;
     }
 
-    .mac-screenshot {
-      margin: 0 -450px 0 0;
-      width: 450px;
+    .application-frame {
+      margin: 0 -350px 0 0;
+      width: 350px;
       position: absolute;
-      bottom: -19.5em;
-      right: 55%;
+      bottom: -5em;
+      right: 50%;
+    }
+
+    .replay-btn {
+      bottom: -4em;
     }
   }
 
@@ -537,7 +574,7 @@ li.active .question .arrow {
   }
 
   .features-intro {
-    padding: 20em 0;
+    padding: 22em 0 20em 0;
   }
 
   .major-feature,
@@ -552,7 +589,7 @@ li.active .question .arrow {
         width: 32%;
       }
 
-      .mac-screenshot {
+      .application-frame {
         width: 50%;
       }
     }
@@ -603,18 +640,23 @@ li.active .question .arrow {
 
   .press-logos {
     padding-top: 10em;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    width: 100%;
+    margin: 0 auto;
 
     li {
-      width: 14%;
-      margin: 0 2em;
-      vertical-align: bottom;
+      width: 15%;
+      padding: 0 2em;
+      box-sizing: border-box;
+      vertical-align: middle;
 
       img {
+        height: 10px;
         display: inline-block;
-        vertical-align: bottom;
+        vertical-align: middle;
+      }
+
+      &:first-child img{
+        height: 15px;
       }
     }
   }
@@ -682,6 +724,10 @@ li.active .question .arrow {
   .introduction {
     padding: 12em 0 18em;
 
+    &.mac {
+      padding-bottom: 14em;
+    }
+
     .iphone {
       margin-right: -380px;
       width: 380px;
@@ -689,11 +735,11 @@ li.active .question .arrow {
       right: 45%;
     }
 
-    .mac-screenshot {
-      margin-right: -580px;
-      width: 580px;
-      bottom: -27.4em;
-      right: 55%;
+    .application-frame {
+      margin-right: -500px;
+      width: 500px;
+      bottom: -8em;
+      right: 50%;
     }
   }
 
@@ -714,10 +760,18 @@ li.active .question .arrow {
     }
   }
 
+  .task-creation .media-well .application-frame {
+    width: 30%;
+  }
+
+  .today-mode .media-well .application-frame {
+    width: 50%;
+  }
+
   .press-logos {
     li {
       img {
-        height: 30px;
+        height: 20px;
       }
     }
   }
@@ -731,12 +785,20 @@ li.active .question .arrow {
   .introduction {
     padding-bottom: 12em;
 
+    &.mac {
+      padding-bottom: 16em;
+    }
+
     .iphone {
       bottom: -21.4em;
     }
 
-    .mac-screenshot {
-      bottom: -23.4em;
+    .application-frame {
+      margin-right: -560px;
+      width: 560px;
+      bottom: -8em;
+      right: 50%;
+      bottom: -10em;
     }
   }
 
@@ -745,6 +807,14 @@ li.active .question .arrow {
 
     p {
       max-width: 270px;
+    }
+  }
+
+  .press-logos {
+    li {
+      img {
+        height: 24px;
+      }
     }
   }
 

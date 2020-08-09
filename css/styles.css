@@ -217,7 +217,7 @@ label, input, textarea, .selection {
 #support-topics {
   padding: 12em 3em;
   text-align: center;
-  background: #C0F3CE;
+  background: #bff4d2;
   border-radius: 4px; }
   #support-topics h1 {
     font-size: 3em;
@@ -312,12 +312,12 @@ label, input, textarea, .selection {
 
 .device-label {
   text-transform: uppercase;
-  letter-spacing: .1em;
-  font-size: .7em;
+  letter-spacing: .2em;
+  font-size: .8em;
   display: block;
   font-weight: 600;
-  margin-top: 1.5em;
-  color: #6E6D7A; }
+  margin-top: 2em;
+  color: #3D806E; }
 
 /***
 *****************************
@@ -450,6 +450,9 @@ section {
 /* Removed with JS for noscript support*/
 .hidden {
   display: none; }
+
+.lazy-load {
+  transition: opacity .25s ease-in-out; }
 
 ::selection {
   background: #E6E4FF; }
@@ -602,7 +605,7 @@ img.icon {
   display: inline-block; }
 
 .button {
-  padding: 1.5em 2.5em;
+  padding: 1.5em 3em;
   border-radius: 8px;
   display: inline-block;
   font-size: .9em;
@@ -612,16 +615,15 @@ img.icon {
   color: #383938;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0);
   transform: translateY(0px);
-  transition: transform 100ms ease-in-out, box-shadow 100ms ease-in-out; }
+  transition: transform 100ms ease-in-out, box-shadow 100ms ease-in-out, border-color 100ms ease-in-out; }
   .button.primary {
     background-color: #111111;
     color: white;
     border-radius: 3em; }
   .button.bordered {
-    border: 2px solid #EDEEF3; }
-  .button:hover {
-    box-shadow: 0 14px 20px rgba(0, 0, 0, 0.05);
-    transform: translateY(-2px); }
+    border: 1px solid #EDEEF3; }
+    .button.bordered:hover {
+      border-color: #383938; }
 
 .app-store-badge {
   display: inline-block; }
@@ -652,6 +654,19 @@ img.icon {
 .optional-new-line {
   display: block; }
 
+.mac-screenshot {
+  border-radius: 6px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden; }
+
+.application-frame {
+  margin: 0 auto;
+  line-height: 0; }
+  .application-frame video, .application-frame img {
+    width: 100%;
+    margin: 0; }
+
 @media screen and (min-width: 768px) {
   .display-flex {
     flex-direction: row;
@@ -665,7 +680,7 @@ img.icon {
     display: block; }
 
   .button {
-    padding: 2em 3em; }
+    padding: 2em 6em; }
 
   section {
     padding: 6em 0; }
@@ -679,7 +694,10 @@ img.icon {
     letter-spacing: -.04em; }
 
   p {
-    font-size: 1.1em; } }
+    font-size: 1.1em; }
+
+  .mac-screenshot {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); } }
 @media screen and (min-width: 1024px) {
   section {
     padding: 10em 0; }
@@ -694,7 +712,13 @@ img.icon {
     font-size: 1.25em; }
 
   .caption {
-    font-size: 0.75em; } }
+    font-size: 0.75em; }
+
+  .mac-screenshot {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); }
+
+  .media-well {
+    padding: 8em 0; } }
 @media screen and (min-width: 1280px) {
   h1 {
     font-size: 5em; }
@@ -778,23 +802,27 @@ Y8b d88P
  *********************************************
  */
 .introduction {
-  background-color: #C0F3CE;
+  background-color: #bff4d2;
   padding: 4em 0 6.4em;
-  overflow: visible; }
+  overflow: visible;
+  z-index: 2;
+  position: relative; }
   .introduction .iphone {
     width: 80%;
     margin: 4em auto -15.1em; }
-  .introduction .mac-screenshot {
-    width: 120%;
-    margin: 2em auto -15.1em;
-    margin-left: -10%; }
+  .introduction .application-frame {
+    width: 90%;
+    margin: 4em auto -15.1em;
+    margin-left: 5%; }
+    .introduction .application-frame .mac-screenshot {
+      border-color: #b1c9b7; }
 
 .intro-text p {
   color: #383938;
   margin: 2em 0 2em; }
 
 .features-intro {
-  padding: 20em 0 10em;
+  padding: 22em 0 10em;
   border-bottom: 1px solid #EDEEF3; }
 
 .major-feature,
@@ -808,8 +836,8 @@ Y8b d88P
   .major-feature .media-well .iphone,
   .highlighted-features .media-well .iphone {
     width: 80%; }
-  .major-feature .media-well .mac-screenshot,
-  .highlighted-features .media-well .mac-screenshot {
+  .major-feature .media-well .application-frame,
+  .highlighted-features .media-well .application-frame {
     width: 80%; }
   .major-feature h3,
   .highlighted-features h3 {
@@ -823,9 +851,13 @@ Y8b d88P
 
 .task-creation .media-well {
   background-color: #E8EDF6; }
+.task-creation .application-frame {
+  width: 25%; }
 
 .today-mode .media-well {
   background-color: #E8E8FF; }
+.today-mode .application-frame {
+  width: 30%; }
 
 .doo-design img {
   width: 100%; }
@@ -860,16 +892,24 @@ Y8b d88P
 .replay-btn {
   position: absolute;
   bottom: 2em;
-  left: 2em;
+  left: 50%;
+  margin-left: -33px;
   background: transparent url("../images/repeat_icon.png") 0px 0.7em no-repeat;
   background-size: 20px auto;
   padding: 1em 0 1em 25px;
   opacity: 0;
   transition: opacity .5s ease-in-out;
-  pointer-events: none; }
+  pointer-events: none;
+  line-height: 1; }
   .replay-btn.active {
     opacity: 1;
     pointer-events: all; }
+
+.iphone .replay-btn {
+  bottom: -4em; }
+
+.application-frame .replay-btn {
+  bottom: 2em; }
 
 .press {
   padding-bottom: 10em; }
@@ -896,7 +936,8 @@ Y8b d88P
   .press-logos li {
     display: inline-block;
     width: 50%;
-    padding: 2em 0; }
+    padding: 2em 0;
+    opacity: 0.3; }
     .press-logos li:first-child {
       margin-left: 0; }
     .press-logos li:last-child {
@@ -918,7 +959,7 @@ Y8b d88P
 
 .platform-recirculation-mac {
   text-align: center;
-  background-color: #FFF9EE;
+  background-color: #E8F1FF;
   font-size: 1.3em;
   padding: 3em 0; }
   .platform-recirculation-mac p {
@@ -1028,18 +1069,20 @@ li.active .question .arrow {
   .introduction {
     padding-top: 6em;
     padding-bottom: 9em; }
+    .introduction.mac {
+      padding-bottom: 6em; }
     .introduction .iphone {
       margin: 0 -240px 0 0;
       width: 240px;
       position: absolute;
       bottom: -15em;
       right: 50%; }
-    .introduction .mac-screenshot {
-      margin: 0 -340px 0 0;
-      width: 340px;
+    .introduction .application-frame {
+      margin: 0 -200px 0 0;
+      width: 260px;
       position: absolute;
-      bottom: -15em;
-      right: 50%; }
+      bottom: -1.5em;
+      right: 40%; }
 
   .intro-text {
     width: 40%; }
@@ -1052,8 +1095,8 @@ li.active .question .arrow {
   .major-feature .media-well .iphone,
   .highlighted-features .media-well .iphone {
     width: 45%; }
-  .major-feature .media-well .mac-screenshot,
-  .highlighted-features .media-well .mac-screenshot {
+  .major-feature .media-well .application-frame,
+  .highlighted-features .media-well .application-frame {
     width: 50%; } }
 @media screen and (min-width: 768px) {
   .left-content {
@@ -1065,18 +1108,22 @@ li.active .question .arrow {
 
   .introduction {
     padding: 8em 0 12em; }
+    .introduction.mac {
+      padding-bottom: 8em; }
     .introduction .iphone {
       margin: 0 -300px 0 0;
       width: 300px;
       position: absolute;
       bottom: -19.5em;
       right: 50%; }
-    .introduction .mac-screenshot {
-      margin: 0 -450px 0 0;
-      width: 450px;
+    .introduction .application-frame {
+      margin: 0 -350px 0 0;
+      width: 350px;
       position: absolute;
-      bottom: -19.5em;
-      right: 55%; }
+      bottom: -5em;
+      right: 50%; }
+    .introduction .replay-btn {
+      bottom: -4em; }
 
   .intro-text {
     width: 40%; }
@@ -1084,7 +1131,7 @@ li.active .question .arrow {
       margin-top: 3em; }
 
   .features-intro {
-    padding: 20em 0; }
+    padding: 22em 0 20em 0; }
 
   .major-feature img.full-width,
   .major-feature .media-well,
@@ -1094,8 +1141,8 @@ li.active .question .arrow {
   .major-feature .media-well .iphone,
   .highlighted-features .media-well .iphone {
     width: 32%; }
-  .major-feature .media-well .mac-screenshot,
-  .highlighted-features .media-well .mac-screenshot {
+  .major-feature .media-well .application-frame,
+  .highlighted-features .media-well .application-frame {
     width: 50%; }
 
   .privacy img {
@@ -1128,16 +1175,19 @@ li.active .question .arrow {
 
   .press-logos {
     padding-top: 10em;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap; }
+    width: 100%;
+    margin: 0 auto; }
     .press-logos li {
-      width: 14%;
-      margin: 0 2em;
-      vertical-align: bottom; }
+      width: 15%;
+      padding: 0 2em;
+      box-sizing: border-box;
+      vertical-align: middle; }
       .press-logos li img {
+        height: 10px;
         display: inline-block;
-        vertical-align: bottom; }
+        vertical-align: middle; }
+      .press-logos li:first-child img {
+        height: 15px; }
 
   .conclusion .intro-text {
     width: 100%;
@@ -1175,16 +1225,18 @@ li.active .question .arrow {
 @media screen and (min-width: 1024px) {
   .introduction {
     padding: 12em 0 18em; }
+    .introduction.mac {
+      padding-bottom: 14em; }
     .introduction .iphone {
       margin-right: -380px;
       width: 380px;
       bottom: -27.4em;
       right: 45%; }
-    .introduction .mac-screenshot {
-      margin-right: -580px;
-      width: 580px;
-      bottom: -27.4em;
-      right: 55%; }
+    .introduction .application-frame {
+      margin-right: -500px;
+      width: 500px;
+      bottom: -8em;
+      right: 50%; }
 
   .highlighted-features ul li {
     width: 33%; }
@@ -1193,23 +1245,38 @@ li.active .question .arrow {
     .highlighted-features ul li:nth-child(3), .highlighted-features ul li:nth-child(6) {
       padding-right: 0; }
 
+  .task-creation .media-well .application-frame {
+    width: 30%; }
+
+  .today-mode .media-well .application-frame {
+    width: 50%; }
+
   .press-logos li img {
-    height: 30px; }
+    height: 20px; }
 
   .answer {
     font-size: 1.25em; } }
 @media screen and (min-width: 1280px) {
   .introduction {
     padding-bottom: 12em; }
+    .introduction.mac {
+      padding-bottom: 16em; }
     .introduction .iphone {
       bottom: -21.4em; }
-    .introduction .mac-screenshot {
-      bottom: -23.4em; }
+    .introduction .application-frame {
+      margin-right: -560px;
+      width: 560px;
+      bottom: -8em;
+      right: 50%;
+      bottom: -10em; }
 
   .intro-text {
     margin-left: 11.6%; }
     .intro-text p {
       max-width: 270px; }
+
+  .press-logos li img {
+    height: 24px; }
 
   .features-intro p, .features-intro h2 {
     margin-left: 11.6%; } }

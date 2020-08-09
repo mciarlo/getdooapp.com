@@ -57,7 +57,7 @@ label, input, textarea, .selection {
  #support-topics {
    padding: 12em 3em;
    text-align: center;
-   background: #C0F3CE;
+   background: $lightGreenBackground;
    border-radius: 4px;
 
    h1 {
@@ -185,12 +185,12 @@ label, input, textarea, .selection {
 
 .device-label {
   text-transform: uppercase;
-  letter-spacing: .1em;
-  font-size: .7em;
+  letter-spacing: .2em;
+  font-size: .8em;
   display: block;
   font-weight: 600;
-  margin-top: 1.5em;
-  color: $textColorSecondary;
+  margin-top: 2em;
+  color: $greenText;
 }
 
 /***
