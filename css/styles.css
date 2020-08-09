@@ -819,7 +819,7 @@ Y8b d88P
 
 .intro-text p {
   color: #383938;
-  margin: 2em 0 2em; }
+  margin: 1em 0 3em; }
 
 .features-intro {
   padding: 22em 0 10em;
@@ -1109,7 +1109,7 @@ li.active .question .arrow {
   .introduction {
     padding: 8em 0 12em; }
     .introduction.mac {
-      padding-bottom: 8em; }
+      padding-bottom: 10em; }
     .introduction .iphone {
       margin: 0 -300px 0 0;
       width: 300px;
@@ -1127,8 +1127,6 @@ li.active .question .arrow {
 
   .intro-text {
     width: 40%; }
-    .intro-text p {
-      margin-top: 3em; }
 
   .features-intro {
     padding: 22em 0 20em 0; }
