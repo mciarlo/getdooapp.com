@@ -90,14 +90,21 @@ label, input, textarea, .selection {
 
 .illustration-description {
   display: block;
-  margin-bottom: .3em;
+  font-weight: 600;
+  margin-bottom: 3em;
+  box-sizing: border-box;
 }
 
 .support-table.emoji {
   padding-top: 3em;
 
   li {
-    padding: 1em 0;
+    padding: 1.5em;
+    box-sizing: border-box;
+    line-height: 1.8;
+    width: 100%;
+    margin-bottom: 2em;
+    color: $textColorPrimary;
   }
 }
 
@@ -110,6 +117,12 @@ label, input, textarea, .selection {
   &.active {
     opacity: 1;
   }
+}
+
+.qa-pair.active .support-table.emoji {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 /***
@@ -335,5 +348,18 @@ label, input, textarea, .selection {
 @media screen and (min-width: 1024px) {
   .url-params {
     font-size: 1.25em;
+  }
+
+  .support-table.emoji {
+    li {
+      padding: 2em;
+      width: 48%;
+      margin-right: 2%;
+
+      &:nth-child(even) {
+        left: 5%;
+        margin-right: 0;
+      }
+    }
   }
 }

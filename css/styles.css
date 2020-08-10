@@ -243,12 +243,19 @@ label, input, textarea, .selection {
 
 .illustration-description {
   display: block;
-  margin-bottom: .3em; }
+  font-weight: 600;
+  margin-bottom: 3em;
+  box-sizing: border-box; }
 
 .support-table.emoji {
   padding-top: 3em; }
   .support-table.emoji li {
-    padding: 1em 0; }
+    padding: 1.5em;
+    box-sizing: border-box;
+    line-height: 1.8;
+    width: 100%;
+    margin-bottom: 2em;
+    color: #383938; }
 
 .results-label {
   display: block;
@@ -257,6 +264,11 @@ label, input, textarea, .selection {
   opacity: 0; }
   .results-label.active {
     opacity: 1; }
+
+.qa-pair.active .support-table.emoji {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row; }
 
 /***
 *****************************
@@ -410,7 +422,15 @@ label, input, textarea, .selection {
     width: 60%; } }
 @media screen and (min-width: 1024px) {
   .url-params {
-    font-size: 1.25em; } }
+    font-size: 1.25em; }
+
+  .support-table.emoji li {
+    padding: 2em;
+    width: 48%;
+    margin-right: 2%; }
+    .support-table.emoji li:nth-child(even) {
+      left: 5%;
+      margin-right: 0; } }
 li {
   list-style: none; }
 
@@ -698,6 +718,81 @@ img.icon {
 
   .mac-screenshot {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); } }
+.COLOR_PURPLE_LIGHTEST {
+  background-color: #E5E8FD; }
+
+.COLOR_PURPLE_LIGHT_DULL {
+  background-color: #DFDBF9; }
+
+.COLOR_PURPLE {
+  background-color: #C7BEFB; }
+
+.COLOR_BLUE_FAINT {
+  background-color: #E7EFFF; }
+
+.COLOR_BLUE_PURPLE {
+  background-color: #D2D8FF; }
+
+.COLOR_BLUE_DARK {
+  background-color: #C1CEF2; }
+
+.COLOR_BLUE_DULL {
+  background-color: #B8CCE8; }
+
+.COLOR_BLUE_GREEN_LIGHT {
+  background-color: #DCEFF4; }
+
+.COLOR_GREEN_LIGHT {
+  background-color: #CCE2E8; }
+
+.COLOR_BLUE_GREEN {
+  background-color: #C7DFF0; }
+
+.COLOR_LIME_GREEN_LIGHT {
+  background-color: #DEF2CD; }
+
+.COLOR_LIME_GREEN {
+  background-color: #CEEAD0; }
+
+.COLOR_GREEN {
+  background-color: #BBEAD4; }
+
+.COLOR_GREEN_FOREST_LIGHT {
+  background-color: #C8E6C4; }
+
+.COLOR_YELLOW_DULL {
+  background-color: #F0F2B0; }
+
+.COLOR_YELLOW_LIGHT {
+  background-color: #FAF7D7; }
+
+.COLOR_GOLD_DULL {
+  background-color: #EADBBB; }
+
+.COLOR_ORANGE_LIGHT {
+  background-color: #FCE3CB; }
+
+.COLOR_ORANGE_LIGHT_DULL {
+  background-color: #EED4BF; }
+
+.COLOR_ORANGE_DULL {
+  background-color: #FDDBB8; }
+
+.COLOR_BROWN_DULL {
+  background-color: #E1BFAB; }
+
+.COLOR_RED_LIGHT {
+  background-color: #ECDBF2; }
+
+.COLOR_PINK_LIGHT {
+  background-color: #F7D2EA; }
+
+.COLOR_PINK {
+  background-color: #FBD1D1; }
+
+.COLOR_RED_DULL {
+  background-color: #EABBBB; }
+
 @media screen and (min-width: 1024px) {
   section {
     padding: 10em 0; }
