@@ -300,10 +300,10 @@ label, input, textarea, .selection {
       .feature-group li.feature-image img {
         width: 100%; }
 
-.features-list .content-wrapper {
+.features-list .content-wrapper, .features-list .platform-recirculation-mac {
   padding-top: 3em;
   border-top: 1px solid #EDEEF3; }
-  .features-list .content-wrapper:nth-child(2), .features-list .content-wrapper:nth-child(1) {
+  .features-list .content-wrapper:nth-child(2), .features-list .platform-recirculation-mac:nth-child(2), .features-list .content-wrapper:nth-child(1), .features-list .platform-recirculation-mac:nth-child(1) {
     border: 0; }
 
 .feature-label {
@@ -329,7 +329,7 @@ label, input, textarea, .selection {
   display: block;
   font-weight: 600;
   margin-top: 2em;
-  color: #3D806E; }
+  color: #13804B; }
 
 /***
 *****************************
@@ -566,14 +566,15 @@ p {
 
 .device-media {
   position: absolute;
-  width: 87%;
-  left: 6.5%;
+  width: 86%;
+  left: 6.9%;
   z-index: 1;
-  top: 2.5%; }
+  top: 3.7%; }
 
 .media-well {
   text-align: center;
-  padding: 6em 0; }
+  padding: 6em 0;
+  background-color: #F0F3FF; }
   .media-well .iphone {
     margin: 0 auto; }
 
@@ -581,7 +582,7 @@ p {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #3D806E;
+  color: #13804B;
   font-size: .85em;
   margin-bottom: 1em; }
 
@@ -676,8 +677,8 @@ img.icon {
 
 .mac-screenshot {
   border-radius: 6px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border: 0.75px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden; }
 
 .application-frame {
@@ -686,6 +687,58 @@ img.icon {
   .application-frame video, .application-frame img {
     width: 100%;
     margin: 0; }
+
+.features-list h1 .block {
+  display: block;
+  color: #B2B2B2; }
+
+.orange {
+  background: #E7C8B4; }
+
+.cream {
+  background: #F7F1D4; }
+
+.forest-green {
+  background: #CEEAD0; }
+
+.green {
+  background: #C3F5DD; }
+
+.light-green {
+  background: #DBFFEF; }
+
+.light-warm-blue {
+  background: #DCEFF4; }
+
+.warm-blue {
+  background: #C7DEF0; }
+
+.cool-blue {
+  background: #D2DAF3; }
+
+.light-blue {
+  background: #E7EFFF; }
+
+.blue {
+  background: #BBCAFF; }
+
+.light-purple {
+  background: #D2D8FF; }
+
+.purple {
+  background: #D1CAFA; }
+
+.cool-gray-purple {
+  background: #DFDBF9; }
+
+.gray-purple {
+  background: #EFE5FD; }
+
+.salmon {
+  background: #FFDFEF; }
+
+.pink {
+  background: #F9CFE4; }
 
 @media screen and (min-width: 768px) {
   .display-flex {
@@ -707,7 +760,7 @@ img.icon {
 
   h1 {
     font-size: 2.8em;
-    letter-spacing: -.06em; }
+    letter-spacing: -.04em; }
 
   h2, h3 {
     font-size: 2em;
@@ -717,88 +770,13 @@ img.icon {
     font-size: 1.1em; }
 
   .mac-screenshot {
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); } }
-.COLOR_PURPLE_LIGHTEST {
-  background-color: #E5E8FD; }
-
-.COLOR_PURPLE_LIGHT_DULL {
-  background-color: #DFDBF9; }
-
-.COLOR_PURPLE {
-  background-color: #C7BEFB; }
-
-.COLOR_BLUE_FAINT {
-  background-color: #E7EFFF; }
-
-.COLOR_BLUE_PURPLE {
-  background-color: #D2D8FF; }
-
-.COLOR_BLUE_DARK {
-  background-color: #C1CEF2; }
-
-.COLOR_BLUE_DULL {
-  background-color: #B8CCE8; }
-
-.COLOR_BLUE_GREEN_LIGHT {
-  background-color: #DCEFF4; }
-
-.COLOR_GREEN_LIGHT {
-  background-color: #CCE2E8; }
-
-.COLOR_BLUE_GREEN {
-  background-color: #C7DFF0; }
-
-.COLOR_LIME_GREEN_LIGHT {
-  background-color: #DEF2CD; }
-
-.COLOR_LIME_GREEN {
-  background-color: #CEEAD0; }
-
-.COLOR_GREEN {
-  background-color: #BBEAD4; }
-
-.COLOR_GREEN_FOREST_LIGHT {
-  background-color: #C8E6C4; }
-
-.COLOR_YELLOW_DULL {
-  background-color: #F0F2B0; }
-
-.COLOR_YELLOW_LIGHT {
-  background-color: #FAF7D7; }
-
-.COLOR_GOLD_DULL {
-  background-color: #EADBBB; }
-
-.COLOR_ORANGE_LIGHT {
-  background-color: #FCE3CB; }
-
-.COLOR_ORANGE_LIGHT_DULL {
-  background-color: #EED4BF; }
-
-.COLOR_ORANGE_DULL {
-  background-color: #FDDBB8; }
-
-.COLOR_BROWN_DULL {
-  background-color: #E1BFAB; }
-
-.COLOR_RED_LIGHT {
-  background-color: #ECDBF2; }
-
-.COLOR_PINK_LIGHT {
-  background-color: #F7D2EA; }
-
-.COLOR_PINK {
-  background-color: #FBD1D1; }
-
-.COLOR_RED_DULL {
-  background-color: #EABBBB; }
-
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); } }
 @media screen and (min-width: 1024px) {
   section {
     padding: 10em 0; }
 
   h1 {
-    font-size: 5em; }
+    font-size: 3.2em; }
 
   h2, h3 {
     font-size: 2.5em; }
@@ -810,13 +788,13 @@ img.icon {
     font-size: 0.75em; }
 
   .mac-screenshot {
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); }
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); }
 
   .media-well {
     padding: 8em 0; } }
 @media screen and (min-width: 1280px) {
   h1 {
-    font-size: 5em; }
+    font-size: 4em; }
 
   h2, h3 {
     font-size: 3em; }
@@ -862,13 +840,13 @@ Y8b d88P
  "Y88P"
 
 */
-.content-wrapper {
-  max-width: 1440px;
+.content-wrapper, .platform-recirculation-mac {
   width: 86%;
+  max-width: 1280px;
   margin: 0 auto;
   position: relative;
   box-sizing: border-box; }
-  .content-wrapper:after {
+  .content-wrapper:after, .platform-recirculation-mac:after {
     content: "";
     clear: both;
     display: block; }
@@ -897,28 +875,46 @@ Y8b d88P
  *********************************************
  */
 .introduction {
-  background-color: #bff4d2;
+  background: white url("../images/pattern_01_mobile.jpg") bottom center no-repeat;
+  background-size: 120% auto;
   padding: 4em 0 6.4em;
   overflow: visible;
   z-index: 2;
   position: relative; }
   .introduction .iphone {
     width: 80%;
-    margin: 4em auto -15.1em; }
+    margin: 8em auto 0; }
+  .introduction.mac {
+    background-size: 90% auto;
+    padding-bottom: 10em; }
   .introduction .application-frame {
-    width: 90%;
-    margin: 4em auto -15.1em;
-    margin-left: 5%; }
+    width: 80%;
+    margin: 8em auto 0; }
     .introduction .application-frame .mac-screenshot {
-      border-color: #b1c9b7; }
+      border-color: #cacaca; }
 
-.intro-text p {
-  color: #383938;
-  margin: 1em 0 3em; }
+.intro-text {
+  max-width: 220px; }
+  .intro-text h1 {
+    max-width: 150px; }
+  .intro-text p {
+    color: #383938;
+    margin: 1em 0 2em; }
 
 .features-intro {
-  padding: 22em 0 10em;
+  padding: 10em 0 10em;
   border-bottom: 1px solid #EDEEF3; }
+  .features-intro li {
+    font-size: 1.2em;
+    padding: .5em 0;
+    padding-left: 20px;
+    position: relative; }
+    .features-intro li:before {
+      content: "•";
+      color: #79DCAC;
+      position: absolute;
+      top: .5em;
+      left: 0; }
 
 .major-feature,
 .highlighted-features {
@@ -944,13 +940,12 @@ Y8b d88P
     margin-left: auto;
     margin-right: auto; }
 
-.task-creation .media-well {
-  background-color: #E8EDF6; }
+.doo-design .application-frame {
+  width: 25%; }
+
 .task-creation .application-frame {
   width: 25%; }
 
-.today-mode .media-well {
-  background-color: #E8E8FF; }
 .today-mode .application-frame {
   width: 30%; }
 
@@ -986,7 +981,7 @@ Y8b d88P
 
 .replay-btn {
   position: absolute;
-  bottom: 2em;
+  bottom: 2.5em;
   left: 50%;
   margin-left: -33px;
   background: transparent url("../images/repeat_icon.png") 0px 0.7em no-repeat;
@@ -1070,9 +1065,10 @@ Y8b d88P
       color: #383938; }
 
 footer {
-  background-color: #2F2F2F;
-  padding: 3em 0;
-  color: white; }
+  padding-bottom: 3em; }
+  footer .content-wrapper, footer .platform-recirculation-mac {
+    padding-top: 3em;
+    border-top: 1px solid #EDEEF3; }
   footer ul {
     margin-bottom: 2em; }
     footer ul li {
@@ -1080,9 +1076,9 @@ footer {
       footer ul li:first-child {
         font-weight: 600; }
     footer ul a:link, footer ul a:visited {
-      color: #D0D0D0; }
+      color: #6E6D7A; }
     footer ul a:hover {
-      color: white; }
+      color: #383938; }
   footer .copyright {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     padding-top: 2em;
@@ -1160,32 +1156,12 @@ li.active .answer {
 li.active .question .arrow {
   transform: rotate(180deg); }
 
-@media screen and (min-width: 525px) and (max-width: 767px) {
+@media screen and (max-width: 467px) {
+  .introduction .iphone {
+    max-width: 300px; } }
+@media screen and (min-width: 475px) and (max-width: 767px) {
   .introduction {
-    padding-top: 6em;
-    padding-bottom: 9em; }
-    .introduction.mac {
-      padding-bottom: 6em; }
-    .introduction .iphone {
-      margin: 0 -240px 0 0;
-      width: 240px;
-      position: absolute;
-      bottom: -15em;
-      right: 50%; }
-    .introduction .application-frame {
-      margin: 0 -200px 0 0;
-      width: 260px;
-      position: absolute;
-      bottom: -1.5em;
-      right: 40%; }
-
-  .intro-text {
-    width: 40%; }
-    .intro-text p {
-      max-width: 340px; }
-
-  .features-intro {
-    padding: 10em 0; }
+    background-size: auto 100%; }
 
   .major-feature .media-well .iphone,
   .highlighted-features .media-well .iphone {
@@ -1202,29 +1178,47 @@ li.active .question .arrow {
     flex: 1; }
 
   .introduction {
-    padding: 8em 0 12em; }
+    padding: 8em 0 24em;
+    background: white url("../images/pattern_01.jpg") bottom center no-repeat;
+    background-size: 90% auto; }
     .introduction.mac {
-      padding-bottom: 10em; }
+      background-image: url("../images/pattern_03.jpg");
+      background-size: 70% auto;
+      padding-bottom: 24em; }
     .introduction .iphone {
+      margin: 0 -260px 0 0;
+      width: 260px;
+      position: absolute;
+      bottom: -22em;
+      right: 55%; }
+    .introduction .application-frame {
       margin: 0 -300px 0 0;
       width: 300px;
       position: absolute;
-      bottom: -19.5em;
-      right: 50%; }
-    .introduction .application-frame {
-      margin: 0 -350px 0 0;
-      width: 350px;
-      position: absolute;
-      bottom: -5em;
+      bottom: -18em;
       right: 50%; }
     .introduction .replay-btn {
       bottom: -4em; }
 
   .intro-text {
     width: 40%; }
+    .intro-text h1 {
+      max-width: 100%; }
 
   .features-intro {
-    padding: 22em 0 20em 0; }
+    background: white url("../images/pattern_02.jpg") top center no-repeat;
+    background-size: 90% auto;
+    padding: 12em 0; }
+    .features-intro li {
+      font-size: 1.4em; }
+    .features-intro.mac {
+      padding-top: 10em; }
+    .features-intro ul,
+    .features-intro .heading-label {
+      width: 60%;
+      margin: 0 auto; }
+    .features-intro .heading-label {
+      padding-bottom: 1em; }
 
   .major-feature img.full-width,
   .major-feature .media-well,
@@ -1236,7 +1230,7 @@ li.active .question .arrow {
     width: 32%; }
   .major-feature .media-well .application-frame,
   .highlighted-features .media-well .application-frame {
-    width: 50%; }
+    width: 45%; }
 
   .privacy img {
     display: inline-block;
@@ -1292,11 +1286,12 @@ li.active .question .arrow {
     padding: 4em 0; }
 
   footer {
-    padding: 6em 0; }
-    footer .content-wrapper {
+    padding-bottom: 6em; }
+    footer .content-wrapper, footer .platform-recirculation-mac {
       display: flex;
       flex-direction: row;
-      flex-wrap: nowrap; }
+      flex-wrap: nowrap;
+      padding-top: 6em; }
     footer ul {
       width: 20%;
       margin-bottom: 0; }
@@ -1317,19 +1312,28 @@ li.active .question .arrow {
     height: 25px; } }
 @media screen and (min-width: 1024px) {
   .introduction {
-    padding: 12em 0 18em; }
+    padding: 8em 0 30em;
+    background-size: 80% auto; }
+    .introduction .intro-text {
+      max-width: 280px; }
     .introduction.mac {
-      padding-bottom: 14em; }
+      padding-bottom: 28em;
+      background-size: 75% auto; }
     .introduction .iphone {
-      margin-right: -380px;
-      width: 380px;
-      bottom: -27.4em;
-      right: 45%; }
+      margin-right: -320px;
+      width: 320px;
+      bottom: -28em;
+      right: 55%; }
     .introduction .application-frame {
-      margin-right: -500px;
-      width: 500px;
-      bottom: -8em;
-      right: 50%; }
+      margin-right: -360px;
+      width: 360px;
+      bottom: -24em;
+      right: 55%; }
+
+  .features-intro {
+    background-size: 80% auto; }
+    .features-intro.mac {
+      padding-top: 10em; }
 
   .highlighted-features ul li {
     width: 33%; }
@@ -1341,9 +1345,6 @@ li.active .question .arrow {
   .task-creation .media-well .application-frame {
     width: 30%; }
 
-  .today-mode .media-well .application-frame {
-    width: 50%; }
-
   .press-logos li img {
     height: 20px; }
 
@@ -1351,27 +1352,37 @@ li.active .question .arrow {
     font-size: 1.25em; } }
 @media screen and (min-width: 1280px) {
   .introduction {
-    padding-bottom: 12em; }
+    padding-bottom: 38em;
+    background-size: 1152px auto; }
+    .introduction .intro-text {
+      max-width: 320px; }
     .introduction.mac {
-      padding-bottom: 16em; }
+      background-size: 1100px auto;
+      padding-bottom: 34em; }
     .introduction .iphone {
-      bottom: -21.4em; }
+      margin-right: -200px;
+      width: 400px;
+      bottom: -38em;
+      right: 38%; }
     .introduction .application-frame {
-      margin-right: -560px;
-      width: 560px;
-      bottom: -8em;
+      margin-right: -420px;
+      width: 420px;
       right: 50%;
-      bottom: -10em; }
+      bottom: -29em; }
 
-  .intro-text {
-    margin-left: 11.6%; }
-    .intro-text p {
-      max-width: 270px; }
+  .features-intro {
+    background-size: 1152px auto;
+    padding: 16em 0 16em; }
+    .features-intro li {
+      font-size: 1.6em; }
+
+  .media-well {
+    padding: 10em 0; }
+
+  .intro-text p {
+    max-width: 270px; }
 
   .press-logos li img {
-    height: 24px; }
-
-  .features-intro p, .features-intro h2 {
-    margin-left: 11.6%; } }
+    height: 24px; } }
 
 /*# sourceMappingURL=styles.css.map */

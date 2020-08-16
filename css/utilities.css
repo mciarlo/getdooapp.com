@@ -133,14 +133,15 @@ p {
 
 .device-media {
   position: absolute;
-  width: 87%;
-  left: 6.5%;
+  width: 86%;
+  left: 6.9%;
   z-index: 1;
-  top: 2.5%; }
+  top: 3.7%; }
 
 .media-well {
   text-align: center;
-  padding: 6em 0; }
+  padding: 6em 0;
+  background-color: #F0F3FF; }
   .media-well .iphone {
     margin: 0 auto; }
 
@@ -148,7 +149,7 @@ p {
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.06em;
-  color: #3D806E;
+  color: #13804B;
   font-size: .85em;
   margin-bottom: 1em; }
 
@@ -243,8 +244,8 @@ img.icon {
 
 .mac-screenshot {
   border-radius: 6px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  border: 0.75px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden; }
 
 .application-frame {
@@ -253,6 +254,58 @@ img.icon {
   .application-frame video, .application-frame img {
     width: 100%;
     margin: 0; }
+
+.features-list h1 .block {
+  display: block;
+  color: #B2B2B2; }
+
+.orange {
+  background: #E7C8B4; }
+
+.cream {
+  background: #F7F1D4; }
+
+.forest-green {
+  background: #CEEAD0; }
+
+.green {
+  background: #C3F5DD; }
+
+.light-green {
+  background: #DBFFEF; }
+
+.light-warm-blue {
+  background: #DCEFF4; }
+
+.warm-blue {
+  background: #C7DEF0; }
+
+.cool-blue {
+  background: #D2DAF3; }
+
+.light-blue {
+  background: #E7EFFF; }
+
+.blue {
+  background: #BBCAFF; }
+
+.light-purple {
+  background: #D2D8FF; }
+
+.purple {
+  background: #D1CAFA; }
+
+.cool-gray-purple {
+  background: #DFDBF9; }
+
+.gray-purple {
+  background: #EFE5FD; }
+
+.salmon {
+  background: #FFDFEF; }
+
+.pink {
+  background: #F9CFE4; }
 
 @media screen and (min-width: 768px) {
   .display-flex {
@@ -274,7 +327,7 @@ img.icon {
 
   h1 {
     font-size: 2.8em;
-    letter-spacing: -.06em; }
+    letter-spacing: -.04em; }
 
   h2, h3 {
     font-size: 2em;
@@ -284,13 +337,13 @@ img.icon {
     font-size: 1.1em; }
 
   .mac-screenshot {
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); } }
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); } }
 @media screen and (min-width: 1024px) {
   section {
     padding: 10em 0; }
 
   h1 {
-    font-size: 5em; }
+    font-size: 3.2em; }
 
   h2, h3 {
     font-size: 2.5em; }
@@ -302,13 +355,13 @@ img.icon {
     font-size: 0.75em; }
 
   .mac-screenshot {
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); }
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); }
 
   .media-well {
     padding: 8em 0; } }
 @media screen and (min-width: 1280px) {
   h1 {
-    font-size: 5em; }
+    font-size: 4em; }
 
   h2, h3 {
     font-size: 3em; }

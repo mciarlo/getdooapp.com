@@ -10,20 +10,35 @@ $(function () {
 		$sectionC = $(".doo-design"),
 		$sectionD = $(".privacy"),
 		$sectionE = $(".highlighted-features"),
+		videoA = document.getElementById("video_01"),
 		videoB = document.getElementById("video_02"),
-		$videoB = $("#video_02"),
+		videoC = document.getElementById("video_03"),
 		videoD = document.getElementById("video_04"),
+		$videoA = $("#video_01"),
+		$videoB = $("#video_02"),
+		$videoC = $("#video_03"),
 		$videoD = $("#video_04"),
 		$burgerIcon = $("#hamburger-icon"),
 		ANIMATION_CLASS = "will-reveal",
+		DID_PLAY_01 = false,
 		DID_PLAY_02 = false,
+		DID_PLAY_03 = false,
 		DID_PLAY_04 = false,
 		preventDefaultFormAction = function (ev) {
 			ev.preventDefault();
 			ev.stopPropagation();
 		};
 
-	if ($videoB.length > 0) {
+	if ($videoA.length > 0) {
+		videoA.onended = function () {
+			DID_PLAY_01 = true;
+			$("#replay-btn-01").addClass("active");
+		};
+
+		videoA.onplay = function () {
+			$("#replay-btn-01").removeClass("active");
+		};
+
 		videoB.onended = function () {
 			DID_PLAY_02 = true;
 			$("#replay-btn-02").addClass("active");
@@ -34,7 +49,16 @@ $(function () {
 		};
 	}
 
-	if ($videoD.length > 0) {
+	if ($videoC.length > 0) {
+		videoC.onended = function () {
+			DID_PLAY_03 = true;
+			$("#replay-btn-03").addClass("active");
+		};
+
+		videoC.onplay = function () {
+			$("#replay-btn-03").removeClass("active");
+		};
+
 		videoD.onended = function () {
 			DID_PLAY_04 = true;
 			$("#replay-btn-04").addClass("active");
@@ -99,6 +123,10 @@ $(function () {
 		}
 
 		var catchAutoPlayForVideoWithCatchBlock = function (video, catchBlock) {
+			if (video.playing) {
+				return;
+			}
+
 			var promise = video.play();
 
 			if (promise !== undefined) {
@@ -110,25 +138,47 @@ $(function () {
 			}
 		};
 
-		if ($videoB.length > 0) {
-			if ($videoB.offset().top < windowCenterDefault) {
-				if (DID_PLAY_02) {
-					return;
+		if ($videoA.length > 0) {
+			if ($videoA.offset().top < windowCenterDefault) {
+				if (!DID_PLAY_01) {
+					catchAutoPlayForVideoWithCatchBlock(videoA, function () {
+						$("#replay-btn-01").addClass("active");
+					});
+				} else {
+					$("#replay-btn-01").addClass("active");
 				}
-				catchAutoPlayForVideoWithCatchBlock(videoB, function () {
+			}
+
+			if ($videoB.offset().top < windowCenterDefault) {
+				if (!DID_PLAY_02) {
+					catchAutoPlayForVideoWithCatchBlock(videoB, function () {
+						$("#replay-btn-02").addClass("active");
+					});
+				} else {
 					$("#replay-btn-02").addClass("active");
-				});
+				}
 			}
 		}
 
-		if ($videoD.length > 0) {
-			if ($videoD.offset().top < windowCenterDefault) {
-				if (DID_PLAY_04) {
-					return;
+		if ($videoC.length > 0) {
+			if ($videoC.offset().top < windowCenterDefault) {
+				if (!DID_PLAY_03) {
+					catchAutoPlayForVideoWithCatchBlock(videoC, function () {
+						$("#replay-btn-03").addClass("active");
+					});
+				} else {
+					$("#replay-btn-03").addClass("active");
 				}
-				catchAutoPlayForVideoWithCatchBlock(videoD, function () {
+			}
+
+			if ($videoD.offset().top < windowCenterDefault) {
+				if (!DID_PLAY_04) {
+					catchAutoPlayForVideoWithCatchBlock(videoD, function () {
+						$("#replay-btn-04").addClass("active");
+					});
+				} else {
 					$("#replay-btn-04").addClass("active");
-				});
+				}
 			}
 		}
 	},
