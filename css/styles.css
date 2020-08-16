@@ -566,10 +566,10 @@ p {
 
 .device-media {
   position: absolute;
-  width: 86%;
-  left: 6.9%;
+  width: 84.8%;
+  left: 7.6%;
   z-index: 1;
-  top: 3.7%; }
+  top: 3.5%; }
 
 .media-well {
   text-align: center;
@@ -1182,7 +1182,6 @@ li.active .question .arrow {
     background: white url("../images/pattern_01.jpg") bottom center no-repeat;
     background-size: 90% auto; }
     .introduction.mac {
-      background-image: url("../images/pattern_03.jpg");
       background-size: 70% auto;
       padding-bottom: 24em; }
     .introduction .iphone {
