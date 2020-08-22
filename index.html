@@ -7,11 +7,11 @@
     <meta name="Author" content="Michael Ciarlo">
     <meta name="robots" content="noodp">
     <title itemprop="name">iOS | Doo &ndash; Get Things Done</title>
-    <meta name="Description" content="Get things done by turning your to-do list into a stack of cards you swipe to complete. Cards helps you focus more and procrastinate less. Download for iPhone, iPad, and Mac." />
+    <meta name="Description" content="Build better habits and make progress each day with a to-do app designed to help you focus. Download for iPhone, iPad, and Mac." />
     <meta name="Keywords" content="reminders app, reminders ios, reminders mac, todo list, to-do list, task manager, productivity app, get things done, time management, doo, task, tasks" />
 
     <meta property="og:title" content="Doo &ndash; Get Things Done" />
-    <meta property="og:description" content="Get things done by turning your to-do list into a stack of cards you swipe to complete. Cards helps you focus more and procrastinate less. Available for iPhone, iPad, Apple Watch, and Mac." />
+    <meta property="og:description" content="Build better habits and make progress each day with a to-do app designed to help you focus. Available for iPhone, iPad, Apple Watch, and Mac." />
     <link rel="canonical" href="https://www.getdooapp.com">
     <meta property="og:url" content="https://www.getdooapp.com" />
     <meta property="og:image" content="https://www.getdooapp.com/images/DooImage.jpg" />
@@ -52,7 +52,7 @@
         <div class="intro-text">
           <h1>Simplify your to-do list</h1>
           <p>Build better habits and make progress each day with a to-do app designed to help you focus.</p>
-          <a class="app-store-badge ios-content" href="https://itunes.apple.com/us/app/doo-get-things-done/id1066322956?ls=1&mt=8" title="Get Doo on the App Store"><img src="../images/Download_on_the_App_Store_Badge_US-UK_135x40.svg" alt="App Store Badge"/></a>
+          <a class="app-store-badge ios-content" data-attr-type="iOS" href="https://apps.apple.com/us/app/id1515371154" title="Get Doo on the App Store"><img src="../images/Download_on_the_App_Store_Badge_US-UK_135x40.svg" alt="App Store Badge"/></a>
         </div>
 
         <div class="iphone">
@@ -133,14 +133,29 @@
         <p>Tap the Edit button to select your tasks for the day and snooze the rest. Doo helps you focus and avoid productivity guilt.</p>
 
         <div class="media-well">
-          <div class="iphone">
+          <!-- <div class="iphone">
             <img class="lazy-load invisible device-bezel" src="../images/placeholder.png" data-src="../images/iphone_frame.png" data-src-retina="../images/iphone_frame@2x.png"/>
             <img class="lazy-load invisible device-media" src="../images/placeholder.png" data-src="../images/list_editing.jpg" data-src-retina="../images/list_editing@2x.jpg"/>
 
             <noscript>
               <img class="device-bezel" src="../images/iphone_frame@2x.png"/>
               <img class="device-media" src="../images/list_editing@2x.jpg"/>
-            </noscript>
+            </noscript>-->
+
+            <div class="iphone">
+              <img class="lazy-load invisible device-bezel" src="../images/placeholder.png" data-src="../images/iphone_frame.png" data-src-retina="../images/iphone_frame@2x.png"/>
+
+              <noscript>
+                <img class="device-bezel" src="../images/iphone_frame@2x.png"/>
+              </noscript>
+
+              <video id="video_05" class="device-media" poster="../images/list_editing@2x.jpg">
+                <source src="../video/list.mp4" type="video/mp4"/>
+                <source src="../video/list.webm" type="video/webm" />
+              </video>
+            </div>
+
+            <a href="#" class="replay-btn" id="replay-btn-05" data-attr-id="video_05">Replay</a>
           </div>
       </div>
     </section>
@@ -185,7 +200,7 @@
       <div class="content-wrapper">
         <div class="intro-text">
           <h2>Build better habits.</br>Get the app with invisible superpowers.</h2>
-          <a class="app-store-badge ios-content" href="https://itunes.apple.com/us/app/doo-get-things-done/id1066322956?ls=1&mt=8" title="Get Doo on the App Store"><img src="../images/Download_on_the_App_Store_Badge_US-UK_135x40.svg" alt="App Store Badge"/></a>
+          <a class="app-store-badge ios-content" data-attr-type="iOS" href="https://apps.apple.com/us/app/id1515371154" title="Get Doo on the App Store"><img src="../images/Download_on_the_App_Store_Badge_US-UK_135x40.svg" alt="App Store Badge"/></a>
         </div>
 
         <img class="lazy-load invisible full-width" src="../images/placeholder.png" data-src="../images/conclusion_hero_ios.jpg" data-src-retina="../images/conclusion_hero_ios@2x.jpg"/>
@@ -222,37 +237,36 @@
       </div>
     </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="../js/lib.js"></script>
-    <script src="../js/mciarlo.js"></script>
-
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-72804362-1"></script>
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-      ga('create', 'UA-72804362-1', 'auto');
-      ga('send', 'pageview');
+      gtag('config', 'UA-72804362-1');
     </script>
 
     <script type="application/ld+json">
       {
         "@context": "http://www.schema.org",
         "@type": "product",
-        "logo": "https://www.getdooapp.com/images/doo_icon_large.png",
-        "name": "Doo – Get Things Done",
-        "category": "iOS and Mac ",
+        "logo": "https://www.getdooapp.com/images/favicon_large.png",
+        "name": "Doo: Get Things Done",
+        "category": "iOS",
         "url": "https://www.getdooapp.com",
         "image": "https://www.getdooapp.com/images/DooImage.jpg",
-        "description": "Get things done by turning your to-do list into a stack of cards you swipe to complete. The stack helps you focus more and procrastinate less.",
+        "description": "Build better habits and make progress each day with a to-do app designed to help you focus.",
         "offers": {
           "@type": "Offer",
           "priceCurrency": "USD",
-          "price": "3.99",
-          "url":"https://itunes.apple.com/us/app/doo-get-things-done/id1066322956?ls=1&mt=8"
+          "price": "4.99",
+          "url":"https://apps.apple.com/us/app/id1515371154"
         }
       }
     </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../js/lib.js"></script>
+    <script src="../js/mciarlo.js"></script>
   </body>
 </html>

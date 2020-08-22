@@ -14,20 +14,55 @@ $(function () {
 		videoB = document.getElementById("video_02"),
 		videoC = document.getElementById("video_03"),
 		videoD = document.getElementById("video_04"),
+		videoE = document.getElementById("video_05"),
+		videoF = document.getElementById("video_06"),
 		$videoA = $("#video_01"),
 		$videoB = $("#video_02"),
 		$videoC = $("#video_03"),
 		$videoD = $("#video_04"),
+		$videoE = $("#video_05"),
+		$videoF = $("#video_06"),
 		$burgerIcon = $("#hamburger-icon"),
 		ANIMATION_CLASS = "will-reveal",
 		DID_PLAY_01 = false,
 		DID_PLAY_02 = false,
 		DID_PLAY_03 = false,
 		DID_PLAY_04 = false,
+		DID_PLAY_05 = false,
+		DID_PLAY_06 = false,
+		downloadButtons = $(".app-store-badge"),
 		preventDefaultFormAction = function (ev) {
 			ev.preventDefault();
 			ev.stopPropagation();
 		};
+
+	var timeout;
+
+	function sendURL(anchor) {
+		clearTimeout(timeout)
+		window.location = $(anchor).attr("href")
+	}
+
+	if (downloadButtons.length > 0) {
+		downloadButtons.each(function (idx, el) {
+			el.addEventListener("click", function(e){
+			e.preventDefault();
+			var anchor = e.currentTarget;
+
+			// Creates a timeout to call `submitForm` after one second.
+			timeout = setTimeout(function () {
+				sendURL(anchor)
+			}, 2000);
+
+			var downloadType =
+			gtag('event', 'download', {
+			  'event_category' : 'download',
+			  'event_label' : $(anchor).attr("data-attr-type"),
+			  'hitCallback' : sendURL(anchor)
+			});
+		});
+		});
+	}
 
 	if ($videoA.length > 0) {
 		videoA.onended = function () {
@@ -46,6 +81,15 @@ $(function () {
 
 		videoB.onplay = function () {
 			$("#replay-btn-02").removeClass("active");
+		};
+
+		videoE.onended = function () {
+			DID_PLAY_05 = true;
+			$("#replay-btn-05").addClass("active");
+		};
+
+		videoE.onplay = function () {
+			$("#replay-btn-05").removeClass("active");
 		};
 	}
 
@@ -66,6 +110,15 @@ $(function () {
 
 		videoD.onplay = function () {
 			$("#replay-btn-04").removeClass("active");
+		};
+
+		videoF.onended = function () {
+			DID_PLAY_06 = true;
+			$("#replay-btn-06").addClass("active");
+		};
+
+		videoF.onplay = function () {
+			$("#replay-btn-06").removeClass("active");
 		};
 	}
 
@@ -158,6 +211,16 @@ $(function () {
 					$("#replay-btn-02").addClass("active");
 				}
 			}
+
+			if ($videoE.offset().top < windowCenterDefault) {
+				if (!DID_PLAY_05) {
+					catchAutoPlayForVideoWithCatchBlock(videoE, function () {
+						$("#replay-btn-05").addClass("active");
+					});
+				} else {
+					$("#replay-btn-05").addClass("active");
+				}
+			}
 		}
 
 		if ($videoC.length > 0) {
@@ -178,6 +241,16 @@ $(function () {
 					});
 				} else {
 					$("#replay-btn-04").addClass("active");
+				}
+			}
+
+			if ($videoF.offset().top < windowCenterDefault) {
+				if (!DID_PLAY_06) {
+					catchAutoPlayForVideoWithCatchBlock(videoF, function () {
+						$("#replay-btn-06").addClass("active");
+					});
+				} else {
+					$("#replay-btn-06").addClass("active");
 				}
 			}
 		}

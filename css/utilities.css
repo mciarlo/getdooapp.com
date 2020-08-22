@@ -133,10 +133,10 @@ p {
 
 .device-media {
   position: absolute;
-  width: 84.8%;
-  left: 7.6%;
+  width: 86.5%;
+  left: 6.9%;
   z-index: 1;
-  top: 3.5%; }
+  top: 2.9%; }
 
 .media-well {
   text-align: center;
@@ -308,6 +308,17 @@ img.icon {
   background: #F9CFE4; }
 
 @media screen and (min-width: 768px) {
+  nav {
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.08);
+    position: fixed; }
+
+  body {
+    padding-top: 78px; }
+
   .display-flex {
     flex-direction: row;
     flex-wrap: nowrap;

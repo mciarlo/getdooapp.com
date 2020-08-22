@@ -566,10 +566,10 @@ p {
 
 .device-media {
   position: absolute;
-  width: 84.8%;
-  left: 7.6%;
+  width: 86.5%;
+  left: 6.9%;
   z-index: 1;
-  top: 3.5%; }
+  top: 2.9%; }
 
 .media-well {
   text-align: center;
@@ -741,6 +741,17 @@ img.icon {
   background: #F9CFE4; }
 
 @media screen and (min-width: 768px) {
+  nav {
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.08);
+    position: fixed; }
+
+  body {
+    padding-top: 78px; }
+
   .display-flex {
     flex-direction: row;
     flex-wrap: nowrap;
@@ -924,11 +935,11 @@ Y8b d88P
   .highlighted-features img.full-width,
   .highlighted-features .media-well {
     margin-top: 3em; }
-  .major-feature .media-well .iphone,
-  .highlighted-features .media-well .iphone {
+  .major-feature .iphone,
+  .highlighted-features .iphone {
     width: 80%; }
-  .major-feature .media-well .application-frame,
-  .highlighted-features .media-well .application-frame {
+  .major-feature .application-frame,
+  .highlighted-features .application-frame {
     width: 80%; }
   .major-feature h3,
   .highlighted-features h3 {
@@ -981,7 +992,7 @@ Y8b d88P
 
 .replay-btn {
   position: absolute;
-  bottom: 2.5em;
+  bottom: 2em;
   left: 50%;
   margin-left: -33px;
   background: transparent url("../images/repeat_icon.png") 0px 0.7em no-repeat;
@@ -994,9 +1005,6 @@ Y8b d88P
   .replay-btn.active {
     opacity: 1;
     pointer-events: all; }
-
-.iphone .replay-btn {
-  bottom: -4em; }
 
 .application-frame .replay-btn {
   bottom: 2em; }
@@ -1163,12 +1171,15 @@ li.active .question .arrow {
   .introduction {
     background-size: auto 100%; }
 
-  .major-feature .media-well .iphone,
-  .highlighted-features .media-well .iphone {
+  .major-feature .iphone,
+  .highlighted-features .iphone {
     width: 45%; }
-  .major-feature .media-well .application-frame,
-  .highlighted-features .media-well .application-frame {
-    width: 50%; } }
+  .major-feature .application-frame,
+  .highlighted-features .application-frame {
+    width: 50%; }
+
+  .task-creation .application-frame {
+    width: 35%; } }
 @media screen and (min-width: 768px) {
   .left-content {
     width: 25%; }
@@ -1188,7 +1199,7 @@ li.active .question .arrow {
       margin: 0 -260px 0 0;
       width: 260px;
       position: absolute;
-      bottom: -22em;
+      bottom: -26em;
       right: 55%; }
     .introduction .application-frame {
       margin: 0 -300px 0 0;
@@ -1196,8 +1207,6 @@ li.active .question .arrow {
       position: absolute;
       bottom: -18em;
       right: 50%; }
-    .introduction .replay-btn {
-      bottom: -4em; }
 
   .intro-text {
     width: 40%; }
@@ -1224,12 +1233,18 @@ li.active .question .arrow {
   .highlighted-features img.full-width,
   .highlighted-features .media-well {
     margin-top: 6em; }
-  .major-feature .media-well .iphone,
-  .highlighted-features .media-well .iphone {
+  .major-feature .iphone,
+  .highlighted-features .iphone {
     width: 32%; }
-  .major-feature .media-well .application-frame,
-  .highlighted-features .media-well .application-frame {
+  .major-feature .application-frame,
+  .highlighted-features .application-frame {
     width: 45%; }
+
+  .task-creation .application-frame {
+    width: 35%; }
+
+  .replay-btn {
+    bottom: 2em; }
 
   .privacy img {
     display: inline-block;
@@ -1321,13 +1336,19 @@ li.active .question .arrow {
     .introduction .iphone {
       margin-right: -320px;
       width: 320px;
-      bottom: -28em;
+      bottom: -34em;
       right: 55%; }
     .introduction .application-frame {
       margin-right: -360px;
       width: 360px;
       bottom: -24em;
       right: 55%; }
+
+  .replay-btn {
+    bottom: 3em; }
+
+  .application-frame .replay-btn {
+    bottom: 4em; }
 
   .features-intro {
     background-size: 80% auto; }
@@ -1361,13 +1382,19 @@ li.active .question .arrow {
     .introduction .iphone {
       margin-right: -200px;
       width: 400px;
-      bottom: -38em;
+      bottom: -44em;
       right: 38%; }
     .introduction .application-frame {
       margin-right: -420px;
       width: 420px;
       right: 50%;
       bottom: -29em; }
+
+  .replay-btn {
+    bottom: 4em; }
+
+  .application-frame .replay-btn {
+    bottom: 5em; }
 
   .features-intro {
     background-size: 1152px auto;

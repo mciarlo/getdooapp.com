@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg width="60px" height="20px" viewBox="0 0 60 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Group</title>
+    <title>Logo / Wordmark</title>
     <g id="Web" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Desktop-HD" transform="translate(-80.000000, -34.000000)">
             <g id="Group" transform="translate(80.000000, 34.000000)">
-                <circle id="Oval" fill="#B8FBDC" cx="28" cy="10" r="10"></circle>
-                <circle id="Oval" fill="#C0CCF9" cx="50" cy="10" r="10"></circle>
-                <path d="M6.91560397,20 C12.4850621,20 17,15.5228475 17,10 C17,4.4771525 12.4850621,0 6.91560397,0 L0,0 L0,20 L6.91560397,20 Z" id="Oval" fill="#90ECC1"></path>
+                <ellipse id="Oval" fill="#A3F2CB" cx="28.4337349" cy="10" rx="10.0401606" ry="10"></ellipse>
+                <ellipse id="Oval" fill="#ACBEFB" cx="49.9598394" cy="10" rx="10.0401606" ry="10"></ellipse>
+                <path d="M6.8943654,20 C12.4467191,20 16.9477912,15.5228475 16.9477912,10 C16.9477912,4.4771525 12.4467191,0 6.8943654,0 L0,0 L0,20 L6.8943654,20 Z" id="Oval" fill="#64E5A6"></path>
             </g>
         </g>
     </g>
