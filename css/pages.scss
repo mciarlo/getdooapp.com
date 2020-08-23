@@ -125,6 +125,15 @@ label, input, textarea, .selection {
   flex-direction: row;
 }
 
+.qa-pair a:link,
+.qa-pair a:visited {
+  font-weight: 600;
+}
+
+.qa-pair a:hover {
+  color: $textColorSecondary;
+}
+
 /***
 *****************************
 **** Features
@@ -178,6 +187,7 @@ label, input, textarea, .selection {
     &:nth-child(2),
     &:nth-child(1) {
       border: 0;
+      padding-top: 0;
     }
   }
 }
@@ -307,10 +317,6 @@ label, input, textarea, .selection {
 
   .url-params {
     font-size: 1.1em;
-  }
-
-  .features-list {
-    padding-top: 3em;
   }
 
   .feature-group {

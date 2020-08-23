@@ -193,24 +193,31 @@ img.icon {
   display: inline-block; }
 
 .button {
-  padding: 1.5em 3em;
+  padding: 1.5em 2em;
   border-radius: 8px;
   display: inline-block;
-  font-size: .9em;
+  font-size: .7em;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.2em;
   font-weight: 600;
-  color: #383938;
+  color: #6E6D7A;
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0);
   transform: translateY(0px);
-  transition: transform 100ms ease-in-out, box-shadow 100ms ease-in-out, border-color 100ms ease-in-out; }
+  transition: transform 100ms ease-in-out, box-shadow 100ms ease-in-out, border-color 100ms ease-in-out, color 100ms ease-in-out; }
+  .button.download {
+    border: 1px solid #dadada;
+    padding: 1.5em 3em; }
+    .button.download:hover {
+      border-color: #383938; }
   .button.primary {
     background-color: #111111;
     color: white;
     border-radius: 3em; }
   .button.bordered {
-    border: 1px solid #EDEEF3; }
+    border: 1px solid #EDEEF3;
+    color: #6E6D7A; }
     .button.bordered:hover {
+      color: #383938;
       border-color: #383938; }
 
 .app-store-badge {
@@ -244,7 +251,7 @@ img.icon {
 
 .mac-screenshot {
   border-radius: 6px;
-  border: 0.75px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden; }
 
@@ -331,13 +338,13 @@ img.icon {
     display: block; }
 
   .button {
-    padding: 2em 6em; }
+    font-size: .8em; }
 
   section {
     padding: 6em 0; }
 
   h1 {
-    font-size: 2.8em;
+    font-size: 3.5em;
     letter-spacing: -.04em; }
 
   h2, h3 {
@@ -354,7 +361,7 @@ img.icon {
     padding: 10em 0; }
 
   h1 {
-    font-size: 3.2em; }
+    font-size: 5em; }
 
   h2, h3 {
     font-size: 2.5em; }
@@ -372,7 +379,7 @@ img.icon {
     padding: 8em 0; } }
 @media screen and (min-width: 1280px) {
   h1 {
-    font-size: 4em; }
+    font-size: 6em; }
 
   h2, h3 {
     font-size: 3em; }

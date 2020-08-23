@@ -85,8 +85,8 @@ Y8b d88P
  */
  .introduction {
    background: white url("../images/pattern_01_mobile.jpg") bottom center no-repeat;
-   background-size: 120% auto;
-   padding: 4em 0 6.4em;
+   background-size: 475px auto;
+   padding: 4em 0 0;
    overflow: visible;
    z-index: 2;
    position: relative;
@@ -96,26 +96,20 @@ Y8b d88P
      margin: 8em auto 0;
    }
 
-   &.mac {
-     background-size: 90% auto;
-     padding-bottom: 10em;
-   }
-
    .application-frame {
      width: 80%;
      margin: 8em auto 0;
-
-     .mac-screenshot {
-       border-color: #cacaca;
-     }
    }
  }
 
  .intro-text {
-   max-width: 220px;
+   max-width: 300px;
+   margin: 0 auto;
+   text-align: center;
 
    h1 {
      max-width: 150px;
+     margin: 0 auto;
    }
 
    p {
@@ -125,21 +119,13 @@ Y8b d88P
  }
 
  .features-intro {
-   padding: 10em 0 10em;
-   border-bottom: 1px solid $borderColor;
+   .icon-grid {
+     li {
+       font-size: 1.2em;
 
-   li {
-     font-size: 1.2em;
-     padding: .5em 0;
-     padding-left: 20px;
-     position: relative;
-
-     &:before {
-       content: "•";
-       color: $lightGreen;
-       position: absolute;
-       top: .5em;
-       left: 0;
+       img {
+        top: 2.1em;
+      }
      }
    }
  }
@@ -208,36 +194,39 @@ Y8b d88P
    }
  }
 
- .highlighted-features {
-  ul {
-    padding: 3em 0 1em;
+.icon-grid,
+.features-intro ul {
+  padding: 3em 0 1em;
 
-    li {
-      padding: 3em 0 3em 70px;
-      position: relative;
-      text-align: left;
-      line-height: 1.8;
-      border-top: 1px solid $borderColor;
+  li {
+    padding: 3em 0 3em 70px;
+    position: relative;
+    text-align: left;
+    line-height: 1.8;
+    border-top: 1px solid $borderColor;
 
-      &:first-child {
-          border-top: 0;
-      }
+    &:first-child {
+        border-top: 0;
+    }
 
-      img {
-        position: absolute;
-        left: 0;
-        top: 3.5em;
-        width: 50px;
-      }
+    img {
+      position: absolute;
+      left: 0;
+      top: 3.5em;
+      width: 50px;
+    }
 
-      strong {
-        color: $textColorPrimary;
-        font-size: 1.4em;
-        margin-bottom: .5em;
-        display:block;
-      }
+    strong {
+      color: $textColorPrimary;
+      font-size: 1.4em;
+      margin-bottom: .5em;
+      display:block;
     }
   }
+}
+
+.features-intro ul li img {
+  top: 2em;
 }
 
 .replay-btn {
@@ -276,9 +265,7 @@ Y8b d88P
   }
 
   cite {
-    padding-top: 3em;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    padding-top: 10em;
     font-weight: 600;
     display: inline-block;
     text-align: center;
@@ -318,10 +305,6 @@ Y8b d88P
 .conclusion {
   border-top: 1px solid $borderColor;
   text-align: center;
-
-  .intro-text {
-    margin-left: 0;
-  }
 
   a {
     margin-top: 1em;
@@ -497,19 +480,25 @@ li.active .question .arrow {
   transform: rotate(180deg);
 }
 
-@media screen and (max-width: 467px) {
+@media screen and (max-width: 375px) {
+  .introduction {
+    background-size: 100% auto;
+  }
+}
+
+@media screen and (max-width: 767px) {
   .introduction {
     .iphone {
       max-width: 300px;
+    }
+
+    .application-frame {
+      max-width: 350px;
     }
   }
 }
 
 @media screen and (min-width: 475px) and (max-width: 767px) {
-  .introduction {
-    background-size: auto 100%;
-  }
-
   .major-feature,
   .highlighted-features {
     .iphone {
@@ -537,62 +526,36 @@ li.active .question .arrow {
   }
 
   .introduction {
-    padding: 8em 0 24em;
+    padding: 8em 0 0;
     background: white url("../images/pattern_01.jpg") bottom center no-repeat;
-    background-size: 90% auto;
-
-    &.mac {
-      background-size: 70% auto;
-      padding-bottom: 24em;
-    }
+    background-size: 100% auto;
 
     .iphone {
-      margin: 0 -260px 0 0;
-      width: 260px;
-      position: absolute;
-      bottom: -26em;
-      right: 55%;
+      width: 350px;
     }
 
     .application-frame {
-      margin: 0 -300px 0 0;
-      width: 300px;
-      position: absolute;
-      bottom: -18em;
-      right: 50%;
+      width: 400px;
     }
   }
 
   .intro-text {
-    width: 40%;
+    width: 320px;
+    max-width: 100%;
 
     h1 {
-      max-width: 100%;
+      max-width: 300px;
     }
   }
 
   .features-intro {
-    background: white url("../images/pattern_02.jpg") top center no-repeat;
-    background-size: 90% auto;
-    padding: 12em 0;
-
     li {
       font-size: 1.4em;
     }
+  }
 
-    &.mac {
-      padding-top: 10em;
-    }
-
-    ul,
-    .heading-label {
-      width: 60%;
-      margin: 0 auto;
-    }
-
-    .heading-label {
-      padding-bottom: 1em;
-    }
+  .features-intro ul li img {
+    top: 2.5em;
   }
 
   .major-feature,
@@ -610,7 +573,6 @@ li.active .question .arrow {
       width: 45%;
     }
   }
-
 
    .task-creation {
      .application-frame {
@@ -633,31 +595,29 @@ li.active .question .arrow {
     }
   }
 
-  .highlighted-features {
-    ul {
-     display: flex;
-     flex-wrap: wrap;
-     flex-direction: row;
-     padding: 6em 0 2em;
+  .icon-grid {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 6em 0 2em;
 
-     li {
-       padding: 140px 50px 20px 50px;
-       margin-bottom: 4em;
-       width: 50%;
-       box-sizing: border-box;
-       border-left: 1px solid $borderColor;
-       border-top: 0;
+    li {
+      padding: 140px 50px 20px 50px;
+      margin-bottom: 4em;
+      width: 50%;
+      box-sizing: border-box;
+      border-left: 1px solid $borderColor;
+      border-top: 0;
 
-       &:nth-child(even) {
-         padding-right: 0;
-       }
+      &:nth-child(even) {
+        padding-right: 0;
+      }
 
-       img {
-         top: 40px;
-         width: 70px;
-         left: auto;
-       }
-     }
+      img {
+        top: 40px;
+        width: 70px;
+        left: auto;
+      }
     }
   }
 
@@ -750,30 +710,14 @@ li.active .question .arrow {
 
 @media screen and (min-width: 1024px) {
   .introduction {
-    padding: 8em 0 30em;
-    background-size: 80% auto;
+    padding: 8em 0 0;
 
     .intro-text {
-      max-width: 280px;
-    }
+      width: 380px;
 
-    &.mac {
-      padding-bottom: 28em;
-      background-size: 75% auto;
-    }
-
-    .iphone {
-      margin-right: -320px;
-      width: 320px;
-      bottom: -34em;
-      right: 55%;
-    }
-
-    .application-frame {
-      margin-right: -360px;
-      width: 360px;
-      bottom: -24em;
-      right: 55%;
+      h1 {
+        max-width: 100%;
+      }
     }
   }
 
@@ -785,28 +729,49 @@ li.active .question .arrow {
     bottom: 4em;
   }
 
-  .features-intro {
-    background-size: 80% auto;
+  .icon-grid {
+   li {
+     width: 33%;
 
-    &.mac {
-      padding-top: 10em;
-    }
+     &:nth-child(even) {
+       padding-right: 50px;
+     }
+
+     &:nth-child(3),
+     &:nth-child(6) {
+         padding-right: 0;
+     }
+   }
   }
 
-  .highlighted-features {
-    ul {
-     li {
-       width: 33%;
+  .features-intro ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 6em 0 2em;
 
-       &:nth-child(even) {
-         padding-right: 50px;
-       }
+    li {
+      padding: 140px 50px 20px 50px;
+      margin-bottom: 4em;
+      width: 33%;
+      box-sizing: border-box;
+      border-left: 1px solid $borderColor;
+      border-top: 0;
 
-       &:nth-child(3),
-       &:nth-child(6) {
-           padding-right: 0;
-       }
-     }
+      &:nth-child(even) {
+        padding-right: 50px;
+      }
+
+      &:nth-child(3),
+      &:nth-child(6) {
+          padding-right: 0;
+      }
+
+      img {
+        top: 40px;
+        width: 70px;
+        left: auto;
+      }
     }
   }
 
@@ -829,30 +794,28 @@ li.active .question .arrow {
 
 @media screen and (min-width: 1280px) {
   .introduction {
-    padding-bottom: 38em;
     background-size: 1152px auto;
 
     .intro-text {
-      max-width: 320px;
-    }
+      width: 500px;
 
-    &.mac {
-      background-size: 1100px auto;
-      padding-bottom: 34em;
+      h1 {
+        max-width: 100%;
+      }
+
+      p {
+        max-width: 360px;
+        margin-left: auto;
+        margin-right: auto;
+      }
     }
 
     .iphone {
-      margin-right: -200px;
       width: 400px;
-      bottom: -44em;
-      right: 38%;
     }
 
     .application-frame {
-      margin-right: -420px;
-      width: 420px;
-      right: 50%;
-      bottom: -29em;
+      width: 450px;
     }
   }
 
@@ -865,9 +828,6 @@ li.active .question .arrow {
   }
 
   .features-intro {
-    background-size: 1152px auto;
-    padding: 16em 0 16em;
-
     li {
       font-size: 1.6em;
     }
@@ -877,12 +837,6 @@ li.active .question .arrow {
     padding: 10em 0;
   }
 
-  .intro-text {
-    p {
-      max-width: 270px;
-    }
-  }
-
   .press-logos {
     li {
       img {
@@ -890,35 +844,4 @@ li.active .question .arrow {
       }
     }
   }
-}
-
-@media screen and (min-width: 1440px) {
-  // .introduction {
-  //   padding-bottom: 40em;
-  //   background-size: 1280px auto;
-  //
-  //   &.mac {
-  //     padding-bottom: 42em;
-  //     background-size: 1024px auto;
-  //   }
-  //
-  //   .iphone {
-  //     margin-right: -225px;
-  //     width: 450px;
-  //     bottom: -44em;
-  //     right: 38%;
-  //   }
-  //
-  //   .application-frame {
-  //     margin-right: -225px;
-  //     width: 450px;
-  //     bottom: -32.5em;
-  //     right: 38%;
-  //   }
-  // }
-  //
-  // .features-intro {
-  //   background-size: 1280px auto;
-  //   padding: 16em 0;
-  // }
 }
