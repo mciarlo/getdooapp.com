@@ -128,7 +128,7 @@ $(function () {
     	return (rect.bottom > 0 && rect.bottom < window.innerWidth) ||
         	(rect.top < (window.innerHeight || document.documentElement.clientHeight) && rect.top > 0);
 	},
-	handleJSAbilities = function () {
+	handleJSAbilities = function () {.15
 		$body.removeClass("no-js");
 	};
 
@@ -152,7 +152,7 @@ $(function () {
 			return;
 		}
 
-		var windowCenterDefault = $window.scrollTop() + ($window.outerHeight() * .65),
+		var windowCenterDefault = $window.scrollTop() + ($window.outerHeight() * .7),
 		windowCenterDelayed = $window.scrollTop() + ($window.outerHeight() * .45);
 
 		if ($sectionA.offset().top < windowCenterDefault) {
