@@ -27,6 +27,7 @@ nav {
   position: relative;
   z-index: 9999;
   height: 56px;
+  overflow: hidden;
   @include transition(height, .25s, ease-in-out);
 }
 
@@ -62,7 +63,7 @@ nav {
 }
 
 nav.active {
-  height: 240px;
+  height: 280px;
 
   #nav-links {
     transition-delay: 200ms;

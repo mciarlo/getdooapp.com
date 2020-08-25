@@ -226,6 +226,15 @@ img.icon {
   display: inline-block;
 }
 
+.app-store-badge {
+  transform: scale3d(1,1,1);
+  transition: transform 200ms ease-in-out;
+
+  &:hover {
+    transform: scale3d(1.05,1.05,1);
+  }
+}
+
 .button {
   padding: 2em 4em;
   border-radius: 8px;
@@ -240,11 +249,12 @@ img.icon {
   transition: transform 100ms ease-in-out, box-shadow 100ms ease-in-out, border-color 100ms ease-in-out, color 100ms ease-in-out;
 
   &.download {
-    border: 1px solid #dadada;
+    border: 0;
+    background: $lightGrayBackground;
     padding: 1.5em 3em;
 
     &:hover {
-      border-color: $textColorPrimary;
+      background: #e6e9f6;
     }
   }
 
@@ -403,7 +413,6 @@ img.icon {
     left: 0;
     width: 100%;
     background: white;
-    box-shadow: 0px 1px 0px rgba(0,0,0,.08);
     position: fixed;
   }
 

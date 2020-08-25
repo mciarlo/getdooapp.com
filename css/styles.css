@@ -57,6 +57,7 @@ nav {
   position: relative;
   z-index: 9999;
   height: 56px;
+  overflow: hidden;
   transition: height 0.25s ease-in-out;
   -webkit-transition: height 0.25s ease-in-out;
   -moz-transition: height 0.25s ease-in-out;
@@ -93,7 +94,7 @@ nav {
       color: #383938; }
 
 nav.active {
-  height: 240px; }
+  height: 280px; }
   nav.active #nav-links {
     transition-delay: 200ms;
     opacity: 1;
@@ -630,6 +631,12 @@ img.icon {
   width: 4em;
   display: inline-block; }
 
+.app-store-badge {
+  transform: scale3d(1, 1, 1);
+  transition: transform 200ms ease-in-out; }
+  .app-store-badge:hover {
+    transform: scale3d(1.05, 1.05, 1); }
+
 .button {
   padding: 2em 4em;
   border-radius: 8px;
@@ -643,10 +650,11 @@ img.icon {
   transform: translateY(0px);
   transition: transform 100ms ease-in-out, box-shadow 100ms ease-in-out, border-color 100ms ease-in-out, color 100ms ease-in-out; }
   .button.download {
-    border: 1px solid #dadada;
+    border: 0;
+    background: #F5F6F9;
     padding: 1.5em 3em; }
     .button.download:hover {
-      border-color: #383938; }
+      background: #e6e9f6; }
   .button.primary {
     background-color: #111111;
     color: white;
@@ -758,7 +766,6 @@ img.icon {
     left: 0;
     width: 100%;
     background: white;
-    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.08);
     position: fixed; }
 
   body {
@@ -898,29 +905,19 @@ Y8b d88P
  *********************************************
  */
 .introduction {
-  background: white url("../images/pattern_01_mobile.jpg") bottom center no-repeat;
-  background-size: 475px auto;
-  padding: 4em 0 0;
+  padding-bottom: 0;
   overflow: visible;
   z-index: 2;
   position: relative; }
-  .introduction .iphone {
-    width: 80%;
-    margin: 8em auto 0; }
-  .introduction .application-frame {
-    width: 80%;
-    margin: 8em auto 0; }
+  .introduction .hero {
+    width: 330%;
+    margin-left: -115%;
+    padding-top: 4em; }
 
 .intro-text {
-  max-width: 300px;
-  margin: 0 auto;
   text-align: center; }
   .intro-text h1 {
-    max-width: 150px;
-    margin: 0 auto; }
-  .intro-text p {
-    color: #383938;
-    margin: 1em 0 2em; }
+    padding-bottom: 1em; }
 
 .features-intro .icon-grid li {
   font-size: 1em; }
@@ -995,8 +992,10 @@ Y8b d88P
       margin-bottom: .5em;
       display: block; }
 
-.features-intro ul li img {
-  top: 2em; }
+.features-intro ul li {
+  font-size: 1.2em; }
+  .features-intro ul li img {
+    top: 2em; }
 
 .replay-btn {
   position: absolute;
@@ -1053,8 +1052,8 @@ Y8b d88P
 
 .conclusion {
   text-align: center; }
-  .conclusion a {
-    margin-top: 1em; }
+  .conclusion h2 {
+    padding-bottom: 1em; }
   .conclusion img.full-width {
     padding-top: 3em; }
 
@@ -1167,14 +1166,13 @@ li.active .answer {
 li.active .question .arrow {
   transform: rotate(180deg); }
 
-@media screen and (max-width: 375px) {
-  .introduction {
-    background-size: 100% auto; } }
-@media screen and (max-width: 767px) {
-  .introduction .iphone {
-    max-width: 300px; }
-  .introduction .application-frame {
-    max-width: 350px; } }
+@media screen and (min-width: 575px) and (max-width: 767px) {
+  .introduction .hero {
+    width: 220%;
+    margin-left: -60%; }
+  .introduction.mac .hero {
+    width: 190%;
+    margin-left: -45%; } }
 @media screen and (min-width: 475px) and (max-width: 767px) {
   .major-feature .iphone,
   .highlighted-features .iphone {
@@ -1194,25 +1192,23 @@ li.active .question .arrow {
     flex: 1; }
 
   .introduction {
-    padding: 8em 0 0;
-    background: white url("../images/pattern_01.jpg") bottom center no-repeat;
-    background-size: 100% auto; }
-    .introduction .iphone {
-      width: 350px; }
-    .introduction .application-frame {
-      width: 400px; }
+    padding-top: 8em; }
+    .introduction h1 {
+      padding-bottom: .65em; }
+    .introduction .hero {
+      width: 200%;
+      margin-left: -50%;
+      padding-top: 5em; }
+    .introduction.mac .hero {
+      width: 160%;
+      margin-left: -30%; }
 
-  .intro-text {
-    width: 320px;
-    max-width: 100%; }
-    .intro-text h1 {
-      max-width: 300px; }
-
-  .features-intro li {
-    font-size: 1.1em; }
-
-  .features-intro ul li img {
-    top: 2.5em; }
+  .features-intro {
+    padding-bottom: 0; }
+    .features-intro li {
+      font-size: 1.3em; }
+      .features-intro li img {
+        top: 2.5em; }
 
   .major-feature img.full-width,
   .major-feature .media-well,
@@ -1276,6 +1272,8 @@ li.active .question .arrow {
       .press-logos li:first-child img {
         height: 15px; }
 
+  .conclusion h2 {
+    padding-bottom: .65em; }
   .conclusion .intro-text {
     width: 100%;
     max-width: 100%; }
@@ -1312,11 +1310,9 @@ li.active .question .arrow {
     height: 25px; } }
 @media screen and (min-width: 1024px) {
   .introduction {
-    padding: 8em 0 0; }
-    .introduction .intro-text {
-      width: 380px; }
-      .introduction .intro-text h1 {
-        max-width: 100%; }
+    padding: 10em 0 0; }
+    .introduction .hero {
+      padding-top: 6em; }
 
   .replay-btn {
     bottom: 3em; }
@@ -1342,7 +1338,8 @@ li.active .question .arrow {
       width: 33%;
       box-sizing: border-box;
       border-left: 1px solid #EDEEF3;
-      border-top: 0; }
+      border-top: 0;
+      font-size: 1.4em; }
       .features-intro ul li:nth-child(even) {
         padding-right: 50px; }
       .features-intro ul li:nth-child(3), .features-intro ul li:nth-child(6) {
@@ -1362,19 +1359,10 @@ li.active .question .arrow {
     font-size: 1.25em; } }
 @media screen and (min-width: 1280px) {
   .introduction {
+    padding-top: 12em;
     background-size: 1152px auto; }
-    .introduction .intro-text {
-      width: 500px; }
-      .introduction .intro-text h1 {
-        max-width: 100%; }
-      .introduction .intro-text p {
-        max-width: 360px;
-        margin-left: auto;
-        margin-right: auto; }
-    .introduction .iphone {
-      width: 400px; }
-    .introduction .application-frame {
-      width: 450px; }
+    .introduction .hero {
+      padding-top: 7em; }
 
   .replay-btn {
     bottom: 4em; }
@@ -1382,8 +1370,8 @@ li.active .question .arrow {
   .application-frame .replay-btn {
     bottom: 5em; }
 
-  .features-intro li {
-    font-size: 1.25em; }
+  .features-intro ul li {
+    font-size: 1.6em; }
 
   .media-well {
     padding: 10em 0; }
