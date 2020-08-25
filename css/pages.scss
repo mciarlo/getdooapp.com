@@ -126,12 +126,16 @@ label, input, textarea, .selection {
 }
 
 .qa-pair a:link,
-.qa-pair a:visited {
+.qa-pair a:visited,
+.feature-group a:link,
+.feature-group a:link {
   font-weight: 600;
+  color: $textColorSecondary;
 }
 
-.qa-pair a:hover {
-  color: $textColorSecondary;
+.qa-pair a:hover,
+.feature-group a:hover {
+  color: $textColorTertiary;
 }
 
 /***

@@ -272,11 +272,15 @@ label, input, textarea, .selection {
   flex-direction: row; }
 
 .qa-pair a:link,
-.qa-pair a:visited {
-  font-weight: 600; }
-
-.qa-pair a:hover {
+.qa-pair a:visited,
+.feature-group a:link,
+.feature-group a:link {
+  font-weight: 600;
   color: #6E6D7A; }
+
+.qa-pair a:hover,
+.feature-group a:hover {
+  color: #B2B2B2; }
 
 /***
 *****************************
@@ -1137,7 +1141,7 @@ footer {
   color: #6E6D7A;
   font-size: 1em; }
   .answer li {
-    padding: .5em 0;
+    padding: .75em 0;
     position: relative; }
   .answer.bulleted li {
     padding-left: 1em; }
