@@ -176,7 +176,7 @@ $(function () {
 		}
 
 		var catchAutoPlayForVideoWithCatchBlock = function (video, catchBlock) {
-			if (video.playing) {
+			if (video.playing || $window.outerHeight() < 768) {
 				return;
 			}
 

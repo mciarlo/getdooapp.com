@@ -227,7 +227,7 @@ Y8b d88P
   background: transparent url("../images/repeat_icon.png") 0px .7em no-repeat;
   background-size: 20px auto;
   padding: 1em 0 1em 25px;
-  opacity: 0;
+  opacity: 1;
   transition: opacity .5s ease-in-out;
   pointer-events: none;
   line-height: 1;
@@ -527,6 +527,10 @@ li.active .question .arrow {
       width: 160%;
       margin-left: -30%;
     }
+  }
+
+  .replay-btn {
+    opacity: 0
   }
 
   .features-intro {
