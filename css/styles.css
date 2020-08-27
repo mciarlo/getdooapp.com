@@ -1011,7 +1011,7 @@ Y8b d88P
   padding: 1em 0 1em 25px;
   opacity: 1;
   transition: opacity .5s ease-in-out;
-  pointer-events: none;
+  pointer-events: all;
   line-height: 1; }
   .replay-btn.active {
     opacity: 1;
@@ -1208,7 +1208,8 @@ li.active .question .arrow {
       margin-left: -30%; }
 
   .replay-btn {
-    opacity: 0; }
+    opacity: 0;
+    pointer-events: none; }
 
   .features-intro {
     padding-bottom: 0; }

@@ -229,7 +229,7 @@ Y8b d88P
   padding: 1em 0 1em 25px;
   opacity: 1;
   transition: opacity .5s ease-in-out;
-  pointer-events: none;
+  pointer-events: all;
   line-height: 1;
 
   &.active {
@@ -530,7 +530,8 @@ li.active .question .arrow {
   }
 
   .replay-btn {
-    opacity: 0
+    opacity: 0;
+    pointer-events: none;
   }
 
   .features-intro {
