@@ -955,9 +955,6 @@ Y8b d88P
 .doo-design .application-frame {
   width: 25%; }
 
-.task-creation .application-frame {
-  width: 25%; }
-
 .today-mode .application-frame {
   width: 30%; }
 
@@ -1230,9 +1227,6 @@ li.active .question .arrow {
   .highlighted-features .application-frame {
     width: 45%; }
 
-  .task-creation .application-frame {
-    width: 35%; }
-
   .replay-btn {
     bottom: 2em; }
 
@@ -1356,9 +1350,6 @@ li.active .question .arrow {
         top: 40px;
         width: 70px;
         left: auto; }
-
-  .task-creation .media-well .application-frame {
-    width: 30%; }
 
   .press-logos li img {
     height: 20px; }
