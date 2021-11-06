@@ -920,8 +920,13 @@ Y8b d88P
 
 .intro-text {
   text-align: center; }
-  .intro-text h1 {
-    padding-bottom: 1em; }
+  .intro-text p {
+    margin: 0 auto;
+    display: block;
+    width: 80%;
+    max-width: 260px;
+    padding: 1em 0 3em;
+    font-size: 1.2em; }
 
 .features-intro .icon-grid li {
   font-size: 1em; }
@@ -1194,8 +1199,6 @@ li.active .question .arrow {
 
   .introduction {
     padding-top: 8em; }
-    .introduction h1 {
-      padding-bottom: .65em; }
     .introduction .hero {
       width: 200%;
       margin-left: -50%;
@@ -1203,6 +1206,9 @@ li.active .question .arrow {
     .introduction.mac .hero {
       width: 160%;
       margin-left: -30%; }
+
+  .intro-text p {
+    font-size: 1.3em; }
 
   .replay-btn {
     opacity: 0;
@@ -1248,6 +1254,8 @@ li.active .question .arrow {
       box-sizing: border-box;
       border-left: 1px solid #EDEEF3;
       border-top: 0; }
+      .icon-grid li:first-child, .icon-grid li:nth-child(3), .icon-grid li:nth-child(5) {
+        border-left: 0; }
       .icon-grid li:nth-child(even) {
         padding-right: 0; }
       .icon-grid li img {
@@ -1324,10 +1332,18 @@ li.active .question .arrow {
 
   .icon-grid li {
     width: 33%; }
+    .icon-grid li:first-child, .icon-grid li:nth-child(3), .icon-grid li:nth-child(5) {
+      border-left: 1px solid #EDEEF3; }
+    .icon-grid li:first-child, .icon-grid li:nth-child(4) {
+      border-left: 0; }
     .icon-grid li:nth-child(even) {
       padding-right: 50px; }
     .icon-grid li:nth-child(3), .icon-grid li:nth-child(6) {
       padding-right: 0; }
+
+  .intro-text p {
+    font-size: 1.4em;
+    max-width: 360px; }
 
   .features-intro ul {
     display: flex;
@@ -1342,6 +1358,8 @@ li.active .question .arrow {
       border-left: 1px solid #EDEEF3;
       border-top: 0;
       font-size: 1.4em; }
+      .features-intro ul li:first-child {
+        border-left: 0; }
       .features-intro ul li:nth-child(even) {
         padding-right: 50px; }
       .features-intro ul li:nth-child(3), .features-intro ul li:nth-child(6) {
@@ -1370,6 +1388,9 @@ li.active .question .arrow {
     bottom: 5em; }
 
   .features-intro ul li {
+    font-size: 1.6em; }
+
+  .intro-text p {
     font-size: 1.6em; }
 
   .media-well {
