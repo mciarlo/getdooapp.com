@@ -49,7 +49,9 @@ table {
   opacity: 1;
   pointer-events: all; }
 .no-js nav {
-  height: 200px; }
+  height: 300px; }
+  .no-js nav.no-js {
+    display: block; }
 .no-js #hamburger-icon {
   display: none; }
 
@@ -57,12 +59,18 @@ nav {
   position: relative;
   z-index: 9999;
   height: 56px;
-  overflow: hidden;
-  transition: height 0.25s ease-in-out;
-  -webkit-transition: height 0.25s ease-in-out;
-  -moz-transition: height 0.25s ease-in-out;
-  -ms-transition: height 0.25s ease-in-out;
-  -o-transition: height 0.25s ease-in-out; }
+  overflow: hidden; }
+  nav.animates {
+    transition: height 0.25s ease-in-out;
+    -webkit-transition: height 0.25s ease-in-out;
+    -moz-transition: height 0.25s ease-in-out;
+    -ms-transition: height 0.25s ease-in-out;
+    -o-transition: height 0.25s ease-in-out; }
+
+.support nav {
+  height: 86px; }
+  .support nav.no-js {
+    height: 300px; }
 
 #nav-links {
   margin-top: 3em;
@@ -85,11 +93,11 @@ nav {
     letter-spacing: 0.06em;
     color: #6E6D7A;
     display: inline-block;
-    transition: all 0.25s ease-in-out;
-    -webkit-transition: all 0.25s ease-in-out;
-    -moz-transition: all 0.25s ease-in-out;
-    -ms-transition: all 0.25s ease-in-out;
-    -o-transition: all 0.25s ease-in-out; }
+    transition: color 0.25s ease-in-out;
+    -webkit-transition: color 0.25s ease-in-out;
+    -moz-transition: color 0.25s ease-in-out;
+    -ms-transition: color 0.25s ease-in-out;
+    -o-transition: color 0.25s ease-in-out; }
     #nav-links a:link:hover, #nav-links a:link.active, #nav-links a:visited:hover, #nav-links a:visited.active {
       color: #383938; }
 
@@ -146,6 +154,9 @@ nav.active {
 
 @media screen and (min-width: 768px) {
   .no-js nav {
+    height: auto; }
+
+  .support nav {
     height: auto; }
 
   nav {

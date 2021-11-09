@@ -130,6 +130,9 @@ $(function () {
 	},
 	handleJSAbilities = function () {.15
 		$body.removeClass("no-js");
+		setTimeout(function () {
+			$("nav").addClass("animates");
+		}, 1000);
 	};
 
 	$burgerIcon.click(function (ev) {

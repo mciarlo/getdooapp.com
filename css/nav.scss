@@ -15,7 +15,11 @@ $menuDuration: 1200ms;
   }
 
   nav {
-    height: 200px;
+    height: 300px;
+
+    &.no-js {
+      display: block;
+    }
   }
 
   #hamburger-icon {
@@ -28,7 +32,18 @@ nav {
   z-index: 9999;
   height: 56px;
   overflow: hidden;
-  @include transition(height, .25s, ease-in-out);
+
+  &.animates {
+    @include transition(height, .25s, ease-in-out);    
+  }
+}
+
+.support nav {
+  height: 86px;
+
+  &.no-js {
+    height: 300px;
+  }
 }
 
 #nav-links {
@@ -53,7 +68,7 @@ nav {
     letter-spacing: 0.06em;
     color: $textColorSecondary;
     display: inline-block;
-    @include transition(all, .25s, ease-in-out);
+    @include transition(color, .25s, ease-in-out);
 
     &:hover,
     &.active {
@@ -130,6 +145,10 @@ nav.active {
     nav {
       height: auto;
     }
+  }
+
+  .support nav {
+    height: auto;
   }
 
   nav {
