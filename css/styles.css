@@ -1038,6 +1038,22 @@ Y8b d88P
 .application-frame .replay-btn {
   bottom: 2em; }
 
+#video_01,
+#video_02,
+#video_05,
+#video_03,
+#video_04,
+#video_06 {
+  background: white url("../images/ios_poster.jpg") center center no-repeat;
+  background-size: 100% 100%; }
+
+#video_03,
+#video_06 {
+  background-image: url("../images/mac_poster_01.jpg"); }
+
+#video_05 {
+  background-image: url("../images/mac_poster_02.jpg"); }
+
 .press {
   padding-bottom: 10em; }
   .press blockquote {
