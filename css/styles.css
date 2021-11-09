@@ -323,6 +323,8 @@ label, input, textarea, .selection {
       .feature-group li.feature-image img {
         width: 100%; }
 
+.features-list .full-width {
+  padding-bottom: 4em; }
 .features-list .content-wrapper, .features-list .platform-recirculation-mac {
   padding-top: 3em;
   border-top: 1px solid #EDEEF3; }
@@ -947,7 +949,7 @@ Y8b d88P
     display: block;
     width: 80%;
     max-width: 260px;
-    padding: 1em 0 3em;
+    padding: 1em 0 2em;
     font-size: 1.2em; }
 
 .features-intro .icon-grid li {
@@ -1027,9 +1029,9 @@ Y8b d88P
   background: transparent url("../images/repeat_icon.png") 0px 0.7em no-repeat;
   background-size: 20px auto;
   padding: 1em 0 1em 25px;
-  opacity: 1;
-  transition: opacity .5s ease-in-out;
-  pointer-events: all;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .4s ease-in-out;
   line-height: 1; }
   .replay-btn.active {
     opacity: 1;
@@ -1083,10 +1085,14 @@ Y8b d88P
       margin-left: 0; }
     .press-logos li:last-child {
       margin-right: 0; }
-    .press-logos li:first-child img {
-      height: 30px; }
   .press-logos img {
     height: 20px; }
+    .press-logos img.wired-icon {
+      height: 25px; }
+    .press-logos img.lifehacker-icon {
+      height: 25px; }
+    .press-logos img.webby-icon {
+      height: 40px; }
 
 .conclusion {
   text-align: center; }
@@ -1239,10 +1245,6 @@ li.active .question .arrow {
   .intro-text p {
     font-size: 1.3em; }
 
-  .replay-btn {
-    opacity: 0;
-    pointer-events: none; }
-
   .features-intro {
     padding-bottom: 0; }
     .features-intro li {
@@ -1296,20 +1298,15 @@ li.active .question .arrow {
     padding-bottom: 20em; }
 
   .press-logos {
-    padding-top: 10em;
-    width: 100%;
-    margin: 0 auto; }
-    .press-logos li {
-      width: 15%;
-      padding: 0 2em;
-      box-sizing: border-box;
-      vertical-align: middle; }
-      .press-logos li img {
-        height: 10px;
-        display: inline-block;
-        vertical-align: middle; }
-      .press-logos li:first-child img {
-        height: 15px; }
+    padding-top: 5em; }
+    .press-logos li:nth-child(1), .press-logos li:nth-child(2), .press-logos li:nth-child(3) {
+      padding-bottom: 2em; }
+    .press-logos img {
+      height: 30px; }
+      .press-logos img.wired-icon, .press-logos img.lifehacker-icon {
+        height: 35px; }
+      .press-logos img.webby-icon {
+        height: 45px; }
 
   .conclusion h2 {
     padding-bottom: .65em; }
@@ -1345,8 +1342,10 @@ li.active .question .arrow {
   .answer {
     font-size: 1.1em; } }
 @media screen and (min-width: 900px) {
-  .press-logos li img {
-    height: 25px; } }
+  .press-logos {
+    padding-top: 8em; }
+    .press-logos li {
+      width: 30%; } }
 @media screen and (min-width: 1024px) {
   .introduction {
     padding: 10em 0 0; }
@@ -1398,9 +1397,6 @@ li.active .question .arrow {
         width: 70px;
         left: auto; }
 
-  .press-logos li img {
-    height: 20px; }
-
   .answer {
     font-size: 1.25em; } }
 @media screen and (min-width: 1280px) {
@@ -1425,5 +1421,17 @@ li.active .question .arrow {
   .media-well {
     padding: 10em 0; }
 
-  .press-logos li img {
-    height: 24px; } }
+  .press-logos li {
+    width: auto;
+    padding: 0 1.5em; }
+    .press-logos li:nth-child(1), .press-logos li:nth-child(2), .press-logos li:nth-child(3) {
+      padding-bottom: 0; } }
+@media screen and (min-width: 1440px) {
+  .press-logos li {
+    padding: 0 2em; }
+  .press-logos img {
+    height: 34px; }
+    .press-logos img.wired-icon, .press-logos img.lifehacker-icon {
+      height: 38px; }
+    .press-logos img.webby-icon {
+      height: 45px; } }

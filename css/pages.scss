@@ -184,6 +184,10 @@ label, input, textarea, .selection {
 }
 
 .features-list {
+  .full-width {
+    padding-bottom: 4em;
+  }
+
   .content-wrapper {
     padding-top: 3em;
     border-top: 1px solid $borderColor;
