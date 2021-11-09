@@ -711,7 +711,10 @@ img.icon {
   display: block; }
 
 .mac-screenshot {
-  border-radius: 12px;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -ms-border-radius: 8px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden; }
@@ -815,6 +818,10 @@ img.icon {
     font-size: 1.1em; }
 
   .mac-screenshot {
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -ms-border-radius: 10px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); } }
 @media screen and (min-width: 1024px) {
   section {
@@ -833,6 +840,10 @@ img.icon {
     font-size: 0.75em; }
 
   .mac-screenshot {
+    border-radius: 12px;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -ms-border-radius: 12px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); }
 
   .media-well {
@@ -1190,10 +1201,7 @@ li.active .question .arrow {
     width: 45%; }
   .major-feature .application-frame,
   .highlighted-features .application-frame {
-    width: 50%; }
-
-  .task-creation .application-frame {
-    width: 35%; } }
+    width: 70%; } }
 @media screen and (min-width: 768px) {
   .left-content {
     width: 25%; }
