@@ -104,7 +104,7 @@ Y8b d88P
      display: block;
      width: 80%;
      max-width: 260px;
-     padding: 1em 0 3em;
+     padding: 1em 0 2em;
      font-size: 1.2em;
    }
  }
@@ -147,18 +147,6 @@ Y8b d88P
      display: block;
      margin-left: auto;
      margin-right: auto;
-   }
- }
-
- .doo-design {
-   .application-frame {
-     width: 25%;
-   }
- }
-
- .today-mode {
-   .application-frame {
-     width: 30%
    }
  }
 
@@ -226,9 +214,9 @@ Y8b d88P
   background: transparent url("../images/repeat_icon.png") 0px .7em no-repeat;
   background-size: 20px auto;
   padding: 1em 0 1em 25px;
-  opacity: 1;
-  transition: opacity .5s ease-in-out;
-  pointer-events: all;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .4s ease-in-out;
   line-height: 1;
 
   &.active {
@@ -239,6 +227,25 @@ Y8b d88P
 
 .application-frame .replay-btn {
   bottom: 2em;
+}
+
+#video_01,
+#video_02,
+#video_05,
+#video_03,
+#video_04,
+#video_06 {
+  background: white url("../images/ios_poster.jpg") center center no-repeat;
+  background-size: 100% 100%;
+}
+
+#video_03,
+#video_06 {
+  background-image: url("../images/mac_poster_01.jpg");
+}
+
+#video_04 {
+  background-image: url("../images/mac_poster_02.jpg");
 }
 
 .press {
@@ -280,14 +287,22 @@ Y8b d88P
     &:last-child {
       margin-right: 0;
     }
-
-    &:first-child img{
-      height: 30px;
-    }
   }
 
   img {
     height: 20px;
+
+    &.wired-icon {
+      height: 25px;
+    }
+
+    &.lifehacker-icon {
+      height: 25px;
+    }
+
+    &.webby-icon {
+      height: 40px;
+    }
   }
 }
 
@@ -490,12 +505,8 @@ li.active .question .arrow {
     }
 
     .application-frame {
-      width: 50%;
+      width: 70%;
     }
-  }
-
-  .task-creation .application-frame {
-    width: 35%;
   }
 }
 
@@ -530,11 +541,6 @@ li.active .question .arrow {
     }
   }
 
-  .replay-btn {
-    opacity: 0;
-    pointer-events: none;
-  }
-
   .features-intro {
     padding-bottom: 0;
 
@@ -559,7 +565,7 @@ li.active .question .arrow {
     }
 
     .application-frame {
-      width: 45%;
+      width: 45%
     }
   }
 
@@ -615,24 +621,26 @@ li.active .question .arrow {
   }
 
   .press-logos {
-    padding-top: 10em;
-    width: 100%;
-    margin: 0 auto;
+    padding-top: 5em;
 
     li {
-      width: 15%;
-      padding: 0 2em;
-      box-sizing: border-box;
-      vertical-align: middle;
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3) {
+        padding-bottom: 2em;
+      }
+    }
 
-      img {
-        height: 10px;
-        display: inline-block;
-        vertical-align: middle;
+    img {
+      height: 30px;
+
+      &.wired-icon,
+      &.lifehacker-icon {
+        height: 35px;
       }
 
-      &:first-child img{
-        height: 15px;
+      &.webby-icon {
+        height: 45px;
       }
     }
   }
@@ -693,10 +701,10 @@ li.active .question .arrow {
 
 @media screen and (min-width: 900px) {
   .press-logos {
+    padding-top: 8em;
+
     li {
-      img {
-        height: 25px;
-      }
+      width: 30%;
     }
   }
 }
@@ -787,14 +795,6 @@ li.active .question .arrow {
     }
   }
 
-  .press-logos {
-    li {
-      img {
-        height: 20px;
-      }
-    }
-  }
-
   .answer {
     font-size: 1.25em;
   }
@@ -836,8 +836,34 @@ li.active .question .arrow {
 
   .press-logos {
     li {
-      img {
-        height: 24px;
+      width: auto;
+      padding: 0 1.5em;
+
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3) {
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .press-logos {
+    li {
+      padding: 0 2em;
+    }
+
+    img {
+      height: 34px;
+
+      &.wired-icon,
+      &.lifehacker-icon {
+        height: 38px;
+      }
+
+      &.webby-icon {
+        height: 45px;
       }
     }
   }

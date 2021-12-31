@@ -130,6 +130,9 @@ $(function () {
 	},
 	handleJSAbilities = function () {.15
 		$body.removeClass("no-js");
+		setTimeout(function () {
+			$("nav").addClass("animates");
+		}, 1000);
 	};
 
 	$burgerIcon.click(function (ev) {
@@ -176,7 +179,7 @@ $(function () {
 		}
 
 		var catchAutoPlayForVideoWithCatchBlock = function (video, catchBlock) {
-			if (video.playing || $window.outerHeight() < 768) {
+			if (video.playing) {
 				return;
 			}
 

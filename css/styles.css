@@ -49,7 +49,9 @@ table {
   opacity: 1;
   pointer-events: all; }
 .no-js nav {
-  height: 200px; }
+  height: 300px; }
+  .no-js nav.no-js {
+    display: block; }
 .no-js #hamburger-icon {
   display: none; }
 
@@ -57,12 +59,18 @@ nav {
   position: relative;
   z-index: 9999;
   height: 56px;
-  overflow: hidden;
-  transition: height 0.25s ease-in-out;
-  -webkit-transition: height 0.25s ease-in-out;
-  -moz-transition: height 0.25s ease-in-out;
-  -ms-transition: height 0.25s ease-in-out;
-  -o-transition: height 0.25s ease-in-out; }
+  overflow: hidden; }
+  nav.animates {
+    transition: height 0.25s ease-in-out;
+    -webkit-transition: height 0.25s ease-in-out;
+    -moz-transition: height 0.25s ease-in-out;
+    -ms-transition: height 0.25s ease-in-out;
+    -o-transition: height 0.25s ease-in-out; }
+
+.support nav {
+  height: 86px; }
+  .support nav.no-js {
+    height: 300px; }
 
 #nav-links {
   margin-top: 3em;
@@ -85,11 +93,11 @@ nav {
     letter-spacing: 0.06em;
     color: #6E6D7A;
     display: inline-block;
-    transition: all 0.25s ease-in-out;
-    -webkit-transition: all 0.25s ease-in-out;
-    -moz-transition: all 0.25s ease-in-out;
-    -ms-transition: all 0.25s ease-in-out;
-    -o-transition: all 0.25s ease-in-out; }
+    transition: color 0.25s ease-in-out;
+    -webkit-transition: color 0.25s ease-in-out;
+    -moz-transition: color 0.25s ease-in-out;
+    -ms-transition: color 0.25s ease-in-out;
+    -o-transition: color 0.25s ease-in-out; }
     #nav-links a:link:hover, #nav-links a:link.active, #nav-links a:visited:hover, #nav-links a:visited.active {
       color: #383938; }
 
@@ -146,6 +154,9 @@ nav.active {
 
 @media screen and (min-width: 768px) {
   .no-js nav {
+    height: auto; }
+
+  .support nav {
     height: auto; }
 
   nav {
@@ -312,6 +323,8 @@ label, input, textarea, .selection {
       .feature-group li.feature-image img {
         width: 100%; }
 
+.features-list .full-width {
+  padding-bottom: 4em; }
 .features-list .content-wrapper, .features-list .platform-recirculation-mac {
   padding-top: 3em;
   border-top: 1px solid #EDEEF3; }
@@ -700,8 +713,11 @@ img.icon {
   display: block; }
 
 .mac-screenshot {
-  border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border: 1px solid #d7d7d7;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden; }
 
@@ -804,6 +820,10 @@ img.icon {
     font-size: 1.1em; }
 
   .mac-screenshot {
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -ms-border-radius: 10px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1); } }
 @media screen and (min-width: 1024px) {
   section {
@@ -822,6 +842,10 @@ img.icon {
     font-size: 0.75em; }
 
   .mac-screenshot {
+    border-radius: 12px;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -ms-border-radius: 12px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); }
 
   .media-well {
@@ -925,7 +949,7 @@ Y8b d88P
     display: block;
     width: 80%;
     max-width: 260px;
-    padding: 1em 0 3em;
+    padding: 1em 0 2em;
     font-size: 1.2em; }
 
 .features-intro .icon-grid li {
@@ -956,12 +980,6 @@ Y8b d88P
     display: block;
     margin-left: auto;
     margin-right: auto; }
-
-.doo-design .application-frame {
-  width: 25%; }
-
-.today-mode .application-frame {
-  width: 30%; }
 
 .doo-design img {
   width: 100%; }
@@ -1011,9 +1029,9 @@ Y8b d88P
   background: transparent url("../images/repeat_icon.png") 0px 0.7em no-repeat;
   background-size: 20px auto;
   padding: 1em 0 1em 25px;
-  opacity: 1;
-  transition: opacity .5s ease-in-out;
-  pointer-events: all;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .4s ease-in-out;
   line-height: 1; }
   .replay-btn.active {
     opacity: 1;
@@ -1021,6 +1039,22 @@ Y8b d88P
 
 .application-frame .replay-btn {
   bottom: 2em; }
+
+#video_01,
+#video_02,
+#video_05,
+#video_03,
+#video_04,
+#video_06 {
+  background: white url("../images/ios_poster.jpg") center center no-repeat;
+  background-size: 100% 100%; }
+
+#video_03,
+#video_06 {
+  background-image: url("../images/mac_poster_01.jpg"); }
+
+#video_04 {
+  background-image: url("../images/mac_poster_02.jpg"); }
 
 .press {
   padding-bottom: 10em; }
@@ -1051,10 +1085,14 @@ Y8b d88P
       margin-left: 0; }
     .press-logos li:last-child {
       margin-right: 0; }
-    .press-logos li:first-child img {
-      height: 30px; }
   .press-logos img {
     height: 20px; }
+    .press-logos img.wired-icon {
+      height: 25px; }
+    .press-logos img.lifehacker-icon {
+      height: 25px; }
+    .press-logos img.webby-icon {
+      height: 40px; }
 
 .conclusion {
   text-align: center; }
@@ -1185,10 +1223,7 @@ li.active .question .arrow {
     width: 45%; }
   .major-feature .application-frame,
   .highlighted-features .application-frame {
-    width: 50%; }
-
-  .task-creation .application-frame {
-    width: 35%; } }
+    width: 70%; } }
 @media screen and (min-width: 768px) {
   .left-content {
     width: 25%; }
@@ -1209,10 +1244,6 @@ li.active .question .arrow {
 
   .intro-text p {
     font-size: 1.3em; }
-
-  .replay-btn {
-    opacity: 0;
-    pointer-events: none; }
 
   .features-intro {
     padding-bottom: 0; }
@@ -1267,20 +1298,15 @@ li.active .question .arrow {
     padding-bottom: 20em; }
 
   .press-logos {
-    padding-top: 10em;
-    width: 100%;
-    margin: 0 auto; }
-    .press-logos li {
-      width: 15%;
-      padding: 0 2em;
-      box-sizing: border-box;
-      vertical-align: middle; }
-      .press-logos li img {
-        height: 10px;
-        display: inline-block;
-        vertical-align: middle; }
-      .press-logos li:first-child img {
-        height: 15px; }
+    padding-top: 5em; }
+    .press-logos li:nth-child(1), .press-logos li:nth-child(2), .press-logos li:nth-child(3) {
+      padding-bottom: 2em; }
+    .press-logos img {
+      height: 30px; }
+      .press-logos img.wired-icon, .press-logos img.lifehacker-icon {
+        height: 35px; }
+      .press-logos img.webby-icon {
+        height: 45px; }
 
   .conclusion h2 {
     padding-bottom: .65em; }
@@ -1316,8 +1342,10 @@ li.active .question .arrow {
   .answer {
     font-size: 1.1em; } }
 @media screen and (min-width: 900px) {
-  .press-logos li img {
-    height: 25px; } }
+  .press-logos {
+    padding-top: 8em; }
+    .press-logos li {
+      width: 30%; } }
 @media screen and (min-width: 1024px) {
   .introduction {
     padding: 10em 0 0; }
@@ -1369,9 +1397,6 @@ li.active .question .arrow {
         width: 70px;
         left: auto; }
 
-  .press-logos li img {
-    height: 20px; }
-
   .answer {
     font-size: 1.25em; } }
 @media screen and (min-width: 1280px) {
@@ -1396,5 +1421,17 @@ li.active .question .arrow {
   .media-well {
     padding: 10em 0; }
 
-  .press-logos li img {
-    height: 24px; } }
+  .press-logos li {
+    width: auto;
+    padding: 0 1.5em; }
+    .press-logos li:nth-child(1), .press-logos li:nth-child(2), .press-logos li:nth-child(3) {
+      padding-bottom: 0; } }
+@media screen and (min-width: 1440px) {
+  .press-logos li {
+    padding: 0 2em; }
+  .press-logos img {
+    height: 34px; }
+    .press-logos img.wired-icon, .press-logos img.lifehacker-icon {
+      height: 38px; }
+    .press-logos img.webby-icon {
+      height: 45px; } }
