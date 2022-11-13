@@ -1,42 +1,64 @@
 $(function () {
 	var $window = $(window),
-		SCROLL_ANIMATION_DURATION = 1200,
-		MIN_DEVICE_PARALLAX = 0,
-		MAX_DEVICE_PARALLAX_LEFT = 150,
-		MAX_DEVICE_PARALLAX_RIGHT = 250,
 		$body = $("body"),
-		$sectionA = $(".task-creation"),
-		$sectionB = $(".today-mode"),
-		$sectionC = $(".doo-design"),
-		$sectionD = $(".privacy"),
-		$sectionE = $(".highlighted-features"),
-		videoA = document.getElementById("video_01"),
-		videoB = document.getElementById("video_02"),
-		videoC = document.getElementById("video_03"),
-		videoD = document.getElementById("video_04"),
-		videoE = document.getElementById("video_05"),
-		videoF = document.getElementById("video_06"),
-		$videoA = $("#video_01"),
-		$videoB = $("#video_02"),
-		$videoC = $("#video_03"),
-		$videoD = $("#video_04"),
-		$videoE = $("#video_05"),
-		$videoF = $("#video_06"),
+		$parallax = $(".parallax"),
+		$watches = $(".horizontal-parallax"),
 		$burgerIcon = $("#hamburger-icon"),
+		windowWidth = $window.outerWidth(),
+		windowHeight = $window.outerHeight(),
+		scrollTop = $window.scrollTop(),
 		ANIMATION_CLASS = "will-reveal",
-		DID_PLAY_01 = false,
-		DID_PLAY_02 = false,
-		DID_PLAY_03 = false,
-		DID_PLAY_04 = false,
-		DID_PLAY_05 = false,
-		DID_PLAY_06 = false,
+		MIN_WINDOW_WIDTH_FOR_PARALLAX = 768,
+		SCROLL_DELAY = 0,
 		downloadButtons = $(".app-store-badge"),
 		preventDefaultFormAction = function (ev) {
 			ev.preventDefault();
 			ev.stopPropagation();
 		};
 
-	var timeout;
+	var timeout,
+	updateParallax = function (el, useVertical) {
+		if (!isLargeViewport()) {
+			return;
+		}
+
+		$el = $(el);
+		var translationDistancePercent = $el.attr("data-attr-delay-percent");
+		var windowOffset = useVertical ? 0 : windowHeight / 2;
+		var distanceFromTop = $el.parent().offset().top + windowOffset - scrollTop;
+
+		if (useVertical) {
+			var translationDistance = translationDistancePercent > 0 ? windowHeight * translationDistancePercent : windowHeight / 2,
+			percentFromTop = distanceFromTop / windowHeight;
+			percentFromTop = percentFromTop > 1.0 ? 1.0 : percentFromTop;
+			percentFromTop = percentFromTop < 0 ? 0 : percentFromTop;
+			offset = percentFromTop * translationDistance;
+			$el.css("transform", "translate3d(0," + offset + "px,0)");
+
+		} else {
+			var translationDistance = windowWidth / 2,
+			percentFromTop = distanceFromTop / windowHeight;
+			percentFromTop = percentFromTop > 1.0 ? 1.0 : percentFromTop;
+			percentFromTop = percentFromTop < 0 ? 0 : percentFromTop;
+			offset = percentFromTop * translationDistance;
+			$el.css("transform", "translate3d(" + offset + "px,0, 0)");
+		}
+	},
+	isLargeViewport = function () {
+		return windowWidth >= MIN_WINDOW_WIDTH_FOR_PARALLAX;
+	},
+	isElementInViewport = function (el) {
+		var rect = el.getBoundingClientRect();
+
+    return (rect.bottom > 0 && rect.bottom < window.innerWidth) ||
+        	(rect.top < (window.innerHeight || document.documentElement.clientHeight) && rect.top > 0);
+	},
+	handleJSAbilities = function () {.15
+		$body.removeClass("no-js");
+		setTimeout(function () {
+			$("nav").addClass("animates");
+		}, 1000);
+	};
 
 	function sendURL(anchor) {
 		clearTimeout(timeout)
@@ -64,19 +86,6 @@ $(function () {
 		});
 	}
 
-	var isElementInViewport = function (el) {
-		var rect = el.getBoundingClientRect();
-
-    	return (rect.bottom > 0 && rect.bottom < window.innerWidth) ||
-        	(rect.top < (window.innerHeight || document.documentElement.clientHeight) && rect.top > 0);
-	},
-	handleJSAbilities = function () {.15
-		$body.removeClass("no-js");
-		setTimeout(function () {
-			$("nav").addClass("animates");
-		}, 1000);
-	};
-
 	$burgerIcon.click(function (ev) {
 		ev.preventDefault();
 		ev.stopPropagation();
@@ -90,131 +99,30 @@ $(function () {
 	    reallow: function() {
 	        scrollHandling.allow = true;
 	    },
-	    delay: 100 //(milliseconds) adjust to the highest acceptable value
+	    delay: SCROLL_DELAY //(milliseconds) adjust to the highest acceptable value
 	},
   onScroll = function () {
-		if ($sectionA.length == 0) {
+		if ($parallax.length == 0) {
 			return;
 		}
 
-		var windowCenterDefault = $window.scrollTop() + ($window.outerHeight() * .7),
-		windowCenterDelayed = $window.scrollTop() + ($window.outerHeight() * .45);
+		scrollTop = $window.scrollTop();
 
-		if ($sectionA.offset().top < windowCenterDefault) {
-			$sectionA.removeClass(ANIMATION_CLASS);
-		}
+		$parallax.each(function (index, el) {
+			updateParallax(el, true);
+		});
 
-		if ($sectionB.offset().top < windowCenterDefault) {
-			$sectionB.removeClass(ANIMATION_CLASS);
-		}
-
-		if ($sectionC.offset().top < windowCenterDefault) {
-			$sectionC.removeClass(ANIMATION_CLASS);
-		}
-
-		if ($sectionD.offset().top < windowCenterDefault) {
-			$sectionD.removeClass(ANIMATION_CLASS);
-		}
-
-		if ($sectionE.offset().top < windowCenterDefault) {
-			$sectionE.removeClass(ANIMATION_CLASS);
-		}
-
-		var catchAutoPlayForVideoWithCatchBlock = function (video, catchBlock) {
-			if (video.playing) {
-				return;
-			}
-
-			var promise = video.play();
-
-			if (promise !== undefined) {
-				promise.then(_ => {
-					// Autoplay successful
-				}).catch(error => {
-					catchBlock();
-				});
-			}
-		};
-
-		if ($videoA.length > 0) {
-			if ($videoA.offset().top < windowCenterDefault) {
-				if (!DID_PLAY_01) {
-					catchAutoPlayForVideoWithCatchBlock(videoA, function () {
-						$("#replay-btn-01").addClass("active");
-					});
-				} else {
-					$("#replay-btn-01").addClass("active");
-				}
-			}
-
-			if ($videoB.offset().top < windowCenterDefault) {
-				if (!DID_PLAY_02) {
-					catchAutoPlayForVideoWithCatchBlock(videoB, function () {
-						$("#replay-btn-02").addClass("active");
-					});
-				} else {
-					$("#replay-btn-02").addClass("active");
-				}
-			}
-
-			if ($videoE.offset().top < windowCenterDefault) {
-				if (!DID_PLAY_05) {
-					catchAutoPlayForVideoWithCatchBlock(videoE, function () {
-						$("#replay-btn-05").addClass("active");
-					});
-				} else {
-					$("#replay-btn-05").addClass("active");
-				}
-			}
-		}
-
-		if ($videoC.length > 0) {
-			if ($videoC.offset().top < windowCenterDefault) {
-				if (!DID_PLAY_03) {
-					catchAutoPlayForVideoWithCatchBlock(videoC, function () {
-						$("#replay-btn-03").addClass("active");
-					});
-				} else {
-					$("#replay-btn-03").addClass("active");
-				}
-			}
-
-			if ($videoD.offset().top < windowCenterDefault) {
-				if (!DID_PLAY_04) {
-					catchAutoPlayForVideoWithCatchBlock(videoD, function () {
-						$("#replay-btn-04").addClass("active");
-					});
-				} else {
-					$("#replay-btn-04").addClass("active");
-				}
-			}
-
-			if ($videoF.offset().top < windowCenterDefault) {
-				if (!DID_PLAY_06) {
-					catchAutoPlayForVideoWithCatchBlock(videoF, function () {
-						$("#replay-btn-06").addClass("active");
-					});
-				} else {
-					$("#replay-btn-06").addClass("active");
-				}
-			}
-		}
+		$watches.each(function (index, el) {
+			updateParallax(el, false);
+		});
 	},
 	onResize = function () {
-
+		windowHeight = $window.outerHeight();
+		windowWidth = $window.outerWidth();
 	};
 
 	$window.resize(function () {
 		onResize();
-	});
-
-	$(".replay-btn").click(function (ev) {
-		ev.preventDefault();
-		ev.stopPropagation();
-		$this = $(this);
-		video = document.getElementById($this.attr("data-attr-id"));
-		video.play();
-		$this.removeClass("active");
 	});
 
 	$window.scroll(function () {
@@ -227,14 +135,6 @@ $(function () {
 
 	onResize();
 	handleJSAbilities();
-
-	if ($sectionA.length > 0 && $window.outerWidth() >= 768) {
-		$sectionA.addClass(ANIMATION_CLASS);
-		$sectionB.addClass(ANIMATION_CLASS);
-		$sectionC.addClass(ANIMATION_CLASS);
-		$sectionD.addClass(ANIMATION_CLASS);
-		$sectionE.addClass(ANIMATION_CLASS);
-	}
 
 	var $questions = $(".question");
 	$("#support-input").on("input search", function () {
