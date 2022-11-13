@@ -10,7 +10,7 @@ $(function () {
 		ANIMATION_CLASS = "will-reveal",
 		MIN_WINDOW_WIDTH_FOR_PARALLAX = 768,
 		SCROLL_DELAY = 0,
-		downloadButtons = $(".app-store-badge"),
+		downloadButtons = $(".download"),
 		preventDefaultFormAction = function (ev) {
 			ev.preventDefault();
 			ev.stopPropagation();
@@ -19,6 +19,10 @@ $(function () {
 	var timeout,
 	updateParallax = function (el, useVertical) {
 		if (!isLargeViewport()) {
+			return;
+		}
+
+		if (!isElementInViewport(el)) {
 			return;
 		}
 

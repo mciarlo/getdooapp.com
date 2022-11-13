@@ -92,6 +92,12 @@ p {
   }
 }
 
+@media screen and (min-width: 1024px) {
+  h2 + a.button {
+    margin-top: 4em;
+  }
+}
+
 @media screen and (min-width: 1280px) {
   h1  {
     font-size: 5rem;

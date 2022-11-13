@@ -32,15 +32,15 @@
    }
 
    &:focus {
-     border-color: #94E5AA;
+     border-color: $purple;
 
      &:hover {
-       border-color: #94E5AA;
+       border-color: $purple;
      }
    }
 
    &:hover {
-     border-color: #94E5AA;
+     border-color: $purple;
    }
  }
 
@@ -74,7 +74,9 @@ label, input, textarea, .selection {
     margin-bottom: 2em;
   }
 
-  input,
+  input[type="text"],
+  input[type="email"],
+  input[type="file"],
   textarea {
     width: 100%;
     background: #f1f1f1;
@@ -92,6 +94,10 @@ label, input, textarea, .selection {
 
   .primary {
     margin-top: 2rem;
+  }
+
+  input[type="submit"] {
+    width: auto;
   }
 }
 
@@ -119,7 +125,7 @@ label, input, textarea, .selection {
  #support-topics {
    padding: 12em 3em;
    text-align: center;
-   background: $lightGreenBackground;
+   background: #D2DAF3;
    border-radius: 4px;
 
    h1 {
@@ -288,7 +294,7 @@ label, input, textarea, .selection {
   display: block;
   font-weight: 600;
   margin-top: 2em;
-  color: $greenText;
+  color: $purple;
 }
 
 /***

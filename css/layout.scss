@@ -24,10 +24,10 @@ footer {
   background: $primaryBackground;
 
   &.bordered {
-    border-top: 1px solid $borderColor;
     padding-top: 0;
 
     .content-wrapper {
+      border-top: 1px solid $borderColor;
       padding-top: $sectionPadding375;
     }
   }

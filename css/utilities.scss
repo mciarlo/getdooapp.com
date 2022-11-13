@@ -193,7 +193,8 @@ img.icon {
   }
 }
 
-a.button {
+a.button,
+input[type="submit"] {
   padding: 1.5em 3em;
   border-radius: 30px;
   display: inline-block;
@@ -204,6 +205,7 @@ a.button {
   border-radius: 3em;
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.03);
   transform: translateY(0px);
+  cursor: pointer;
   transition: color 150ms ease-in-out, border-color 150ms ease-in-out, box-shadow 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
   -webkit-transition: color 150ms ease-in-out, border-color 150ms ease-in-out, box-shadow 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
   -moz-transition: color 150ms ease-in-out, border-color 150ms ease-in-out, box-shadow 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
@@ -215,13 +217,18 @@ a.button {
     transform: translate3d(0, -2px, 0);
     box-shadow: 0 18px 30px rgba(0, 0, 0, 0.1);
     background: #4838A8;
+    border-color: transparent;
   }
 
-  &.bordered {
-    border: 1px solid $borderColor;
+  &.secondary {
+    padding: 1em 2em;
+    border: 2px solid $borderColor;
     color: $textColorSecondary;
+    background-color: transparent;
+    box-shadow: none;
 
     &:hover {
+      box-shadow: none;
       color: $textColorPrimary;
       border-color: $textColorPrimary;
     }
@@ -275,5 +282,9 @@ a.button {
 
   a.button {
     padding: 2em 4em;
+
+    &.secondary {
+      padding: 1em 2em;
+    }
   }
 }
