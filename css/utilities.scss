@@ -10,16 +10,35 @@ em {
   text-transform: none;
 }
 
+.centered {
+  text-align: center;
+}
+
 .block {
   display: block;
 }
 
-.bold {
-  font-weight: bold;
+.inline-block {
+  display: inline-block;
 }
 
 .optional-new-line {
   display: inline;
+}
+
+.mobile {
+  display: block;
+}
+
+.desktop {
+  display: none;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 1em;
+  color: $textColorSecondary
 }
 
 section {
@@ -115,35 +134,6 @@ img {
 }
 
 /** Global Elements **/
-section {
-  overflow: hidden;
-  padding: 4em 0;
-  @include overflowfix;
-}
-
-h1, h2, h3, h4 {
-  line-height: 1em;
-  color: $textColorPrimary;
-}
-
-h1 {
-  font-size: 2em;
-  line-height: 1em;
-  letter-spacing: -.06em;
-  font-weight: 600;
-}
-
-h2, h3  {
-  font-size: 1.6em;
-  line-height: 1.35em;
-  letter-spacing: -.04em;
-}
-
-p {
-  font-size: 1em;
-  line-height: 1.8;
-}
-
 .iphone {
   position: relative;
 }
@@ -160,38 +150,6 @@ p {
   left: 6.9%;
   z-index: 1;
   top: 2.9%;
-}
-
-.media-well {
-  text-align: center;
-  padding: 6em 0;
-  background-color: #f0f2fa;
-
-  .iphone {
-    margin: 0 auto;
-  }
-}
-
-.heading-label {
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: $greenText;
-  font-size: .85em;
-  margin-bottom: 1em;
-}
-
-.caption {
-  padding-top: 1em;
-  font-size: 0.9em;
-  max-width: 240px;
-  color: $textColorSecondary;
-}
-
-.large-text {
-  font-size: 1.5em;
-  line-height: 1.5;
-  display: inline-block;
 }
 
 code {
@@ -235,33 +193,28 @@ img.icon {
   }
 }
 
-.button {
-  padding: 2em 4em;
-  border-radius: 8px;
+a.button {
+  padding: 1.5em 3em;
+  border-radius: 30px;
   display: inline-block;
-  font-size: .8em;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
   font-weight: 600;
-  color: $textColorSecondary;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, .0);
+  color: white;
+  font-size: 1rem;
+  background: $purple;
+  border-radius: 3em;
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.03);
   transform: translateY(0px);
-  transition: transform 100ms ease-in-out, box-shadow 100ms ease-in-out, border-color 100ms ease-in-out, color 100ms ease-in-out;
+  transition: color 150ms ease-in-out, border-color 150ms ease-in-out, box-shadow 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
+  -webkit-transition: color 150ms ease-in-out, border-color 150ms ease-in-out, box-shadow 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
+  -moz-transition: color 150ms ease-in-out, border-color 150ms ease-in-out, box-shadow 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
+  -ms-transition: color 150ms ease-in-out, border-color 150ms ease-in-out, box-shadow 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
+  -o-transition: color 150ms ease-in-out, border-color 150ms ease-in-out, box-shadow 150ms ease-in-out, background-color 150ms ease-in-out, transform 150ms ease-in-out;
 
-  &.download {
-    border: 0;
-    background: $lightGrayBackground;
-    padding: 1.5em 3em;
-
-    &:hover {
-      background: #e6e9f6;
-    }
-  }
-
-  &.primary {
-    background-color: $black;
+  &:hover {
     color: white;
-    border-radius: 3em;
+    transform: translate3d(0, -2px, 0);
+    box-shadow: 0 18px 30px rgba(0, 0, 0, 0.1);
+    background: #4838A8;
   }
 
   &.bordered {
@@ -275,155 +228,15 @@ img.icon {
   }
 }
 
-.app-store-badge {
-  display: inline-block;
-}
-
-.paragraphs {
-  h1, h2, h3, p {
-    text-align: left;
-    margin-bottom: 1em;
-  }
-
-  h1 {
-    font-size: 2.8em;
-    margin-bottom: 3em;
-  }
-
-  h2 {
-    font-size: 2em;
-  }
-
-  p {
-    margin-bottom: 1em;
-    max-width: 640px;
-  }
-
-  p + h2 {
-    padding-top: 2em;
-  }
-}
-
-.mobile {
-  display: block;
-}
-
-.desktop {
-  display: none;
-}
-
-.centered {
-  text-align: center;
-}
-
-.optional-new-line {
-  display: block;
-}
-
-.mac-screenshot {
-  @include border-radius(8px);
-  border: 1px solid rgba(215, 215, 215, 1.0);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-.application-frame {
-  margin: 0 auto;
-  line-height: 0;
-
-  video, img {
-    width: 100%;
-    margin: 0;
-  }
-}
-
-.features-list h1 .block {
-  display: block;
-  color: $textColorTertiary;
-}
-
-.orange {
-  background: #E7C8B4;
-}
-
-.cream {
-  background: #F7F1D4;
-}
-
-.forest-green {
-  background: #CEEAD0;
-}
-
-.green {
-  background: #C3F5DD;
-}
-
-.light-green {
-  background: #DBFFEF;
-}
-
-.light-warm-blue {
-  background: #DCEFF4;
-}
-
-.warm-blue {
-  background: #C7DEF0;
-}
-
-.cool-blue {
-  background: #D2DAF3;
-}
-
-.light-blue {
-  background: #E7EFFF;
-}
-
-.blue {
-  background: #BBCAFF;
-}
-
-.light-purple {
-  background: #D2D8FF;
-}
-
-.purple {
-  background: #D1CAFA;
-}
-
-.cool-gray-purple {
-  background: #DFDBF9;
-}
-
-.gray-purple {
-  background: #EFE5FD;
-}
-
-.salmon {
-  background: #FFDFEF;
-}
-
-.pink {
-  background: #F9CFE4;
-}
-
-
 @media screen and (min-width: 768px) {
-  nav {
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: white;
-    position: fixed;
-  }
-
-  body {
-    padding-top: 78px;
-  }
-
   .display-flex {
     flex-direction: row;
     flex-wrap: nowrap;
     display: flex;
+  }
+
+  .optional-new-line {
+    display: block;
   }
 
   .mobile {
@@ -442,23 +255,10 @@ img.icon {
     padding: 6em 0;
   }
 
-  h1 {
-    font-size: 3.5em;
-    letter-spacing: -.04em;
-  }
-
-  h2, h3  {
-    font-size: 2em;
-    letter-spacing: -.04em;
-  }
-
-  p {
-    font-size: 1.1em;
-  }
-
-  .mac-screenshot {
-    @include border-radius(10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  .content-wrapper {
+    &.bordered {
+      padding-top: 6em;
+    }
   }
 }
 
@@ -467,42 +267,13 @@ img.icon {
     padding: 10em 0;
   }
 
-  h1  {
-    font-size: 5em;
+  .content-wrapper {
+    &.bordered {
+      padding-top: 10em;
+    }
   }
 
-  h2, h3  {
-    font-size: 2.5em;
-  }
-
-  p {
-    font-size: 1.25em;
-  }
-
-  .caption {
-    font-size: 0.75em;
-  }
-
-  .mac-screenshot {
-    @include border-radius(12px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  }
-
-  .media-well {
-    padding: 8em 0;
-  }
-}
-
-@media screen and (min-width: 1280px) {
-  h1  {
-    font-size: 6em;
-  }
-
-  h2, h3  {
-    font-size: 3em;
-  }
-
-  p {
-    font-size: 1.25em;
+  a.button {
+    padding: 2em 4em;
   }
 }

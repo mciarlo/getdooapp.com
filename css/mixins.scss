@@ -17,34 +17,12 @@
   font-family: "Avenir Next", -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Helvetica", "Helvetica", "Gill Sans", sans-serif;
 }
 
-@mixin rotationfix {
-  -webkit-backface-visibility: hidden;
-  outline: 1px solid transparent;
-  padding: 1px;
-  -webkit-background-clip: content-box;
-}
-
-@mixin opacity($float, $percent) {
-  opacity: $float;
-  filter: alpha(opacity=$percent);
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity = #{$percent});
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity =  #{$percent});
-}
-
 @mixin transition($property, $duration, $easing) {
   transition: $property $duration $easing;
   -webkit-transition: $property $duration $easing;
   -moz-transition: $property $duration $easing;
   -ms-transition: $property $duration $easing;
   -o-transition: $property $duration $easing;
-}
-
-@mixin transition-delay($delay) {
-  transition-delay: $delay;
-  -webkit-transition-delay: $delay;
-  -moz-transition-delay: $delay;
-  -ms-transition-delay: $delay;
-  -o-transition-delay: $delay;
 }
 
 @mixin translate3d($x, $y, $z) {
@@ -74,4 +52,8 @@
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   -ms-box-sizing: border-box;
+}
+
+@mixin maskBorderRadiusWebkit {
+    -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
 }

@@ -6,7 +6,7 @@
 
     <meta name="Author" content="Michael Ciarlo">
     <meta name="robots" content="noodp">
-    <title itemprop="name">Privacy | Doo &ndash; Get Things Done</title>
+    <title itemprop="name">Contact | Doo &ndash; Get Things Done</title>
     <meta name="Description" content="Build better habits and make progress each day with a to-do app designed to help you focus. Available for iPhone, iPad, Apple Watch, and Mac." />
     <meta name="Keywords" content="reminders app, reminders ios, reminders mac, todo list, to-do list, task manager, productivity app, get things done, time management, doo, task, tasks" />
 
@@ -29,14 +29,14 @@
     <link rel="icon" type="image/png" sizes="128x128" href="/images/favicon128.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon192.png">
   </head>
-  <body class="no-js">
+  <body class="no-js features">
     <nav>
       <div class="content-wrapper">
         <a href="/" class="logo-link" title="Go to the Doo overview"><img src="/images/doo_logo.svg"/>Doo</a>
 
         <ul id="nav-links">
           <li><a href="/" data-resource="/" title="Overview | Doo &ndash; Get Things Done"><span>Overview</span></a></li>
-          <li><a href="/features" data-resource="features" title="Features | Doo &ndash; Get Things Done"><span>Features</span></a></li>
+          <li><a class="active" href="/features" data-resource="features" title="Features | Doo &ndash; Get Things Done"><span>Features</span></a></li>
           <li><a href="/support" data-resource="support" title="Support | Doo &ndash; Get Things Done"><span>Support</span></a></li>
           <li><a href="/contact" data-resource="contact" title="Contact | Doo &ndash; Get Things Done"><span>Contact</span></a></li>
           <li><a class="download" data-attr-type="iOS" href="https://apps.apple.com/us/app/id1515371154" title="Get Doo on the App Store"><span>Download</span></a></li>
@@ -50,30 +50,32 @@
       </div>
     </nav>
 
-    <section class="paragraphs">
-      <div class="content-wrapper">
-        <h1>Privacy Policy</h1>
+    <section class="contact">
+      <div class="content-wrapper display-flex">
+        <div class="left-content">
+          <h1>Help &amp; feedback</h1>
+          <p class="large">Have a feature suggestion, bug report, or question? I aim to reply to all messages within two business days.</p>
+        </div>
 
-        <h2>User Data</h2>
+        <form id="ioreplies_contactForm" method="POST" enctype="multipart/form-data" accept-charset="UTF-8" autocomplete="off" class="right-content support">
+          <label for="name">Name</label>
+          <input type="text" name="name" placeholder="Name"></input>
 
-        <p>Doo does not store, copy, or transfer any user data <em>except</em> as necessary to save reminder entries to iCloud and within the application. Doo connects via Apple provided authentication mechanisms to transfer data to your private iCloud account.</p>
+          <label for="email">Email</label>
+          <input type="email" placeholder="your@email.com" name="email" required="true">
 
-        <p>We firmly believe in privacy and stand with companies like Apple who support strong encryption.</p>
+          <label for="body">Message</label>
+          <textarea name="body" rows="5" required="true" placeholder="How can I help?"></textarea>
 
-        <h2>Diagnostic and Usage Data</h2>
+          <input type="file" name="attachments" multiple="true" />
 
-        <p>Doo does not collect or receive any diagnostic or usage data beyond what is provided by Apple as part of our participation in the Apple Developer Program. This diagnostic and usage data includes, but is not limited to, the iOS operating system version, device type, Doo app version, and any applicable crash logs. Sending diagnostic and usage data to Apple can be enabled or disabled <a href="https://support.apple.com/en-us/HT202100">within iOS</a> from the Settings app.</p>
+				  <input class="button bluebtn primary" type="submit" value="Send" onclick="this.form.action = RepliesContactForm.endpoint">
 
-
-        <h2>Third-Parties</h2>
-
-        <p>Doo transfers your reminder data to the iCloud service maintained and operated by Apple and connected to your Apple ID. Doo does not integrate with any other third-party services.</p>
-
-        <h2>Website</h2>
-
-        <p>The Doo app website located at <code>getdooapp.com</code> integrates with Google Analytics to track industry-standard metrics. These metrics include but are not limited to referrals, visit duration, and visitor origin.</p>
-
-        <p>The Doo website does not use tracking cookies beyond those provided by Google Analytics.</p>
+          <input type="hidden" name="product_name" value="Doo: Get Things Done">
+          <input type="hidden" name="metadata" value="{}">
+          <input type="hidden" name="language" value="en">
+          <input type="hidden" name="success_url" value="https://getdooapp.com/contact/thanks">
+        </form>
       </div>
     </section>
 
@@ -98,6 +100,8 @@
       gtag('config', 'UA-72804362-1');
     </script>
 
+    <script src="https://1.replies.io/api-js/contact_form_4.min.js"></script>
+    <script>RepliesContactForm.endpoint = "https://1.replies.io/api/contact_forms/2uqc35h3qfre2a6p57gp4dfm1g";</script>
     <script src="../js/doo.js"></script>
   </body>
 </html>

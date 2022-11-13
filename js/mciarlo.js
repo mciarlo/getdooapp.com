@@ -64,64 +64,6 @@ $(function () {
 		});
 	}
 
-	if ($videoA.length > 0) {
-		videoA.onended = function () {
-			DID_PLAY_01 = true;
-			$("#replay-btn-01").addClass("active");
-		};
-
-		videoA.onplay = function () {
-			$("#replay-btn-01").removeClass("active");
-		};
-
-		videoB.onended = function () {
-			DID_PLAY_02 = true;
-			$("#replay-btn-02").addClass("active");
-		};
-
-		videoB.onplay = function () {
-			$("#replay-btn-02").removeClass("active");
-		};
-
-		videoE.onended = function () {
-			DID_PLAY_05 = true;
-			$("#replay-btn-05").addClass("active");
-		};
-
-		videoE.onplay = function () {
-			$("#replay-btn-05").removeClass("active");
-		};
-	}
-
-	if ($videoC.length > 0) {
-		videoC.onended = function () {
-			DID_PLAY_03 = true;
-			$("#replay-btn-03").addClass("active");
-		};
-
-		videoC.onplay = function () {
-			$("#replay-btn-03").removeClass("active");
-		};
-
-		videoD.onended = function () {
-			DID_PLAY_04 = true;
-			$("#replay-btn-04").addClass("active");
-		};
-
-		videoD.onplay = function () {
-			$("#replay-btn-04").removeClass("active");
-		};
-
-		videoF.onended = function () {
-			DID_PLAY_06 = true;
-			$("#replay-btn-06").addClass("active");
-		};
-
-		videoF.onplay = function () {
-			$("#replay-btn-06").removeClass("active");
-		};
-	}
-
 	var isElementInViewport = function (el) {
 		var rect = el.getBoundingClientRect();
 
