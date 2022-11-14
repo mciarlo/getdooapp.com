@@ -6,6 +6,8 @@
 @import "utilities";
 @import "animation";
 
+$cardRotationAnimationDuration: 6s;
+
 html,
 body {
   color: $textColorSecondary;
@@ -41,14 +43,6 @@ Y8b d88P
 p.large {
   max-width: 600px;
   font-size: 1.5em;
-}
-
-.inset-1-col {
-  padding: 0 $col-1;
-}
-
-.inset-2-col {
-  padding: 0 $col-2;
 }
 
 /*********************************************
@@ -142,7 +136,7 @@ p.large {
     display: inline-block;
   }
 
-  li {
+  > li {
     text-align: center;
     flex: 1;
     margin-bottom: $sectionPadding375 / 2;
@@ -217,6 +211,61 @@ p.large {
     left: 50%;
     transition: none;
     transform: translate3d(-50%, -50%, 0);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    li {
+      width: 25%;
+      height: 50px;
+      background-color: white;
+      @include border-radius(10px);
+      border: 3px solid #F7F7F7;
+      display: block;
+      box-sizing: border-box;
+
+      &:nth-child(6) {
+        animation: $cardRotationAnimationDuration ease-in-out rotateViolet infinite;
+      }
+
+      &:nth-child(11) {
+        animation: $cardRotationAnimationDuration ease-in-out rotateGreen infinite;
+      }
+
+      &:nth-child(13) {
+        animation: $cardRotationAnimationDuration ease-in-out rotateYellow infinite;
+      }
+
+      &:nth-child(2) {
+        animation: $cardRotationAnimationDuration ease-in-out rotateViolet infinite;
+        animation-delay: $cardRotationAnimationDuration / 3;
+      }
+
+      &:nth-child(5) {
+        animation: $cardRotationAnimationDuration ease-in-out rotateGreen infinite;
+        animation-delay: $cardRotationAnimationDuration / 3;
+      }
+
+      &:nth-child(14) {
+        animation: $cardRotationAnimationDuration ease-in-out rotateYellow infinite;
+        animation-delay: $cardRotationAnimationDuration / 3;
+      }
+
+      &:nth-child(4) {
+        animation: $cardRotationAnimationDuration ease-in-out rotateViolet infinite;
+        animation-delay: $cardRotationAnimationDuration * .66;
+      }
+
+      &:nth-child(9) {
+        animation: $cardRotationAnimationDuration ease-in-out rotateGreen infinite;
+        animation-delay: $cardRotationAnimationDuration * .66;
+      }
+
+      &:nth-child(16) {
+        animation: $cardRotationAnimationDuration ease-in-out rotateYellow infinite;
+        animation-delay: $cardRotationAnimationDuration * .66;
+      }
+    }
   }
 
   .card-pattern {
@@ -449,6 +498,14 @@ li.active .question .arrow {
 }
 
 @media screen and (min-width: 768px) {
+  .inset-1-col {
+    padding: 0 $col-1;
+  }
+
+  .inset-2-col {
+    padding: 0 $col-2;
+  }
+
   .intro-text {
     padding-bottom: $sectionPadding768;
 
@@ -551,13 +608,13 @@ li.active .question .arrow {
       }
 
       &:nth-child(2) {
-        margin-top: 12em;
+        margin-top: 16em;
         margin-left: 2%;
         margin-right: 2%;
       }
 
       &:nth-child(3) {
-        margin-top: 16em;
+        margin-top: 24em;
         margin-left: 2%;
       }
     }
@@ -569,7 +626,7 @@ li.active .question .arrow {
     }
   }
 
-  .how-it-works li {
+  .how-it-works > li {
     flex: 1;
     width: 30%;
   }
@@ -624,6 +681,14 @@ li.active .question .arrow {
       width: 120px;
       height: 120px;
     }
+
+    .mini-cards {
+      li {
+        height: 70px;
+        @include border-radius(16px);
+        border-width: 5px;
+      }
+    }
   }
 
   .buttons {
@@ -634,6 +699,13 @@ li.active .question .arrow {
 @media screen and (min-width: 1280px) {
   .card {
     height: 450px;
+
+    .mini-cards {
+      li {
+        height: 80px;
+        border-width: 5px;
+      }
+    }
   }
 }
 

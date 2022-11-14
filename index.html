@@ -86,7 +86,14 @@
         <ul class="how-it-works inset-1-col display-flex">
           <li><div class="card blue"><span class="task-title">Clean the bathroom<span class="cursor"></span></span></div><span class="label">Create tasks with a single step and a clear goal</span></li>
           <li>
-            <div class="card gray padded"><img class="mini-cards" src="/images/mini_cards.svg"/></div><span class="label">Pick a few tasks each day and snooze the rest</span></li>
+            <div class="card gray padded">
+              <ul class="mini-cards">
+                <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+              </li>
+            </div>
+
+            <span class="label">Pick a few tasks each day and snooze the rest</span>
+          </li>
           <li><div class="card white"><img class="green-check" src="/images/green_check.svg"/><img class="card-pattern" src="/images/card_pattern.svg"/></div><span class="label">Complete your daily tasks for big progress over time</span></li>
         </ul>
       </div>
@@ -101,8 +108,8 @@
         </div>
 
         <div class="inset-1-col desktop">
-          <img class="lazy-load invisible gesture-img-1 parallax" data-attr-delay-percent="0.0" src="/images/placeholder.png" data-src="/images/doo_gestures_01.jpg" data-src-retina="/images/doo_gestures_01@2x.jpg"/>
-          <img class="lazy-load invisible gesture-img-2 parallax" data-attr-delay-percent="0.2" src="/images/placeholder.png" data-src="/images/doo_gestures_02.png" data-src-retina="/images/doo_gestures_02@2x.png"/>
+          <img class="lazy-load invisible gesture-img-1 parallax" data-attr-delay-percent="0.3" src="/images/placeholder.png" data-src="/images/doo_gestures_01.jpg" data-src-retina="/images/doo_gestures_01@2x.jpg"/>
+          <img class="lazy-load invisible gesture-img-2 parallax" data-attr-delay-percent="0.0" src="/images/placeholder.png" data-src="/images/doo_gestures_02.png" data-src-retina="/images/doo_gestures_02@2x.png"/>
           <noscript>
             <img class="gesture-img-1" src="/images/doo_gestures_01@2x.jpg"/>
             <img class="gesture-img-2" src="/images/doo_gestures_02@2x.png"/>
@@ -110,7 +117,7 @@
         </div>
 
         <div class="inset-1-col mobile">
-          <img class="lazy-load invisible gesture-image full-width" data-attr-delay-percent="0.3" src="/images/placeholder.png" data-src="/images/doo_gestures.jpg" data-src-retina="/images/doo_gestures@2x.jpg"/>
+          <img class="lazy-load invisible gesture-image full-width" src="/images/placeholder.png" data-src="/images/doo_gestures.jpg" data-src-retina="/images/doo_gestures@2x.jpg"/>
           <noscript>
             <img class="gesture-image full-width" src="/images/doo_gestures@2x.jpg"/>
           </noscript>
@@ -122,7 +129,7 @@
       <div class="content-wrapper">
         <div class="inset-2-col">
           <span class="eyebrow">Task Creation</span>
-          <h2>Swipe away cards to prepare for your day</h2>
+          <h2>Creating a task is as easy as typing the title</h2>
           <p class="large">Doo uses a custom set of keyboards to show calendars, weekdays, and all the tools you need to set up tasks without any fuss.</p>
         </div>
 
@@ -231,16 +238,16 @@
 
         <ul class="display-flex private-by-design">
           <li>
-            <img class="lazy-load invisible" src="/images/placeholder.png" data-src="/images/lock_icon.png" data-src-retina="/images/lock_icon@2x.png"/>
+            <img class="lazy-load invisible" src="/images/placeholder.png" data-src="/images/lock_icon.jpg" data-src-retina="/images/lock_icon@2x.jpg"/>
             <noscript>
-              <img src="/images/lock_icon@2x.png"/>
+              <img src="/images/lock_icon@2x.jpg"/>
             </noscript>
           </li>
 
           <li>
-            <img class="lazy-load invisible" src="/images/placeholder.png" data-src="/images/doo_app_lock.png" data-src-retina="/images/doo_app_lock@2x.png"/>
+            <img class="lazy-load invisible" src="/images/placeholder.png" data-src="/images/doo_app_lock.jpg" data-src-retina="/images/doo_app_lock@2x.jpg"/>
             <noscript>
-              <img src="/images/doo_app_lock@2x.png"/>
+              <img src="/images/doo_app_lock@2x.jpg"/>
             </noscript>
           </li>
         </ul>
@@ -249,9 +256,9 @@
 
     <section class="major-feature feature-wrap-up">
       <div class="content-wrapper">
-        <div class="display-flex">
+        <div class="inset-1-col display-flex">
           <div class="left-content">
-            <h2>Hundreds of features.<span class="block">Deceptively simple.<span></h2>
+            <h2>Big on features.<span class="block">Deceptively simple.<span></h2>
             <a class="button secondary" href="/features" title="View all Doo features">View all features</a>
           </div>
 
@@ -343,8 +350,6 @@
       }
     </script>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="../js/lib.js"></script>
-    <script src="../js/mciarlo.js"></script>
+    <script src="../js/doo.js"></script>
   </body>
 </html>

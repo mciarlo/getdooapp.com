@@ -213,11 +213,11 @@ nav.active {
           &:before {
             opacity: 1;
             transform: scale3d(1, 1, 1);
-            transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
           }
         }
 
         &:before {
+          transition: opacity 150ms ease-in-out, transform 150ms ease-in-out;
           content: "-";
           font-size: 0;
           text-indent: -9999px;

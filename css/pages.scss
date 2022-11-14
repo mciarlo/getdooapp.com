@@ -235,15 +235,36 @@ label, input, textarea, .selection {
   .block  {
     font-size: 1.4em;
     color: $textColorPrimary;
-    padding: .25em 0 .5em;
+    padding: 0 0 .25em;
     font-weight: 600;
   }
 
-  li {
-    margin: 0 0 2em 0;
+  > li {
+    margin: 0 0 1em 0;
     display: inline-block;
     box-sizing: border-box;
     vertical-align: top;
+
+    p {
+      margin-bottom: 0.75em;
+    }
+
+    .preview-img {
+      margin-top: 1em;
+      width: 100%;
+      @include border-radius(20px);
+    }
+
+    ul {
+      li {
+        display: inline-block;
+        margin-right: 5px;
+
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
 
     &.feature-image {
       width: 100%;
@@ -259,17 +280,6 @@ label, input, textarea, .selection {
 .features-list {
   .full-width {
     padding-bottom: 4em;
-  }
-
-  .content-wrapper {
-    padding-top: 3em;
-    border-top: 1px solid $borderColor;
-
-    &:nth-child(2),
-    &:nth-child(1) {
-      border: 0;
-      padding-top: 0;
-    }
   }
 }
 
@@ -288,13 +298,13 @@ label, input, textarea, .selection {
 }
 
 .device-label {
-  text-transform: uppercase;
-  letter-spacing: .2em;
-  font-size: .8em;
-  display: block;
+  font-size: 0.75em;
+  display: inline-block;
   font-weight: 600;
-  margin-top: 2em;
-  color: $purple;
+  color: $textColorPrimary;
+  background: #f5f5f5;
+  padding: .2em .8em;
+  @include border-radius(4px);
 }
 
 /***
@@ -401,14 +411,9 @@ label, input, textarea, .selection {
   }
 
   .feature-group {
-    li {
-      padding: 0 5% 5em 0;
-      width: 50%;
-
-      &.col-2 {
-        padding-right: 0;
-        padding-left: 5%;
-      }
+    > li {
+      padding: 0 0 1em 0;
+      width: 100%;
 
       &.feature-image {
         padding-right: 0;
@@ -423,11 +428,19 @@ label, input, textarea, .selection {
 
     .left-content {
       margin-left: 0;
+      width: 50%;
     }
 
     .right-content {
       margin-right: 0;
-      width: 60%;
+      margin-left: 4%;
+      width: 50%;
+    }
+
+    &.bordered {
+      .content-wrapper:first-child {
+        border: 0;
+      }
     }
   }
 

@@ -9,3 +9,52 @@
     opacity: 0;
   }
 }
+
+$yellow: #F5E29B;
+$green: #C3F5DD;
+$violet: #D1CAFA;
+
+@keyframes rotateYellow {
+  0% {
+    background-color: #FFFFFF;
+  }
+  10% {
+    background-color: $yellow;
+  }
+  25% {
+    background-color: $yellow;
+  }
+  40% {
+    background-color: #FFFFFF;
+  }
+}
+
+@keyframes rotateGreen {
+  0% {
+    background-color: #FFFFFF;
+  }
+  10% {
+    background-color: $green;
+  }
+  25% {
+    background-color: $green;
+  }
+  40% {
+    background-color: #FFFFFF;
+  }
+}
+
+@keyframes rotateViolet {
+  0% {
+    background-color: #FFFFFF;
+  }
+  10% {
+    background-color: $violet;
+  }
+  25% {
+    background-color: $violet;
+  }
+  40% {
+    background-color: #FFFFFF;
+  }
+}

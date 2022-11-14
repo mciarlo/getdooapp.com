@@ -29,13 +29,16 @@ $(function () {
 		$el = $(el);
 		var translationDistancePercent = $el.attr("data-attr-delay-percent");
 		var windowOffset = useVertical ? 0 : windowHeight / 2;
-		var distanceFromTop = $el.parent().offset().top + windowOffset - scrollTop;
+		var distanceFromTop = $el.offset().top - scrollTop;
 
 		if (useVertical) {
 			var translationDistance = translationDistancePercent > 0 ? windowHeight * translationDistancePercent : windowHeight / 2,
+			percentFromTop = easeInOutQuad(distanceFromTop);
+
 			percentFromTop = distanceFromTop / windowHeight;
 			percentFromTop = percentFromTop > 1.0 ? 1.0 : percentFromTop;
 			percentFromTop = percentFromTop < 0 ? 0 : percentFromTop;
+
 			offset = percentFromTop * translationDistance;
 			$el.css("transform", "translate3d(0," + offset + "px,0)");
 
@@ -44,6 +47,8 @@ $(function () {
 			percentFromTop = distanceFromTop / windowHeight;
 			percentFromTop = percentFromTop > 1.0 ? 1.0 : percentFromTop;
 			percentFromTop = percentFromTop < 0 ? 0 : percentFromTop;
+			percentFromTop = easeInOutQuad(percentFromTop);
+
 			offset = percentFromTop * translationDistance;
 			$el.css("transform", "translate3d(" + offset + "px,0, 0)");
 		}
@@ -62,7 +67,10 @@ $(function () {
 		setTimeout(function () {
 			$("nav").addClass("animates");
 		}, 1000);
-	};
+	},
+	easeInOutQuad = function(x) {
+		return x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
+	}
 
 	function sendURL(anchor) {
 		clearTimeout(timeout)
