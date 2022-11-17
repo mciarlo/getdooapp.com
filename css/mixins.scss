@@ -1,3 +1,5 @@
+$ease: cubic-bezier(0.17, 3.02, 0.21, -0.36);
+
 @mixin aliasing {
   -webkit-font-smoothing: antialiased;
 
@@ -23,6 +25,14 @@
   -moz-transition: $property $duration $easing;
   -ms-transition: $property $duration $easing;
   -o-transition: $property $duration $easing;
+}
+
+@mixin transitions($statement...) {
+  transition: $statement;
+  -webkit-transition: $statement;
+  -moz-transition: $statement;
+  -ms-transition: $statement;
+  -o-transition: $statement;
 }
 
 @mixin translate3d($x, $y, $z) {
