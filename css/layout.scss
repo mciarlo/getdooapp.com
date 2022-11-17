@@ -33,6 +33,10 @@ footer {
   }
 }
 
+.features footer {
+  padding-top: $sectionPadding375;
+}
+
 .content-wrapper {
   @include overflowfix;
   max-width: 1440px;
@@ -73,6 +77,10 @@ footer {
       }
     }
   }
+
+  .features footer {
+    padding-top: $sectionPadding768;
+  }
 }
 
 @media screen and (min-width: 1023px) {
@@ -101,5 +109,9 @@ footer {
         padding-top: $sectionPadding1200;
       }
     }
+  }
+
+  .features footer {
+    padding-top: $sectionPadding1200;
   }
 }
