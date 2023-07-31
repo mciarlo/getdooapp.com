@@ -89,7 +89,7 @@ nav {
     color: $textColorSecondary;
     display: inline-block;
     padding: 0.25em 0;
-    @include transition(color, .25s, ease-in-out);
+    @include transition(color, 150ms, ease-in-out);
 
     &:hover,
     &.active {
@@ -128,7 +128,7 @@ nav.active {
     width: 100%;
     background: $textColorSecondary;
     opacity: 1;
-    @include transition(all, .25s, ease-in-out);
+    @include transition(all, 150ms, ease-in-out);
 
     &.top {
       top: 20%;
@@ -226,7 +226,7 @@ nav.active {
           position: absolute;
           top: -5px;
           left: -20px;
-          background: $lightPurple;
+          background: $lightGrayBackground;
           @include border-radius(20px);
           z-index: 1;
           padding: 5px 20px;

@@ -41,6 +41,22 @@ em {
   color: $textColorSecondary
 }
 
+.promo {
+  background: $lightPurple;
+  @include border-radius(20px);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4em 0;
+
+  h3 + p {
+    margin-top: 0.5em;
+  }
+
+  p + .button {
+    margin-top: 1em;
+  }
+}
+
 section {
   transition: transform 1s ease-in-out, opacity 1s ease-in-out;
   opacity: 1;
@@ -302,6 +318,10 @@ a.button {
       padding-top: 6em;
     }
   }
+
+  .promo {
+    padding: 6em 0;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -319,5 +339,15 @@ a.button {
     &.secondary {
       padding: 1em 2em;
     }
+  }
+
+  .promo {
+    padding: 6em 0;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .promo {
+    padding: 10em 0;
   }
 }

@@ -220,6 +220,15 @@ label, input, textarea, .selection {
       color: $textColorTertiary;
     }
   }
+
+  .content-wrapper {
+    padding-bottom: $sectionPadding375;
+
+    &:last-child,
+    &:first-child {
+      padding-bottom: 0;
+    }
+  }
 }
 
 .feature-group {
@@ -227,6 +236,10 @@ label, input, textarea, .selection {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+
+  &:last-child {
+    padding-bottom: 0;
+  }
 
   &:last-child {
     border: 0;
@@ -244,6 +257,10 @@ label, input, textarea, .selection {
     display: inline-block;
     box-sizing: border-box;
     vertical-align: top;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
 
     p {
       margin-bottom: 0.75em;
@@ -442,6 +459,10 @@ label, input, textarea, .selection {
         border: 0;
       }
     }
+
+    .content-wrapper {
+      padding-bottom: $sectionPadding768;
+    }
   }
 
   .contact form {
@@ -464,6 +485,14 @@ label, input, textarea, .selection {
         left: 5%;
         margin-right: 0;
       }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .features-list {
+    .content-wrapper {
+      padding-bottom: $sectionPadding1200;
     }
   }
 }
