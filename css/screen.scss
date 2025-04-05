@@ -652,6 +652,18 @@ li.active .question .arrow {
   }
 }
 
+.mail {
+  text-align: center;
+  background: $lightPurple;
+  margin-bottom: 4rem;
+  @include border-radius(30px);
+
+  h2 {
+    display: block;
+    margin-bottom: 1em;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .card {
     height: 350px;
