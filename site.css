@@ -208,7 +208,7 @@ pre code { background: none; padding: 0; font-size: inherit; }
 /* ---------- Homepage ---------- */
 :root {
   --home-max: 1120px;
-  --hero-device-w: clamp(190px, 19vw, 240px);
+  --hero-device-w: clamp(240px, 26vw, 340px); /* the biggest phone on the page, leading it */
   --panel-device-w: clamp(180px, 20vw, 260px);
   --panel-radius: 16px;
 }
@@ -283,7 +283,8 @@ pre code { background: none; padding: 0; font-size: inherit; }
 .hero-links a:hover { color: var(--accent); }
 
 /* Apple's official App Store badge, at its 40px minimum height */
-.badge img { display: block; height: 40px; width: auto; transition: transform .2s ease-out; }
+/* The previous site's bounce: the curve overshoots past 1.05 and settles back */
+.badge img { display: block; height: 40px; width: auto; transition: transform 150ms cubic-bezier(.13, 1.11, .42, 1.44); }
 /* Grows 5% on hover. The reduced-motion rule at the end turns the animation off. */
 .badge:hover img { transform: scale(1.05); }
 
