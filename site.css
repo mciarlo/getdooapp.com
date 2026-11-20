@@ -1,0 +1,402 @@
+/* getdooapp.com: every page's styles. Light only.
+   Task colors come from DooKit (MCIllustrationHelper.m).
+
+   Breakpoints, used the same way on every page:
+     phone    below 768px
+     tablet   768px and up
+     desktop  1024px and up
+
+   Sections: tokens · base · shared layout · shared type · homepage · help · URL scheme */
+
+/* ---------- Tokens ---------- */
+:root {
+  --sage: #BCD8C4;
+  --nanohana: #EEDEA1;
+  --sky: #B5D6EB;
+  --anzu: #F8D4AF;
+  --iris: #C8C0E5;
+  --heather: #EAD1DE;
+  --seafoam: #BEE0E3;
+  --usubeni: #F4CDC7;
+
+  /* Each color's light tint, behind a feature row's text */
+  --sage-tint: #EDF8F0;
+  --heather-tint: #F8ECF3;
+  --anzu-tint: #F8F1E9;
+  --seafoam-tint: #EEF7F7;
+  --nanohana-tint: #F6F3E6;
+  --usubeni-tint: #FBF0EE;
+
+  /* Headings on each color's tint. Darker than DooKit's _DARK shades so they read as text. */
+  --sage-ink: #245833;
+  --heather-ink: #723054;
+  --anzu-ink: #7A4C1C;
+  --seafoam-ink: #183D56;
+  --nanohana-ink: #604F0C;
+  --usubeni-ink: #682B22;
+
+  --page: #FFFFFF;
+  --text: #111111;
+  --text-2: rgba(17, 17, 17, .62);   /* 5.3:1 on white, passes AA for body text */
+  --rule: rgba(17, 17, 17, .1);
+  --accent: #4D4899;
+  --surface: #FFFFFF;                 /* boxes that sit on a muted background */
+  --muted: #F2F2F4;                   /* muted backgrounds: crops, code, keys */
+  --shadow: 0 2px 12px rgba(0, 0, 0, .06);
+  --button-bg: #111111;
+  --button-text: #FFFFFF;
+
+  --radius-s: 6px;
+  --radius-m: 12px;
+  --radius-l: 16px;
+  --radius-pill: 999px;
+
+  --gutter: 16px;
+  --nav-h: 52px;
+  --column: 640px;
+  --font: "Avenir Next", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+@media (min-width: 768px) {
+  :root { --gutter: 24px; }
+}
+
+/* ---------- Base ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body {
+  background: var(--page);
+  color: var(--text);
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+html { scroll-behavior: smooth; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; }
+h1, h2, h3, h4, h5, h6, p { text-wrap: pretty; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: var(--radius-s); }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap;
+}
+
+/* ---------- Shared layout ---------- */
+
+/* Nav on every page but the homepage: the mark centered in a bar, the same as the homepage's once it shrinks */
+.nav {
+  position: fixed; inset: 0 0 auto 0; z-index: 10;
+  height: var(--nav-h);
+  display: flex; align-items: center; justify-content: center;
+  background: var(--page); border-bottom: 1px solid var(--rule);
+}
+.nav .logo img { display: block; width: 28px; height: 28px; }
+
+/* Download bar on every page but the homepage. It sits in the page just above the footer and
+   sticks to the bottom of the window until you scroll to that spot, then stays put there. */
+:root { --download-bar-w: 452px; --download-bar-gap: 16px; }
+.download-bar {
+  position: sticky; z-index: 10;
+  bottom: calc(var(--download-bar-gap) + env(safe-area-inset-bottom, 0px));
+  width: min(var(--download-bar-w), calc(100% - var(--gutter) * 2));
+  margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 14px 16px 14px 20px; border-radius: var(--radius-l);
+  background: rgba(241, 241, 241, .8); color: var(--text); /* #F1F1F1 at 80% */
+  -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+}
+.download-bar-text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.download-bar-text strong { font-size: 16px; font-weight: 600; }
+.download-bar-text .req { white-space: nowrap; }
+/* Phones: each requirement on its own line, without the separator */
+@media (max-width: 767px) {
+  .download-bar-text .req { display: block; }
+  .download-bar-text .sep { display: none; }
+}
+.download-bar-text span { font-size: 13px; color: var(--text-2); }
+.download-bar .badge { flex: none; }
+
+/* Reading column: the homepage features and every content page */
+.column {
+  max-width: calc(var(--column) + var(--gutter) * 2);
+  margin: 0 auto;
+  padding-left: var(--gutter); padding-right: var(--gutter);
+  font-size: 17px; line-height: 1.6;
+}
+/* Content pages start below the fixed nav */
+.page { padding-top: calc(var(--nav-h) + 56px); padding-bottom: 96px; }
+.page-header { display: flex; flex-direction: column; gap: 12px; }
+.page section { padding-top: 64px; display: flex; flex-direction: column; gap: 14px; scroll-margin-top: calc(var(--nav-h) + 24px); }
+
+/* Divider lines */
+.rule-top { margin-top: 64px; padding-top: 40px; border-top: 1px solid var(--rule); }
+.rule-bottom { padding-bottom: 32px; border-bottom: 1px solid var(--rule); }
+
+/* Lists of items, each a title over a line of text */
+.list { list-style: none; display: flex; flex-direction: column; gap: 40px; }
+.item { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+
+/* A colored dot, set with style="--dot: var(--sage)" */
+.dot::before {
+  content: ""; flex: none;
+  width: var(--dot-size, 14px); height: var(--dot-size, 14px);
+  border-radius: 50%; background: var(--dot);
+}
+
+/* Footer on every page: a sage download card, then the site links and copyright */
+.closing {
+  max-width: calc(var(--home-max) + var(--gutter) * 2);
+  margin: 0 auto;
+  padding: 96px var(--gutter) calc(48px + env(safe-area-inset-bottom, 0px));
+  display: flex; flex-direction: column; align-items: center; gap: 16px;
+  text-align: center;
+}
+.closing-card {
+  width: 100%;
+  border-radius: var(--panel-radius);
+  background: var(--sage);
+  padding: 72px var(--gutter) 64px;
+  display: flex; flex-direction: column; align-items: center; gap: 48px;
+  margin-bottom: 32px;
+}
+.closing-title {
+  font-size: clamp(24px, 2.6vw, 32px); line-height: 1.2; letter-spacing: -.025em; font-weight: 700;
+  color: var(--sage-ink);
+}
+.closing-title span { display: block; } /* the second line always starts here */
+/* Final image: Doo on every device, 600px wide at most */
+.closing-art { display: block; width: min(100%, 600px); height: auto; }
+.closing-card .requirements { color: var(--sage-ink); }
+.footer-links {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px;
+  font-size: 13px; font-weight: 500;
+}
+.footer-links a:hover, .footer-links a[aria-current="page"] { color: var(--accent); }
+.copyright { font-size: 12px; color: var(--text-2); }
+
+/* ---------- Shared type ---------- */
+.column h1 { font-size: clamp(32px, 6vw, 44px); line-height: 1.1; letter-spacing: -.02em; font-weight: 600; }
+.column h2 { font-size: 26px; line-height: 1.2; letter-spacing: -.01em; font-weight: 600; }
+.column h3, .item h2, .item h3, .params dt { font-size: 18px; line-height: 1.3; font-weight: 600; }
+.page section h3 { margin-top: 10px; }
+/* Body text is secondary; titles and .primary text stay full strength */
+.column :is(p, dd), .column :is(ul, ol):not(.list) { color: var(--text-2); }
+.column ul:not(.list) { padding-left: 1.2em; display: flex; flex-direction: column; gap: 6px; }
+/* App labels, like Use quick add, are bold text set as chips below */
+.column .primary { color: var(--text); font-weight: 500; }
+.column a { color: var(--accent); }
+.column a:hover { text-decoration: underline; }
+.parsed { color: var(--accent); }
+.detail { color: var(--text-2); }
+
+/* One chip for things in the app: keyboard shortcuts, labels of settings and buttons, and code */
+code, kbd, .column strong {
+  font-size: .85em; color: var(--text);
+  background: var(--muted); border-radius: var(--radius-s); padding: 2px 6px;
+  white-space: nowrap; /* a label reads as one control, so it never splits across lines */
+}
+code { font-family: var(--mono); white-space: normal; }
+kbd { font-family: inherit; font-weight: 600; } /* browsers default kbd to monospace */
+.column strong { font-weight: 500; }
+pre {
+  background: var(--muted); border-radius: var(--radius-m); padding: 14px 16px;
+  overflow-x: auto; font-size: 14px; line-height: 1.5;
+}
+pre code { background: none; padding: 0; font-size: inherit; }
+
+/* ---------- Homepage ---------- */
+:root {
+  --home-max: 1120px;
+  --hero-device-w: clamp(190px, 19vw, 240px);
+  --panel-device-w: clamp(180px, 20vw, 260px);
+  --panel-radius: 16px;
+}
+@media (min-width: 768px) {
+  :root { --panel-radius: 24px; }
+}
+
+/* Frameless phone screen around a screenshot or video, sized by --device-w */
+.device {
+  --w: var(--device-w, 240px);
+  position: relative;
+  width: var(--w);
+  aspect-ratio: 920 / 2000; /* the screen recording's shape */
+  border-radius: calc(var(--w) * .13);
+  background: var(--muted);
+  box-shadow: 0 0 0 1px var(--rule); /* an outline only, so a light screen keeps its edge on the page */
+}
+.screen {
+  position: absolute; inset: 0;
+  border-radius: inherit; overflow: hidden;
+}
+.screen :is(img, video) { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+/* Homepage nav: the mark starts large above the hero and shrinks into a fixed bar as you scroll.
+   The page script sets --nav-progress from 0 (top of page) to 1 (bar fully formed). */
+:root {
+  --home-nav-h: var(--nav-h);
+  --mark-size: 64px;
+  --mark-top: 40px;          /* where the large mark sits at the top of the page */
+  --mark-top-small: 12px;    /* centered in the bar once small */
+  --mark-small-scale: .44;   /* 28px in the bar */
+}
+.home-nav { position: fixed; inset: 0 0 auto 0; z-index: 10; height: var(--home-nav-h); pointer-events: none; }
+.home-nav::before {
+  content: ""; position: absolute; inset: 0;
+  background: var(--page); border-bottom: 1px solid var(--rule);
+  opacity: var(--nav-progress, 0);
+}
+.home-mark {
+  position: absolute; left: 50%; top: 0;
+  width: var(--mark-size); height: var(--mark-size);
+  pointer-events: auto;
+  transform-origin: top center;
+  transform:
+    translate(-50%, calc(var(--mark-top) + (var(--mark-top-small) - var(--mark-top)) * var(--nav-progress, 0)))
+    scale(calc(1 - (1 - var(--mark-small-scale)) * var(--nav-progress, 0)));
+}
+.home-mark img { display: block; width: 100%; height: 100%; }
+
+/* Hero: the statement, the app, and how to get it */
+.hero {
+  padding: calc(var(--mark-top) + var(--mark-size) + 40px) var(--gutter) 72px;
+  display: flex; flex-direction: column; align-items: center; gap: 40px;
+  text-align: center;
+}
+.statement {
+  font-size: clamp(20px, 2.4vw, 26px); line-height: 1.3; letter-spacing: -.01em; font-weight: 600;
+  color: rgba(17, 17, 17, .5); /* 3.5:1, AA for large bold text */
+}
+/* Each line is its own block; balance evens out a line that still has to wrap on narrow screens */
+.statement > span { display: block; text-wrap: balance; }
+/* On phones the two-sentence lines split at the period, so every line ends where a thought ends */
+@media (max-width: 767px) {
+  .statement > span > span { display: block; }
+}
+.statement .strong, .tagline { color: var(--text); }
+.tagline { font-size: clamp(20px, 2.4vw, 26px); font-weight: 600; letter-spacing: -.01em; }
+.hero .device { --device-w: var(--hero-device-w); }
+.get-app { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.requirements { font-size: 13px; line-height: 1.5; color: var(--text-2); }
+.hero-links { display: flex; gap: 24px; font-size: 13px; font-weight: 500; }
+.hero-links a:hover { color: var(--accent); }
+
+/* Apple's official App Store badge, at its 40px minimum height */
+.badge img { display: block; height: 40px; width: auto; transition: transform .2s ease-out; }
+/* Grows 5% on hover. The reduced-motion rule at the end turns the animation off. */
+.badge:hover img { transform: scale(1.05); }
+
+/* Feature rows: two cards side by side. Text sits at the bottom of the row color's tint;
+   the full color holds the vignette. Each row sets --panel, --tint and --ink. */
+/* The page gutter sits outside the section, so the divider above the rows spans exactly as wide as the cards */
+.features {
+  width: min(var(--home-max), 100% - var(--gutter) * 2);
+  margin: 0 auto;
+  padding: 96px 0;
+  border-top: 1px solid var(--rule);
+  display: flex; flex-direction: column; gap: 56px;
+}
+.feature-row { display: grid; gap: 12px; }
+@media (min-width: 768px) {
+  .feature-row { grid-template-columns: 1fr 1fr; }
+}
+/* The row's text size is set on the item so the heading-to-paragraph gap is 1em of it */
+.feature-row .item {
+  border-radius: var(--panel-radius);
+  background: var(--tint);
+  padding: 40px;
+  justify-content: flex-end;
+  font-size: 16px; gap: 1em;
+}
+.feature-row h3 { font-size: clamp(24px, 2.6vw, 32px); line-height: 1.2; letter-spacing: -.025em; font-weight: 700; color: var(--ink); }
+.feature-row h3 span { display: block; } /* the heading's second line always starts here */
+.feature-row p { line-height: 1.6; color: rgba(0, 0, 0, .7); max-width: 340px; }
+@media (min-width: 768px) {
+  .feature-row .item { padding: 56px; }
+}
+.panel {
+  position: relative;
+  border-radius: var(--panel-radius);
+  background: var(--panel);
+  padding: 56px 24px;
+  display: grid; place-items: center;
+}
+@media (min-width: 768px) {
+  .panel { aspect-ratio: 10 / 13; } /* the mockup's card shape; the text card stretches to match */
+}
+.panel .device { --device-w: var(--panel-device-w); }
+
+/* Pause/play for each vignette, added by the page script */
+.video-toggle {
+  position: absolute; right: 16px; bottom: 16px;
+  width: 36px; height: 36px; border: 0; border-radius: 50%;
+  background: rgba(255, 255, 255, .75); color: var(--text);
+  display: grid; place-items: center;
+  cursor: pointer;
+}
+.video-toggle:hover { background: var(--surface); }
+.video-toggle svg { width: 14px; height: 14px; fill: currentColor; }
+
+/* Privacy report card, in the privacy row's color panel */
+.report {
+  width: min(100%, 320px); border-radius: var(--radius-l);
+  background: var(--surface); color: var(--text); box-shadow: var(--shadow);
+  text-align: left; overflow: hidden;
+}
+.report-icon { display: block; width: 24px; height: 28px; margin: 24px auto 10px; fill: var(--ink); }
+.report-icon .keyhole { fill: var(--surface); }
+.report h4 { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink); text-align: center; padding-bottom: 20px; }
+.report ul { list-style: none; }
+.report li { display: flex; justify-content: space-between; padding: 20px; border-top: 1px solid var(--rule); font-size: 14px; }
+.report li::after { content: "✓"; color: var(--ink); }
+
+/* Praise: a heading, then quotes stacked one above the next, each under its logo */
+.press {
+  max-width: calc(var(--home-max) + var(--gutter) * 2);
+  margin: 0 auto;
+  /* Added to the 96px the feature rows and the closing card already leave, so the praise stands apart */
+  padding: 64px var(--gutter);
+  display: flex; flex-direction: column; align-items: center; gap: 64px;
+  text-align: center;
+}
+.press-header { display: flex; flex-direction: column; gap: 8px; }
+.press-header h2 { font-size: clamp(24px, 2.6vw, 32px); line-height: 1.2; letter-spacing: -.025em; font-weight: 700; }
+.press-header p { font-size: 15px; color: var(--text-2); }
+.press ul { list-style: none; display: flex; flex-direction: column; gap: 72px; }
+.press li { display: flex; flex-direction: column; align-items: center; gap: 16px; max-width: 560px; margin: 0 auto; }
+.press q {
+  font-size: clamp(20px, 2.2vw, 26px); line-height: 1.3; letter-spacing: -.01em; font-weight: 600;
+  color: var(--text);
+}
+/* Avenir Next's curly quotes are thin wedges at this size; a serif's are rounder */
+.press q::before, .press q::after { font-family: ui-serif, "New York", Georgia, serif; font-weight: 800; }
+.press img { height: 22px; width: auto; }
+
+/* ---------- Help ---------- */
+.help h2 { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; }
+.help h2 .top { font-size: 15px; font-weight: 500; color: var(--text-2); }
+.help h2 .top:hover { text-decoration: none; color: var(--text); }
+
+.toc { list-style: none; counter-reset: toc; padding-top: 32px; columns: 2; column-gap: 32px; }
+.toc li { counter-increment: toc; break-inside: avoid; padding: 3px 0; }
+.toc li::before { content: counter(toc); display: inline-block; width: 1.8em; color: var(--text-2); font-variant-numeric: tabular-nums; }
+.column .toc a { color: var(--text); font-weight: 500; }
+@media (max-width: 767px) { .toc { columns: 1; } }
+
+.shortcuts { width: 100%; border-collapse: collapse; font-size: 16px; }
+.shortcuts :is(th, td) { padding: 8px 0; border-bottom: 1px solid var(--rule); color: var(--text-2); font-weight: 400; text-align: left; vertical-align: top; }
+.shortcuts td { text-align: right; white-space: nowrap; padding-left: 16px; }
+
+/* ---------- URL scheme ---------- */
+.params div { padding: 14px 0; border-bottom: 1px solid var(--rule); display: flex; flex-direction: column; gap: 4px; }
+.params dt { display: flex; align-items: baseline; gap: 10px; }
+
+/* ---------- Reduced motion (last, so it wins) ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}

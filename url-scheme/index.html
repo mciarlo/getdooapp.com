@@ -1,175 +1,94 @@
-<!DOCTYPE html>
-  <html>
-  <head itemscope itemtype="http://schema.org/WebSite">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta charset="utf-8" />
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>URL scheme - Doo: Get Things Done</title>
+<meta name="description" content="Create Doo reminders from other apps and automations with the doo.create URL scheme.">
+<meta name="apple-itunes-app" content="app-id=1515371154">
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/favicon.png" type="image/png" sizes="32x32">
+<link rel="stylesheet" href="/site.css">
+<script src="/js/analytics.js" async></script>
+</head>
+<body>
+<nav class="nav" aria-label="Main">
+  <a class="logo" href="/"><img src="/images/doo_mark.svg" alt="Doo" width="72" height="72"></a>
+</nav>
 
-    <meta name="Author" content="Michael Ciarlo">
-    <meta name="robots" content="noodp">
-    <title itemprop="name">URL Scheme | Doo &ndash; Get Things Done</title>
-    <meta name="Description" content="Become a more productive you, one card at a time. Available for iPhone, iPad, Apple Watch, and Mac." />
-    <meta name="Keywords" content="reminders app, reminders ios, reminders mac, todo list, to-do list, task manager, productivity app, get things done, time management, doo, task, tasks" />
+<main class="page column">
+  <header class="page-header">
+    <h1>URL Scheme</h1>
+    <p>Add tasks to Doo using <code>doo.create</code>. Use the URL host to set the task title. The title field is the only required attribute of your URL. You can create tasks silently or with a confirmation. URLs are percent decoded before parsing, but encoding is not required.</p>
+  </header>
 
-    <meta property="og:title" content="Doo &ndash; Get Things Done" />
-    <meta property="og:description" content="Become a more productive you, one card at a time. Available for iPhone, iPad, Apple Watch, and Mac." />
-    <link rel="canonical" href="https://www.getdooapp.com">
-    <meta property="og:url" content="https://www.getdooapp.com" />
-    <meta property="og:image" content="https://www.getdooapp.com/images/DooImage.jpg" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Doo - Get Things Done" />
+  <section>
+    <h2>Parameters</h2>
+    <p>All parameters are optional. Certain conditions like location-based tasks require specific sets of parameters.</p>
+    <dl class="params">
+      <div><dt><code>a</code> Alerts</dt><dd>Use 0 for disabled or 1 for enabled. Defaults to enabled.</dd></div>
+      <div><dt><code>nag</code> Nag Alerts</dt><dd>Use 0 for disabled or 1 for enabled. Defaults to disabled.</dd></div>
+      <div><dt><code>c</code> Checklist</dt><dd>Strings separated by line breaks, represented by <code>\n</code>. Begin incomplete items with <code>[ ]</code> and completed items with <code>[x]</code>.</dd></div>
+      <div><dt><code>n</code> Notes</dt><dd>Recommended length is 300 characters or less.</dd></div>
+      <div><dt><code>d</code> Date</dt><dd>A date string in ISO 8601 format.</dd></div>
+      <div><dt><code>ed</code> End Date</dt><dd>A date string in ISO 8601 format.</dd></div>
+      <div><dt><code>r</code> Repeat Type</dt><dd>0 = None. 1 = Daily. 2 = Weekly. 3 = Monthly. 4 = Yearly.</dd></div>
+      <div><dt><code>rint</code> Repeat Interval</dt><dd>Integer.</dd></div>
+      <div><dt><code>ord</code> Repeat Day Ordinals</dt><dd>A comma separated list of day ordinals from 1 to N. In the Gregorian calendar, N is equal to 7 and Sunday has an ordinal of 1. Day ordinals are only valid for the weekly repeat type. Visit the <a href="https://developer.apple.com/reference/foundation/nsdatecomponents/1410442-weekday">Apple documentation on weekday ordinals</a> for more information.</dd></div>
+      <div><dt><code>eat</code> Early Reminder Type</dt><dd>0 = None. 1 = Day. 2 = Week. 3 = Month. 4 = Year.</dd></div>
+      <div><dt><code>eaint</code> Early Reminder Interval</dt><dd>Integer.</dd></div>
+      <div><dt><code>loc</code> Location Name</dt><dd>The name of the location. A location-based task requires latitude, longitude, and location name.</dd></div>
+      <div><dt><code>lat</code> Latitude</dt><dd>Float. A location-based task requires latitude, longitude, and location name. The presence of both latitude and longitude will cause the scheme to ignore any dates or custom repeat information. Latitude values are not validated.</dd></div>
+      <div><dt><code>long</code> Longitude</dt><dd>Float. A location-based task requires latitude, longitude, and location name. The presence of both latitude and longitude will cause the scheme to ignore any dates or custom repeat information. Longitude values are not validated.</dd></div>
+      <div><dt><code>lact</code> Location Activation</dt><dd>Integer. 0 = Arriving. 1 = Leaving. Defaults to Arriving.</dd></div>
+      <div><dt><code>lrad</code> Location Activation Radius</dt><dd>Integer. Defaults to 300 meters.</dd></div>
+      <div><dt><code>silent</code> Confirmation Prompt</dt><dd>Require a confirmation before saving the reminder. Use 0 for disabled or 1 for enabled. Defaults to enabled.</dd></div>
+    </dl>
+  </section>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-    <link href='/css/screen.css' rel='stylesheet' type='text/css' />
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" rel="stylesheet">
+  <section>
+    <h2>Examples</h2>
+    <h3>No due date, with confirmation</h3>
+    <pre><code>doo.create://New%20Reminder</code></pre>
+    <h3>Checklist, no confirmation</h3>
+    <pre><code>doo.create://New%20Reminder?silent=0&amp;c=[%20]Item\n[%20]Item</code></pre>
+    <h3>Due date, no confirmation</h3>
+    <pre><code>doo.create://New%20Reminder?silent=0&amp;d=2017-08-01T06:47:59+03:00</code></pre>
+    <h3>Monthly due date, with confirmation</h3>
+    <pre><code>doo.create://New%20Reminder?d=2019-08-01T06:47:59+03:00&amp;r=3</code></pre>
+    <h3>Every other week on Monday, Wednesday and Friday, with confirmation</h3>
+    <pre><code>doo.create://New%20Reminder?d=2019-08-01T06:47:59+03:00&amp;r=2&amp;rint=2&amp;ord=2,4,6</code></pre>
+    <h3>Due at a location, no confirmation</h3>
+    <pre><code>doo.create://New%20Reminder?silent=0&amp;lat=40.7128&amp;long=-73.935242&amp;loc=New%20York</code></pre>
+  </section>
+</main>
 
-    <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.png">
-    <link rel="icon" type="image/png" sizes="64x64" href="/images/favicon64.png">
-    <link rel="icon" type="image/png" sizes="144x144" href="/images/favicon144.png">
-    <link rel="icon" type="image/png" sizes="128x128" href="/images/favicon128.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon192.png">
-  </head>
-  <body class="no-js">
-    <nav>
-      <div class="content-wrapper">
-        <a href="/" class="logo-link" title="Go to the Doo overview">Doo</a>
+<!-- Sticky download bar, sticks to the bottom of the window, then comes to rest above the footer -->
+<aside class="download-bar" aria-label="Download">
+  <div class="download-bar-text">
+    <strong>Download</strong>
+    <span><span class="req">iOS 18 or later</span><span class="sep"> · </span><span class="req">macOS 26.0 and later</span></span>
+  </div>
+  <a class="badge" href="https://apps.apple.com/us/app/id1515371154"><img src="/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" width="120" height="40"></a>
+</aside>
 
-        <ul id="nav-links">
-          <li><a href="/" data-resource="/" title="Check out the major features"><span>Overview</span></a></li>
-          <li><a href="/features" data-resource="features" title="Check out the full feature list"><span>Features</span></a></li>
-          <li><a href="/support" data-resource="support" title="Get answers to common questions"><span>Support</span></a></li>
-          <li><a class="download" data-attr-type="iOS" href="https://apps.apple.com/us/app/id1515371154" title="Download Doo on the App Store"><span>Download</span></a></li>
-        </ul>
-
-        <a id="hamburger-icon" href="#nav-links">
-          <span class="top"></span>
-          <span class="middle"></span>
-          <span class="bottom"></span>
-        </a>
-      </div>
-    </nav>
-
-    <section class="url-scheme">
-      <div class="content-wrapper">
-        <h1>URL Scheme</h1>
-        <p>Add tasks to Doo using <code>doo.create</code>. Use the URL host to set the task title. The title field is the only required attribute of your URL. You can create tasks silently or with a confirmation. URLs are percent decoded before parsing, but encoding is not required.</p>
-
-        <h2>Parameters</h2>
-        <p>All parameters are optional. Certain conditions like location-based tasks require specific sets of parameters.</p>
-        <ul class="url-params">
-          <li>
-            <span class="param-label"><code>a</code></span>
-            <span class="param-description">Alerts</span>
-            <span class="param-notes">Use 0 for disabled or 1 for enabled. Defaults to enabled.</span>
-          </li><li>
-            <span class="param-label"><code>nag</code></span>
-            <span class="param-description">Nag Alerts</span>
-            <span class="param-notes">Use 0 for disabled or 1 for enabled. Defaults to disabled.</span>
-          </li><li>
-            <span class="param-label"><code>c</code></span>
-            <span class="param-description">Checklist</span>
-            <span class="param-notes">Strings separated by line breaks, represented by "\n". Begin incomplete items with "[ ]" and completed items with "[x]".</span>
-          </li><li>
-            <span class="param-label"><code>n</code></span>
-            <span class="param-description">Notes</span>
-            <span class="param-notes">Recommended length is 300 characters or less</span>
-          </li><li>
-            <span class="param-label"><code>d</code></span>
-            <span class="param-description">Date</span>
-            <span class="param-notes">A date string in ISO 8601 format</span>
-          </li><li>
-            <span class="param-label"><code>ed</code></span>
-            <span class="param-description">End Date</span>
-            <span class="param-notes">A date string in ISO 8601 format</span>
-          </li><li>
-            <span class="param-label"><code>r</code></span>
-            <span class="param-description">Repeat Type</span>
-            <span class="param-notes">0 = None. 1 = Daily. 2 = Weekly. 3 = Monthly. 4 = Yearly.</span>
-          </li><li>
-            <span class="param-label"><code>rint</code></span>
-            <span class="param-description">Repeat Interval</span>
-            <span class="param-notes">Integer</span>
-          </li><li>
-            <span class="param-label"><code>ord</code></span>
-            <span class="param-description">Repeat Day Ordinals</span>
-            <span class="param-notes">A comma separated list of day ordinals from 1 to N. In the Gregorian calendar, N is equal to 7 and Sunday has an ordinal of 1. Day ordinals are only valid for the weekly repeat type. Visit the Apple documentation on <a href="https://developer.apple.com/reference/foundation/nsdatecomponents/1410442-weekday" title="NSDateFormatter Weekday documentation on Apple.com">weekday ordinals</a> for more information.</span>
-          </li><li>
-            <span class="param-label"><code>eat</code></span>
-            <span class="param-description">Early Reminder Type</span>
-            <span class="param-notes">0 = None. 1 = Day. 2 = Week. 3 = Month. 4 = Year.</span>
-          </li><li>
-            <span class="param-label"><code>eaint</code></span>
-            <span class="param-description">Early Reminder Interval</span>
-            <span class="param-notes">Integer</span>
-          </li><li>
-            <span class="param-label"><code>lat</code></span>
-            <span class="param-description">Latitude</span>
-            <span class="param-notes">Float. A location-based task requires latitude, longitude, and location name. The presence of both latitude and longitude will cause the scheme to ignore any dates or custom repeat information. Latitude values are not validated.</span>
-          </li><li>
-            <span class="param-label"><code>long</code></span>
-            <span class="param-description">Longitude</span>
-            <span class="param-notes">Float. A location-based task requires latitude, longitude, and location name. The presence of both latitude and longitude will cause the scheme to ignore any dates or custom repeat information. Longitude values are not validated.</span>
-          </li><li>
-            <span class="param-label"><code>lact</code></span>
-            <span class="param-description">Location Activation</span>
-            <span class="param-notes">Integer. 0 = Arriving. 1 = Leaving. Defaults to Arriving.</span>
-          </li><li>
-            <span class="param-label"><code>lrad</code></span>
-            <span class="param-description">Location Activation Radius</span>
-            <span class="param-notes">Integer. Defaults to 300 meters.</span>
-          </li><li>
-            <span class="param-label"><code>silent</code></span>
-            <span class="param-description">Confirmation Prompt</span>
-            <span class="param-notes">Require a confirmation before saving the reminder. Use 0 for disabled or 1 for enabled. Defaults to enabled.</span>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="url-scheme-examples">
-      <div class="content-wrapper">
-        <h2>Examples</h2>
-
-        <h3>Create a reminder with no due date, with confirmation</h3>
-        <script src="https://gist.github.com/mciarlo/d61f7489a21ad272a21174382772b9ee.js"></script>
-
-        <h3>Create a reminder with a checklist, no confirmation</h3>
-        <script src="https://gist.github.com/mciarlo/7e45cdeab109104a3b7d8c4e37ed7667.js"></script>
-
-        <h3>Create a reminder with a due date, no confirmation</h3>
-        <script src="https://gist.github.com/mciarlo/f25d6de0540df9fc6691d506ab9508e2.js"></script>
-
-        <h3>Create a reminder with a monthly due date, with confirmation</h3>
-        <script src="https://gist.github.com/mciarlo/1f979a069b7588ae8ca71a09d1915523.js"></script>
-
-        <h3>Create a reminder with a bi-weekly due date on Monday, Wednesday, and Friday, with confirmation</h3>
-        <script src="https://gist.github.com/mciarlo/f7314d369c15757e8d0645e7e6350b1f.js"></script>
-
-        <h3>Create a reminder due at a location, with no confirmation</h3>
-        <script src="https://gist.github.com/mciarlo/e70bf27d8562a20da9802e1a6e886788.js"></script>
-      </div>
-    </section>
-
-    <footer>
-      <img src="/images/doo_logo.svg" alt="Doo: Get Things Done" />
-      <ul>
-        <li><a href="/" data-resource="/" title="Overview | Doo &ndash; Get Things Done"><span>Overview</span></a></li>
-        <li><a href="/features" data-resource="features" title="Features | Doo &ndash; Get Things Done"><span>Features</span></a></li>
-        <li><a href="/support" data-resource="support" title="Support | Doo &ndash; Get Things Done"><span>Support</span></a></li>
-      </ul>
-
-      <p>&copy; 2016&ndash;<noscript>2025</noscript><span id="copyright"><script>document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))</script></span> Ciarlo Software, LLC</p>
-    </footer>
-
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-72804362-1"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'UA-72804362-1');
-    </script>
-
-    <script src="../js/doo.js"></script>
-  </body>
+<!-- Closing download card, then the site links -->
+<footer class="closing">
+  <div class="closing-card">
+    <h2 class="closing-title">Helping people <span>get things done since 2016</span></h2>
+    <img class="closing-art" src="/images/doo-platforms-mac-ios-watch.webp" alt="Doo on Mac, iPad, iPhone and Apple Watch, each showing the same reminder, Water plants" width="2000" height="922">
+    <div class="get-app">
+      <a class="badge" href="https://apps.apple.com/us/app/id1515371154"><img src="/images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg" alt="Download on the App Store" width="120" height="40"></a>
+      <p class="requirements">iOS 18 or later<br>macOS 26.0 and later</p>
+    </div>
+  </div>
+  <nav class="footer-links" aria-label="Site">
+    <a href="/support/">Support</a>
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/url-scheme/" aria-current="page">URL Scheme</a>
+    <a href="/about/">About</a>
+  </nav>
+  <p class="copyright">© 2016–2026 Ciarlo Software, LLC</p>
+</footer>
+</body>
 </html>
